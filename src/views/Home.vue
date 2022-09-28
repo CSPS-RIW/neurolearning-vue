@@ -10,6 +10,8 @@
             enter-active-class="animate__animated animate__fadeInDown"
             >
               <div class="instructional" v-if="!complete">
+                <p class="intro">Please select the relevant buttons in order to generate a customized resource toolkit. </p>
+                  <p class="intro">If you make a mistake, select the "Clear all inputs" button to clear the page.</p>
                 <p>
                   {{ message }}
                 </p>
@@ -135,6 +137,19 @@
                 </p>
                 <p v-if="employeeClaim">You have submitted a claim on your own behalf.</p>
                 <p>Here is a list of resources that may help you in your role.</p>
+                <div class="resources">
+                  <ul class="resource-list">
+                    <li v-if="manager">
+                      {{ resources.managerItem }}
+                    </li>
+                    <li v-if="executive">
+                      {{ resources.executiveItem }}
+                    </li>
+                    <li v-if="employee">
+                      {{ resources.employeeItem }}
+                    </li>
+                  </ul>
+                </div>
                 <button class="btn btn-info" @click="resetAll()">Back</button>
               </div>
             </Transition>
@@ -155,6 +170,10 @@
 <style scoped>
    body {
     font-family: 'helvetica', sans-serif;
+   }
+
+   .intro {
+    font-size: 26px;
    }
    
    .text-layer {
@@ -214,21 +233,29 @@ export default {
             complete: false,
             job: '',
             manager: false,
+            employee: false,
             executive: false,
             MHRole: '',
             managerClaim: false,
             employeeClaim: false,
             actionPlan: false,
             message: 'Which one of these are you?',
+            resources: {
+              employeeItem: 'http://www.employeehelp.com',
+              managerItem: 'http://www.managersunite.com',
+              executiveItem: 'http://www.executives.com',
+              psychotherapistItem: '',
+              socialItem: ''
+            }
         }
     },
     methods: {
         tier0Submit: function(description) {
           if (description === 'employee') {
-            this.role = 1; this.finalClear(); this.job = 'an Employee'
+            this.role = 1; this.finalClear(); this.job = 'an Employee';
           }
           else if (description === 'manager') {
-            this.role = 2; this.finalClear(); this.job = 'a Manager'
+            this.role = 2; this.finalClear(); this.job = 'a Manager'; this.ma
           }
           else if (description === 'mental health') {
             this.role = 3; this.finalClear(); this.job = 'a Mental Health Professional'
@@ -257,7 +284,22 @@ export default {
         },
         tier2Submit: function(clarifier) {
           this.complete = true;
-          if (clarifier === 'manager claim') {
+          switch (clarifier) {
+            case 'manager claim':
+              this.managerClaim = true;
+            case 'not manager claim':
+              this.managerClaim = false;
+            case 'employee claim':
+              this.employeeClaim = true;
+            case 'not employee claim':
+              this.employeeClaim = false;
+            case 'action plan':
+              this.actionPlan = true;
+            case 'not action plan':
+              this.actionPlan = false;
+            break;
+          }
+          /*if (clarifier === 'manager claim') {
             this.managerClaim = true
           }
           else if (clarifier === 'not manager claim') {
@@ -292,7 +334,7 @@ export default {
           }
           else if (clarifier === 'final question no') {
 
-          }
+          }*/
         },
         finalClear: function() {
           this.final1 = 0

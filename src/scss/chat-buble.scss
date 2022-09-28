@@ -1,0 +1,173 @@
+@use './_colors'as c;
+@use './utils/breakpoints'as b;
+
+//! DO NOT TOUCH THIS FILE!!
+.chat-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2em 0em;
+    margin-bottom: 1em;
+
+    @include b.breakpoint(small) {
+        flex-flow: row nowrap;
+        gap: 2em;
+        margin-bottom: 0;
+    }
+
+    .persona {
+        height: 6em;
+        width: 23em;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 60px 90px;
+
+        @include b.breakpoint(small) {
+            background-size: 75px 107px;
+        }
+
+        &.megan {
+            background-image: url(https://app.csps-efpc.gc.ca//content/enforced/9301-INC118-DEV-EN/inc118-custom/_assets/images/SVG/megan-sm.svg);
+        }
+
+        &.robert {
+            background-image: url(https://app.csps-efpc.gc.ca//content/enforced/9301-INC118-DEV-EN/inc118-custom/_assets/images/SVG/robert-sm.svg);
+        }
+
+        &.morena {
+            background-image: url(https://app.csps-efpc.gc.ca//content/enforced/9301-INC118-DEV-EN/inc118-custom/_assets/images/SVG/morena-sm.svg);
+        }
+
+        &.alex {
+            background-image: url(https://app.csps-efpc.gc.ca//content/enforced/9301-INC118-DEV-EN/inc118-custom/_assets/images/SVG/alex-sm.svg);
+        }
+    }
+
+    p.chat-bubble,
+    span.chat-bubble {
+        position: relative;
+        height: auto;
+        border-radius: 15px;
+        padding: 1rem;
+        margin: 0 0 0 1em;
+
+        @include b.breakpoint(small) {
+            margin: 1rem 0;
+        }
+
+    }
+
+    &.grey {
+
+        p.chat-bubble,
+        span.chat-bubble {
+            background-color: #ededed;
+            color: c.$body-grey;
+
+            &::before {
+                border-left: 10px solid #ededed;
+                border-right: 10px solid #0000;
+                border-top: 10px solid #ededed;
+                border-bottom: 10px solid #0000;
+            }
+        }
+    }
+
+    &.blue {
+
+        p.chat-bubble,
+        span.chat-bubble {
+            background-color: #2F4A79;
+            color: c.$white-heat;
+
+            &::before {
+                border-left: 10px solid #2F4A79;
+                border-right: 10px solid #0000;
+                border-top: 10px solid #2F4A79;
+                border-bottom: 10px solid #0000;
+            }
+        }
+
+        a {
+            color: #fffd83;
+            border-bottom: 1px solid #fffd83;
+        }
+
+    }
+
+    &.left {
+
+        p.chat-bubble,
+        span.chat-bubble {
+            &::before {
+                content: "";
+                width: 0px;
+                height: 0px;
+                position: absolute;
+                left: 135px;
+                bottom: 0;
+                transform: rotate(40deg);
+                top: -7px;
+
+                @include b.breakpoint(small) {
+                    top: revert;
+                    left: -8px;
+                    bottom: 74px;
+                    transform: rotate(-50deg);
+                }
+            }
+        }
+    }
+
+    &.right {
+
+        p.chat-bubble,
+        span.chat-bubble {
+
+
+            &::before {
+                content: "";
+                width: 0px;
+                height: 0px;
+                position: absolute;
+                right: 135px;
+                bottom: -9px;
+                transform: rotate(225deg);
+
+                @include b.breakpoint(small) {
+                    right: -9px;
+                    bottom: 46px;
+                    transform: rotate(135deg);
+                }
+            }
+        }
+
+        .persona {
+            order: 2;
+            transform: rotateY(180deg);
+        }
+    }
+}
+
+// .avatar-text:not(.chat-container .chat-bubble) {
+//     background-color: pink;
+//     width: 44vw !important;
+// }
+.case-study {
+    .chat-bubble:not(.special-bubble) {
+        width: 100%;
+
+        @include b.breakpoint(medium) {
+            width: 65%;
+        }
+
+        @include b.breakpoint(large) {
+            width: 70%;
+        }
+
+        @include b.breakpoint(xlarge) {
+            width: 80%;
+        }
+    }
+}

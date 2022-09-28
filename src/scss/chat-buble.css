@@ -1,0 +1,178 @@
+/* **************************************************
+ * Color scheme
+ * *************************************************/
+/* **************************************************
+  * default colors
+  * *************************************************/
+/* **************************************************
+* BUTTONS
+* *************************************************/
+/* **************************************************
+  * BLOCKQUOTES
+  * *************************************************/
+/* **************************************************
+    * LISTS
+    * *************************************************/
+/* **************************************************
+* BANNER
+* *************************************************/
+/* **************************************************
+* JUMBOTRON
+* *************************************************/
+/* **************************************************
+* PANELS
+* *************************************************/
+/* **************************************************
+* TABLES
+* *************************************************/
+/* **************************************************
+* ACCORDIONS
+* *************************************************/
+/* **************************************************
+* CARDS
+* *************************************************/
+/* **************************************************
+* TABS
+* *************************************************/
+.chat-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2em 0em;
+  margin-bottom: 1em;
+}
+@media (min-width: 768px) {
+  .chat-container {
+    flex-flow: row nowrap;
+    gap: 2em;
+    margin-bottom: 0;
+  }
+}
+.chat-container .persona {
+  height: 6em;
+  width: 23em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60px 90px;
+}
+@media (min-width: 768px) {
+  .chat-container .persona {
+    background-size: 75px 107px;
+  }
+}
+.chat-container .persona.megan {
+  background-image: url(https://app.csps-efpc.gc.ca//content/enforced/9301-INC118-DEV-EN/inc118-custom/_assets/images/SVG/megan-sm.svg);
+}
+.chat-container .persona.robert {
+  background-image: url(https://app.csps-efpc.gc.ca//content/enforced/9301-INC118-DEV-EN/inc118-custom/_assets/images/SVG/robert-sm.svg);
+}
+.chat-container .persona.morena {
+  background-image: url(https://app.csps-efpc.gc.ca//content/enforced/9301-INC118-DEV-EN/inc118-custom/_assets/images/SVG/morena-sm.svg);
+}
+.chat-container .persona.alex {
+  background-image: url(https://app.csps-efpc.gc.ca//content/enforced/9301-INC118-DEV-EN/inc118-custom/_assets/images/SVG/alex-sm.svg);
+}
+.chat-container p.chat-bubble,
+.chat-container span.chat-bubble {
+  position: relative;
+  height: auto;
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 0 0 0 1em;
+}
+@media (min-width: 768px) {
+  .chat-container p.chat-bubble,
+.chat-container span.chat-bubble {
+    margin: 1rem 0;
+  }
+}
+.chat-container.grey p.chat-bubble,
+.chat-container.grey span.chat-bubble {
+  background-color: #ededed;
+  color: #333;
+}
+.chat-container.grey p.chat-bubble::before,
+.chat-container.grey span.chat-bubble::before {
+  border-left: 10px solid #ededed;
+  border-right: 10px solid rgba(0, 0, 0, 0);
+  border-top: 10px solid #ededed;
+  border-bottom: 10px solid rgba(0, 0, 0, 0);
+}
+.chat-container.blue p.chat-bubble,
+.chat-container.blue span.chat-bubble {
+  background-color: #2F4A79;
+  color: #fff;
+}
+.chat-container.blue p.chat-bubble::before,
+.chat-container.blue span.chat-bubble::before {
+  border-left: 10px solid #2F4A79;
+  border-right: 10px solid rgba(0, 0, 0, 0);
+  border-top: 10px solid #2F4A79;
+  border-bottom: 10px solid rgba(0, 0, 0, 0);
+}
+.chat-container.blue a {
+  color: #fffd83;
+  border-bottom: 1px solid #fffd83;
+}
+.chat-container.left p.chat-bubble::before,
+.chat-container.left span.chat-bubble::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  left: 135px;
+  bottom: 0;
+  transform: rotate(40deg);
+  top: -7px;
+}
+@media (min-width: 768px) {
+  .chat-container.left p.chat-bubble::before,
+.chat-container.left span.chat-bubble::before {
+    top: revert;
+    left: -8px;
+    bottom: 74px;
+    transform: rotate(-50deg);
+  }
+}
+.chat-container.right p.chat-bubble::before,
+.chat-container.right span.chat-bubble::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  right: 135px;
+  bottom: -9px;
+  transform: rotate(225deg);
+}
+@media (min-width: 768px) {
+  .chat-container.right p.chat-bubble::before,
+.chat-container.right span.chat-bubble::before {
+    right: -9px;
+    bottom: 46px;
+    transform: rotate(135deg);
+  }
+}
+.chat-container.right .persona {
+  order: 2;
+  transform: rotateY(180deg);
+}
+
+.case-study .chat-bubble:not(.special-bubble) {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .case-study .chat-bubble:not(.special-bubble) {
+    width: 65%;
+  }
+}
+@media (min-width: 1200px) {
+  .case-study .chat-bubble:not(.special-bubble) {
+    width: 70%;
+  }
+}
+@media (min-width: 1600px) {
+  .case-study .chat-bubble:not(.special-bubble) {
+    width: 80%;
+  }
+}/*# sourceMappingURL=chat-buble.css.map */
