@@ -7,26 +7,26 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-end;
-    gap: 2em 0em;
+    gap: 1em 0em;
     margin-bottom: 1em;
 
     @include b.breakpoint(small) {
         flex-flow: row nowrap;
-        gap: 2em;
+        gap: 1em;
         margin-bottom: 0;
     }
 
     .persona {
         height: 6em;
-        width: 23em;
+        width: 22em;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 60px 90px;
+        background-size: 101px 155px;
 
         @include b.breakpoint(small) {
             background-size: 75px 107px;
         }
-
+// Add classess with bg-img for persona images
         &.megan {
             background-image: url(https://app.csps-efpc.gc.ca//content/enforced/9301-INC118-DEV-EN/inc118-custom/_assets/images/SVG/megan-sm.svg);
         }
@@ -41,6 +41,9 @@
 
         &.alex {
             background-image: url(https://app.csps-efpc.gc.ca//content/enforced/9301-INC118-DEV-EN/inc118-custom/_assets/images/SVG/alex-sm.svg);
+        }
+        &.logo{
+            background-image: url(../assets/logo.svg);
         }
     }
 

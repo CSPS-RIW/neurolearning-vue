@@ -1,10 +1,10 @@
 import { createApp } from 'vue'
-import App from '../src/App.vue'
+import App from './App.vue'
 import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'animate.css'
 
-import './assets/main.css'
+import './scss/chat-buble.scss'
 
 const app = createApp(App)
 
