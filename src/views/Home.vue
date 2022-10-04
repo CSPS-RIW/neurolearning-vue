@@ -212,6 +212,10 @@ body {
     font-family: 'helvetica', sans-serif;
 }
 
+h1 {
+    color: #1c578a;
+}
+
 .intro {
     font-size: 26px;
     text-align: left;
