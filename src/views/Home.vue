@@ -19,9 +19,9 @@
                     </p>
                     <div class="role mb-5">
                         <div class="tier0 role-buttons d-flex justify-content-md-around mb-3">
-                            <button class="btn btn-info btn-lg" role="button" aria-label="Employee" :disabled=" role >= 2 " @click="tier0Submit('employee')">Employee</button>
-                            <button class="btn btn-info btn-lg" role="button" aria-label="Supervisor / Manager" :disabled=" role === 1 || role === 3" @click="tier0Submit('manager')">Supervisor / Manager</button>
-                            <button class="btn btn-info btn-lg" role="button" aria-label="Mental Health Professional" :disabled=" role === 1 || role === 2" @click="tier0Submit('mental health')">Mental Health Professional</button>
+                            <button class="btn btn-info btn-lg" role="button" aria-label="Employee" :disabled=" role > 0 " @click="tier0Submit('employee')">Employee</button>
+                            <button class="btn btn-info btn-lg" role="button" aria-label="Supervisor / Manager" :disabled=" role > 0" @click="tier0Submit('manager')">Supervisor / Manager</button>
+                            <button class="btn btn-info btn-lg" role="button" aria-label="Mental Health Professional" :disabled=" role > 0" @click="tier0Submit('mental health')">Mental Health Professional</button>
                         </div>
                         <div class="tier1 clarify-role mt-5" aria-live="polite">
                             <Transition name="custom-classes" enter-active-class="animate__animated animate__fadeInDown" leave-active-class="animate__animated animate__fadeOutUp">
@@ -100,6 +100,7 @@
                     </div>
                 </div>
                 <div class="instructional" v-else aria-live="polite">
+                   
                     <p>
                         Based on your input, you are {{ job }}.
                     </p>
@@ -129,52 +130,60 @@
                             Your Custom Toolkit
                         </h3>
                         <!-- Tier 0 output -->
-                        <div class="card"  style="width: 36rem;" v-if="role === 1">
-                            <div class="card-body">
-                                <div>
-                                    <a class="card-text" :href=" resources.employeeItem ">{{ resources.employeeItem }}</a>
-                                </div>
-                                <!-- Tier 1 output -->
-                                <div v-if="final1 === 1">
-                                    <a class="card-text" :href=" resources.managerItem ">{{ resources.managerItem }}</a>
+                        <div class="card-container">
+                            <div class="card"  v-if="role === 1">
+                                <div class="card-body">
+                                    <div>
+                                        <a class="card-text" :href=" resources.employeeItem ">{{ resources.employeeItem }}</a>
+                                    </div>
+                                    <!-- Tier 1 output -->
+                                    <div v-if="final1 === 1">
+                                        <a class="card-text" :href=" resources.managerItem ">{{ resources.managerItem }}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Tier 0 output -->
-                        <div class="card"  style="width: 36rem;" v-if="role === 2">
-                            <div class="card-body">
-                                <div>
-                                    <a class="card-text" :href=" resources.managerItem ">{{ resources.managerItem }}</a>
-                                </div>
-                                <!-- Tier 1 output -->
-                                <div v-if="final2 === 1">
-                                    <a class="card-text"  :href=" resources.executiveItem ">{{ resources.executiveItem }}</a>
-                                </div>
-                                <!-- Tier 2 output -->
-                                <div v-if="!actionPlan">
-                                    <a class="card-text"  :href=" resources.actionPlanItem ">{{ resources.actionPlanItem }}</a>
+                        <div class="card-container">
+                            <div class="card"  v-if="role === 2">
+                                <div class="card-body">
+                                    <div>
+                                        <a class="card-text" :href=" resources.managerItem ">{{ resources.managerItem }}</a>
+                                    </div>
+                                    <!-- Tier 1 output -->
+                                    <div v-if="final2 === 1">
+                                        <a class="card-text"  :href=" resources.executiveItem ">{{ resources.executiveItem }}</a>
+                                    </div>
+                                    <!-- Tier 2 output -->
+                                    <div v-if="!actionPlan">
+                                        <a class="card-text"  :href=" resources.actionPlanItem ">{{ resources.actionPlanItem }}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Psychotherapist output -->
-                        <div class="card"  style="width: 36rem;" v-if="MHRole === 'Psychotherapist'">
-                            <div class="card-body">
-                                <div>
-                                    <a class="card-text" :href=" resources.psychotherapistItem ">{{ resources.psychotherapistItem }}</a>
-                                </div>
-                                <div v-if="disabilityInsurance === false">
-                                    <a class="card-text" :href=" resources.disabilityItem ">{{ resources.disabilityItem }}</a>
+                        <div class="card-container">
+                            <div class="card"  v-if="MHRole === 'Psychotherapist'">
+                                <div class="card-body">
+                                    <div>
+                                        <a class="card-text" :href=" resources.psychotherapistItem ">{{ resources.psychotherapistItem }}</a>
+                                    </div>
+                                    <div v-if="disabilityInsurance === false">
+                                        <a class="card-text" :href=" resources.disabilityItem ">{{ resources.disabilityItem }}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Social Worker Output -->
-                        <div class="card"  style="width: 36rem;" v-if="MHRole === 'Social Worker'">
-                            <div class="card-body">
-                                <div>
-                                    <a class="card-text" :href=" resources.socialItem ">{{ resources.socialItem }}</a>
-                                </div>
-                                <div v-if="disabilityInsurance === false">
-                                    <a class="card-text" :href=" resources.disabilityItem ">{{ resources.disabilityItem }}</a>
+                        <div class="card-container">
+                            <div class="card" v-if="MHRole === 'Social Worker'">
+                                <div class="card-body">
+                                    <div>
+                                        <a class="card-text" :href=" resources.socialItem ">{{ resources.socialItem }}</a>
+                                    </div>
+                                    <div v-if="disabilityInsurance === false">
+                                        <a class="card-text" :href=" resources.disabilityItem ">{{ resources.disabilityItem }}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -207,7 +216,7 @@
 </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 body {
     font-family: 'helvetica', sans-serif;
 }
@@ -222,6 +231,12 @@ h1 {
     padding-bottom: 1rem;
     margin-bottom: 1rem;
     border-bottom: 2px solid #6b6b6b;
+}
+
+.prv-choice {
+    
+        outline: solid 3px grey;
+     
 }
 
 .role-buttons {
@@ -287,6 +302,19 @@ h1 {
   box-shadow: 1px 1px 1px grey;
 }
 
+.card {
+    min-width: 18rem;
+    @media(min-width: 900px) {
+        max-width: 50rem;
+    }
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .d {
     fill: #3F2A56;
 }
@@ -319,6 +347,7 @@ h1 {
 </style>
 
 <script>
+
 export default {
     name: 'Path',
     data: function () {
