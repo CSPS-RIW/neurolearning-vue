@@ -120,7 +120,7 @@
                             You've been involved in a disability insurance claim.
                         </p>
                         <p v-else-if="!disabilityInsurance">
-                            You've have not been involved in a disability insurance claim.
+                            You have not been involved in a disability insurance claim.
                         </p>
                     </div>
                     <p v-if="employeeClaim">You have submitted a claim on your own behalf.</p>
