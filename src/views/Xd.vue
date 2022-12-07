@@ -1,8 +1,11 @@
 <template>
     <main>
-        <h1>Toolkit</h1>
+        
         <div class="holster">
             <div class="questionnaire-wrapper">
+                <div class="questionnaire-header">
+                    <h1>Your Custom Toolkit</h1>
+                </div>
                 <div class="questionnaire questionnaire-1" v-if="step === 1">
                     <h2>I am interested in...</h2>
                     <p>Select all that apply.</p>
@@ -56,13 +59,14 @@
                 </form>
                 </div>
             </div>
-            <div class="nav-buttons">
+           
+                
+            </div>
+             <div class="nav-buttons">
             <button class="back" @click="step--" :disabled=" this.step <= 1">Back</button>
             <button class="next" @click="step++" :disabled=" this.step >= 3 ">Next</button>
             </div>
             <div class="progress">
-                
-            </div>
         </div>
     </main>
 </template>
@@ -97,44 +101,83 @@ export default {
         background-color: #FCF9FF;
     }
 
+    h1 {
+        text-align: center;
+        margin: 1rem 0rem;
+
+        &::before, &::after {
+            content: '🧰';
+        }
+    }
+
     .holster {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin-top: 1.5rem;
     }
 
     .questionnaire-wrapper {
-        border-radius: 50%;
-        border: 20px solid #3F2A56;
-        padding: 5rem;
+        
+        //border: 10px solid #3F2A56;
+        background-color: #FEFEFE;
+        border-radius: 10px;
+        //padding: 1rem;
+        margin-bottom: 2rem;
         max-width: 520px;
-        height: 500px;
+        min-height: 500px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 10px 18px #555555;
     }
 
     .questionnaire {
+        color: rgb(12, 12, 12);
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: 2rem;
 
         h2, p {
             text-align: center;
         }
+
+        p {
+            font-size: 1.3rem;
+        }
+    }
+
+    .questionnaire-header {
+        background: rgb(63,42,86);
+        background: linear-gradient(90deg, rgba(63,42,86,1) 40%, rgba(83,86,171,1) 100%);
+        color: white;
+        border-radius: 3px;
     }
 
     form.options {
        display: flex;
        flex-direction: column;
+       font-size: 1.3rem;
+
+       div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+       }
     }
 
     input[type="checkbox"], input[type="radio"] {
-        margin-right: 0.5rem;
+        width: 16px;
+        height: 16px;
+        margin: 0.5rem 0.5rem 0rem 0rem;
     }
 
     .nav-buttons {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     button {
@@ -147,6 +190,11 @@ export default {
 
         &:disabled {
             background-color: grey;
+        }
+
+        &.skip {
+            background-color: #EEEEEE;
+            color: #3F2A56;
         }
     }
 </style>
