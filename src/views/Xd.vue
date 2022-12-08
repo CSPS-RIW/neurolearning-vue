@@ -44,19 +44,104 @@
                 <div class="questionnaire questionnaire-3" v-if="step === 3">
                     <p>Which of these best describes your role? </p>
                     <form class="options">
-                    <div>
-                        <input type="radio" name="option" id="employee" aria-label="employee" value="employee" v-model="question2.role">
-                        <label for="employee">Employee</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="option" id="manager" aria-label="manager" value="manager" v-model="question2.role">
-                        <label for="manager">Manager</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="option" id="mental-health" aria-label="mental health professional" value="mhp" v-model="question2.role">
-                        <label for="mental-health">Mental Health Professional</label>
-                    </div>
-                </form>
+                        <div>
+                            <input type="radio" name="option" id="employee" aria-label="employee" value="employee" v-model="question2.role">
+                            <label for="employee">Employee</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="option" id="manager" aria-label="manager" value="manager" v-model="question2.role">
+                            <label for="manager">Manager</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="option" id="mental-health" aria-label="mental health professional" value="mhp" v-model="question2.role">
+                            <label for="mental-health">Mental Health Professional</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="questionnaire questionnaire-4" v-if="step === 4">
+                    <p>As an {{ this.question2.role }}, do you ...</p>
+                    <form class="options" v-if="this.question2.role === 'employee'">
+                        <div>
+                            <input type="radio" name="option" id="employee" aria-label="employee" value="employee" >
+                            <label for="employee">Employee option 1</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="option" id="manager" aria-label="manager" value="manager">
+                            <label for="manager">Employee option 2</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="option" id="mental-health" aria-label="mental health professional" value="mhp">
+                            <label for="mental-health">Employee option 3</label>
+                        </div>
+                    </form>
+                    <form class="options" v-if="this.question2.role === 'manager'">
+                        <div>
+                            <input type="radio" name="option" id="employee" aria-label="employee" value="employee">
+                            <label for="employee">Employee</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="option" id="manager" aria-label="manager" value="manager">
+                            <label for="manager">Manager</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="option" id="mental-health" aria-label="mental health professional" value="mhp">
+                            <label for="mental-health">Mental Health Professional</label>
+                        </div>
+                    </form>
+                    <form class="options" v-if="this.question2.role === 'mhp'">
+                        <div>
+                            <input type="radio" name="option" id="employee" aria-label="employee" value="employee">
+                            <label for="employee">Employee</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="option" id="manager" aria-label="manager" value="manager">
+                            <label for="manager">Manager</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="option" id="mental-health" aria-label="mental health professional" value="mhp">
+                            <label for="mental-health">Mental Health Professional</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="customized-toolkit" v-if="step === 5">
+                    <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
                 </div>
             </div>
            
@@ -64,7 +149,7 @@
             </div>
              <div class="nav-buttons">
             <button class="back" @click="step--" :disabled=" this.step <= 1">Back</button>
-            <button class="next" @click="step++" :disabled=" this.step >= 3 ">Next</button>
+            <button class="next" @click="step++" :disabled=" this.step >= 5 ">Next</button>
             </div>
             <div class="progress">
         </div>
@@ -98,16 +183,11 @@ export default {
     main {
         border: 7px solid #DA797A;
         min-height: 100vh;
-        background-color: #FCF9FF;
     }
 
     h1 {
         text-align: center;
         margin: 1rem 0rem;
-
-        &::before, &::after {
-            content: '🧰';
-        }
     }
 
     .holster {
@@ -130,7 +210,7 @@ export default {
         height: auto;
         display: flex;
         flex-direction: column;
-        box-shadow: 0px 10px 18px #555555;
+        box-shadow: 0px 10px 40px #c5c5c5;
     }
 
     .questionnaire {
@@ -153,7 +233,7 @@ export default {
         background: rgb(63,42,86);
         background: linear-gradient(90deg, rgba(63,42,86,1) 40%, rgba(83,86,171,1) 100%);
         color: white;
-        border-radius: 3px;
+        border-radius: 10px;
     }
 
     form.options {
