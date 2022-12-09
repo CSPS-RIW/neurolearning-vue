@@ -334,7 +334,6 @@
     }
 
     .questionnaire-wrapper {
-
         //border: 10px solid #3F2A56;
         background-color: #FEFEFE;
         border-radius: 10px;
@@ -342,10 +341,20 @@
         margin-bottom: 2rem;
         width: 300px;
         min-height: 500px;
+        max-height: 600px;
+        overflow: scroll;
+        overflow-x: hidden;
         height: auto;
         display: flex;
         flex-direction: column;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
         //box-shadow: 0px 10px 40px #c5c5c5;
+        mix-blend-mode: lighten;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         @media (min-width: 560px) {
             width: 560px;
