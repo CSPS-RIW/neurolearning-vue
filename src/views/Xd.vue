@@ -46,7 +46,7 @@
                         customize the list of resources to meet your needs. </p>
                     <p>Please note that your responses to the questions will only be used to generate a customized list
                         of resources and no responses will be stored by CSPS.</p>
-                    <button class="btn-regular skip">Skip to end</button>
+                    <button class="btn-regular skip" @click="this.step = 5">Skip to end</button>
                 </div>
                 <div class="questionnaire questionnaire-3" v-if="step === 3">
                     <p>Which of these best describes your role? </p>
@@ -268,12 +268,22 @@
 
 
         </div>
+        <div class="progress-tracker">
+            <nav role="navigation" aria-label="Toolkit Step Navigation">
+                <ul>
+                    <li v-for="currentStep in totalSteps" :key="currentStep" class="dot" :class="{ active: this.step === currentStep }" >
+                        <a href="#" @click="this.step = currentStep" :aria-label="`Go to step ${currentStep}`" :aria-current="{ true: this.step === currentStep }">
+                            {{ currentStep }}
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <div class="nav-buttons">
-            <button class="btn-regular back" @click="step--" :disabled=" this.step <= 1">Back</button>
+            <button class="btn-regular back" @click="navigateBack" :disabled=" this.step <= 1">Back</button>
             <button class="btn-regular next" @click="step++" :disabled=" this.step >= 5">Next</button>
         </div>
-        <!--<div class="progress">
-        </div>-->
+        
     </main>
 </template>
 <script>
@@ -282,6 +292,7 @@
         data: function () {
             return {
                 step: 1,
+                totalSteps: 5,
                 question1: {
                     cspslearning: false,
                     otherlearning: false,
@@ -301,7 +312,13 @@
             }
         },
         methods: {
-
+            navigateBack: function() {
+                if (this.step === 5) {
+                    this.step = 2
+                } else {
+                    this.step--
+                }
+            }
         }
     }
 </script>
@@ -330,7 +347,8 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        height: 80vh;
+        height: auto;
+        padding-top: 2rem;
     }
 
     .questionnaire-wrapper {
@@ -431,6 +449,32 @@
         &.skip {
             background-color: #EEEEEE;
             color: #3F2A56;
+        }
+    }
+
+    .progress-tracker {
+        nav ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: 20px;
+        }
+        
+        li.dot {
+            list-style-type: none;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            margin-left: 4px;
+            margin-right: 4px;
+            cursor: pointer;
+            
+            &.active {
+                background-color: $school-purple;
+            }
+            
         }
     }
 </style>
