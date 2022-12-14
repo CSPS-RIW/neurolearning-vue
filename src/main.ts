@@ -4,6 +4,7 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'animate.css'
 import 'jquery'
+import  'gsap/dist/gsap'
 
 
 import './scss/chat-buble.scss'
