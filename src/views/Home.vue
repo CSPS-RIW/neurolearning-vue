@@ -4,7 +4,7 @@
             <h1 class="text-center m-3">Helpful Resources</h1>
         </header>
         <main>
-            <div class="big-number" v-if="count >= 5 && count <= 25">
+            <div class="big-number" v-if="count >= 5 && count < 25">
                 <h2>Surprise!</h2>
                 <p>{{ count }} is a really big number!</p>
                 <p v-if="count >= 10">You may want to stop clicking that button!</p>
@@ -26,7 +26,7 @@
                         <p>
                             {{ message }}
                         </p>
-                        <div class="row flex">
+                        <div class="row flex" v-if="count < 25">
 
                             <p>{{ count }}</p>
                             <button class="btn btn-info" @click="increase()">increase count</button>
