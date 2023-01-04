@@ -292,6 +292,11 @@ body {
     &.drk {
         background-color: #332;
         color: #333;
+
+        & .btn.btn-info {
+            background-color: #332;
+            color: #333;
+        }
     }
 }
 </style>
