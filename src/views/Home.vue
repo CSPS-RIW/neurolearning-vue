@@ -286,15 +286,31 @@
         </footer>
     </div>
 </template>
+<style lang="scss">
+body {
+
+    &.drk {
+        background-color: #332;
+        color: #333;
+    }
+}
+</style>
 
 <style scoped lang="scss">
 body {
     font-family: 'helvetica', sans-serif;
+
+    &.drk {
+        background-color: #332;
+        color: #333;
+    }
 }
 
 h1 {
     color: #1c578a;
 }
+
+
 
 .big-number {
     position: absolute;
@@ -550,7 +566,9 @@ export default {
         let count = ref(1)
 
         const increase = () => {
+            let body = document.querySelector('body')
             count.value++
+            count.value === 25 && body?.classList.add('drk')
         }
 
         return { count, increase }
