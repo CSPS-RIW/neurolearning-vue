@@ -4,6 +4,13 @@
             <h1 class="text-center m-3">Helpful Resources</h1>
         </header>
         <main>
+            <div class="big-number" v-if="count >= 5 && count <= 25">
+                <h2>Surprise!</h2>
+                <p>{{ count }} is a really big number!</p>
+                <p v-if="count >= 10">You may want to stop clicking that button!</p>
+                <p v-if="count >= 15">Stop!</p>
+                <p v-if="count >= 20">STOP!</p>
+            </div>
             <div class="text-layer pt-5">
                 <Transition name="custom-classes" enter-active-class="animate__animated animate__fadeInDown">
                     <div class="instructional" v-if="!complete">
@@ -19,6 +26,11 @@
                         <p>
                             {{ message }}
                         </p>
+                        <div class="row flex">
+
+                            <p>{{ count }}</p>
+                            <button class="btn btn-info" @click="increase()">increase count</button>
+                        </div>
                         <div class="role mb-5">
                             <div class="tier0 role-buttons d-flex justify-content-md-around mb-3">
                                 <button class="btn btn-info btn-lg" role="button" aria-label="Employee"
@@ -284,6 +296,21 @@ h1 {
     color: #1c578a;
 }
 
+.big-number {
+    position: absolute;
+    top: 7%;
+    left: 40%;
+    z-index: 100000000000000;
+    background-color: #cd5c5c;
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 5rem;
+    font-size: 1.5rem;
+}
+
 .intro {
     font-size: 26px;
     text-align: left;
@@ -407,6 +434,7 @@ h1 {
 </style>
 
 <script lang="ts">
+import { ref } from 'vue';
 
 export default {
     name: 'Path',
@@ -517,6 +545,15 @@ export default {
             this.actionPlan = false
             this.message = 'Which one of these best describes your role?'
         }
+    },
+    setup() {
+        let count = ref(1)
+
+        const increase = () => {
+            count.value++
+        }
+
+        return { count, increase }
     }
 }
 </script>
