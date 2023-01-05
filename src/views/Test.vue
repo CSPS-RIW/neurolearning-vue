@@ -28,7 +28,9 @@
                     <img class="character" id="man" src="../assets/businessman.png" alt="">
                 </div>
                 <div class="animation-2">
+                    <img src="../assets/coin.png" id="coin1" alt="" class="coin none">
                     <img src="../assets/work.png" id="work" alt="" class="character none">
+                    <img src="../assets/coin.png" id="coin2" alt="" class="coin none">
                 </div>
             </div>
         </div>
@@ -94,6 +96,12 @@
         min-height: 128px;
     }
 
+    .animation-2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
     .character {
         max-width: 128px;
         height: auto;
@@ -101,6 +109,11 @@
         &#man {
             display: none;
         }
+    }
+
+    .coin {
+        max-width: 25px;
+        max-height: 25px;
     }
 
     .none {
@@ -179,11 +192,13 @@ export default {
 
             switch (this.count) {
                 case 1:
-                    document.getElementById('man').style.display = 'block';
-                    tl.fromTo('#man', {autoAlpha: 0}, {autoAlpha: 1, duration: 1} )
-                    tl.to("#man", { autoAlpha: 0, delay: 1, duration: 1});
-                    tl.to('#man', { display: 'none' })
-                    tl.to('#work', {display: 'block', duration: 1})
+                    tl.fromTo('#man', {display: 'none', autoAlpha: 0}, {display: 'block', autoAlpha: 1, duration: 1} )
+                    tl.to("#man", { autoAlpha: 0, display: 'none', delay: 1, duration: 1});
+                    // Scene 2
+            
+                    tl.fromTo('#work', {display: 'none', autoAlpha: 0}, {display: 'block', autoAlpha: 1, duration: 1} )
+                    tl.fromTo('#coin1', {display: 'none', autoAlpha: 0, y: 0}, { display: 'block', autoAlpha: 1, y: -30, duration: 1 })
+                    tl.fromTo('#coin2', {display: 'none', autoAlpha: 0, y: 0}, { display: 'block', autoAlpha: 1, y: -20, duration: 1 })
                     //tl2.to()
                     break;
                 
