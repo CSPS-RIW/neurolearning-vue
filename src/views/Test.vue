@@ -23,7 +23,7 @@
             </p>
         </div>
         <div class="animation-frame">
-            <div class="scene-1"> 
+            <div class="scene-1" v-if="count === 1"> 
                 <div class="animation-1">
                     <img class="character" id="man" src="../assets/businessman.png" alt="">
                 </div>
@@ -31,6 +31,12 @@
                     <img src="../assets/coin.png" id="coin1" alt="" class="coin none">
                     <img src="../assets/work.png" id="work" alt="" class="character none">
                     <img src="../assets/coin.png" id="coin2" alt="" class="coin none">
+                </div>
+            </div>
+            <div class="scene-2" v-if="count === 2">
+                <div class="animation-1">
+                    <img src="../assets/moon.png" id="moon" alt="" class="moon none">
+                    <img src="../assets/work.png" id="work" alt="" class="character none">
                 </div>
             </div>
         </div>
@@ -116,6 +122,11 @@
         max-height: 25px;
     }
 
+    .moon {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
     .none {
         display: none;
     }
@@ -136,7 +147,6 @@
 </style>
 <script>
 import { gsap } from 'gsap'
-
 export default {
     name: 'Test',
     data: function() {
@@ -204,7 +214,8 @@ export default {
                 
                 case 2:
                     
-                    tl.to("#man", {duration: 0.7, x: -80})
+                    tl.fromTo('#work', {display: 'none', autoAlpha: 0}, {display: 'block', autoAlpha: 1, duration: 1} )
+                    tl.fromTo('#moon', {display: 'none', autoAlpha: 0, x: 100, y: 70}, {display: 'block', autoAlpha: 1, y: 40, duration: 1} )
                     break;
             }
         }
