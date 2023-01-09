@@ -28,7 +28,12 @@ export default {
                         <router-link to="/path" role="link" aria-label="Ethnicity / Race">
                             <rect class="hs_box" x="60" y="105" width="85" height="250" rx="50" fill-opacity="0" stroke="#000" transform="rotate(-30)"/>
                         </router-link>
-                        
+                        <router-link to="/religion" role="link" aria-label="Religion">
+                            <rect class="hs_box" x="240" y="3" width="85" height="250" rx="50" fill-opacity="0" stroke="#000" />
+                        </router-link>
+                        <router-link to="/path" role="link" aria-label="Disability">
+                            <rect class="hs_box" x="345" y="-385" width="85" height="250" rx="50" fill-opacity="0" stroke="#000" transform="rotate(60)"/>
+                        </router-link>
                     </svg>
                 </figure>
             </div>
