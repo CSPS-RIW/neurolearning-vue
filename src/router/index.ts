@@ -4,6 +4,7 @@ import Path from '../views/Path.vue'
 import Test from '../views/Test.vue'
 import Intersectionality from '../views/Intersectionality.vue'
 import Religion from '../views/Religion.vue'
+import Intro from '../views/Intro.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/religion',
       name: 'Religion',
       component: Religion
+    },
+    {
+      path: '/intro',
+      name: 'Intro',
+      component: Intro
     }
   ]
 })

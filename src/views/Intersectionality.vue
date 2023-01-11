@@ -3,7 +3,7 @@ export default {
     name: 'Intersectionality',
     data: function() {
         return {
-
+            count: 1
         }
     },
     methods: {
@@ -17,7 +17,7 @@ export default {
             <div class="page-counter">
                 <p>
                     Page <br>
-                    1 / 6
+                    {{ count }} / 6
                 </p>
             </div>
             <div class="wheel mb-2 d-flex justify-content-center">
@@ -37,6 +37,11 @@ export default {
                     </svg>
                 </figure>
             </div>
+            <div class="nav-buttons d-flex justify-content-evenly">
+                <router-link class="btn btn-large btn-primary" to="/intro">Back</router-link>
+                
+                <button class="btn btn-large btn-primary" @click="count++">Next</button>
+            </div>
         </div>
     </main>
 </template>
@@ -44,6 +49,24 @@ export default {
     $school-purple: #3F2A56;
     $school-coral: #DA797A;
     $pale: #FCF9FF;
+
+    .intro {
+        background-color: $school-purple;
+        height: 100vh;
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 1.25rem;
+        color: #FFF;
+    }
+
+    button.start {
+        min-width: 4rem;
+        padding: 0.25rem 1rem;
+    }
     
     .page-counter {
         width: 200px;

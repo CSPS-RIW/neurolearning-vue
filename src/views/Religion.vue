@@ -14,7 +14,7 @@
                     </p>
                     <img src="../assets/mo.png" alt="">
                     <div class="navigation">
-                        <button class="btn btn-large btn-primary">Back</button>
+                        <router-link to="/intersectionality" class="btn btn-large btn-primary">Back</router-link>
                         
                     </div>
                 </div>
