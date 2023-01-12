@@ -273,8 +273,9 @@
                 <ul>
                     <li v-for="currentStep in totalSteps" :key="currentStep" class="dot" :class="{ active: this.step === currentStep }" >
                         <a href="#" @click="this.step = currentStep" :aria-label="`Go to step ${currentStep}`" :aria-current="{ true: this.step === currentStep }">
-                            {{ currentStep }}
+                            •
                         </a>
+                        {{ currentStep }}
                     </li>
                 </ul>
             </nav>
@@ -473,6 +474,13 @@
             
             &.active {
                 background-color: $school-purple;
+            }
+
+            a {
+                text-decoration: none;
+                color: #ffffff00;
+                font-size: 2rem;
+                line-height: 2px;
             }
             
         }
