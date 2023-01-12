@@ -3,8 +3,8 @@
         <div class="activity-holder">
             <div class="page-counter">
                 <p>
-                    Page <br>
-                    1 / 6
+                    Religion
+                    
                 </p>
             </div>
             <div class="wrapper">
