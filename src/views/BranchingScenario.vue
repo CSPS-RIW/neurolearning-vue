@@ -31,27 +31,32 @@
                             <p>This is the third page of the employee scenario</p>
                         </div>
                     </div>
-                    <div class="questionnaire questionnaire-5">
+                    <div class="questionnaire questionnaire-5" v-if="step === 5">
                         <h3>As an employee, what would you do in this case?</h3>
                         <form class="options">
-                        <div>
-                            <input type="radio" name="option" id="choice1" aria-label="Choice 1">
-                            <label for="choice1">Choice 1</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="option" id="choice2" aria-label="Choice 2">
-                            <label for="choice2">Choice 2</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="option" id="choice3" aria-label="Choice 3">
-                            <label for="choice3">Choice 3</label>
-                        </div>
-                    </form>
+                            <div>
+                                <input type="radio" name="option" id="choice1" aria-label="Choice 1" value="Choice 1" v-model="employeeChoice">
+                                <label for="choice1">Choice 1</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="option" id="choice2" aria-label="Choice 2" value="Choice 2" v-model="employeeChoice">
+                                <label for="choice2">Choice 2</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="option" id="choice3" aria-label="Choice 3" value="Choice 3" v-model="employeeChoice">
+                                <label for="choice3">Choice 3</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionnaire questionnaire-6" v-if="step === 6">
+                        <p v-if="employeeChoice === 'Choice 1'">That's not quite right. Press the back button and try another option.</p>
+                        <p v-if="employeeChoice === 'Choice 2'">Close! While some aspects of that choice are good, there is still ONE problem with that answer. Press the back button and try another option.</p>
+                        <p v-if="employeeChoice === 'Choice 3'">That's right! This choice covers all the bases.</p>
                     </div>
                 </div>
                 <div class="manager" v-if="this.role === 'manager'">
                     <div class="questionnaire questionnaire-2" v-if="step === 2">
-                        <div >
+                        <div>
                             <h3>Manager Part 1</h3>
                             <p>This is the first page of the manager scenario</p>
                         </div>
@@ -68,6 +73,28 @@
                             <p>This is the third page of the manager scenario</p>
                         </div>
                     </div>
+                    <div class="questionnaire questionnaire-5" v-if="step === 5">
+                        <h3>As a manager, what would you do in this case?</h3>
+                        <form class="options">
+                            <div>
+                                <input type="radio" name="option" id="choice1" aria-label="Choice 1" value="Choice 1" v-model="managerChoice">
+                                <label for="choice1">Choice 1</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="option" id="choice2" aria-label="Choice 2" value="Choice 2" v-model="managerChoice">
+                                <label for="choice2">Choice 2</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="option" id="choice3" aria-label="Choice 3" value="Choice 3" v-model="managerChoice">
+                                <label for="choice3">Choice 3</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionnaire questionnaire-6" v-if="step === 6">
+                        <p v-if="managerChoice === 'Choice 1'">That's not quite right. Press the back button and try another option.</p>
+                        <p v-if="managerChoice === 'Choice 2'">Close! While some aspects of that choice are good, there is still ONE problem with that answer. Press the back button and try another option.</p>
+                        <p v-if="managerChoice === 'Choice 3'">That's right! This choice covers all the bases.</p>
+                    </div>
                 </div>
             </div>
 
@@ -80,14 +107,13 @@
                         <a href="#" @click="this.step = currentStep" :aria-label="`Go to step ${currentStep}`" :aria-current="{ true: this.step === currentStep }">
                             •
                         </a>
-                        
                     </li>
                 </ul>
             </nav>
         </div>
         <div class="nav-buttons">
             <button class="btn-regular back" @click="navigateBack" :disabled=" this.step <= 1">Back</button>
-            <button class="btn-regular next" @click="step++" :disabled=" this.step === 1 || this.step >= 5">Next</button>
+            <button class="btn-regular next" @click="step++" :disabled=" this.step === 1 || this.step > 5">Next</button>
         </div>
         
     </main>
@@ -99,16 +125,14 @@
             return {
                 step: 1,
                 totalSteps: 5,
-                role: ''
+                role: '',
+                employeeChoice: '',
+                managerChoice: ''
             }
         },
         methods: {
             navigateBack: function() {
-                if (this.step === 5) {
-                    this.step = 2
-                } else {
-                    this.step--
-                }
+                this.step--
             },
             managerButton: function() {
                 this.role = 'manager'
