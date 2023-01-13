@@ -13,18 +13,22 @@
                     </div>
                 </div>
                 <div class="employee" v-if="this.role === 'employee'">
-                    <div class="questionnaire questionnaire-2" v-if="step === 2">
-                        <div >
-                            <h3>Employee Part 1</h3>
-                            <p>This is the first page of the employee scenario</p>
+                    <Transition name="custom-classes" enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut">
+                        <div class="questionnaire questionnaire-2" v-if="step === 2">
+                            <div>
+                                <h3>Employee Part 1</h3>
+                                <p>This is the first page of the employee scenario</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="questionnaire questionnaire-3" v-if="step === 3">
-                        <div >
-                            <h3>Employee Part 2</h3>
-                            <p>This is the second page of the employee scenario</p>
+                    </Transition>
+                    <Transition name="custom-classes" enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut">
+                        <div class="questionnaire questionnaire-3" v-if="step === 3">
+                            <div >
+                                <h3>Employee Part 2</h3>
+                                <p>This is the second page of the employee scenario</p>
+                            </div>
                         </div>
-                    </div>
+                    </Transition>
                     <div class="questionnaire questionnaire-4" v-if="step === 4">
                         <div >
                             <h3>Employee Part 3</h3>
@@ -279,11 +283,13 @@
         border: 1px solid rgb(187, 187, 187);
 
         &:hover, &:focus {
-            background-color: $school-coral;
+            background-color: $school-purple;
+            color: white;
         }
 
         &:disabled {
-            background-color: grey;
+            background-color: rgb(113, 113, 113);
+            color: white;
         }
 
         &.skip {
