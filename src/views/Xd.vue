@@ -1,3 +1,39 @@
+<script setup>
+    import MultiAccordions from '../components/MultiAccordions.vue';
+</script>
+<script>
+    
+    export default {
+        name: 'Xd',
+        data: function () {
+            return {
+                step: 1,
+                totalSteps: 5,
+                question1: {
+                    cspslearning: false,
+                    otherlearning: false,
+                    selfid: false,
+                    events: false,
+                    urgenthelp: false,
+                    communities: false
+                },
+                question2: {
+                    role: ''
+                },
+                question3: {
+                    poc: false,
+                    lgbt: false,
+                    disability: false
+                }
+            }
+        },
+        methods: {
+            navigateBack: function() {
+                    this.step--
+            }
+        }
+    }
+</script>
 <template>
     <div class="wrapper">
         <header>
@@ -143,108 +179,50 @@
                         <div class="go-back" v-if="Object.values(this.question1).every((v) => v === false)">
                             <p>Please go back to the first page and select the items you are interested in.</p>
                         </div>
-                        <div v-else class="accordion" id="resourcesaccordion">
-                            <div class="accordion-item" v-if="question1.cspslearning">
-                                <h3 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        CSPS Learning Products
-                                    </button>
-                                </h3>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                    data-bs-parent="#resourcesaccordion">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li><a href="#">Course 1</a></li>
-                                            <li><a href="#">Course 2</a></li>
-                                            <li><a href="#">Course 3</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item" v-if="question1.otherlearning">
-                                <h3 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Other organizations' learning products
-                                    </button>
-                                </h3>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#resourcesaccordion">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li><a href="#">Course 1</a></li>
-                                            <li><a href="#">Course 2</a></li>
-                                            <li><a href="#">Course 3</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item" v-if="question1.selfid">
-                                <h3 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Self-assessment Tools
-                                    </button>
-                                </h3>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                    data-bs-parent="#resourcesaccordion">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li><a href="#">Tool 1</a></li>
-                                            <li><a href="#">Tool 2</a></li>
-                                            <li><a href="#">Tool 3</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item" v-if="question1.events">
-                                <h3 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        Events on Mental Health
-                                    </button>
-                                </h3>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                    data-bs-parent="#resourcesaccordion">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li><a href="#">Event 1</a></li>
-                                            <li><a href="#">Event 2</a></li>
-                                            <li><a href="#">Event 3</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item" v-if="question1.urgenthelp">
-                                <h3 class="accordion-header" id="headingFive">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        Urgent help resources
-                                    </button>
-                                </h3>
-                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                                    data-bs-parent="#resourcesaccordion">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li><a href="#">Event 1</a></li>
-                                            <li><a href="#">Event 2</a></li>
-                                            <li><a href="#">Event 3</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item" v-if="question1.communities">
-                                <h3 class="accordion-header" id="headingSix">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                        Resources for specific communities
-                                    </button>
-                                </h3>
-                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                                    data-bs-parent="#resourcesaccordion">
-                                    <div class="accordion-body">
-                                        <section v-if="question3.lgbt">
+                        <MultiAccordions AccNum="6" v-else>
+                            <template v-if="question1.cspslearning" #AccTitle-1>CSPS Learning Products</template>
+                            <template v-if="question1.cspslearning" #AccBody-1>
+                                <ul>
+                                    <li><a href="#">Course 1</a></li>
+                                    <li><a href="#">Course 2</a></li>
+                                    <li><a href="#">Course 3</a></li>
+                                </ul>
+                            </template>
+                            <template v-if="question1.otherlearning" #AccTitle-2>Other Learning Products</template>
+                            <template v-if="question1.otherlearning" #AccBody-2>
+                                <ul>
+                                    <li><a href="#">Course 1</a></li>
+                                    <li><a href="#">Course 2</a></li>
+                                    <li><a href="#">Course 3</a></li>
+                                </ul>
+                            </template>
+                            <template v-if="question1.selfid" #AccTitle-3>Self-Assessment Tools</template>
+                            <template v-if="question1.selfid" #AccBody-3>
+                                <ul>
+                                    <li><a href="#">Tool 1</a></li>
+                                    <li><a href="#">Tool 2</a></li>
+                                    <li><a href="#">Tool 3</a></li>
+                                </ul>
+                            </template>
+                            <template v-if="question1.events" #AccTitle-4>Events on Mental Health</template>
+                            <template v-if="question1.events" #AccBody-4>
+                                <ul>
+                                    <li><a href="#">Event 1</a></li>
+                                    <li><a href="#">Event 2</a></li>
+                                    <li><a href="#">Event 3</a></li>
+                                </ul>
+                            </template>
+                            <template v-if="question1.urgenthelp" #AccTitle-5>Urgent Help Resources</template>
+                            <template v-if="question1.urgenthelp" #AccBody-5>
+                                <ul>
+                                    <li><a href="#">Resource 1</a></li>
+                                    <li><a href="#">Resource 2</a></li>
+                                    <li><a href="#">Resource 3</a></li>
+                                </ul>
+                            </template>
+                            <template v-if="question1.communities" #AccTitle-6>Resources for Specific Communities</template>
+                            <template v-if="question1.communities" #AccBody-6>
+                                <section v-if="question3.lgbt">
                                             <h3>SLGBTQ+ Resources</h3>
                                             <ul>
                                                 <li><a href="#">Resource 1</a></li>
@@ -268,10 +246,8 @@
                                                 <li><a href="#">Resource 3</a></li>
                                             </ul>
                                         </section>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            </template>
+                        </MultiAccordions>
                     </div>
                 </div>
         
@@ -298,38 +274,7 @@
         </main>
     </div>
 </template>
-<script>
-    export default {
-        name: 'Xd',
-        data: function () {
-            return {
-                step: 1,
-                totalSteps: 5,
-                question1: {
-                    cspslearning: false,
-                    otherlearning: false,
-                    selfid: false,
-                    events: false,
-                    urgenthelp: false,
-                    communities: false
-                },
-                question2: {
-                    role: ''
-                },
-                question3: {
-                    poc: false,
-                    lgbt: false,
-                    disability: false
-                }
-            }
-        },
-        methods: {
-            navigateBack: function() {
-                    this.step--
-            }
-        }
-    }
-</script>
+
 <style lang="scss" scoped>
 
     $school-purple: #3F2A56;
