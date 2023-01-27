@@ -1,14 +1,14 @@
 <script setup>
     import MultiAccordions from '../components/MultiAccordions.vue';
 </script>
-<script>
-    
+<script> 
     export default {
         name: 'Xd',
         data: function () {
             return {
                 step: 1,
                 totalSteps: 5,
+                accordionNum: 0,
                 question1: {
                     cspslearning: false,
                     otherlearning: false,
@@ -179,7 +179,7 @@
                         <div class="go-back" v-if="Object.values(this.question1).every((v) => v === false)">
                             <p>Please go back to the first page and select the items you are interested in.</p>
                         </div>
-                        <MultiAccordions AccNum="6" v-else>
+                        <MultiAccordions :AccNum="accordionNum" v-else>
                             <template v-if="question1.cspslearning" #AccTitle-1>CSPS Learning Products</template>
                             <template v-if="question1.cspslearning" #AccBody-1>
                                 <ul>
