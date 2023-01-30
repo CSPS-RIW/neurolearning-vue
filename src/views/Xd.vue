@@ -30,6 +30,15 @@
         methods: {
             navigateBack: function() {
                     this.step--
+            },
+            determineAccordionNum(event) {
+                let decider = event.target
+                    if (decider.checked) {
+                        this.accordionNum++
+                    } else if (decider.checked === false) {
+                        this.accordionNum--
+                    }
+                
             }
         }
     }
@@ -52,33 +61,33 @@
                         <p>Select all that apply.</p>
                         <form class="options">
                             <div>
-                                <input type="checkbox" name="csps-learning-products" id="csps-learning-products"
-                                     v-model="question1.cspslearning">
+                                <input type="checkbox" class="decider" name="csps-learning-products" id="csps-learning-products"
+                                     v-model="question1.cspslearning" @change="determineAccordionNum">
                                 <label for="csps-learning-products">Learning products by CSPS</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="other-learning-products" id="other-learning-products"
-                                     v-model="question1.otherlearning">
+                                <input type="checkbox" class="decider" name="other-learning-products" id="other-learning-products"
+                                     v-model="question1.otherlearning" @change="determineAccordionNum">
                                 <label for="other-learning-products">Learning products by other organizations</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="self-id" id="self-id" 
-                                    v-model="question1.selfid">
+                                <input type="checkbox" class="decider" name="self-id" id="self-id" 
+                                    v-model="question1.selfid" @change="determineAccordionNum">
                                 <label for="self-id">Self-assessment tools</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="events" id="events" 
-                                    v-model="question1.events">
+                                <input type="checkbox" class="decider" name="events" id="events" 
+                                    v-model="question1.events" @change="determineAccordionNum">
                                 <label for="events">Events on mental health</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="urgent-help" id="urgent-help"
-                                     v-model="question1.urgenthelp">
+                                <input type="checkbox" class="decider" name="urgent-help" id="urgent-help"
+                                     v-model="question1.urgenthelp" @change="determineAccordionNum">
                                 <label for="urgent-help">Urgent/immediate help resources</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="community-resources" id="community-resources"
-                                     v-model="question1.communities">
+                                <input type="checkbox" class="decider" name="community-resources" id="community-resources"
+                                     v-model="question1.communities" @change="determineAccordionNum">
                                 <label for="community-resources">Resources for specific communities</label>
                             </div>
                         </form>
@@ -127,53 +136,6 @@
                                 <label for="mental-health">a person living with a disability</label>
                             </div>
                         </form>
-                        <!--
-                            Commenting out for now, adding in questions about Identities
-                            <form class="options" v-if="this.question2.role === 'employee'">
-                            <div>
-                                <input type="radio" name="option" id="employee" aria-label="employee" value="employee">
-                                <label for="employee">Employee option 1</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="option" id="manager" aria-label="manager" value="manager">
-                                <label for="manager">Employee option 2</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="option" id="mental-health" aria-label="mental health professional"
-                                    value="mhp">
-                                <label for="mental-health">Employee option 3</label>
-                            </div>
-                        </form>
-                        <form class="options" v-if="this.question2.role === 'manager'">
-                            <div>
-                                <input type="radio" name="option" id="employee" aria-label="employee" value="employee">
-                                <label for="employee">Employee</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="option" id="manager" aria-label="manager" value="manager">
-                                <label for="manager">Manager</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="option" id="mental-health" aria-label="mental health professional"
-                                    value="mhp">
-                                <label for="mental-health">Mental Health Professional</label>
-                            </div>
-                        </form>
-                        <form class="options" v-if="this.question2.role === 'mhp'">
-                            <div>
-                                <input type="radio" name="option" id="employee" aria-label="employee" value="employee">
-                                <label for="employee">Employee</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="option" id="manager" aria-label="manager" value="manager">
-                                <label for="manager">Manager</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="option" id="mental-health" aria-label="mental health professional"
-                                    value="mhp">
-                                <label for="mental-health">Mental Health Professional</label>
-                            </div>
-                        </form>-->
                     </div>
                     <div class="customized-toolkit" v-if="step === 5">
                         <div class="go-back" v-if="Object.values(this.question1).every((v) => v === false)">
@@ -302,6 +264,10 @@
         background-color: $school-purple;
         margin: 0rem;
         padding: 1rem;
+    }
+
+    h2 {
+        color: #fff;
     }
 
     .holster {
@@ -465,6 +431,11 @@
                 height: 15px;
                 border-radius: 50%;
                 //line-height: 2px;
+            }
+
+            &::before {
+                content: '';
+                display: none;
             }
             
         }
