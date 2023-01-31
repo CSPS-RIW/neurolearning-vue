@@ -142,6 +142,7 @@
                             <p>Please go back to the first page and select the items you are interested in.</p>
                         </div>
                         <MultiAccordions :AccNum="accordionNum" v-else>
+                            
                             <template v-if="question1.cspslearning" #AccTitle-1>CSPS Learning Products</template>
                             <template v-if="question1.cspslearning" #AccBody-1>
                                 <ul>
@@ -379,6 +380,12 @@
             background-color: $school-purple;
             color: #fff;
             outline: 1px solid #fff;
+
+            &:disabled {
+                background-color: grey;
+                color: $school-purple;
+                outline: none;
+            }
         }
 
         &:disabled {
@@ -417,6 +424,7 @@
             margin-left: 4px;
             margin-right: 4px;
             cursor: pointer;
+            position: relative;
             
             &.active {
                 background-color: $school-purple;
@@ -430,7 +438,10 @@
                 width: 15px;
                 height: 15px;
                 border-radius: 50%;
+                padding: 0rem;
                 //line-height: 2px;
+                position: absolute;
+                left: 0px;
             }
 
             &::before {
