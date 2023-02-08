@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import 'animate.css'
 import 'jquery'
+import './assets/fontawesome-free-5.9.0-web/css/all.min.css'
 
 
 import './scss/chat-buble.scss'
