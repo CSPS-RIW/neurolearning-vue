@@ -29,7 +29,7 @@ const toggleAccordions = (e) => {
 </script>
 
 <template>
-    <div class="multi-accordion-group" :data-acc-group="`multi_accordion_${randNum - 2}`">
+    <div class="multi-accordion-group" :data-acc-group="`multi_accordion_${randNum - 2}`" hidden>
         <button type="button" class="btn ac-btn btn-secondary expandall" aria-expanded="false" @click="toggleAccordions"
             v-if="lang !== 'fr'">Open All Panels</button>
         <button type="button" class="btn ac-btn btn-secondary expandall" aria-expanded="false" @click="toggleAccordions"

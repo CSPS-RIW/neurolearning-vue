@@ -1,7 +1,7 @@
 <script setup>
     import MultiAccordions from '../components/MultiAccordions.vue';
 </script>
-<script> 
+<script>
     export default {
         name: 'Xd',
         data: function () {
@@ -28,28 +28,35 @@
             }
         },
         methods: {
-            navigateNext: function() {
+            navigateNext: function () {
                 this.step++
             },
-            navigateBack: function() {
+            navigateBack: function () {
                 this.step--
             },
             determineAccordionNum(event) {
                 let decider = event.target.getAttribute('data-accordion-target')
                 let accordionArray = Array.from(document.querySelectorAll('.accordion > div'))
-               
-                accordionArray.map(arr =>{
+                let multiAccGroup = document.querySelector('.multi-accordion-group')
+
+                accordionArray.map(arr => {
                     // arr is accordion that matches decider
-                if (decider === arr.getAttribute('data-accordion')){
-                    // Show this accordion
-                    arr.toggleAttribute('hidden')
+                    if (decider === arr.getAttribute('data-accordion')) {
+                        // Show this accordion
+                        arr.toggleAttribute('hidden')
+                        arr.toggleAttribute('checked')
 
-                }
+                        if (Object.values(this.question1).some((v) => v === true)) {
+                            multiAccGroup.removeAttribute('hidden')
+                        } else {
+                            multiAccGroup.setAttribute('hidden', '')
+                        }
 
-                    
+
+                    }
                 })
-                
-            }   
+
+            }
         }
     }
 </script>
@@ -66,206 +73,212 @@
                             Questionnaire
                         </h2>
                     </div>
-                    
-                        <div class="questionnaire questionnaire-1" v-if="step === 1" >
-                            <h3 class="text-center">I am interested in...</h3>
-                            <p>Select all that apply.</p>
-                            <form class="options">
-                                <div>
-                                    <input type="checkbox" class="decider" name="csps-learning-products" id="csps-learning-products"
-                                         v-model="question1.cspslearning" @click="determineAccordionNum" data-accordion-target="1">
-                                    <label for="csps-learning-products">Learning products by CSPS</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" class="decider" name="other-learning-products" id="other-learning-products"
-                                         v-model="question1.otherlearning" @change="determineAccordionNum" data-accordion-target="2">
-                                    <label for="other-learning-products">Learning products by other organizations</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" class="decider" name="self-id" id="self-id" 
-                                        v-model="question1.selfid" @change="determineAccordionNum" data-accordion-target="3">
-                                    <label for="self-id">Self-assessment tools</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" class="decider" name="events" id="events" 
-                                        v-model="question1.events" @change="determineAccordionNum" data-accordion-target="4">
-                                    <label for="events">Events on mental health</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" class="decider" name="urgent-help" id="urgent-help"
-                                         v-model="question1.urgenthelp" @change="determineAccordionNum" data-accordion-target="5">
-                                    <label for="urgent-help">Urgent/immediate help resources</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" class="decider" name="community-resources" id="community-resources"
-                                         v-model="question1.communities" @change="determineAccordionNum" data-accordion-target="6">
-                                    <label for="community-resources">Resources for specific communities</label>
-                                </div>
-                            </form>
-                        </div>
-                    
-                    
-                        <div class="questionnaire questionnaire-2" v-if="step === 2">
-                            <p>Thank you for your selection. You may choose to answer a few additional questions to better
-                                customize the list of resources to meet your needs. </p>
-                            <p>Please note that your responses to the questions will only be used to generate a customized list
-                                of resources and no responses will be stored by CSPS.</p>
-                            <button class="btn-regular skip" @click="this.step = 5">Skip to end</button>
-                        </div>
-                    
-                    
-                        <div class="questionnaire questionnaire-3" v-if="step === 3">
-                            <p>Which of these best describes your role? </p>
-                            <form class="options">
-                                <div>
-                                    <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
-                                        v-model="question2.role">
-                                    <label for="employee">Employee</label>
-                                </div>
-                                <div>
-                                    <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
-                                        v-model="question2.role">
-                                    <label for="manager">Manager</label>
-                                </div>
-                                <div>
-                                    <input type="radio" name="option" id="mental-health" aria-label="mental health professional"
-                                        value="mhp" v-model="question2.role">
-                                    <label for="mental-health">Mental Health Professional</label>
-                                </div>
-                            </form>
-                        </div>
-                   
-                        <div class="questionnaire questionnaire-4" v-if="step === 4">
-                            <h3 class="text-center"><span v-if="question2.role.length > 0">As an {{ this.question2.role }},</span> do you identify as...</h3>
-                            <p><b>Select all that apply</b></p>
-                            <form class="options">
-                                <div>
-                                    <input type="checkbox" name="option" id="POC" aria-label="POC" v-model="question3.poc">
-                                    <label for="POC">a person of colour</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" name="option" id="LGBT" aria-label="LGBT" v-model="question3.lgbt">
-                                    <label for="LGBT">a member of the SLGBTQIA+ community</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" name="option" id="mental-health" aria-label="mental health professional" v-model="question3.disability">
-                                    <label for="mental-health">a person living with a disability</label>
-                                </div>
-                            </form>
-                        </div>
-                    
-                    
-                        <div class="customized-toolkit" v-show="step === 5">
-                            <div class="go-back questionnaire" v-show="Object.values(this.question1).every((v) => v === false)">
-                                <p>Please go back to the first page and select the items you are interested in.</p>
+
+                    <div class="questionnaire questionnaire-1" v-if="step === 1">
+                        <h3 class="text-center">I am interested in...</h3>
+                        <p>Select all that apply.</p>
+                        <form class="options">
+                            <div>
+                                <input type="checkbox" class="decider" name="csps-learning-products"
+                                    id="csps-learning-products" v-model="question1.cspslearning"
+                                    @change="determineAccordionNum" data-accordion-target="1">
+                                <label for="csps-learning-products">Learning products by CSPS</label>
                             </div>
-                            <MultiAccordions :AccNum="6">
-                                
-                                <template #AccTitle-1 data-accordion="1" class="accordions">CSPS Learning Products</template>
-                                <template #AccBody-1 >
-                                    <ul>
-                                        <li><a href="#">Course 1</a></li>
-                                        <li><a href="#">Course 2</a></li>
-                                        <li><a href="#">Course 3</a></li>
-                                    </ul>
-                                </template>
-                                <template data-accordion="2" #AccTitle-2 class="accordions">Other Learning Products</template>
-                                <template  #AccBody-2 >
-                                    <ul>
-                                        <li><a href="#">Course 1</a></li>
-                                        <li><a href="#">Course 2</a></li>
-                                        <li><a href="#">Course 3</a></li>
-                                    </ul>
-                                </template>
-                                <template v-if="this.question1.selfid" #AccTitle-3 class="accordions">Self-Assessment Tools</template>
-                                <template v-if="this.question1.selfid" #AccBody-3>
-                                    <ul>
-                                        <li><a href="#">Tool 1</a></li>
-                                        <li><a href="#">Tool 2</a></li>
-                                        <li><a href="#">Tool 3</a></li>
-                                    </ul>
-                                </template>
-                                <template v-if="this.question1.events" #AccTitle-4 class="accordions">Events on Mental Health</template>
-                                <template v-if="this.question1.events" #AccBody-4 >
-                                    <ul>
-                                        <li><a href="#">Event 1</a></li>
-                                        <li><a href="#">Event 2</a></li>
-                                        <li><a href="#">Event 3</a></li>
-                                    </ul>
-                                </template>
-                                <template v-if="this.question1.urgenthelp" #AccTitle-5 class="accordions">Urgent Help Resources</template>
-                                <template v-if="this.question1.urgenthelp" #AccBody-5 >
+                            <div>
+                                <input type="checkbox" class="decider" name="other-learning-products"
+                                    id="other-learning-products" v-model="question1.otherlearning"
+                                    @change="determineAccordionNum" data-accordion-target="2">
+                                <label for="other-learning-products">Learning products by other organizations</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" class="decider" name="self-id" id="self-id"
+                                    v-model="question1.selfid" @change="determineAccordionNum"
+                                    data-accordion-target="3">
+                                <label for="self-id">Self-assessment tools</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" class="decider" name="events" id="events"
+                                    v-model="question1.events" @change="determineAccordionNum"
+                                    data-accordion-target="4">
+                                <label for="events">Events on mental health</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" class="decider" name="urgent-help" id="urgent-help"
+                                    v-model="question1.urgenthelp" @change="determineAccordionNum"
+                                    data-accordion-target="5">
+                                <label for="urgent-help">Urgent/immediate help resources</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" class="decider" name="community-resources"
+                                    id="community-resources" v-model="question1.communities"
+                                    @change="determineAccordionNum" data-accordion-target="6">
+                                <label for="community-resources">Resources for specific communities</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionnaire questionnaire-2" v-if="step === 2">
+                        <p>Thank you for your selection. You may choose to answer a few additional questions to better
+                            customize the list of resources to meet your needs. </p>
+                        <p>Please note that your responses to the questions will only be used to generate a customized
+                            list
+                            of resources and no responses will be stored by CSPS.</p>
+                        <button class="btn-regular skip" @click="this.step = 5">Skip to end</button>
+                    </div>
+                    <div class="questionnaire questionnaire-3" v-if="step === 3">
+                        <p>Which of these best describes your role? </p>
+                        <form class="options">
+                            <div>
+                                <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
+                                    v-model="question2.role">
+                                <label for="employee">Employee</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
+                                    v-model="question2.role">
+                                <label for="manager">Manager</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="option" id="mental-health"
+                                    aria-label="mental health professional" value="mhp" v-model="question2.role">
+                                <label for="mental-health">Mental Health Professional</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questionnaire questionnaire-4" v-if="step === 4">
+                        <h3 class="text-center"><span v-if="question2.role.length > 0">As an
+                                {{ this.question2.role }},</span> do you identify as...</h3>
+                        <p><b>Select all that apply</b></p>
+                        <form class="options">
+                            <div>
+                                <input type="checkbox" name="option" id="POC" aria-label="POC" v-model="question3.poc">
+                                <label for="POC">a person of colour</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="option" id="LGBT" aria-label="LGBT"
+                                    v-model="question3.lgbt">
+                                <label for="LGBT">a member of the SLGBTQIA+ community</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="option" id="mental-health"
+                                    aria-label="mental health professional" v-model="question3.disability">
+                                <label for="mental-health">a person living with a disability</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="customized-toolkit" v-show="step === 5">
+                        <div class="go-back questionnaire"
+                            v-show="Object.values(this.question1).every((v) => v === false)">
+                            <p>Please go back to the first page and select the items you are interested in.</p>
+                        </div>
+                        <MultiAccordions :AccNum="6">
+                            <template #AccTitle-1 data-accordion="1" class="accordions">CSPS Learning
+                                Products</template>
+                            <template #AccBody-1>
+                                <ul>
+                                    <li><a href="#">Course 1</a></li>
+                                    <li><a href="#">Course 2</a></li>
+                                    <li><a href="#">Course 3</a></li>
+                                </ul>
+                            </template>
+                            <template #AccTitle-2 data-accordion="2" class="accordions" >Other Learning
+                                Products</template>
+                            <template #AccBody-2>
+                                <ul>
+                                    <li><a href="#">Course 1</a></li>
+                                    <li><a href="#">Course 2</a></li>
+                                    <li><a href="#">Course 3</a></li>
+                                </ul>
+                            </template>
+                            <template #AccTitle-3 data-accordion="3" class="accordions">Self-Assessment
+                                Tools</template>
+                            <template #AccBody-3>
+                                <ul>
+                                    <li><a href="#">Tool 1</a></li>
+                                    <li><a href="#">Tool 2</a></li>
+                                    <li><a href="#">Tool 3</a></li>
+                                </ul>
+                            </template>
+                            <template #AccTitle-4 data-accordion="4" class="accordions">Events on Mental
+                                Health</template>
+                            <template #AccBody-4>
+                                <ul>
+                                    <li><a href="#">Event 1</a></li>
+                                    <li><a href="#">Event 2</a></li>
+                                    <li><a href="#">Event 3</a></li>
+                                </ul>
+                            </template>
+                            <template  #AccTitle-5 data-accordion="5" class="accordions">Urgent Help
+                                Resources</template>
+                            <template  #AccBody-5>
+                                <ul>
+                                    <li><a href="#">Resource 1</a></li>
+                                    <li><a href="#">Resource 2</a></li>
+                                    <li><a href="#">Resource 3</a></li>
+                                </ul>
+                            </template>
+                            <template #AccTitle-6 data-accordion="6" class="accordions">Resources for
+                                Specific Communities</template>
+                            <template #AccBody-6>
+                                <section v-if="question3.lgbt">
+                                    <h3>SLGBTQ+ Resources</h3>
                                     <ul>
                                         <li><a href="#">Resource 1</a></li>
                                         <li><a href="#">Resource 2</a></li>
                                         <li><a href="#">Resource 3</a></li>
                                     </ul>
-                                </template>
-                                <template v-if="this.question1.communities" #AccTitle-6 class="accordions">Resources for Specific Communities</template>
-                                <template v-if="this.question1.communities" #AccBody-6 >
-                                    <section v-if="question3.lgbt">
-                                                <h3>SLGBTQ+ Resources</h3>
-                                                <ul>
-                                                    <li><a href="#">Resource 1</a></li>
-                                                    <li><a href="#">Resource 2</a></li>
-                                                    <li><a href="#">Resource 3</a></li>
-                                                </ul>
-                                            </section>
-                                            <section v-if="question3.poc">
-                                                <h3>Resources for Persons of Colour</h3>
-                                                <ul>
-                                                    <li><a href="#">Resource 1</a></li>
-                                                    <li><a href="#">Resource 2</a></li>
-                                                    <li><a href="#">Resource 3</a></li>
-                                                </ul>
-                                            </section>
-                                            <section v-if="question3.disability">
-                                                <h3>Resources for Persons Living with Disabilities</h3>
-                                                <ul>
-                                                    <li><a href="#">Resource 1</a></li>
-                                                    <li><a href="#">Resource 2</a></li>
-                                                    <li><a href="#">Resource 3</a></li>
-                                                </ul>
-                                            </section>
-                                </template>
-                            </MultiAccordions>
-                        </div>
-                    
+                                </section>
+                                <section v-if="question3.poc">
+                                    <h3>Resources for Persons of Colour</h3>
+                                    <ul>
+                                        <li><a href="#">Resource 1</a></li>
+                                        <li><a href="#">Resource 2</a></li>
+                                        <li><a href="#">Resource 3</a></li>
+                                    </ul>
+                                </section>
+                                <section v-if="question3.disability">
+                                    <h3>Resources for Persons Living with Disabilities</h3>
+                                    <ul>
+                                        <li><a href="#">Resource 1</a></li>
+                                        <li><a href="#">Resource 2</a></li>
+                                        <li><a href="#">Resource 3</a></li>
+                                    </ul>
+                                </section>
+                            </template>
+                        </MultiAccordions>
+                    </div>
                 </div>
-        
-        
             </div>
-            
             <div class="nav-buttons">
                 <button class="btn-regular back" @click="navigateBack" :disabled=" this.step <= 1">Back</button>
                 <div class="progress-tracker">
-                <nav role="navigation" aria-label="Toolkit Pagination">
-                    <ul>
-                        <li v-for="currentStep in totalSteps" :key="currentStep" class="dot" :class="{ active: this.step === currentStep }" >
-                            <a href="#" @click="this.step = currentStep" :aria-label="`Go to step ${currentStep}`" :aria-current=" this.step === currentStep ">
-                                {{ currentStep }}
-                            </a>
-                            
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+                    <nav role="navigation" aria-label="Toolkit Pagination">
+                        <ul>
+                            <li v-for="currentStep in totalSteps" :key="currentStep" class="dot"
+                                :class="{ active: this.step === currentStep }">
+                                <a href="#" @click="this.step = currentStep" :aria-label="`Go to step ${currentStep}`"
+                                    :aria-current=" this.step === currentStep ">
+                                    {{ currentStep }}
+                                </a>
+
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
                 <button class="btn-regular next" @click="step++" :disabled=" this.step >= 5">Next</button>
             </div>
-            
         </main>
     </div>
 </template>
 
 <style lang="scss" scoped>
-
     $school-purple: #3F2A56;
     $school-coral: #DA797A;
-    
+
     html {
         padding: 0;
         margin: 0;
     }
+
     .wrapper {
         min-height: 100vh;
         background-color: #3F2A56;
@@ -306,15 +319,17 @@
         //padding: 1rem;
         margin-bottom: 2rem;
         width: 300px;
-        min-height: 560px;
+        min-height: 600px;
         max-height: 600px;
         overflow: scroll;
         overflow-x: hidden;
         height: auto;
         display: flex;
         flex-direction: column;
-        -ms-overflow-style: none;  /* Internet Explorer 10+ */
-        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none;
+        /* Internet Explorer 10+ */
+        scrollbar-width: none;
+        /* Firefox */
         //box-shadow: 0px 10px 40px #c5c5c5;
         //mix-blend-mode: lighten;
 
@@ -362,10 +377,14 @@
             flex-wrap: nowrap;
 
             label {
-                -webkit-user-select: none;  /* Chrome all / Safari all */
-                -moz-user-select: none;     /* Firefox all */
-                -ms-user-select: none;      /* IE 10+ */
-                user-select: none;          /* Likely future */
+                -webkit-user-select: none;
+                /* Chrome all / Safari all */
+                -moz-user-select: none;
+                /* Firefox all */
+                -ms-user-select: none;
+                /* IE 10+ */
+                user-select: none;
+                /* Likely future */
 
             }
         }
@@ -394,8 +413,18 @@
         background-color: #FFF;
         border-radius: 5px;
         border: 1px solid rgb(187, 187, 187);
+        -webkit-user-select: none;
+                /* Chrome all / Safari all */
+                -moz-user-select: none;
+                /* Firefox all */
+                -ms-user-select: none;
+                /* IE 10+ */
+                user-select: none;
+                /* Likely future */
+        
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             background-color: $school-purple;
             color: #fff;
             outline: 1px solid #fff;
@@ -415,7 +444,8 @@
             background-color: #EEEEEE;
             color: #3F2A56;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 background-color: $school-purple;
                 color: #fff;
                 outline: 1px solid #fff;
@@ -432,7 +462,7 @@
             padding-left: 0rem;
             margin-bottom: 0rem;
         }
-        
+
         li.dot {
             list-style-type: none;
             width: 20px;
@@ -444,7 +474,7 @@
             margin-right: 4px;
             cursor: pointer;
             position: relative;
-            
+
             &.active {
                 background-color: $school-purple;
             }
@@ -467,7 +497,7 @@
                 content: '';
                 display: none;
             }
-            
+
         }
     }
 </style>
