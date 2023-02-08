@@ -35,7 +35,7 @@ const toggleAccordions = (e) => {
         <button type="button" class="btn ac-btn btn-secondary expandall" aria-expanded="false" @click="toggleAccordions"
             v-else>Ouvrir tous les panneaux</button>
         <div class="accordion acc-id" :id="`multi_accordion_${randNum - 2}`">
-            <div v-for="accordion in accNum" :key="accordion" :data-accordion="accordion">
+            <div v-for="accordion in accNum" :key="accordion" :data-accordion="accordion" hidden>
                 <div class="card">
                     <div class="card-header" :id="`multi_accordion_heading_${accordion + randNum}`">
                         <h2 class="card-title">

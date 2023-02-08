@@ -28,18 +28,28 @@
             }
         },
         methods: {
+            navigateNext: function() {
+                this.step++
+            },
             navigateBack: function() {
-                    this.step--
+                this.step--
             },
             determineAccordionNum(event) {
-                let decider = event.target
-                    if (decider.checked) {
-                        this.accordionNum++
-                    } else if (decider.checked === false) {
-                        this.accordionNum--
-                    }
+                let decider = event.target.getAttribute('data-accordion-target')
+                let accordionArray = Array.from(document.querySelectorAll('.accordion > div'))
+               
+                accordionArray.map(arr =>{
+                    // arr is accordion that matches decider
+                if (decider === arr.getAttribute('data-accordion')){
+                    // Show this accordion
+                    arr.toggleAttribute('hidden')
+
+                }
+
+                    
+                })
                 
-            }
+            }   
         }
     }
 </script>
@@ -56,45 +66,45 @@
                             Questionnaire
                         </h2>
                     </div>
-                    <Transition enter-active-class="animate__animated animate__zoomIn">
+                    
                         <div class="questionnaire questionnaire-1" v-if="step === 1" >
                             <h3 class="text-center">I am interested in...</h3>
                             <p>Select all that apply.</p>
                             <form class="options">
                                 <div>
                                     <input type="checkbox" class="decider" name="csps-learning-products" id="csps-learning-products"
-                                         v-model="question1.cspslearning" @change="determineAccordionNum">
+                                         v-model="question1.cspslearning" @click="determineAccordionNum" data-accordion-target="1">
                                     <label for="csps-learning-products">Learning products by CSPS</label>
                                 </div>
                                 <div>
                                     <input type="checkbox" class="decider" name="other-learning-products" id="other-learning-products"
-                                         v-model="question1.otherlearning" @change="determineAccordionNum">
+                                         v-model="question1.otherlearning" @change="determineAccordionNum" data-accordion-target="2">
                                     <label for="other-learning-products">Learning products by other organizations</label>
                                 </div>
                                 <div>
                                     <input type="checkbox" class="decider" name="self-id" id="self-id" 
-                                        v-model="question1.selfid" @change="determineAccordionNum">
+                                        v-model="question1.selfid" @change="determineAccordionNum" data-accordion-target="3">
                                     <label for="self-id">Self-assessment tools</label>
                                 </div>
                                 <div>
                                     <input type="checkbox" class="decider" name="events" id="events" 
-                                        v-model="question1.events" @change="determineAccordionNum">
+                                        v-model="question1.events" @change="determineAccordionNum" data-accordion-target="4">
                                     <label for="events">Events on mental health</label>
                                 </div>
                                 <div>
                                     <input type="checkbox" class="decider" name="urgent-help" id="urgent-help"
-                                         v-model="question1.urgenthelp" @change="determineAccordionNum">
+                                         v-model="question1.urgenthelp" @change="determineAccordionNum" data-accordion-target="5">
                                     <label for="urgent-help">Urgent/immediate help resources</label>
                                 </div>
                                 <div>
                                     <input type="checkbox" class="decider" name="community-resources" id="community-resources"
-                                         v-model="question1.communities" @change="determineAccordionNum">
+                                         v-model="question1.communities" @change="determineAccordionNum" data-accordion-target="6">
                                     <label for="community-resources">Resources for specific communities</label>
                                 </div>
                             </form>
                         </div>
-                    </Transition>
-                    <Transition enter-active-class="animate__animated animate__zoomIn" >
+                    
+                    
                         <div class="questionnaire questionnaire-2" v-if="step === 2">
                             <p>Thank you for your selection. You may choose to answer a few additional questions to better
                                 customize the list of resources to meet your needs. </p>
@@ -102,8 +112,8 @@
                                 of resources and no responses will be stored by CSPS.</p>
                             <button class="btn-regular skip" @click="this.step = 5">Skip to end</button>
                         </div>
-                    </Transition>
-                    <Transition enter-active-class="animate__animated animate__zoomIn">
+                    
+                    
                         <div class="questionnaire questionnaire-3" v-if="step === 3">
                             <p>Which of these best describes your role? </p>
                             <form class="options">
@@ -124,8 +134,7 @@
                                 </div>
                             </form>
                         </div>
-                    </Transition>
-                    <Transition enter-active-class="animate__animated animate__zoomIn">
+                   
                         <div class="questionnaire questionnaire-4" v-if="step === 4">
                             <h3 class="text-center"><span v-if="question2.role.length > 0">As an {{ this.question2.role }},</span> do you identify as...</h3>
                             <p><b>Select all that apply</b></p>
@@ -144,56 +153,56 @@
                                 </div>
                             </form>
                         </div>
-                    </Transition>
-                    <Transition enter-active-class="animate__animated animate__zoomIn">
-                        <div class="customized-toolkit" v-if="step === 5">
-                            <div class="go-back questionnaire" v-if="Object.values(this.question1).every((v) => v === false)">
+                    
+                    
+                        <div class="customized-toolkit" v-show="step === 5">
+                            <div class="go-back questionnaire" v-show="Object.values(this.question1).every((v) => v === false)">
                                 <p>Please go back to the first page and select the items you are interested in.</p>
                             </div>
-                            <MultiAccordions :AccNum="accordionNum" v-else>
+                            <MultiAccordions :AccNum="6">
                                 
-                                <template v-if="question1.cspslearning" #AccTitle-1>CSPS Learning Products</template>
-                                <template v-if="question1.cspslearning" #AccBody-1>
+                                <template #AccTitle-1 data-accordion="1" class="accordions">CSPS Learning Products</template>
+                                <template #AccBody-1 >
                                     <ul>
                                         <li><a href="#">Course 1</a></li>
                                         <li><a href="#">Course 2</a></li>
                                         <li><a href="#">Course 3</a></li>
                                     </ul>
                                 </template>
-                                <template v-if="question1.otherlearning" #AccTitle-2>Other Learning Products</template>
-                                <template v-if="question1.otherlearning" #AccBody-2>
+                                <template data-accordion="2" #AccTitle-2 class="accordions">Other Learning Products</template>
+                                <template  #AccBody-2 >
                                     <ul>
                                         <li><a href="#">Course 1</a></li>
                                         <li><a href="#">Course 2</a></li>
                                         <li><a href="#">Course 3</a></li>
                                     </ul>
                                 </template>
-                                <template v-if="question1.selfid" #AccTitle-3>Self-Assessment Tools</template>
-                                <template v-if="question1.selfid" #AccBody-3>
+                                <template v-if="this.question1.selfid" #AccTitle-3 class="accordions">Self-Assessment Tools</template>
+                                <template v-if="this.question1.selfid" #AccBody-3>
                                     <ul>
                                         <li><a href="#">Tool 1</a></li>
                                         <li><a href="#">Tool 2</a></li>
                                         <li><a href="#">Tool 3</a></li>
                                     </ul>
                                 </template>
-                                <template v-if="question1.events" #AccTitle-4>Events on Mental Health</template>
-                                <template v-if="question1.events" #AccBody-4>
+                                <template v-if="this.question1.events" #AccTitle-4 class="accordions">Events on Mental Health</template>
+                                <template v-if="this.question1.events" #AccBody-4 >
                                     <ul>
                                         <li><a href="#">Event 1</a></li>
                                         <li><a href="#">Event 2</a></li>
                                         <li><a href="#">Event 3</a></li>
                                     </ul>
                                 </template>
-                                <template v-if="question1.urgenthelp" #AccTitle-5>Urgent Help Resources</template>
-                                <template v-if="question1.urgenthelp" #AccBody-5>
+                                <template v-if="this.question1.urgenthelp" #AccTitle-5 class="accordions">Urgent Help Resources</template>
+                                <template v-if="this.question1.urgenthelp" #AccBody-5 >
                                     <ul>
                                         <li><a href="#">Resource 1</a></li>
                                         <li><a href="#">Resource 2</a></li>
                                         <li><a href="#">Resource 3</a></li>
                                     </ul>
                                 </template>
-                                <template v-if="question1.communities" #AccTitle-6>Resources for Specific Communities</template>
-                                <template v-if="question1.communities" #AccBody-6>
+                                <template v-if="this.question1.communities" #AccTitle-6 class="accordions">Resources for Specific Communities</template>
+                                <template v-if="this.question1.communities" #AccBody-6 >
                                     <section v-if="question3.lgbt">
                                                 <h3>SLGBTQ+ Resources</h3>
                                                 <ul>
@@ -221,7 +230,7 @@
                                 </template>
                             </MultiAccordions>
                         </div>
-                    </Transition>
+                    
                 </div>
         
         
