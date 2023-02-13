@@ -413,6 +413,7 @@
         background-color: #FFF;
         border-radius: 5px;
         border: 1px solid rgb(187, 187, 187);
+        transition: all 0.5s;
         -webkit-user-select: none;
                 /* Chrome all / Safari all */
                 -moz-user-select: none;
