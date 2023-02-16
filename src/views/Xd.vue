@@ -259,7 +259,6 @@
                                     :aria-current=" this.step === currentStep ">
                                     {{ currentStep }}
                                 </a>
-
                             </li>
                         </ul>
                     </nav>
@@ -318,7 +317,7 @@
         border-radius: 10px;
         //padding: 1rem;
         margin-bottom: 2rem;
-        width: 300px;
+        width: 320px;
         min-height: 600px;
         max-height: 600px;
         overflow: scroll;
@@ -339,6 +338,10 @@
 
         @media (min-width: 560px) {
             width: 560px;
+        }
+
+        @media (min-width: 720px) {
+            width: 700px;
         }
     }
 
@@ -408,7 +411,7 @@
 
     button.btn-regular {
         font-size: 1.5rem;
-        padding: 0.3rem 4rem;
+        padding: 0.3rem 1.1rem;
         color: #3F2A56;
         background-color: #FFF;
         border-radius: 5px;
@@ -451,6 +454,14 @@
                 color: #fff;
                 outline: 1px solid #fff;
             }
+        }
+
+        @media (min-width: 500px) {
+            padding: 0.3rem 2.75rem;
+        }
+
+        @media (min-width: 720px) {
+            padding: 0.3rem 4rem;
         }
     }
 
