@@ -173,9 +173,9 @@
                             </template>
                             <template v-slot:AccBody>
                                 <ul>
-                                    <li><a href="#">Course 1</a></li>
-                                    <li><a href="#">Course 2</a></li>
-                                    <li><a href="#">Course 3</a></li>
+                                    <li><a href="#">General Resource 1</a></li>
+                                    <li><a href="#">General Resource 2</a></li>
+                                    <li><a href="#">General Resource 3</a></li>
                                 </ul>
                             </template>
                         </SimpleAccordion>
@@ -189,18 +189,20 @@
                                 Products</template>
                             <template #AccBody-1>
                                 <ul>
-                                    <li><a href="#">Course 1</a></li>
-                                    <li><a href="#">Course 2</a></li>
-                                    <li><a href="#">Course 3</a></li>
+                                    <li><a href="#">Preventing Harassment and Violence in the Workplace for Employees (WMT101)</a></li>
+                                    <br>
+                                    <li><a href="#">Preventing Harassment and Violence in the Workplace for Designated Recipients (WMT103)</a></li>
+                                    <br>
+                                    <li><a href="#">Disability Management and Workplace Wellness (INC120)</a></li>
                                 </ul>
                             </template>
                             <template #AccTitle-2 data-accordion="2" class="accordions" >Other Learning
                                 Products</template>
                             <template #AccBody-2>
                                 <ul>
-                                    <li><a href="#">Course 1</a></li>
-                                    <li><a href="#">Course 2</a></li>
-                                    <li><a href="#">Course 3</a></li>
+                                    <li><a href="#">Other Learning Product - Course 1</a></li>
+                                    <li><a href="#">Other Learning Product - Course 2</a></li>
+                                    <li><a href="#">Other Learning Product - Course 3</a></li>
                                 </ul>
                             </template>
                             <template #AccTitle-3 data-accordion="3" class="accordions">Self-Assessment
@@ -216,29 +218,34 @@
                                 Health</template>
                             <template #AccBody-4>
                                 <ul>
-                                    <li><a href="#">Event 1</a></li>
-                                    <li><a href="#">Event 2</a></li>
-                                    <li><a href="#">Event 3</a></li>
+                                    <li><a href="#">Event on Mental Health 1</a></li>
+                                    <li><a href="#">Event on Mental Health 2</a></li>
+                                    <li><a href="#">Event on Mental Health 3</a></li>
                                 </ul>
                             </template>
                             <template  #AccTitle-5 data-accordion="5" class="accordions">Urgent Help
                                 Resources</template>
                             <template  #AccBody-5>
                                 <ul>
-                                    <li><a href="#">Resource 1</a></li>
-                                    <li><a href="#">Resource 2</a></li>
-                                    <li><a href="#">Resource 3</a></li>
+                                    <li><a href="#">Urgent Help Resource 1</a></li>
+                                    <li><a href="#">Urgent Help Resource 2</a></li>
+                                    <li><a href="#">Urgent Help Resource 3</a></li>
                                 </ul>
                             </template>
                             <template #AccTitle-6 data-accordion="6" class="accordions">Resources for
                                 Specific Communities</template>
                             <template #AccBody-6>
+                                <ul>
+                                    <li><a href="#">Resource 1</a></li>
+                                    <li><a href="#">Resource 2</a></li>
+                                    <li><a href="#">Resource 3</a></li>
+                                </ul>
                                 <section v-if="question3.lgbt">
-                                    <h3>SLGBTQ+ Resources</h3>
+                                    <h3>2SLGBTQIA+ Resources</h3>
                                     <ul>
-                                        <li><a href="#">Resource 1</a></li>
-                                        <li><a href="#">Resource 2</a></li>
-                                        <li><a href="#">Resource 3</a></li>
+                                        <li><a href="#">2SLGBTQIA+ Resource 1</a></li>
+                                        <li><a href="#">2SLGBTQIA+ Resource 2</a></li>
+                                        <li><a href="#">2SLGBTQIA+ Resource 3</a></li>
                                     </ul>
                                 </section>
                                 <section v-if="question3.poc">
@@ -314,6 +321,10 @@
 
     h2 {
         color: #fff;
+    }
+
+    a {
+        text-decoration: none;
     }
 
     .holster {
