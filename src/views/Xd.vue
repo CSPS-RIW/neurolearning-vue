@@ -1,5 +1,6 @@
 <script setup>
     import MultiAccordions from '../components/MultiAccordions.vue';
+    import SimpleAccordion from '../components/SimpleAccordion.vue';
 </script>
 <script>
     export default {
@@ -128,47 +129,60 @@
                         <p>Which of these best describes your role? </p>
                         <form class="options">
                             <div>
-                                <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
+                                <input type="radio" name="option" id="employee" aria-label="employee" value="an employee"
                                     v-model="question2.role">
                                 <label for="employee">Employee</label>
                             </div>
                             <div>
-                                <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
+                                <input type="radio" name="option" id="manager" aria-label="manager" value="a manager"
                                     v-model="question2.role">
                                 <label for="manager">Manager</label>
                             </div>
                             <div>
                                 <input type="radio" name="option" id="mental-health"
-                                    aria-label="mental health professional" value="mhp" v-model="question2.role">
+                                    aria-label="mental health professional" value="a mental health professional" v-model="question2.role">
                                 <label for="mental-health">Mental Health Professional</label>
                             </div>
                         </form>
                     </div>
                     <div class="questionnaire questionnaire-4" v-if="step === 4">
-                        <h3 class="text-center"><span v-if="question2.role.length > 0">As an
+                        <h3 class="text-center"><span v-if="question2.role.length > 0">As 
                                 {{ this.question2.role }},</span> do you identify as...</h3>
                         <p><b>Select all that apply</b></p>
                         <form class="options">
                             <div>
-                                <input type="checkbox" name="option" id="POC" aria-label="POC" v-model="question3.poc">
+                                <input type="checkbox" name="option" id="POC" v-model="question3.poc">
                                 <label for="POC">a person of colour</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="option" id="LGBT" aria-label="LGBT"
+                                <input type="checkbox" name="option" id="LGBT"
                                     v-model="question3.lgbt">
                                 <label for="LGBT">a member of the SLGBTQIA+ community</label>
                             </div>
                             <div>
                                 <input type="checkbox" name="option" id="mental-health"
-                                    aria-label="mental health professional" v-model="question3.disability">
+                                     v-model="question3.disability">
                                 <label for="mental-health">a person living with a disability</label>
                             </div>
                         </form>
                     </div>
                     <div class="customized-toolkit" v-show="step === 5">
+                        <SimpleAccordion  v-show="Object.values(this.question1).every((v) => v === false)">
+                            <template v-slot:AccTitle>
+                                General Resources
+                            </template>
+                            <template v-slot:AccBody>
+                                <ul>
+                                    <li><a href="#">Course 1</a></li>
+                                    <li><a href="#">Course 2</a></li>
+                                    <li><a href="#">Course 3</a></li>
+                                </ul>
+                            </template>
+                        </SimpleAccordion>
                         <div class="go-back questionnaire"
                             v-show="Object.values(this.question1).every((v) => v === false)">
-                            <p>Please go back to the first page and select the items you are interested in.</p>
+                            
+                            <p>If you are interested in more resources, please go back to the beginning of the questionnaire and select the items you are interested in.</p>
                         </div>
                         <MultiAccordions :AccNum="6">
                             <template #AccTitle-1 data-accordion="1" class="accordions">CSPS Learning
