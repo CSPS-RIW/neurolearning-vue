@@ -1,5 +1,5 @@
 <template>
-  <div v-cloak>
+  <div>
 
 
     <router-view :key="$route.path" />
