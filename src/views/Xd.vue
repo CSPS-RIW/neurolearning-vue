@@ -139,101 +139,103 @@ onBeforeMount(() => {
         </header>
         <main>
             <div class="holster">
+                <button
+        class="btn btn-regular"
+        @click="changeLang" :title="t('langToggle')" :lang="t('shortToggle')">
+        {{ t('langToggle') }}
+      </button>
                 <div class="questionnaire-wrapper" aria-live="polite" role="region" aria-label="Questionnaire">
                     <div class="questionnaire-header">
                         <h2 class="questionnaire-heading text-center">
-                            {{ $t("title") }}
+                            {{ $t("heading") }}
                         </h2>
                     </div>
 
                     <div class="questionnaire questionnaire-1" v-if="step === 1">
-                        <h3 class="text-center">I am interested in...</h3>
-                        <p>Select all that apply.</p>
+                        <h3 class="text-center">{{ $t("interested") }}</h3>
+                        <p>{{ $t("selectAll") }}</p>
                         <form class="options">
                             <div>
                                 <input type="checkbox" class="decider" name="csps-learning-products"
                                     id="csps-learning-products" v-model="question1.cspslearning"
                                     @change="determineAccordionNum" data-accordion-target="1">
-                                <label for="csps-learning-products">Learning products by CSPS</label>
+                                <label for="csps-learning-products">{{ t("checkboxes[0]") }}</label>
                             </div>
                             <div>
                                 <input type="checkbox" class="decider" name="other-learning-products"
                                     id="other-learning-products" v-model="question1.otherlearning"
                                     @change="determineAccordionNum" data-accordion-target="2">
-                                <label for="other-learning-products">Learning products by other organizations</label>
+                                <label for="other-learning-products">{{ t("checkboxes[1]") }}</label>
                             </div>
                             <div>
                                 <input type="checkbox" class="decider" name="self-id" id="self-id"
                                     v-model="question1.selfid" @change="determineAccordionNum"
                                     data-accordion-target="3">
-                                <label for="self-id">Self-assessment tools</label>
+                                <label for="self-id">{{ t("checkboxes[2]") }}</label>
                             </div>
                             <div>
                                 <input type="checkbox" class="decider" name="events" id="events"
                                     v-model="question1.events" @change="determineAccordionNum"
                                     data-accordion-target="4">
-                                <label for="events">Events on mental health</label>
+                                <label for="events">{{ t("checkboxes[3]") }}</label>
                             </div>
                             <div>
                                 <input type="checkbox" class="decider" name="urgent-help" id="urgent-help"
                                     v-model="question1.urgenthelp" @change="determineAccordionNum"
                                     data-accordion-target="5">
-                                <label for="urgent-help">Urgent/immediate help resources</label>
+                                <label for="urgent-help">{{ t("checkboxes[4]") }}</label>
                             </div>
                             <div>
                                 <input type="checkbox" class="decider" name="community-resources"
                                     id="community-resources" v-model="question1.communities"
                                     @change="determineAccordionNum" data-accordion-target="6">
-                                <label for="community-resources">Resources for specific communities</label>
+                                <label for="community-resources">{{ t("checkboxes[5]") }}</label>
                             </div>
                         </form>
                     </div>
                     <div class="questionnaire questionnaire-2" v-if="step === 2">
-                        <p>Thank you for your selection. You may choose to answer a few additional questions to better
-                            customize the list of resources to meet your needs. </p>
-                        <p>Please note that your responses to the questions will only be used to generate a customized
-                            list
-                            of resources and no responses will be stored by CSPS.</p>
-                        <button class="btn-regular skip" @click="this.step = 5">Skip to end</button>
+                        <p>{{ $t("thankYouPara[0]") }}</p>
+                        <p>{{ $t("thankYouPara[1]") }}</p>
+                        <button class="btn-regular skip" @click="this.step = 5">{{ t("buttons.skip") }}</button>
                     </div>
                     <div class="questionnaire questionnaire-3" v-if="step === 3">
-                        <p>Which of these best describes your role? </p>
+                        <p>{{ t("whichOfThese") }}</p>
                         <form class="options">
                             <div>
                                 <input type="radio" name="option" id="employee" aria-label="employee" value="an employee"
                                     v-model="question2.role">
-                                <label for="employee">Employee</label>
+                                <label for="employee">{{ t("roles[0]") }}</label>
                             </div>
                             <div>
                                 <input type="radio" name="option" id="manager" aria-label="manager" value="a manager"
                                     v-model="question2.role">
-                                <label for="manager">Manager</label>
+                                <label for="manager">{{ t("roles[1]") }}</label>
                             </div>
                             <div>
                                 <input type="radio" name="option" id="mental-health"
                                     aria-label="mental health professional" value="a mental health professional" v-model="question2.role">
-                                <label for="mental-health">Mental Health Professional</label>
+                                <label for="mental-health">{{ t("roles[2]") }}</label>
                             </div>
                         </form>
                     </div>
                     <div class="questionnaire questionnaire-4" v-if="step === 4">
                         <h3 class="text-center"><span v-if="question2.role.length > 0">As 
-                                {{ this.question2.role }},</span> do you identify as...</h3>
-                        <p><b>Select all that apply</b></p>
+                                {{ this.question2.role }},</span> {{ $t("identify") }}</h3>
+                        <p><b>{{ $t("selectAll") }}</b></p>
                         <form class="options">
                             <div>
                                 <input type="checkbox" name="option" id="POC" v-model="question3.poc">
-                                <label for="POC">a person of colour</label>
+                                <label for="POC">{{ $t("identities[0]") }}</label>
                             </div>
                             <div>
                                 <input type="checkbox" name="option" id="LGBT"
                                     v-model="question3.lgbt">
-                                <label for="LGBT">a member of the SLGBTQIA+ community</label>
+                                <label for="LGBT">{{ $t("identities[1]") }}</label>
                             </div>
                             <div>
                                 <input type="checkbox" name="option" id="mental-health"
                                      v-model="question3.disability">
-                                <label for="mental-health">a person living with a disability</label>
+                                <label for="mental-health">{{ $t("identities[2]") }}</label>
                             </div>
                         </form>
                     </div>
@@ -341,7 +343,7 @@ onBeforeMount(() => {
                 </div>
             </div>
             <div class="nav-buttons">
-                <button class="btn-regular back" @click="navigateBack" :disabled=" this.step <= 1">Back</button>
+                <button class="btn-regular back" @click="navigateBack" :disabled=" this.step <= 1">{{ $t('buttons.back') }}</button>
                 <div class="progress-tracker">
                     <nav role="navigation" aria-label="Toolkit Pagination">
                         <ul>
@@ -355,7 +357,7 @@ onBeforeMount(() => {
                         </ul>
                     </nav>
                 </div>
-                <button class="btn-regular next" @click="step++" :disabled=" this.step >= 5">Next</button>
+                <button class="btn-regular next" @click="step++" :disabled=" this.step >= 5">{{ $t('buttons.next') }}</button>
             </div>
         </main>
     </div>

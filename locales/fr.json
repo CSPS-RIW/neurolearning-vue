@@ -1,3 +1,38 @@
 {
-    "title": "Felicitations!"
+    "title": "Kit de ressources personnalisé",
+    "pageTitle": "Kit de ressources personnalisé",
+    "heading": "Questionnaire",
+    "interested": "Je suis intéressé par...",
+    "langToggle": "English",
+    "shortToggle": "En",
+    "selectAll": "sélectionnez tout ce qui s'applique.",
+    "checkboxes": [
+        "Les produits d'apprentissage de l'EFPC",
+        "Les produits d'apprentissage d'autres organisations",
+        "Outils d'auto-évaluation",
+        "Événements sur la santé mentale",
+        "Ressources d'aide urgente/immédiate",
+        "Ressources pour des communautés spécifiques"
+    ],
+    "buttons": {
+        "back": "Précédent",
+        "next": "Suivant",
+        "skip": "Passer à la fin"
+    },
+    "thankYouPara": [
+        "Nous vous remercions de votre sélection. Vous pouvez choisir de répondre à quelques questions supplémentaires afin de mieux personnaliser la liste des ressources en fonction de vos besoins.",
+        "Veuillez noter que vos réponses aux questions ne seront utilisées que pour générer une liste personnalisée de ressources et qu'aucune réponse ne sera stockée par l'EFPC."
+    ],
+    "whichOfThese": "Laquelle de ces options décrit le mieux votre rôle?",
+    "roles": [
+        "Employé",
+        "Gestionnaire",
+        "Professionnel de la santé mentale"
+    ],
+    "identify": "Vous identifiez vous comme...",
+    "identities": [
+        "une personne de couleur",
+        "un membre de la communauté 2ELGBTQIA+.",
+        "une personne handicapée"
+    ]
 }
