@@ -21,6 +21,9 @@ const params = useUrlSearchParams('history')
 // use localstorage as ref
 const preferredLanguage = useStorage('preferred-lang')
 
+// language variavle
+let pageLang = lang.getAttribute('lang')
+
 
 watch(locales.state, state => {
   // to chonge locale, add .value because it is a ref
