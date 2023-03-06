@@ -34,6 +34,15 @@
         "a person of colour",
         "a member of the 2SLGBTQIA+ community",
         "a person living with a disability"
+    ],
+    "accordionTitles": [
+        "General Resources",
+        "CSPS Learning Products",
+        "Other Learning Products",
+        "Self-assessment Tools",
+        "Events on Mental Health",
+        "Urgent Help Resources",
+        "Resources for Specific Communities"
     ]
 
 }

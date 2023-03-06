@@ -245,7 +245,7 @@ onBeforeMount(() => {
                     <div class="customized-toolkit" v-show="step === 5">
                         <SimpleAccordion  v-show="Object.values(this.question1).every((v) => v === false)">
                             <template v-slot:AccTitle>
-                                General Resources
+                                {{  $t('accordionTitles[0]') }}
                             </template>
                             <template v-slot:AccBody>
                                 <ul>
@@ -261,8 +261,7 @@ onBeforeMount(() => {
                             <p>If you are interested in more resources, please go back to the beginning of the questionnaire and select the items you are interested in.</p>
                         </div>
                         <MultiAccordions :AccNum="6">
-                            <template #AccTitle-1 data-accordion="1" class="accordions">CSPS Learning
-                                Products</template>
+                            <template #AccTitle-1 data-accordion="1" class="accordions">{{  $t('accordionTitles[1]') }}</template>
                             <template #AccBody-1>
                                 <ul>
                                     <li><a href="#">Preventing Harassment and Violence in the Workplace for Employees (WMT101)</a></li>
@@ -272,8 +271,7 @@ onBeforeMount(() => {
                                     <li><a href="#">Disability Management and Workplace Wellness (INC120)</a></li>
                                 </ul>
                             </template>
-                            <template #AccTitle-2 data-accordion="2" class="accordions" >Other Learning
-                                Products</template>
+                            <template #AccTitle-2 data-accordion="2" class="accordions" >{{  $t('accordionTitles[2]') }}</template>
                             <template #AccBody-2>
                                 <ul>
                                     <li><a href="#">Other Learning Product - Course 1</a></li>
@@ -281,8 +279,7 @@ onBeforeMount(() => {
                                     <li><a href="#">Other Learning Product - Course 3</a></li>
                                 </ul>
                             </template>
-                            <template #AccTitle-3 data-accordion="3" class="accordions">Self-Assessment
-                                Tools</template>
+                            <template #AccTitle-3 data-accordion="3" class="accordions">{{  $t('accordionTitles[3]') }}</template>
                             <template #AccBody-3>
                                 <ul>
                                     <li><a href="#">Tool 1</a></li>
@@ -290,8 +287,7 @@ onBeforeMount(() => {
                                     <li><a href="#">Tool 3</a></li>
                                 </ul>
                             </template>
-                            <template #AccTitle-4 data-accordion="4" class="accordions">Events on Mental
-                                Health</template>
+                            <template #AccTitle-4 data-accordion="4" class="accordions">{{  $t('accordionTitles[4]') }}</template>
                             <template #AccBody-4>
                                 <ul>
                                     <li><a href="#">Event on Mental Health 1</a></li>
@@ -299,8 +295,7 @@ onBeforeMount(() => {
                                     <li><a href="#">Event on Mental Health 3</a></li>
                                 </ul>
                             </template>
-                            <template  #AccTitle-5 data-accordion="5" class="accordions">Urgent Help
-                                Resources</template>
+                            <template  #AccTitle-5 data-accordion="5" class="accordions">{{  $t('accordionTitles[5]') }}</template>
                             <template  #AccBody-5>
                                 <ul>
                                     <li><a href="#">Urgent Help Resource 1</a></li>
@@ -308,8 +303,7 @@ onBeforeMount(() => {
                                     <li><a href="#">Urgent Help Resource 3</a></li>
                                 </ul>
                             </template>
-                            <template #AccTitle-6 data-accordion="6" class="accordions">Resources for
-                                Specific Communities</template>
+                            <template #AccTitle-6 data-accordion="6" class="accordions">{{  $t('accordionTitles[6]') }}</template>
                             <template #AccBody-6>
                                 <ul>
                                     <li><a href="#">Resource 1</a></li>
