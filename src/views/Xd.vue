@@ -264,7 +264,7 @@ onBeforeMount(() => {
                         <div class="go-back questionnaire"
                             v-show="Object.values(this.question1).every((v) => v === false)">
                             
-                            <p>If you are interested in more resources, please go back to the beginning of the questionnaire and select the items you are interested in.</p>
+                            
                         </div>
                         <MultiAccordions :AccNum="6">
                             <template #AccTitle-1 data-accordion="1" class="accordions">{{  $t('accordionTitles[1]') }}</template>
@@ -622,6 +622,7 @@ onBeforeMount(() => {
         font-size: 1.25rem;
         padding: 0.25rem;
         border-radius: 5px;
+        transition: background-color 0.2s;
 
         &:hover, &:focus {
             background-color: $school-purple;

@@ -43,5 +43,9 @@
         "Événements sur la santé mentale",
         "Ressources d'aide urgente",
         "Ressources pour des communautés spécifiques"
+    ],
+    "ifInterestedIn": [
+        "Si vous êtes intéressé par d'autres ressources, veuillez revenir au début du questionnaire et sélectionner les éléments qui vous intéressent."
     ]
+
 }
