@@ -138,15 +138,21 @@ onBeforeMount(() => {
 <template>
     <div class="wrapper">
         <header>
-            <h1 class="text-center">{{ $t("title") }}</h1>
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <h1 class="text-center">{{ $t("title") }}</h1>
+                    </div>
+                    <div class="col-sm-2">
+                        <a href="#" class="lang-toggle" @click="changeLang" :title="t('langToggle')" :lang="t('shortToggle')">{{ t('shortToggle') }}</a>
+                    </div>
+                </div>
+            </div>
         </header>
         <main>
             <div class="holster">
-                <button
-        class="btn btn-regular"
-        @click="changeLang" :title="t('langToggle')" :lang="t('shortToggle')">
-        {{ t('langToggle') }}
-      </button>
+                
                 <div class="questionnaire-wrapper" aria-live="polite" role="region" aria-label="Questionnaire">
                     <div class="questionnaire-header">
                         <h2 class="questionnaire-heading text-center">
@@ -605,6 +611,22 @@ onBeforeMount(() => {
                 display: none;
             }
 
+        }
+    }
+
+    a.lang-toggle {
+        color: $school-purple;
+        background-color: #EEEEEE;
+        border: 1px solid #EEEEEE;
+        font-weight: bold;
+        font-size: 1.25rem;
+        padding: 0.25rem;
+        border-radius: 5px;
+
+        &:hover, &:focus {
+            background-color: $school-purple;
+            color: #EEEEEE;
+            outline: 2px solid #EEEEEE;
         }
     }
 </style>
