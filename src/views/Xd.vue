@@ -77,7 +77,7 @@ onMounted(() => {
     let style = document.createElement('style');
     style.innerText = `
     
-    .accordion-1::after { content: url("src/assets/icons/csps-icon.svg"); display: inline-block; width: 30px; height: 30px; }
+    .accordion-1::before { content: url("src/assets/icons/csps-icon.svg"); display: inline-block; width: 30px; height: 30px; }
     .accordion-2::before { content: url("src/assets/icons/learning-products-icon.svg"); display: inline-block; width: 30px; height: 30px;}
     .accordion-3::before { content: url("src/assets/icons/self-assessment-icon.svg"); display: inline-block; width: 30px; height: 30px;}
     .accordion-4::before { content: url("src/assets/icons/mental-health-icon.svg"); display: inline-block; width: 30px; height: 30px;}
