@@ -21,9 +21,6 @@ const params = useUrlSearchParams('history')
 // use localstorage as ref
 const preferredLanguage = useStorage('preferred-lang')
 
-// language variavle
-let pageLang = lang.getAttribute('lang')
-
 
 watch(locales.state, state => {
   // to chonge locale, add .value because it is a ref
@@ -250,6 +247,7 @@ onBeforeMount(() => {
                     </div>
                     <div class="customized-toolkit" v-show="step === 5">
                         <SimpleAccordion  v-show="Object.values(this.question1).every((v) => v === false)">
+                            
                             <template v-slot:AccTitle>
                                 {{  $t('accordionTitles[0]') }}
                             </template>
@@ -263,7 +261,7 @@ onBeforeMount(() => {
                         </SimpleAccordion>
                         <div class="go-back questionnaire"
                             v-show="Object.values(this.question1).every((v) => v === false)">
-                            
+                            <p>{{ $t('ifInterestedIn') }}</p>
                             
                         </div>
                         <MultiAccordions :AccNum="6">
