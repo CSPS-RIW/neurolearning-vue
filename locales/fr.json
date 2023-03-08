@@ -44,6 +44,7 @@
         "Ressources d'aide urgente",
         "Ressources pour des communautés spécifiques"
     ],
-    "ifInterestedIn": "Si vous êtes intéressé par d'autres ressources, veuillez revenir au début du questionnaire et sélectionner les éléments qui vous intéressent."
+    "ifInterestedIn": "Si vous êtes intéressé par d'autres ressources, veuillez revenir au début du questionnaire et sélectionner les éléments qui vous intéressent.",
+    "openAll" : "Ouvrir tous les panneaux"
 
 }

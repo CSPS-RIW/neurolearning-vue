@@ -1,4 +1,8 @@
 <script setup>
+
+import { useI18n } from 'vue-i18n';
+const { t, locale, availableLocales } = useI18n()
+
 let lang = document.querySelector('html').getAttribute('lang')
 // Get the number of accordions based on props
 const props = defineProps(['AccNum'])
@@ -13,10 +17,10 @@ const toggleAccordions = (e) => {
     accContent.forEach(content => {
         if (content.classList.contains('show')) {
             expandBtn.setAttribute('aria-expanded', false)
-            lang === 'en' ? expandBtn.innerText = 'Open All Panels' : expandBtn.innerText = 'Ouvrir tous les panneaux'
+            //lang === 'en' ? expandBtn.innerText = 'Open All Panels' : expandBtn.innerText = 'Ouvrir tous les panneaux'
         } else {
             expandBtn.setAttribute('aria-expanded', true)
-            lang === 'en' ? expandBtn.innerText = 'Close All Panels' : expandBtn.innerText = 'Fermer tous les panneaux'
+            //lang === 'en' ? expandBtn.innerText = 'Close All Panels' : expandBtn.innerText = 'Fermer tous les panneaux'
         }
         content.classList.contains('show') ?
             content.classList.remove('show') :
@@ -30,10 +34,10 @@ const toggleAccordions = (e) => {
 
 <template>
     <div class="multi-accordion-group" :data-acc-group="`multi_accordion_${randNum - 2}`" hidden>
+        <!-- <button type="button" class="btn ac-btn btn-secondary expandall" aria-expanded="false" @click="toggleAccordions"
+            v-if="lang !== 'fr'">Open All Panels</button> -->
         <button type="button" class="btn ac-btn btn-secondary expandall" aria-expanded="false" @click="toggleAccordions"
-            v-if="lang !== 'fr'">Open All Panels</button>
-        <button type="button" class="btn ac-btn btn-secondary expandall" aria-expanded="false" @click="toggleAccordions"
-            v-else>Ouvrir tous les panneaux</button>
+           >{{ $t("openAll") }}</button>
         <div class="accordion acc-id" :id="`multi_accordion_${randNum - 2}`">
             <div v-for="accordion in accNum" :key="accordion" :data-accordion="accordion" hidden>
                 <div class="card">
