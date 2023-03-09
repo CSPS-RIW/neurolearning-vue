@@ -1,4 +1,8 @@
 <script setup>
+
+import { useI18n } from 'vue-i18n';
+const { t, locale, availableLocales } = useI18n()
+
 let lang = document.querySelector('html').getAttribute('lang')
 // Get the number of accordions based on props
 const props = defineProps(['AccNum'])
@@ -13,10 +17,10 @@ const toggleAccordions = (e) => {
     accContent.forEach(content => {
         if (content.classList.contains('show')) {
             expandBtn.setAttribute('aria-expanded', false)
-            lang === 'en' ? expandBtn.innerText = 'Open All Panels' : expandBtn.innerText = 'Ouvrir tous les panneaux'
+            //lang === 'en' ? expandBtn.innerText = 'Open All Panels' : expandBtn.innerText = 'Ouvrir tous les panneaux'
         } else {
             expandBtn.setAttribute('aria-expanded', true)
-            lang === 'en' ? expandBtn.innerText = 'Close All Panels' : expandBtn.innerText = 'Fermer tous les panneaux'
+            //lang === 'en' ? expandBtn.innerText = 'Close All Panels' : expandBtn.innerText = 'Fermer tous les panneaux'
         }
         content.classList.contains('show') ?
             content.classList.remove('show') :
@@ -30,16 +34,16 @@ const toggleAccordions = (e) => {
 
 <template>
     <div class="multi-accordion-group" :data-acc-group="`multi_accordion_${randNum - 2}`" hidden>
+        <!-- <button type="button" class="btn ac-btn btn-secondary expandall" aria-expanded="false" @click="toggleAccordions"
+            v-if="lang !== 'fr'">Open All Panels</button> -->
         <button type="button" class="btn ac-btn btn-secondary expandall" aria-expanded="false" @click="toggleAccordions"
-            v-if="lang !== 'fr'">Open All Panels</button>
-        <button type="button" class="btn ac-btn btn-secondary expandall" aria-expanded="false" @click="toggleAccordions"
-            v-else>Ouvrir tous les panneaux</button>
+           >{{ $t("openAll") }}</button>
         <div class="accordion acc-id" :id="`multi_accordion_${randNum - 2}`">
             <div v-for="accordion in accNum" :key="accordion" :data-accordion="accordion" hidden>
                 <div class="card">
                     <div class="card-header" :id="`multi_accordion_heading_${accordion + randNum}`">
                         <h2 class="card-title">
-                            <button class="btn btn-link" data-toggle="collapse" aria-expanded="false"
+                            <button class="btn btn-link" :class="`accordion-${accordion}`" data-toggle="collapse" aria-expanded="false"
                                 :data-target="`#multi_accordion_${accordion + randNum}`"
                                 :aria-controls="`multi_accordion_${accordion + randNum}`"
                                 :data-acc-id="`multi_accordion_${randNum - 2}`">
@@ -62,6 +66,132 @@ const toggleAccordions = (e) => {
 </template>
 
 <style lang="scss" scoped>
+@use '../assets/icons/iconpacks/mixins' as m;
+
+$school-purple: #3F2A56;
+$school-coral: #DA797A;
+$school-grey: #4E5B73;
+
+.accordion-{
+
+    
+    &1 {
+
+        &::before {
+            content: "";
+            display: inline-block; 
+            width: 30px; 
+            height: 30px; 
+            position: relative; 
+            right: 5px; top: 5px;
+            @include m.getcode(csps-logo, $school-grey);
+            background-repeat: no-repeat;
+
+        }
+
+        &[aria-expanded="true"]::before {
+            @include m.getcode(csps-logo, #fff);
+            background-repeat: no-repeat;
+        }
+    }
+    &2 {
+
+        &::before {
+            content: "";
+            display: inline-block; 
+            width: 30px; 
+            height: 30px; 
+            position: relative; 
+            right: 5px; top: 5px;
+            @include m.getcode(learning, $school-grey);
+            background-repeat: no-repeat;
+
+        }
+
+        &[aria-expanded="true"]::before {
+            @include m.getcode(learning, #fff);
+            background-repeat: no-repeat;
+        }
+    }
+    &3 {
+
+        &::before {
+            content: "";
+            display: inline-block; 
+            width: 30px; 
+            height: 30px; 
+            position: relative; 
+            right: 5px; top: 5px;
+            @include m.getcode(assessment, $school-grey);
+            background-repeat: no-repeat;
+
+        }
+
+        &[aria-expanded="true"]::before {
+            @include m.getcode(assessment, #fff);
+            background-repeat: no-repeat;
+        }
+    }
+    &4 {
+
+        &::before {
+            content: "";
+            display: inline-block; 
+            width: 30px; 
+            height: 30px; 
+            position: relative; 
+            right: 5px; top: 5px;
+            @include m.getcode(mental-health, $school-grey);
+            background-repeat: no-repeat;
+
+        }
+
+        &[aria-expanded="true"]::before {
+            @include m.getcode(mental-health, #fff);
+            background-repeat: no-repeat;
+        }
+    }
+    &5 {
+
+        &::before {
+            content: "";
+            display: inline-block; 
+            width: 30px; 
+            height: 30px; 
+            position: relative; 
+            right: 5px; top: 5px;
+            @include m.getcode(urgent, $school-grey);
+            background-repeat: no-repeat;
+
+        }
+
+        &[aria-expanded="true"]::before {
+            @include m.getcode(urgent, #fff);
+            background-repeat: no-repeat;
+        }
+    }
+    &6 {
+
+        &::before {
+            content: "";
+            display: inline-block; 
+            width: 30px; 
+            height: 30px; 
+            position: relative; 
+            right: 5px; top: 5px;
+            @include m.getcode(communities, $school-grey);
+            background-repeat: no-repeat;
+
+        }
+
+        &[aria-expanded="true"]::before {
+            @include m.getcode(communities, #fff);
+            background-repeat: no-repeat;
+        }
+    }
+    
+    
+}
 .expandall {
     font-size: 1.125rem;
     font-weight: 700;
@@ -69,5 +199,6 @@ const toggleAccordions = (e) => {
     padding: 0.625rem 1.5rem 0.625rem;
     line-height: 1.25;
     margin-top: 0.75rem;
+    margin-left: 0.75rem;
 }
 </style>

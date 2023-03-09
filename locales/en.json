@@ -1,0 +1,50 @@
+{
+    "title": "Your Custom Toolkit",
+    "pageTitle": "Custom Toolkit",
+    "heading": "Questionnaire",
+    "interested": "I am interested in...",
+    "langToggle": "Français",
+    "shortToggle": "Fr",
+    "selectAll": "Select all that apply.",
+    "checkboxes": [
+        "Learning products by CSPS",
+        "Learning products by other organizations",
+        "Self-assessment tools",
+        "Events on mental health",
+        "Urgent/immediate help resources",
+        "Resources for specific communities"
+    ],
+    "buttons": {
+        "back": "Back",
+        "next": "Next",
+        "skip": "Skip to the end"
+    },
+    "thankYouPara": [
+        "Thank you for your selection. You may choose to answer a few additional questions to better customize the list of resources to meet your needs.",
+        "Please note that your responses to the questions will only be used to generate a customized list of resources and no responses will be stored by CSPS."
+    ],
+    "whichOfThese": "Which of these options best describes your role?",
+    "roles": [
+        "Employee",
+        "Manager",
+        "Mental Health Professional"
+    ],
+    "identify": "Do you identify as...",
+    "identities": [
+        "a person of colour",
+        "a member of the 2SLGBTQIA+ community",
+        "a person living with a disability"
+    ],
+    "accordionTitles": [
+        "General Resources",
+        "CSPS Learning Products",
+        "Other Learning Products",
+        "Self-assessment Tools",
+        "Events on Mental Health",
+        "Urgent Help Resources",
+        "Resources for Specific Communities"
+    ],
+    "ifInterestedIn": "If you are interested in more resources, please go back to the beginning of the questionnaire and select the items you are interested in.",
+    "openAll" : "Open All Panels"
+
+}
