@@ -94,6 +94,101 @@ $school-grey: #4E5B73;
             background-repeat: no-repeat;
         }
     }
+    &2 {
+
+        &::before {
+            content: "";
+            display: inline-block; 
+            width: 30px; 
+            height: 30px; 
+            position: relative; 
+            right: 5px; top: 5px;
+            @include m.getcode(learning, $school-grey);
+            background-repeat: no-repeat;
+
+        }
+
+        &[aria-expanded="true"]::before {
+            @include m.getcode(learning, #fff);
+            background-repeat: no-repeat;
+        }
+    }
+    &3 {
+
+        &::before {
+            content: "";
+            display: inline-block; 
+            width: 30px; 
+            height: 30px; 
+            position: relative; 
+            right: 5px; top: 5px;
+            @include m.getcode(assessment, $school-grey);
+            background-repeat: no-repeat;
+
+        }
+
+        &[aria-expanded="true"]::before {
+            @include m.getcode(assessment, #fff);
+            background-repeat: no-repeat;
+        }
+    }
+    &4 {
+
+        &::before {
+            content: "";
+            display: inline-block; 
+            width: 30px; 
+            height: 30px; 
+            position: relative; 
+            right: 5px; top: 5px;
+            @include m.getcode(mental-health, $school-grey);
+            background-repeat: no-repeat;
+
+        }
+
+        &[aria-expanded="true"]::before {
+            @include m.getcode(mental-health, #fff);
+            background-repeat: no-repeat;
+        }
+    }
+    &5 {
+
+        &::before {
+            content: "";
+            display: inline-block; 
+            width: 30px; 
+            height: 30px; 
+            position: relative; 
+            right: 5px; top: 5px;
+            @include m.getcode(urgent, $school-grey);
+            background-repeat: no-repeat;
+
+        }
+
+        &[aria-expanded="true"]::before {
+            @include m.getcode(urgent, #fff);
+            background-repeat: no-repeat;
+        }
+    }
+    &6 {
+
+        &::before {
+            content: "";
+            display: inline-block; 
+            width: 30px; 
+            height: 30px; 
+            position: relative; 
+            right: 5px; top: 5px;
+            @include m.getcode(communities, $school-grey);
+            background-repeat: no-repeat;
+
+        }
+
+        &[aria-expanded="true"]::before {
+            @include m.getcode(communities, #fff);
+            background-repeat: no-repeat;
+        }
+    }
     
     
 }
