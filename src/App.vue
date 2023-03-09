@@ -4,7 +4,7 @@
     import { useI18n } from 'vue-i18n';
 
     import { useCycleList, useStorage, useTitle, useUrlSearchParams } from '@vueuse/core';
-    import { onBeforeMount, watch, onMounted } from 'vue';
+    import { onBeforeMount, watch } from 'vue';
 
     const { t, locale, availableLocales } = useI18n()
 
