@@ -6,6 +6,7 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import 'jquery'
 import { createI18n } from 'vue-i18n'
 import './scss/index.scss'
+import './assets/fontawesome-free-5.9.0-web/css/all.min.css'
 
 const i18n = createI18n({
     legacy: true,
