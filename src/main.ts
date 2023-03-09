@@ -8,6 +8,7 @@ import 'jquery'
 import './assets/fontawesome-free-5.9.0-web/css/all.min.css'
 import { createI18n } from 'vue-i18n'
 import messages from '@intlify/unplugin-vue-i18n/messages';
+import './scss/index.scss'
 
 
 import './scss/chat-buble.scss'

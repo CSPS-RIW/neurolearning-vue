@@ -43,7 +43,7 @@ const toggleAccordions = (e) => {
                 <div class="card">
                     <div class="card-header" :id="`multi_accordion_heading_${accordion + randNum}`">
                         <h2 class="card-title">
-                            <button class="btn btn-link" data-toggle="collapse" aria-expanded="false"
+                            <button class="btn btn-link" :class="`accordion-${accordion}`" data-toggle="collapse" aria-expanded="false"
                                 :data-target="`#multi_accordion_${accordion + randNum}`"
                                 :aria-controls="`multi_accordion_${accordion + randNum}`"
                                 :data-acc-id="`multi_accordion_${randNum - 2}`">
@@ -66,6 +66,37 @@ const toggleAccordions = (e) => {
 </template>
 
 <style lang="scss" scoped>
+@use '../assets/icons/iconpacks/mixins' as m;
+
+$school-purple: #3F2A56;
+$school-coral: #DA797A;
+$school-grey: #4E5B73;
+
+.accordion-{
+
+    
+    &1 {
+
+        &::before {
+            content: "";
+            display: inline-block; 
+            width: 30px; 
+            height: 30px; 
+            position: relative; 
+            right: 5px; top: 5px;
+            @include m.getcode(csps-logo, $school-grey);
+            background-repeat: no-repeat;
+
+        }
+
+        &[aria-expanded="true"]::before {
+            @include m.getcode(csps-logo, #fff);
+            background-repeat: no-repeat;
+        }
+    }
+    
+    
+}
 .expandall {
     font-size: 1.125rem;
     font-weight: 700;
@@ -73,5 +104,6 @@ const toggleAccordions = (e) => {
     padding: 0.625rem 1.5rem 0.625rem;
     line-height: 1.25;
     margin-top: 0.75rem;
+    margin-left: 0.75rem;
 }
 </style>
