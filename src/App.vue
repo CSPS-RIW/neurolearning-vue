@@ -5,73 +5,68 @@
 
     import { useCycleList, useStorage, useTitle, useUrlSearchParams } from '@vueuse/core';
     import { onBeforeMount, watch, onMounted } from 'vue';
-    import { browserInfo } from './composables/browser-detect';
 
     const { t, locale, availableLocales } = useI18n()
 
     // Set html lang based on current locale
-const locales = useCycleList(availableLocales)
-let lang = document.querySelector('html')
-// set page title
-const title = useTitle()
-title.value = t('pageTitle')
+    const locales = useCycleList(availableLocales)
+    let lang = document.querySelector('html')
+    // set page title
+    const title = useTitle()
+    title.value = t('pageTitle')
 
-// Set lang in url
-const params = useUrlSearchParams('history')
-// use localstorage as ref
-const preferredLanguage = useStorage('preferred-lang')
-
-
-watch(locales.state, state => {
-  // to chonge locale, add .value because it is a ref
-  locale.value = state
-  lang.setAttribute('lang', state)
-  // change page title
-  title.value = t('pageTitle')
-
-  params.lang = state
-  localStorage.setItem('preferred-lang', `${locale.value}`)
+    // Set lang in url
+    const params = useUrlSearchParams('history')
+    // use localstorage as ref
+    const preferredLanguage = useStorage('preferred-lang')
 
 
-})
+    watch(locales.state, state => {
+      // to chonge locale, add .value because it is a ref
+      locale.value = state
+      lang.setAttribute('lang', state)
+      // change page title
+      title.value = t('pageTitle')
 
-// methods
-const changeLang = () => {
-  locales.next()
-
-}
-
-
-// life cycle hooks
-
-onBeforeMount(() => {
-  let body = document.querySelector('body')
-  let browser = browserInfo.browser
-  browser === 'Chrome' && body.classList.add('chromium')
-  browser === 'Firefox' && body.classList.add('gecko')
-
-  // Allow users to share and receive link with specific lang
-  if (params.lang === 'en') {
-    locale.value = params.lang
-  } else if (params.lang === 'fr') {
-    locale.value = params.lang
-    changeLang()
-  } else {
-    // If user access the link directly, set up preferred language
-    if (preferredLanguage.value === 'en') {
-      params.lang = preferredLanguage.value
-      locale.value = params.lang
-    } else if (preferredLanguage.value === 'fr') {
-      params.lang = preferredLanguage.value
-      locale.value = params.lang
-      changeLang()
-    } else {
+      params.lang = state
       localStorage.setItem('preferred-lang', `${locale.value}`)
-      params.lang = locale.value
-    }
-  }
 
-})
+
+    })
+
+    // methods
+    const changeLang = () => {
+      locales.next()
+
+    }
+
+
+    // life cycle hooks
+
+    onBeforeMount(() => {
+
+      // Allow users to share and receive link with specific lang
+      if (params.lang === 'en') {
+        locale.value = params.lang
+      } else if (params.lang === 'fr') {
+        locale.value = params.lang
+        changeLang()
+      } else {
+        // If user access the link directly, set up preferred language
+        if (preferredLanguage.value === 'en') {
+          params.lang = preferredLanguage.value
+          locale.value = params.lang
+        } else if (preferredLanguage.value === 'fr') {
+          params.lang = preferredLanguage.value
+          locale.value = params.lang
+          changeLang()
+        } else {
+          localStorage.setItem('preferred-lang', `${locale.value}`)
+          params.lang = locale.value
+        }
+      }
+
+    })
 
 
 </script>
