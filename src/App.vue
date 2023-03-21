@@ -47,7 +47,7 @@ title.value = t('pageTitle')
 // Set lang in url
 const params = useUrlSearchParams('history')
 // use localstorage as ref
-const preferredLanguage = useStorage('preferred-lang')
+const preferredLanguage = useStorage('preferred-lang', '')
 
 
 watch(locales.state, state => {
