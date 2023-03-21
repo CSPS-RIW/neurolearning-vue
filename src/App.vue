@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import MultiAccordions from './components/MultiAccordions.vue';
 import SimpleAccordion from './components/SimpleAccordion.vue';
 import { useI18n } from 'vue-i18n';
@@ -53,7 +53,7 @@ const preferredLanguage = useStorage('preferred-lang')
 watch(locales.state, state => {
   // to chonge locale, add .value because it is a ref
   locale.value = state
-  lang.setAttribute('lang', state)
+  lang?.setAttribute('lang', state)
   // change page title
   title.value = t('pageTitle')
 
@@ -70,7 +70,7 @@ const changeLang = () => {
 }
 
 
-function determineAccordionNum(e) {
+function determineAccordionNum(e: any) {
   let decider = e.target.getAttribute('data-accordion-target')
   let accordionArray = Array.from(document.querySelectorAll('.accordion > div'))
   let multiAccGroup = document.querySelector('.multi-accordion-group')
@@ -82,10 +82,10 @@ function determineAccordionNum(e) {
       arr.toggleAttribute('hidden')
       arr.toggleAttribute('checked')
 
-      if (Object.values(question1).some((v) => v === true)) {
-        multiAccGroup.removeAttribute('hidden')
+      if (Object.values(question1).some((v: any) => v === true)) {
+        multiAccGroup?.removeAttribute('hidden')
       } else {
-        multiAccGroup.setAttribute('hidden', '')
+        multiAccGroup?.setAttribute('hidden', '')
       }
 
 
@@ -213,7 +213,7 @@ onBeforeMount(() => {
           </div>
           <div class="questionnaire questionnaire-4" v-if="step === 4">
             <h3 class="text-center"><span v-if="question2.role.length > 0">As
-                {{ this.question2.role }},</span> {{ $t("identify") }}</h3>
+                {{ question2.role }},</span> {{ $t("identify") }}</h3>
             <p><b>{{ $t("selectAll") }}</b></p>
             <form class="options">
               <div>
@@ -231,7 +231,7 @@ onBeforeMount(() => {
             </form>
           </div>
           <div class="customized-toolkit" v-show="step === 5">
-            <SimpleAccordion v-show="Object.values(this.question1).every((v) => v === false)">
+            <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
 
               <template v-slot:AccTitle>
                 {{ $t('accordionTitles[0]') }}
@@ -244,7 +244,7 @@ onBeforeMount(() => {
                 </ul>
               </template>
             </SimpleAccordion>
-            <div class="go-back questionnaire" v-show="Object.values(this.question1).every((v) => v === false)">
+            <div class="go-back questionnaire" v-show="Object.values(question1).every((v: any) => v === false)">
               <p>{{ $t('ifInterestedIn') }}</p>
 
             </div>
