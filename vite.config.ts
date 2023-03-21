@@ -9,11 +9,11 @@ export default defineConfig({
   plugins: [
     vue(),
     VueI18nPlugin({
-			include: resolve(
-				dirname(fileURLToPath(import.meta.url)),
-				'./locales/**'
-			),
-		}),
+      include: resolve(
+        dirname(fileURLToPath(import.meta.url)),
+        './locales/**'
+      ),
+    }),
   ],
   resolve: {
     alias: {
