@@ -82,7 +82,7 @@ function determineAccordionNum(e) {
       arr.toggleAttribute('hidden')
       arr.toggleAttribute('checked')
 
-      if (Object.values(this.question1).some((v) => v === true)) {
+      if (Object.values(question1).some((v) => v === true)) {
         multiAccGroup.removeAttribute('hidden')
       } else {
         multiAccGroup.setAttribute('hidden', '')
@@ -189,7 +189,7 @@ onBeforeMount(() => {
           <div class="questionnaire questionnaire-2" v-if="step === 2">
             <p>{{ $t("thankYouPara[0]") }}</p>
             <p>{{ $t("thankYouPara[1]") }}</p>
-            <button class="btn-regular skip" @click="this.step = 5">{{ t("buttons.skip") }}</button>
+            <button class="btn-regular skip" @click="step = 5">{{ t("buttons.skip") }}</button>
           </div>
           <div class="questionnaire questionnaire-3" v-if="step === 3">
             <p>{{ t("whichOfThese") }}</p>
@@ -329,22 +329,22 @@ onBeforeMount(() => {
         </div>
       </div>
       <div class="nav-buttons">
-        <button class="btn-regular back" @click="step--" :disabled="this.step <= 1">{{ $t('buttons.back')
+        <button class="btn-regular back" @click="step--" :disabled="step <= 1">{{ $t('buttons.back')
         }}</button>
         <div class="progress-tracker">
           <nav role="navigation" aria-label="Toolkit Pagination">
             <ul>
               <li v-for="currentStep in totalSteps" :key="currentStep" class="dot"
-                :class="{ active: this.step === currentStep }">
-                <a href="#" @click="this.step = currentStep" :aria-label="`Go to step ${currentStep}`"
-                  :aria-current="this.step === currentStep">
+                :class="{ active: step === currentStep }">
+                <a href="#" @click="step = currentStep" :aria-label="`Go to step ${currentStep}`"
+                  :aria-current="step === currentStep">
                   {{ currentStep }}
                 </a>
               </li>
             </ul>
           </nav>
         </div>
-        <button class="btn-regular next" @click="step++" :disabled="this.step >= 5">{{ $t('buttons.next') }}</button>
+        <button class="btn-regular next" @click="step++" :disabled="step >= 5">{{ $t('buttons.next') }}</button>
       </div>
     </main>
   </div>
