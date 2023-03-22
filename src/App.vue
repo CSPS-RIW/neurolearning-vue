@@ -300,7 +300,7 @@ onBeforeMount(() => {
           <ul>
             <li v-for="currentStep in totalSteps" :key="currentStep" class="dot"
               :class="{ active: step === currentStep }">
-              <a href="#" @click="step = currentStep" :aria-label="`Go to step ${currentStep}`"
+              <a href="#" @click.prevent="step = currentStep" :aria-label="`Go to step ${currentStep}`"
                 :aria-current="step === currentStep">
                 {{ currentStep }}
               </a>
@@ -317,7 +317,7 @@ onBeforeMount(() => {
             <ul>
               <li v-for="currentStep in totalSteps" :key="currentStep" class="dot"
                 :class="{ active: step === currentStep }">
-                <a href="#" @click="step = currentStep" :aria-label="`Go to step ${currentStep}`"
+                <a href="#" @click.prevent="step = currentStep" :aria-label="`Go to step ${currentStep}`"
                   :aria-current="step === currentStep">
                   {{ currentStep }}
                 </a>
