@@ -45,44 +45,21 @@ let currLang = lang?.getAttribute('lang')
 const title = useTitle()
 title.value = t('pageTitle')
 
-// Set lang in url
-const params = useUrlSearchParams('history')
-// use localstorage as ref
-// const preferredLanguage = useStorage('preferred-lang', currLang)
-// set lang based on html lang
-// if (currLang === 'fr') {
-//   locale.value = currLang
-//   lang?.setAttribute('lang', currLang)
-// } else if (currLang === 'en') {
-//   locale.value = currLang
-//   lang?.setAttribute('lang', currLang)
-// }
 
 watch(locales.state, state => {
   // to chonge locale, add .value because it is a ref
-
-  if (currLang === 'fr') {
-    locale.value = 'fr'
-    lang?.setAttribute('lang', 'fr')
-    changeLang()
-  } else {
-    locale.value = state
-    lang?.setAttribute('lang', state)
-
-  }
+  locale.value = state
+  lang?.setAttribute('lang', state)
   // change page title
   title.value = t('pageTitle')
 
-  params.lang = state
-  // localStorage.setItem('preferred-lang', `${locale.value}`)
-
-
+  changeLang()
 
 })
 
 // methods
 function changeLang() {
-  locales.next()
+  locale.value !== 'en' ? locale.value = 'en' : locale.value = 'fr'
 
 }
 
