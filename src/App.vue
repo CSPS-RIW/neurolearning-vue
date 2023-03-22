@@ -1,13 +1,12 @@
 <script setup lang="ts">
+import { useCycleList, useTitle } from '@vueuse/core';
+import { onBeforeMount, reactive, ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 import MultiAccordions from './components/MultiAccordions.vue';
 import SimpleAccordion from './components/SimpleAccordion.vue';
-import { useI18n } from 'vue-i18n';
-import { useCycleList, useStorage, useTitle, useUrlSearchParams } from '@vueuse/core';
-import { onBeforeMount, watch, ref, reactive } from 'vue';
 
 const step = ref(1)
 const totalSteps = ref(5)
-const accordionNum = ref(0)
 
 const question1 = reactive(
   {
