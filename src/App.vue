@@ -50,30 +50,38 @@ const params = useUrlSearchParams('history')
 // use localstorage as ref
 // const preferredLanguage = useStorage('preferred-lang', currLang)
 // set lang based on html lang
+// if (currLang === 'fr') {
+//   locale.value = currLang
+//   lang?.setAttribute('lang', currLang)
+// } else if (currLang === 'en') {
+//   locale.value = currLang
+//   lang?.setAttribute('lang', currLang)
+// }
 
 watch(locales.state, state => {
   // to chonge locale, add .value because it is a ref
-  // locale.value = state
-  // lang?.setAttribute('lang', state)
+
+  if (currLang === 'fr') {
+    locale.value = 'fr'
+    lang?.setAttribute('lang', 'fr')
+    changeLang()
+  } else {
+    locale.value = state
+    lang?.setAttribute('lang', state)
+
+  }
   // change page title
   title.value = t('pageTitle')
 
   params.lang = state
   // localStorage.setItem('preferred-lang', `${locale.value}`)
-  if (currLang === state) {
-    locale.value = 'en'
-    lang?.setAttribute('lang', 'en')
-  } else {
-    locale.value = 'fr'
-    lang?.setAttribute('lang', 'fr')
 
-  }
 
 
 })
 
 // methods
-const changeLang = () => {
+function changeLang() {
   locales.next()
 
 }
@@ -106,30 +114,30 @@ function determineAccordionNum(e: any) {
 
 // life cycle hooks
 
-// onBeforeMount(() => {
+onBeforeMount(() => {
 
-//   // Allow users to share and receive link with specific lang
-//   if (params.lang === 'en') {
-//     locale.value = params.lang
-//   } else if (params.lang === 'fr') {
-//     locale.value = params.lang
-//     changeLang()
-//   } else {
-//     // If user access the link directly, set up preferred language
-//     if (preferredLanguage.value === 'en') {
-//       params.lang = preferredLanguage.value
-//       locale.value = params.lang
-//     } else if (preferredLanguage.value === 'fr') {
-//       params.lang = preferredLanguage.value
-//       locale.value = params.lang
-//       changeLang()
-//     } else {
-//       localStorage.setItem('preferred-lang', `${locale.value}`)
-//       params.lang = locale.value
-//     }
-//   }
+  //   // Allow users to share and receive link with specific lang
+  //   if (params.lang === 'en') {
+  //     locale.value = params.lang
+  //   } else if (params.lang === 'fr') {
+  //     locale.value = params.lang
+  //     changeLang()
+  //   } else {
+  //     // If user access the link directly, set up preferred language
+  //     if (preferredLanguage.value === 'en') {
+  //       params.lang = preferredLanguage.value
+  //       locale.value = params.lang
+  //     } else if (preferredLanguage.value === 'fr') {
+  //       params.lang = preferredLanguage.value
+  //       locale.value = params.lang
+  //       changeLang()
+  //     } else {
+  //       localStorage.setItem('preferred-lang', `${locale.value}`)
+  //       params.lang = locale.value
+  //     }
+  //   }
 
-// })
+})
 
 
 </script>
