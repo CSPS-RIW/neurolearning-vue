@@ -43,23 +43,24 @@ let lang = document.querySelector('html')
 let currLang = lang?.getAttribute('lang')
 // set page title
 const title = useTitle()
-title.value = t('pageTitle')
 
 
-watch(locales.state, state => {
-  // to chonge locale, add .value because it is a ref
-  locale.value = state
-  lang?.setAttribute('lang', state)
-  // change page title
-  title.value = t('pageTitle')
 
-  changeLang()
 
-})
+// watch(locales.state, state => {
+//   // to chonge locale, add .value because it is a ref
+//   locale.value = state
+//   lang?.setAttribute('lang', state)
+//   // change page title
+//   title.value = t('pageTitle')
+// })
 
 // methods
 function changeLang() {
   locale.value !== 'en' ? locale.value = 'en' : locale.value = 'fr'
+  lang?.setAttribute('lang', locale.value)
+  title.value = t('pageTitle')
+  console.log('change')
 
 }
 
@@ -92,27 +93,12 @@ function determineAccordionNum(e: any) {
 // life cycle hooks
 
 onBeforeMount(() => {
+  if (currLang) {
+    locale.value = currLang
+    lang?.setAttribute('lang', locale.value)
+    title.value = t('pageTitle')
 
-  //   // Allow users to share and receive link with specific lang
-  //   if (params.lang === 'en') {
-  //     locale.value = params.lang
-  //   } else if (params.lang === 'fr') {
-  //     locale.value = params.lang
-  //     changeLang()
-  //   } else {
-  //     // If user access the link directly, set up preferred language
-  //     if (preferredLanguage.value === 'en') {
-  //       params.lang = preferredLanguage.value
-  //       locale.value = params.lang
-  //     } else if (preferredLanguage.value === 'fr') {
-  //       params.lang = preferredLanguage.value
-  //       locale.value = params.lang
-  //       changeLang()
-  //     } else {
-  //       localStorage.setItem('preferred-lang', `${locale.value}`)
-  //       params.lang = locale.value
-  //     }
-  //   }
+  }
 
 })
 
