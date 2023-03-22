@@ -10,9 +10,9 @@
 
     <organizations default="NEUROORG">
         <organization identifier="NEUROORG">
-            <title>Brightspace SCORM Page Template</title>
+            <title>Kit de ressources personnalisé</title>
             <item identifier="Neuro_I01" identifierref="Neuro_S01" isvisible="true">
-                <title>Brightspace SCORM Page Template</title>
+                <title>Kit de ressources personnalisé</title>
                 <metadata>
                     <schema>ADL SCORM</schema>
                     <schemaversion>1.2</schemaversion>
