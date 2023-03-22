@@ -88,6 +88,9 @@ onBeforeMount(() => {
 
 })
 
+if (import.meta.env.PROD) {
+  doLMSInitialize()
+}
 
 </script>
 <template>
