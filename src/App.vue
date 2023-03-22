@@ -328,10 +328,24 @@ onBeforeMount(() => {
           </div>
         </div>
       </div>
+      <div class="progress-tracker mobile">
+          <nav role="navigation" aria-label="Toolkit Pagination">
+            <ul>
+              <li v-for="currentStep in totalSteps" :key="currentStep" class="dot"
+                :class="{ active: step === currentStep }">
+                <a href="#" @click="step = currentStep" :aria-label="`Go to step ${currentStep}`"
+                  :aria-current="step === currentStep">
+                  {{ currentStep }}
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       <div class="nav-buttons">
+        
         <button class="btn-regular back" @click="step--" :disabled="step <= 1">{{ $t('buttons.back')
         }}</button>
-        <div class="progress-tracker">
+        <div class="progress-tracker tablet">
           <nav role="navigation" aria-label="Toolkit Pagination">
             <ul>
               <li v-for="currentStep in totalSteps" :key="currentStep" class="dot"
