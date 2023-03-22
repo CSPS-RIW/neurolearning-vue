@@ -88,8 +88,10 @@ onBeforeMount(() => {
 
 })
 
+// initialize scorm if in production
 if (import.meta.env.PROD) {
   doLMSInitialize()
+  console.log('prod: ' + import.meta.env.PROD)
 }
 
 </script>
