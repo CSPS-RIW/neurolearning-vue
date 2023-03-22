@@ -45,23 +45,11 @@ let currLang = lang?.getAttribute('lang')
 const title = useTitle()
 
 
-
-
-// watch(locales.state, state => {
-//   // to chonge locale, add .value because it is a ref
-//   locale.value = state
-//   lang?.setAttribute('lang', state)
-//   // change page title
-//   title.value = t('pageTitle')
-// })
-
 // methods
 function changeLang() {
   locale.value !== 'en' ? locale.value = 'en' : locale.value = 'fr'
   lang?.setAttribute('lang', locale.value)
   title.value = t('pageTitle')
-  console.log('change')
-
 }
 
 
@@ -97,7 +85,6 @@ onBeforeMount(() => {
     locale.value = currLang
     lang?.setAttribute('lang', locale.value)
     title.value = t('pageTitle')
-
   }
 
 })
