@@ -178,17 +178,22 @@ background-attachment: fixed;
         }
         
 
-        &:hover,
-        &:focus {
+        &:hover {
             background-color: $school-purple;
             color: #fff;
-            outline: 2px solid $school-coral;
-
             &:disabled {
                 background-color: grey;
                 //color: $school-purple;
                 outline: none;
             }
+        }
+        &:focus {
+            
+            //outline: 2px solid $school-coral;
+            border-color: #fff;
+            box-shadow: 0 0 0 1px #006fbf;
+
+            
         }
 
         &:disabled {
@@ -197,23 +202,20 @@ background-attachment: fixed;
 
         &.skip {
             background-color: #EEEEEE;
-            color: #3F2A56;
+            color: #222;
             width: 100%;
 
             &:hover,
             &:focus {
-                background-color: $school-purple;
+                background-color: $school-grey;
                 color: #fff;
                 outline: 1px solid #fff;
             }
         }
 
-        @media (min-width: 500px) {
-            padding: 0.3rem 2.75rem;
-        }
-
         @media (min-width: 720px) {
-            padding: 0.3rem 3rem;
+            width: auto;
+            padding: 0.3rem 1.5rem;
 
             &:nth-child(1) {
                 margin-bottom: 0rem;
@@ -295,7 +297,7 @@ background-attachment: fixed;
     }
 
     a.lang-toggle {
-        color: $school-purple;
+        color: #222;
         background-color: #EEEEEE;
         border: 1px solid #636363;
         font-weight: bold;
@@ -305,8 +307,24 @@ background-attachment: fixed;
         transition: background-color 0.2s;
 
         &:hover, &:focus {
-            background-color: $school-purple;
+            background-color: $school-grey;
             color: #EEEEEE;
             outline: 2px solid #EEEEEE;
         }
+    }
+
+    .card {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: 0.25rem;
+        max-width: 700px;
+        margin: auto;
     }
