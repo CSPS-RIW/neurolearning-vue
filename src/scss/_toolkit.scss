@@ -178,17 +178,22 @@ background-attachment: fixed;
         }
         
 
-        &:hover,
-        &:focus {
+        &:hover {
             background-color: $school-purple;
             color: #fff;
-            outline: 2px solid $school-coral;
-
             &:disabled {
                 background-color: grey;
                 //color: $school-purple;
                 outline: none;
             }
+        }
+        &:focus {
+            
+            //outline: 2px solid $school-coral;
+            border-color: #fff;
+            box-shadow: 0 0 0 1px #006fbf;
+
+            
         }
 
         &:disabled {
@@ -197,12 +202,12 @@ background-attachment: fixed;
 
         &.skip {
             background-color: #EEEEEE;
-            color: #3F2A56;
+            color: #222;
             width: 100%;
 
             &:hover,
             &:focus {
-                background-color: $school-purple;
+                background-color: $school-grey;
                 color: #fff;
                 outline: 1px solid #fff;
             }
