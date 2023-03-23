@@ -297,7 +297,7 @@ background-attachment: fixed;
     }
 
     a.lang-toggle {
-        color: $school-purple;
+        color: #222;
         background-color: #EEEEEE;
         border: 1px solid #636363;
         font-weight: bold;
@@ -307,7 +307,7 @@ background-attachment: fixed;
         transition: background-color 0.2s;
 
         &:hover, &:focus {
-            background-color: $school-purple;
+            background-color: $school-grey;
             color: #EEEEEE;
             outline: 2px solid #EEEEEE;
         }
