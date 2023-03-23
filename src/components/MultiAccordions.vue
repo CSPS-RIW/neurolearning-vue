@@ -87,100 +87,104 @@ $school-grey: #4E5B73;
     }
 
     &::after {
-        left: auto !important;
-        right: 1.5rem;
+        //left: auto !important;
+        left: 1.5rem;
     }
 }
 
-.accordion- {
+// .accordion- {
 
 
-    &1 {
+//     &1 {
 
-        &::before {
+//         &::before {
 
-            @include m.getcode(csps-logo, $school-grey);
+//             @include m.getcode(csps-logo, $school-grey);
 
-        }
+//         }
 
-        &[aria-expanded="true"]::before {
-            @include m.getcode(csps-logo, #fff);
-        }
-    }
+//         &[aria-expanded="true"]::before {
+//             @include m.getcode(csps-logo, #fff);
+//         }
+//     }
 
-    &2 {
+//     &2 {
 
-        &::before {
+//         &::before {
 
-            @include m.getcode(learning, $school-grey);
-            background-repeat: no-repeat;
+//             @include m.getcode(learning, $school-grey);
+//             background-repeat: no-repeat;
 
-        }
+//         }
 
-        &[aria-expanded="true"]::before {
-            @include m.getcode(learning, #fff);
-        }
-    }
+//         &[aria-expanded="true"]::before {
+//             @include m.getcode(learning, #fff);
+//         }
+//     }
 
-    &3 {
+//     &3 {
 
-        &::before {
+//         &::before {
 
-            @include m.getcode(assessment, $school-grey);
-            background-repeat: no-repeat;
+//             @include m.getcode(assessment, $school-grey);
+//             background-repeat: no-repeat;
 
-        }
+//         }
 
-        &[aria-expanded="true"]::before {
-            @include m.getcode(assessment, #fff);
-        }
-    }
+//         &[aria-expanded="true"]::before {
+//             @include m.getcode(assessment, #fff);
+//         }
+//     }
 
-    &4 {
+//     &4 {
 
-        &::before {
+//         &::before {
 
-            @include m.getcode(mental-health, $school-grey);
-            background-repeat: no-repeat;
+//             @include m.getcode(mental-health, $school-grey);
+//             background-repeat: no-repeat;
 
-        }
+//         }
 
-        &[aria-expanded="true"]::before {
-            @include m.getcode(mental-health, #fff);
-        }
-    }
+//         &[aria-expanded="true"]::before {
+//             @include m.getcode(mental-health, #fff);
+//         }
+//     }
 
-    &5 {
+//     &5 {
 
-        &::before {
+//         &::before {
 
-            @include m.getcode(urgent, $school-grey);
-            background-repeat: no-repeat;
+//             @include m.getcode(urgent, $school-grey);
+//             background-repeat: no-repeat;
 
-        }
+//         }
 
-        &[aria-expanded="true"]::before {
-            @include m.getcode(urgent, #fff);
-        }
-    }
+//         &[aria-expanded="true"]::before {
+//             @include m.getcode(urgent, #fff);
+//         }
+//     }
 
-    &6 {
+//     &6 {
 
-        &::before {
+//         &::before {
 
-            @include m.getcode(communities, $school-grey);
-            background-repeat: no-repeat;
+//             @include m.getcode(communities, $school-grey);
+//             background-repeat: no-repeat;
 
-        }
+//         }
 
-        &[aria-expanded="true"]::before {
-            @include m.getcode(communities, #fff);
-        }
-    }
+//         &[aria-expanded="true"]::before {
+//             @include m.getcode(communities, #fff);
+//         }
+//     }
 
 
+// }
+
+//only if no icons
+.accordion :not(.card-standard):not(.card-graphic).card .card-title button {
+    padding-left: 1.5rem;
 }
-
 .expandall {
     font-size: 1.125rem;
     font-weight: 700;

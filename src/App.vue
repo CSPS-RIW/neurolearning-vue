@@ -205,15 +205,15 @@ onBeforeMount(() => {
                     <li>Mental Health Continuum Self-Check that can help us to identify how we are doing and when there is a need for support. </li>
                   </ul>
                   <ul class="fr" v-show="locale === 'fr'">
-                    <li>- L'Association canadienne pour la santé mentale est une organisation nationale qui promeut la santé mentale et soutient les personnes qui se rétablissent d'une maladie mentale.</li>
-                    <li>- Crisis Services Canada offre un service gratuit de prévention du suicide 24 heures sur 24, 7 jours sur 7, tout au long de l'année, en composant le 1-833-456-4566. Que vous souffriez d'une perte, que vous vous inquiétiez pour quelqu'un qui pourrait avoir des pensées suicidaires ou que vous ayez vous-même des pensées suicidaires, des intervenants hautement qualifiés peuvent vous apporter leur soutien.</li>
-                    <li>- Jeunesse, J'écoute est un service national accessible 24 heures sur 24, 7 jours sur 7, qui offre aux jeunes des conseils professionnels, des informations, des orientations et un soutien textuel assuré par des bénévoles, en anglais et en français.</li>
-                    <li>- ShelterSafe.ca est une ressource en ligne pour les femmes et leurs enfants qui cherchent à se protéger de la violence et des abus.</li>
-                    <li>- La page Web sur l'intimidation fournit des informations sur la façon de reconnaître et de prévenir l'intimidation, ainsi que des ressources sur la prévention de l'intimidation.</li>
-                    <li>- La page Web sur la violence et les abus fournit des informations sur la violence et les abus, leur prévention et la manière d'obtenir de l'aide si vous êtes victime d'abus.</li>
-                    <li>- Wellness Together Canada propose des conseils par téléphone, par vidéo et par texto, des informations et des vidéos sur les problèmes courants de santé mentale et de toxicomanie, des programmes de bien-être, ainsi qu'un soutien communautaire et par les pairs.</li>
-                    <li>- La Commission de la santé mentale du Canada dirige l'élaboration et la diffusion de programmes et d'outils novateurs destinés à favoriser la santé mentale et le bien-être des Canadiens.</li>
-                    <li>- Autocontrôle du continuum de la santé mentale, qui peut nous aider à identifier notre situation et à déterminer si nous avons besoin d'aide.</li>
+                    <li>L'Association canadienne pour la santé mentale est une organisation nationale qui promeut la santé mentale et soutient les personnes qui se rétablissent d'une maladie mentale.</li>
+                    <li>Crisis Services Canada offre un service gratuit de prévention du suicide 24 heures sur 24, 7 jours sur 7, tout au long de l'année, en composant le 1-833-456-4566. Que vous souffriez d'une perte, que vous vous inquiétiez pour quelqu'un qui pourrait avoir des pensées suicidaires ou que vous ayez vous-même des pensées suicidaires, des intervenants hautement qualifiés peuvent vous apporter leur soutien.</li>
+                    <li>Jeunesse, J'écoute est un service national accessible 24 heures sur 24, 7 jours sur 7, qui offre aux jeunes des conseils professionnels, des informations, des orientations et un soutien textuel assuré par des bénévoles, en anglais et en français.</li>
+                    <li>ShelterSafe.ca est une ressource en ligne pour les femmes et leurs enfants qui cherchent à se protéger de la violence et des abus.</li>
+                    <li>La page Web sur l'intimidation fournit des informations sur la façon de reconnaître et de prévenir l'intimidation, ainsi que des ressources sur la prévention de l'intimidation.</li>
+                    <li>La page Web sur la violence et les abus fournit des informations sur la violence et les abus, leur prévention et la manière d'obtenir de l'aide si vous êtes victime d'abus.</li>
+                    <li>Wellness Together Canada propose des conseils par téléphone, par vidéo et par texto, des informations et des vidéos sur les problèmes courants de santé mentale et de toxicomanie, des programmes de bien-être, ainsi qu'un soutien communautaire et par les pairs.</li>
+                    <li>La Commission de la santé mentale du Canada dirige l'élaboration et la diffusion de programmes et d'outils novateurs destinés à favoriser la santé mentale et le bien-être des Canadiens.</li>
+                    <li>Autocontrôle du continuum de la santé mentale, qui peut nous aider à identifier notre situation et à déterminer si nous avons besoin d'aide.</li>
                   </ul>
                 </template>
               </SimpleAccordion>
