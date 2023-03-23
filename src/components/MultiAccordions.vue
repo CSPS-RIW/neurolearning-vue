@@ -35,16 +35,16 @@ const toggleAccordions = (e) => {
 <template>
     <div class="multi-accordion-group" :data-acc-group="`multi_accordion_${randNum - 2}`" hidden>
         <!-- <button type="button" class="btn ac-btn btn-secondary expandall" aria-expanded="false" @click="toggleAccordions"
-            v-if="lang !== 'fr'">Open All Panels</button> -->
-        <button type="button" class="btn ac-btn btn-secondary expandall" aria-expanded="false" @click="toggleAccordions"
-           >{{ $t("openAll") }}</button>
+                                            v-if="lang !== 'fr'">Open All Panels</button> -->
+        <button type="button" class="btn ac-btn btn-secondary expandall" aria-expanded="false" @click="toggleAccordions">{{
+            $t("openAll") }}</button>
         <div class="accordion acc-id" :id="`multi_accordion_${randNum - 2}`">
             <div v-for="accordion in accNum" :key="accordion" :data-accordion="accordion" hidden>
                 <div class="card">
                     <div class="card-header" :id="`multi_accordion_heading_${accordion + randNum}`">
                         <h2 class="card-title">
-                            <button class="btn btn-link" :class="`accordion-${accordion}`" data-toggle="collapse" aria-expanded="false"
-                                :data-target="`#multi_accordion_${accordion + randNum}`"
+                            <button class="btn btn-link" :class="`accordion-${accordion}`" data-toggle="collapse"
+                                aria-expanded="false" :data-target="`#multi_accordion_${accordion + randNum}`"
                                 :aria-controls="`multi_accordion_${accordion + randNum}`"
                                 :data-acc-id="`multi_accordion_${randNum - 2}`">
                                 <slot :name="`AccTitle-${accordion}`" />
@@ -72,37 +72,46 @@ $school-purple: #3F2A56;
 $school-coral: #DA797A;
 $school-grey: #4E5B73;
 
-.accordion-{
 
-    
+.card-title button {
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        right: 1.5rem;
+        top: 5px;
+        background-repeat: no-repeat;
+
+    }
+
+    &::after {
+        left: auto !important;
+        right: 1.5rem;
+    }
+}
+
+.accordion- {
+
+
     &1 {
 
         &::before {
-            content: "";
-            display: inline-block; 
-            width: 30px; 
-            height: 30px; 
-            position: relative; 
-            right: 5px; top: 5px;
+
             @include m.getcode(csps-logo, $school-grey);
-            background-repeat: no-repeat;
 
         }
 
         &[aria-expanded="true"]::before {
             @include m.getcode(csps-logo, #fff);
-            background-repeat: no-repeat;
         }
     }
+
     &2 {
 
         &::before {
-            content: "";
-            display: inline-block; 
-            width: 30px; 
-            height: 30px; 
-            position: relative; 
-            right: 5px; top: 5px;
+
             @include m.getcode(learning, $school-grey);
             background-repeat: no-repeat;
 
@@ -110,18 +119,13 @@ $school-grey: #4E5B73;
 
         &[aria-expanded="true"]::before {
             @include m.getcode(learning, #fff);
-            background-repeat: no-repeat;
         }
     }
+
     &3 {
 
         &::before {
-            content: "";
-            display: inline-block; 
-            width: 30px; 
-            height: 30px; 
-            position: relative; 
-            right: 5px; top: 5px;
+
             @include m.getcode(assessment, $school-grey);
             background-repeat: no-repeat;
 
@@ -129,18 +133,13 @@ $school-grey: #4E5B73;
 
         &[aria-expanded="true"]::before {
             @include m.getcode(assessment, #fff);
-            background-repeat: no-repeat;
         }
     }
+
     &4 {
 
         &::before {
-            content: "";
-            display: inline-block; 
-            width: 30px; 
-            height: 30px; 
-            position: relative; 
-            right: 5px; top: 5px;
+
             @include m.getcode(mental-health, $school-grey);
             background-repeat: no-repeat;
 
@@ -148,18 +147,13 @@ $school-grey: #4E5B73;
 
         &[aria-expanded="true"]::before {
             @include m.getcode(mental-health, #fff);
-            background-repeat: no-repeat;
         }
     }
+
     &5 {
 
         &::before {
-            content: "";
-            display: inline-block; 
-            width: 30px; 
-            height: 30px; 
-            position: relative; 
-            right: 5px; top: 5px;
+
             @include m.getcode(urgent, $school-grey);
             background-repeat: no-repeat;
 
@@ -167,18 +161,13 @@ $school-grey: #4E5B73;
 
         &[aria-expanded="true"]::before {
             @include m.getcode(urgent, #fff);
-            background-repeat: no-repeat;
         }
     }
+
     &6 {
 
         &::before {
-            content: "";
-            display: inline-block; 
-            width: 30px; 
-            height: 30px; 
-            position: relative; 
-            right: 5px; top: 5px;
+
             @include m.getcode(communities, $school-grey);
             background-repeat: no-repeat;
 
@@ -186,12 +175,12 @@ $school-grey: #4E5B73;
 
         &[aria-expanded="true"]::before {
             @include m.getcode(communities, #fff);
-            background-repeat: no-repeat;
         }
     }
-    
-    
+
+
 }
+
 .expandall {
     font-size: 1.125rem;
     font-weight: 700;
