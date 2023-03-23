@@ -27,7 +27,7 @@
     "roles": [
         "Employee",
         "Manager",
-        "Mental Health Professional"
+        "Executive"
     ],
     "identify": "Do you identify as...",
     "identities": [
@@ -36,11 +36,11 @@
         "a person living with a disability"
     ],
     "accordionTitles": [
-        "General Resources",
-        "Indigenous Resources",
-        "2SLGBTQI+ Resources",
-        "Public Servant Resources",
-        "CSPS Resources"
+        "General mental health and well-being resources",
+        "Indigenous resources for mental health and well-being",
+        "Resources for 2SLGBTQI+ support",
+        "Resources specific to public servants",
+        "Resources from Canada School of Public Service"
     ],
     "ifInterestedIn": "If you are interested in more resources, please go back to the beginning of the questionnaire and select the items you are interested in.",
     "openAll" : "Open All Panels"

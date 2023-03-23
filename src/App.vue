@@ -6,7 +6,7 @@ import MultiAccordions from './components/MultiAccordions.vue';
 import SimpleAccordion from './components/SimpleAccordion.vue';
 
 const step = ref(1)
-const totalSteps = ref(5)
+const totalSteps = ref(4)
 const activityStart = ref(false)
 
 const question1 = reactive(
@@ -161,7 +161,7 @@ onBeforeMount(() => {
             <div class="questionnaire questionnaire-2" v-if="step === 2">
               <p>{{ $t("thankYouPara[0]") }}</p>
               <p>{{ $t("thankYouPara[1]") }}</p>
-              <button class="btn-regular skip" @click="step = 5">{{ t("buttons.skip") }}</button>
+              <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
             </div>
             <div class="questionnaire questionnaire-3" v-if="step === 3">
               <p>{{ t("whichOfThese") }}</p>
@@ -177,32 +177,13 @@ onBeforeMount(() => {
                   <label for="manager">{{ t("roles[1]") }}</label>
                 </div>
                 <div>
-                  <input type="radio" name="option" id="mental-health" aria-label="mental health professional"
+                  <input type="radio" name="option" id="executive" aria-label="executive"
                     value="a mental health professional" v-model="question2.role">
-                  <label for="mental-health">{{ t("roles[2]") }}</label>
+                  <label for="executive">{{ t("roles[2]") }}</label>
                 </div>
               </form>
             </div>
-            <div class="questionnaire questionnaire-4" v-if="step === 4">
-              <h3 class="text-center"><span v-if="question2.role.length > 0">As
-                  {{ question2.role }},</span> {{ $t("identify") }}</h3>
-              <p><b>{{ $t("selectAll") }}</b></p>
-              <form class="options">
-                <div>
-                  <input type="checkbox" name="option" id="POC" v-model="question3.poc">
-                  <label for="POC">{{ $t("identities[0]") }}</label>
-                </div>
-                <div>
-                  <input type="checkbox" name="option" id="LGBT" v-model="question3.lgbt">
-                  <label for="LGBT">{{ $t("identities[1]") }}</label>
-                </div>
-                <div>
-                  <input type="checkbox" name="option" id="mental-health" v-model="question3.disability">
-                  <label for="mental-health">{{ $t("identities[2]") }}</label>
-                </div>
-              </form>
-            </div>
-            <div class="customized-toolkit" v-show="step === 5">
+            <div class="customized-toolkit" v-show="step === 4">
               <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
         
                 <template v-slot:AccTitle>
@@ -298,7 +279,7 @@ onBeforeMount(() => {
               </ul>
             </nav>
           </div>
-          <button class="btn-regular next" @click="step++" :disabled="step >= 5">{{ $t('buttons.next') }}</button>
+          <button class="btn-regular next" @click="step++" :disabled="step >= 4">{{ $t('buttons.next') }}</button>
         </div>
       </div>
     </main>
