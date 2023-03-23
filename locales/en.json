@@ -8,12 +8,11 @@
     "shortToggle": "Fr",
     "selectAll": "Please select one or more of the options below to get a list of some useful resources, categorized according to your selection.",
     "checkboxes": [
-        "Learning products by CSPS",
-        "Learning products by other organizations",
-        "Self-assessment tools",
-        "Events on mental health",
-        "Urgent/immediate help resources",
-        "Resources for specific communities"
+        "General mental health and well-being resources",
+        "Indigenous resources for mental health and well-being",
+        "Resources for 2SLGBTQI+ support",
+        "Resources specific to public servants",
+        "Resources from Canada School of Public Service"
     ],
     "buttons": {
         "back": "Back",
@@ -38,12 +37,10 @@
     ],
     "accordionTitles": [
         "General Resources",
-        "CSPS Learning Products",
-        "Other Learning Products",
-        "Self-assessment Tools",
-        "Events on Mental Health",
-        "Urgent Help Resources",
-        "Resources for Specific Communities"
+        "Indigenous Resources",
+        "2SLGBTQI+ Resources",
+        "Public Servant Resources",
+        "CSPS Resources"
     ],
     "ifInterestedIn": "If you are interested in more resources, please go back to the beginning of the questionnaire and select the items you are interested in.",
     "openAll" : "Open All Panels"

@@ -8,12 +8,11 @@
     "shortToggle": "En",
     "selectAll": "Veuillez sélectionner une ou plusieurs des options ci-dessous pour obtenir une liste de ressources utiles, classées en fonction de votre sélection.",
     "checkboxes": [
-        "Les produits d'apprentissage de l'EFPC",
-        "Les produits d'apprentissage d'autres organisations",
-        "Outils d'auto-évaluation",
-        "Événements sur la santé mentale",
-        "Ressources d'aide urgente/immédiate",
-        "Ressources pour des communautés spécifiques"
+        "Ressources générales sur la santé mentale et le bien-être",
+        "Ressources indigènes pour la santé mentale et le bien-être",
+        "Ressources pour le soutien aux 2SLGBTQI+",
+        "Ressources spécifiques aux fonctionnaires",
+        "Ressources de l'École de la fonction publique du Canada"
     ],
     "buttons": {
         "back": "Précédent",
@@ -38,12 +37,10 @@
     ],
     "accordionTitles": [
         "Ressources générales",
-        "Les produits d'apprentissage de l'EFPC",
-        "Les produits d'apprentissage d'autres organisations",
-        "Outils d'auto-évaluation",
-        "Événements sur la santé mentale",
-        "Ressources d'aide urgente",
-        "Ressources pour des communautés spécifiques"
+        "Ressources indigènes",
+        "Ressources 2SLGBTQI+",
+        "Ressources pour les fonctionnaires",
+        "Ressources de l'EFPC"
     ],
     "ifInterestedIn": "Si vous êtes intéressé par d'autres ressources, veuillez revenir au début du questionnaire et sélectionner les éléments qui vous intéressent.",
     "openAll" : "Ouvrir tous les panneaux"

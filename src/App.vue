@@ -11,12 +11,11 @@ const activityStart = ref(false)
 
 const question1 = reactive(
   {
-    cspslearning: false,
-    otherlearning: false,
-    selfid: false,
-    events: false,
-    urgenthelp: false,
-    communities: false
+    general: false,
+    indigenous: false,
+    lgbt: false,
+    publicServants: false,
+    csps: false
   }
 )
 
@@ -133,34 +132,29 @@ onBeforeMount(() => {
               
               <form class="options">
                 <div>
-                  <input type="checkbox" class="decider" name="csps-learning-products" id="csps-learning-products"
-                    v-model="question1.cspslearning" @change="determineAccordionNum" data-accordion-target="1">
-                  <label for="csps-learning-products">{{ t("checkboxes[0]") }}</label>
+                  <input type="checkbox" class="decider" name="general-resources" id="general-resources"
+                    v-model="question1.general" @change="determineAccordionNum" data-accordion-target="1">
+                  <label for="general-resources">{{ t("checkboxes[0]") }}</label>
                 </div>
                 <div>
-                  <input type="checkbox" class="decider" name="other-learning-products" id="other-learning-products"
-                    v-model="question1.otherlearning" @change="determineAccordionNum" data-accordion-target="2">
-                  <label for="other-learning-products">{{ t("checkboxes[1]") }}</label>
+                  <input type="checkbox" class="decider" name="indigenous-resources" id="indigenous-resources"
+                    v-model="question1.indigenous" @change="determineAccordionNum" data-accordion-target="2">
+                  <label for="indigenous-resources">{{ t("checkboxes[1]") }}</label>
                 </div>
                 <div>
-                  <input type="checkbox" class="decider" name="self-id" id="self-id" v-model="question1.selfid"
+                  <input type="checkbox" class="decider" name="lgbt-support" id="lgbt-support" v-model="question1.lgbt"
                     @change="determineAccordionNum" data-accordion-target="3">
-                  <label for="self-id">{{ t("checkboxes[2]") }}</label>
+                  <label for="lgbt-support">{{ t("checkboxes[2]") }}</label>
                 </div>
                 <div>
-                  <input type="checkbox" class="decider" name="events" id="events" v-model="question1.events"
+                  <input type="checkbox" class="decider" name="public-servant-resources" id="public-servant-resources" v-model="question1.publicServants"
                     @change="determineAccordionNum" data-accordion-target="4">
-                  <label for="events">{{ t("checkboxes[3]") }}</label>
+                  <label for="public-servant-resources">{{ t("checkboxes[3]") }}</label>
                 </div>
                 <div>
-                  <input type="checkbox" class="decider" name="urgent-help" id="urgent-help" v-model="question1.urgenthelp"
+                  <input type="checkbox" class="decider" name="csps-resources" id="csps-resources" v-model="question1.csps"
                     @change="determineAccordionNum" data-accordion-target="5">
-                  <label for="urgent-help">{{ t("checkboxes[4]") }}</label>
-                </div>
-                <div>
-                  <input type="checkbox" class="decider" name="community-resources" id="community-resources"
-                    v-model="question1.communities" @change="determineAccordionNum" data-accordion-target="6">
-                  <label for="community-resources">{{ t("checkboxes[5]") }}</label>
+                  <label for="csps-resources">{{ t("checkboxes[4]") }}</label>
                 </div>
               </form>
             </div>
@@ -227,7 +221,7 @@ onBeforeMount(() => {
         
               </div>
               <MultiAccordions :AccNum="6">
-                <template #AccTitle-1 data-accordion="1" class="accordions">{{ $t('accordionTitles[1]') }}</template>
+                <template #AccTitle-1 data-accordion="1" class="accordions">{{ $t('accordionTitles[0]') }}</template>
                 <template #AccBody-1>
                   <ul>
                     <li><a href="#">Preventing Harassment and Violence in the Workplace for Employees (WMT101)</a></li>
@@ -238,7 +232,7 @@ onBeforeMount(() => {
                     <li><a href="#">Disability Management and Workplace Wellness (INC120)</a></li>
                   </ul>
                 </template>
-                <template #AccTitle-2 data-accordion="2" class="accordions">{{ $t('accordionTitles[2]') }}</template>
+                <template #AccTitle-2 data-accordion="2" class="accordions">{{ $t('accordionTitles[1]') }}</template>
                 <template #AccBody-2>
                   <ul>
                     <li><a href="#">Other Learning Product - Course 1</a></li>
@@ -246,7 +240,7 @@ onBeforeMount(() => {
                     <li><a href="#">Other Learning Product - Course 3</a></li>
                   </ul>
                 </template>
-                <template #AccTitle-3 data-accordion="3" class="accordions">{{ $t('accordionTitles[3]') }}</template>
+                <template #AccTitle-3 data-accordion="3" class="accordions">{{ $t('accordionTitles[2]') }}</template>
                 <template #AccBody-3>
                   <ul>
                     <li><a href="#">Tool 1</a></li>
@@ -254,7 +248,7 @@ onBeforeMount(() => {
                     <li><a href="#">Tool 3</a></li>
                   </ul>
                 </template>
-                <template #AccTitle-4 data-accordion="4" class="accordions">{{ $t('accordionTitles[4]') }}</template>
+                <template #AccTitle-4 data-accordion="4" class="accordions">{{ $t('accordionTitles[3]') }}</template>
                 <template #AccBody-4>
                   <ul>
                     <li><a href="#">Event on Mental Health 1</a></li>
@@ -262,45 +256,13 @@ onBeforeMount(() => {
                     <li><a href="#">Event on Mental Health 3</a></li>
                   </ul>
                 </template>
-                <template #AccTitle-5 data-accordion="5" class="accordions">{{ $t('accordionTitles[5]') }}</template>
+                <template #AccTitle-5 data-accordion="5" class="accordions">{{ $t('accordionTitles[4]') }}</template>
                 <template #AccBody-5>
                   <ul>
                     <li><a href="#">Urgent Help Resource 1</a></li>
                     <li><a href="#">Urgent Help Resource 2</a></li>
                     <li><a href="#">Urgent Help Resource 3</a></li>
                   </ul>
-                </template>
-                <template #AccTitle-6 data-accordion="6" class="accordions">{{ $t('accordionTitles[6]') }}</template>
-                <template #AccBody-6>
-                  <ul>
-                    <li><a href="#">Resource 1</a></li>
-                    <li><a href="#">Resource 2</a></li>
-                    <li><a href="#">Resource 3</a></li>
-                  </ul>
-                  <section v-if="question3.lgbt">
-                    <h3>2SLGBTQIA+ Resources</h3>
-                    <ul>
-                      <li><a href="#">2SLGBTQIA+ Resource 1</a></li>
-                      <li><a href="#">2SLGBTQIA+ Resource 2</a></li>
-                      <li><a href="#">2SLGBTQIA+ Resource 3</a></li>
-                    </ul>
-                  </section>
-                  <section v-if="question3.poc">
-                    <h3>Resources for Persons of Colour</h3>
-                    <ul>
-                      <li><a href="#">Resource 1</a></li>
-                      <li><a href="#">Resource 2</a></li>
-                      <li><a href="#">Resource 3</a></li>
-                    </ul>
-                  </section>
-                  <section v-if="question3.disability">
-                    <h3>Resources for Persons Living with Disabilities</h3>
-                    <ul>
-                      <li><a href="#">Resource 1</a></li>
-                      <li><a href="#">Resource 2</a></li>
-                      <li><a href="#">Resource 3</a></li>
-                    </ul>
-                  </section>
                 </template>
               </MultiAccordions>
             </div>
