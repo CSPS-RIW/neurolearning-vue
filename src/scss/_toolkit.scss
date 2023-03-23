@@ -26,7 +26,7 @@ background-attachment: fixed;
 
     h1 {
         color: $bs-blue;
-        
+        background-color: #fff;
         margin: 0rem;
         padding: 1rem;
         
@@ -87,7 +87,7 @@ background-attachment: fixed;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 2rem;
+        padding: 1rem;
 
         h2,
         p {
@@ -96,6 +96,10 @@ background-attachment: fixed;
 
         p {
             font-size: 1.3rem;
+        }
+
+        @media (min-width: 500px) {
+            padding: 2rem;
         }
     }
 
@@ -139,12 +143,16 @@ background-attachment: fixed;
 
     .nav-buttons {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-around;
         align-items: center;
         max-width: 751px;
         margin: auto;
         margin-bottom: 1rem;
+
+        @media (min-width: 720px) {
+            flex-direction: row;
+        }
     }
 
     button.btn-regular {
@@ -156,13 +164,18 @@ background-attachment: fixed;
         border: 1px solid rgb(187, 187, 187);
         transition: all 0.5s;
         -webkit-user-select: none;
-                /* Chrome all / Safari all */
-                -moz-user-select: none;
-                /* Firefox all */
-                -ms-user-select: none;
-                /* IE 10+ */
-                user-select: none;
-                /* Likely future */
+        /* Chrome all / Safari all */
+        -moz-user-select: none;
+        /* Firefox all */
+        -ms-user-select: none;
+        /* IE 10+ */
+        user-select: none;
+        /* Likely future */
+        width: 80%;
+
+        &:nth-child(1) {
+            margin-bottom: 1rem;
+        }
         
 
         &:hover,
@@ -185,6 +198,7 @@ background-attachment: fixed;
         &.skip {
             background-color: #EEEEEE;
             color: #3F2A56;
+            width: 100%;
 
             &:hover,
             &:focus {
@@ -200,6 +214,10 @@ background-attachment: fixed;
 
         @media (min-width: 720px) {
             padding: 0.3rem 3rem;
+
+            &:nth-child(1) {
+                margin-bottom: 0rem;
+            }
         }
     }
 
