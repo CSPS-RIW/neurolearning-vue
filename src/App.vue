@@ -1,13 +1,12 @@
 <script setup lang="ts">
+import { useCycleList, useTitle } from '@vueuse/core';
+import { onBeforeMount, reactive, ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 import MultiAccordions from './components/MultiAccordions.vue';
 import SimpleAccordion from './components/SimpleAccordion.vue';
-import { useI18n } from 'vue-i18n';
-import { useCycleList, useStorage, useTitle, useUrlSearchParams } from '@vueuse/core';
-import { onBeforeMount, watch, ref, reactive } from 'vue';
 
 const step = ref(1)
 const totalSteps = ref(5)
-const accordionNum = ref(0)
 
 const question1 = reactive(
   {
@@ -40,33 +39,16 @@ const { t, locale, availableLocales } = useI18n()
 // Set html lang based on current locale
 const locales = useCycleList(availableLocales)
 let lang = document.querySelector('html')
+let currLang = lang?.getAttribute('lang')
 // set page title
 const title = useTitle()
-title.value = t('pageTitle')
 
-// Set lang in url
-const params = useUrlSearchParams('history')
-// use localstorage as ref
-const preferredLanguage = useStorage('preferred-lang', '')
-
-
-watch(locales.state, state => {
-  // to chonge locale, add .value because it is a ref
-  locale.value = state
-  lang?.setAttribute('lang', state)
-  // change page title
-  title.value = t('pageTitle')
-
-  params.lang = state
-  localStorage.setItem('preferred-lang', `${locale.value}`)
-
-
-})
 
 // methods
-const changeLang = () => {
-  locales.next()
-
+function changeLang() {
+  locale.value !== 'en' ? locale.value = 'en' : locale.value = 'fr'
+  lang?.setAttribute('lang', locale.value)
+  title.value = t('pageTitle')
 }
 
 
@@ -98,26 +80,10 @@ function determineAccordionNum(e: any) {
 // life cycle hooks
 
 onBeforeMount(() => {
-
-  // Allow users to share and receive link with specific lang
-  if (params.lang === 'en') {
-    locale.value = params.lang
-  } else if (params.lang === 'fr') {
-    locale.value = params.lang
-    changeLang()
-  } else {
-    // If user access the link directly, set up preferred language
-    if (preferredLanguage.value === 'en') {
-      params.lang = preferredLanguage.value
-      locale.value = params.lang
-    } else if (preferredLanguage.value === 'fr') {
-      params.lang = preferredLanguage.value
-      locale.value = params.lang
-      changeLang()
-    } else {
-      localStorage.setItem('preferred-lang', `${locale.value}`)
-      params.lang = locale.value
-    }
+  if (currLang) {
+    locale.value = currLang
+    lang?.setAttribute('lang', locale.value)
+    title.value = t('pageTitle')
   }
 
 })
@@ -134,8 +100,9 @@ onBeforeMount(() => {
             <h1 class="text-center">{{ $t("title") }}</h1>
           </div>
           <div class="col-sm-2">
-            <a href="#" class="lang-toggle" @click="changeLang" :title="t('langToggle')" :lang="t('shortToggle')">{{
-              t('shortToggle') }}</a>
+            <a href="#" class="lang-toggle" @click.prevent="changeLang" :title="t('langToggle')"
+              :lang="t('shortToggle')">{{
+                t('shortToggle') }}</a>
           </div>
         </div>
       </div>
@@ -329,20 +296,20 @@ onBeforeMount(() => {
         </div>
       </div>
       <div class="progress-tracker mobile">
-          <nav role="navigation" aria-label="Toolkit Pagination">
-            <ul>
-              <li v-for="currentStep in totalSteps" :key="currentStep" class="dot"
-                :class="{ active: step === currentStep }">
-                <a href="#" @click="step = currentStep" :aria-label="`Go to step ${currentStep}`"
-                  :aria-current="step === currentStep">
-                  {{ currentStep }}
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <nav role="navigation" aria-label="Toolkit Pagination">
+          <ul>
+            <li v-for="currentStep in totalSteps" :key="currentStep" class="dot"
+              :class="{ active: step === currentStep }">
+              <a href="#" @click.prevent="step = currentStep" :aria-label="`Go to step ${currentStep}`"
+                :aria-current="step === currentStep">
+                {{ currentStep }}
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
       <div class="nav-buttons">
-        
+
         <button class="btn-regular back" @click="step--" :disabled="step <= 1">{{ $t('buttons.back')
         }}</button>
         <div class="progress-tracker tablet">
@@ -350,7 +317,7 @@ onBeforeMount(() => {
             <ul>
               <li v-for="currentStep in totalSteps" :key="currentStep" class="dot"
                 :class="{ active: step === currentStep }">
-                <a href="#" @click="step = currentStep" :aria-label="`Go to step ${currentStep}`"
+                <a href="#" @click.prevent="step = currentStep" :aria-label="`Go to step ${currentStep}`"
                   :aria-current="step === currentStep">
                   {{ currentStep }}
                 </a>
@@ -363,5 +330,3 @@ onBeforeMount(() => {
     </main>
   </div>
 </template>
-
-<style lang="scss" scoped></style>
