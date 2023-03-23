@@ -2,10 +2,11 @@
     "title": "Your Custom Toolkit",
     "pageTitle": "Custom Toolkit",
     "heading": "Questionnaire",
-    "interested": "I am interested in...",
+    "intro": "If you or someone you know needs support, help is available. You are not alone.",
+    "interested": "I'm interested in...",
     "langToggle": "Français",
     "shortToggle": "Fr",
-    "selectAll": "Select all that apply.",
+    "selectAll": "Please select one or more of the options below to get a list of some useful resources, categorized according to your selection.",
     "checkboxes": [
         "Learning products by CSPS",
         "Learning products by other organizations",

@@ -2,10 +2,11 @@
     "title": "Kit de ressources personnalisé",
     "pageTitle": "Kit de ressources personnalisé",
     "heading": "Questionnaire",
+    "intro": "Si vous ou une personne de votre entourage avez besoin de soutien, vous pouvez obtenir de l'aide. Vous n'êtes pas seul.",
     "interested": "Je suis intéressé par...",
     "langToggle": "English",
     "shortToggle": "En",
-    "selectAll": "sélectionnez tout ce qui s'applique.",
+    "selectAll": "Veuillez sélectionner une ou plusieurs des options ci-dessous pour obtenir une liste de ressources utiles, classées en fonction de votre sélection.",
     "checkboxes": [
         "Les produits d'apprentissage de l'EFPC",
         "Les produits d'apprentissage d'autres organisations",

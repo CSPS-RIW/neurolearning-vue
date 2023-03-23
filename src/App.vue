@@ -111,7 +111,7 @@ onBeforeMount(() => {
     <main>
       <div class="card"  v-if="!activityStart">
         <div class="card-body d-flex flex-column justify-content-center">
-          <p>Welcome to the toolkit blah blah blah...</p>
+          <p>{{ $t("intro") }}</p>
           <button class="btn-regular" @click="activityStart = true">
             Start
           </button>
@@ -128,8 +128,9 @@ onBeforeMount(() => {
             </div>
         
             <div class="questionnaire questionnaire-1" v-if="step === 1">
-              <h3 class="text-center">{{ $t("interested") }}</h3>
               <p>{{ $t("selectAll") }}</p>
+              <p class="text-center"><strong>{{ $t("interested") }}</strong></p>
+              
               <form class="options">
                 <div>
                   <input type="checkbox" class="decider" name="csps-learning-products" id="csps-learning-products"
