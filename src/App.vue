@@ -169,18 +169,18 @@ onBeforeMount(() => {
               <p>{{ t("whichOfThese") }}</p>
               <form class="options">
                 <div>
-                  <input type="radio" name="option" id="employee" aria-label="employee" value="an employee"
+                  <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
                     v-model="question2.role">
                   <label for="employee">{{ t("roles[0]") }}</label>
                 </div>
                 <div>
-                  <input type="radio" name="option" id="manager" aria-label="manager" value="a manager"
+                  <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
                     v-model="question2.role">
                   <label for="manager">{{ t("roles[1]") }}</label>
                 </div>
                 <div>
                   <input type="radio" name="option" id="executive" aria-label="executive"
-                    value="a mental health professional" v-model="question2.role">
+                    value="executive" v-model="question2.role">
                   <label for="executive">{{ t("roles[2]") }}</label>
                 </div>
               </form>
@@ -193,9 +193,9 @@ onBeforeMount(() => {
                 </template>
                 <template v-slot:AccBody>
                   <ul class="en" v-show="locale === 'en'">
-                    <li>The Canadian Mental Health Association is a nationwide organization that promotes mental health and supports people recovering from mental illness.</li>
-                    <li>Crisis Services Canada offers a toll-free, 24/7 suicide prevention service throughout the year at 1-833-456-4566. Whether you are suffering from a loss, worried about someone who may be having suicidal thoughts, or having suicidal thoughts yourself, highly trained responders can provide support.</li>
-                    <li>Kids Help Phone is a 24/7 national service offering professional counselling, information, referrals and volunteer-led, text-based support to young people in both English and French.</li>
+                    <li><a href="https://cmha.ca/" target="_blank">The Canadian Mental Health Association</a> is a nationwide organization that promotes mental health and supports people recovering from mental illness.</li>
+                    <li><a href="https://www.crisisservicescanada.ca/en/" target="_blank">Crisis Services Canada</a> offers a toll-free, 24/7 suicide prevention service throughout the year at 1-833-456-4566. Whether you are suffering from a loss, worried about someone who may be having suicidal thoughts, or having suicidal thoughts yourself, highly trained responders can provide support.</li>
+                    <li><a href="https://kidshelpphone.ca/" target="_blank">Kids Help Phone</a> is a 24/7 national service offering professional counselling, information, referrals and volunteer-led, text-based support to young people in both English and French.</li>
                     <li>ShelterSafe.ca is an online resource for women and their children seeking safety from violence and abuse.</li>
                     <li>The Bullying web page provides information on how to recognize and prevent bullying, as well as bullying prevention resources.</li>
                     <li></li>
@@ -206,7 +206,7 @@ onBeforeMount(() => {
                   </ul>
                   <ul class="fr" v-show="locale === 'fr'">
                     <li>L'Association canadienne pour la santé mentale est une organisation nationale qui promeut la santé mentale et soutient les personnes qui se rétablissent d'une maladie mentale.</li>
-                    <li>Crisis Services Canada offre un service gratuit de prévention du suicide 24 heures sur 24, 7 jours sur 7, tout au long de l'année, en composant le 1-833-456-4566. Que vous souffriez d'une perte, que vous vous inquiétiez pour quelqu'un qui pourrait avoir des pensées suicidaires ou que vous ayez vous-même des pensées suicidaires, des intervenants hautement qualifiés peuvent vous apporter leur soutien.</li>
+                    <li><a href="https://www.crisisservicescanada.ca/fr/" target="_blank">Crisis Services Canada</a> offre un service gratuit de prévention du suicide 24 heures sur 24, 7 jours sur 7, tout au long de l'année, en composant le 1-833-456-4566. Que vous souffriez d'une perte, que vous vous inquiétiez pour quelqu'un qui pourrait avoir des pensées suicidaires ou que vous ayez vous-même des pensées suicidaires, des intervenants hautement qualifiés peuvent vous apporter leur soutien.</li>
                     <li>Jeunesse, J'écoute est un service national accessible 24 heures sur 24, 7 jours sur 7, qui offre aux jeunes des conseils professionnels, des informations, des orientations et un soutien textuel assuré par des bénévoles, en anglais et en français.</li>
                     <li>ShelterSafe.ca est une ressource en ligne pour les femmes et leurs enfants qui cherchent à se protéger de la violence et des abus.</li>
                     <li>La page Web sur l'intimidation fournit des informations sur la façon de reconnaître et de prévenir l'intimidation, ainsi que des ressources sur la prévention de l'intimidation.</li>
@@ -224,10 +224,10 @@ onBeforeMount(() => {
               <MultiAccordions :AccNum="6">
                 <template #AccTitle-1 data-accordion="1" class="accordions">{{ $t('accordionTitles[0]') }}</template>
                 <template #AccBody-1>
-                  <ul class="en">
-                    <li>The Canadian Mental Health Association is a nationwide organization that promotes mental health and supports people recovering from mental illness.</li>
-                    <li>Crisis Services Canada offers a toll-free, 24/7 suicide prevention service throughout the year at 1-833-456-4566. Whether you are suffering from a loss, worried about someone who may be having suicidal thoughts, or having suicidal thoughts yourself, highly trained responders can provide support.</li>
-                    <li>Kids Help Phone is a 24/7 national service offering professional counselling, information, referrals and volunteer-led, text-based support to young people in both English and French.</li>
+                  <ul class="en" v-show="locale === 'en'">
+                    <li><a href="https://cmha.ca/" target="_blank">The Canadian Mental Health Association</a> is a nationwide organization that promotes mental health and supports people recovering from mental illness.</li>
+                    <li><a href="https://www.crisisservicescanada.ca/en/" target="_blank">Crisis Services Canada</a> offers a toll-free, 24/7 suicide prevention service throughout the year at 1-833-456-4566. Whether you are suffering from a loss, worried about someone who may be having suicidal thoughts, or having suicidal thoughts yourself, highly trained responders can provide support.</li>
+                    <li><a href="https://kidshelpphone.ca/" target="_blank">Kids Help Phone</a> is a 24/7 national service offering professional counselling, information, referrals and volunteer-led, text-based support to young people in both English and French.</li>
                     <li>ShelterSafe.ca is an online resource for women and their children seeking safety from violence and abuse.</li>
                     <li>The Bullying web page provides information on how to recognize and prevent bullying, as well as bullying prevention resources.</li>
                     <li></li>
@@ -236,41 +236,95 @@ onBeforeMount(() => {
                     <li>The Mental Health Commission of Canada leads the development and dissemination of innovative programs and tools to support the mental health and wellness of Canadians</li>
                     <li>Mental Health Continuum Self-Check that can help us to identify how we are doing and when there is a need for support. </li>
                   </ul>
-                  <ul class="fr">
-
+                  <ul class="fr" v-show="locale === 'fr'">
+                    <li>L'Association canadienne pour la santé mentale est une organisation nationale qui promeut la santé mentale et soutient les personnes qui se rétablissent d'une maladie mentale.</li>
+                    <li><a href="https://www.crisisservicescanada.ca/fr/" target="_blank">Crisis Services Canada</a> offre un service gratuit de prévention du suicide 24 heures sur 24, 7 jours sur 7, tout au long de l'année, en composant le 1-833-456-4566. Que vous souffriez d'une perte, que vous vous inquiétiez pour quelqu'un qui pourrait avoir des pensées suicidaires ou que vous ayez vous-même des pensées suicidaires, des intervenants hautement qualifiés peuvent vous apporter leur soutien.</li>
+                    <li>Jeunesse, J'écoute est un service national accessible 24 heures sur 24, 7 jours sur 7, qui offre aux jeunes des conseils professionnels, des informations, des orientations et un soutien textuel assuré par des bénévoles, en anglais et en français.</li>
+                    <li>ShelterSafe.ca est une ressource en ligne pour les femmes et leurs enfants qui cherchent à se protéger de la violence et des abus.</li>
+                    <li>La page Web sur l'intimidation fournit des informations sur la façon de reconnaître et de prévenir l'intimidation, ainsi que des ressources sur la prévention de l'intimidation.</li>
+                    <li>La page Web sur la violence et les abus fournit des informations sur la violence et les abus, leur prévention et la manière d'obtenir de l'aide si vous êtes victime d'abus.</li>
+                    <li>Wellness Together Canada propose des conseils par téléphone, par vidéo et par texto, des informations et des vidéos sur les problèmes courants de santé mentale et de toxicomanie, des programmes de bien-être, ainsi qu'un soutien communautaire et par les pairs.</li>
+                    <li>La Commission de la santé mentale du Canada dirige l'élaboration et la diffusion de programmes et d'outils novateurs destinés à favoriser la santé mentale et le bien-être des Canadiens.</li>
+                    <li>Autocontrôle du continuum de la santé mentale, qui peut nous aider à identifier notre situation et à déterminer si nous avons besoin d'aide.</li>
                   </ul>
                 </template>
                 <template #AccTitle-2 data-accordion="2" class="accordions">{{ $t('accordionTitles[1]') }}</template>
                 <template #AccBody-2>
                   <ul>
-                    <li><a href="#">Other Learning Product - Course 1</a></li>
-                    <li><a href="#">Other Learning Product - Course 2</a></li>
-                    <li><a href="#">Other Learning Product - Course 3</a></li>
+                    <ul class="en" v-show="locale === 'en'">
+                    <li>The First Peoples Wellness Circle is a national not-for-profit corporation governed and managed by Indigenous Leaders, which exists to improve the lives of Canada’s First Peoples by addressing healing, wellness and other mental health challenges.</li>
+                    <li>The Hope for Wellness Help Line offers immediate help to all Indigenous Peoples across Canada 24 hours a day, 7 days a week. Call the toll-free Help Line or connect to the online chat at hopeforwellness.ca. Telephone and online counselling are available in English and French. On request, telephone counselling is available in Cree, Ojibway and Inuktitut: 1-855-242-3310.</li>
+                    <li>The Indian Residential School Survivors Society offers a 24/7 crisis line that provides support to anyone experiencing pain or distress as a result of their residential school experience: 1-800-721-0066..</li>
+                    <li>Inuit Tapiriit Kanatami works to improve the health and well-being of Inuit in Canada through research, advocacy, public outreach and education.</li>
+                    <li>The Kamatsiaqtut Nunavut Helpline is a toll-free, anonymous, confidential 24/7 service staffed by trained volunteers: 1-800-265-3333.</li>
+                    <li>The Support Line of the National Inquiry into Missing and Murdered Indigenous Women and Girls is an independent, national, 24/7 toll-free service available to anyone who requires assistance. Services are available in English and French: 1-844-413-6649.</li>
+                    <li>The National Association of Friendship Centres provides culturally relevant programs and services for Indigenous Peoples living in urban centres across Canada. It works on a range of issues, including health, housing, youth, justice and international development.</li>
+                    <li>The Native Women's Association of Canada offers support and helps build resiliency. Elders are available Monday to Friday, from 9:00 am to 11:00 am and 1:00 pm to 3:00 pm (Eastern Time): 1-888-664-7808.</li>
+                    <li>Talk4Healing provides 24/7 phone, text, live chat counselling, and other support and resources for Indigenous women, by Indigenous women, all across Ontario. Services are fully grounded in Indigenous culture, wisdom and tradition and are available in the following languages: Oji-Cree, Cree, Algonquin, Inuktitut, Mohawk, Oneida, Odawa, Potawatomi, Micmac, Black Foot, Anishinaabe, Moose Cree, Swampy Cree and English: 1-855-554-HEAL.</li>
+                    <li>The Thunderbird Partnership Foundation promotes a holistic approach to healing and wellness that values culture, respect, community, and compassion. The foundation’s top priority is developing a continuum of care that would be available to all Indigenous Peoples in Canada.</li>
+                  </ul>
                   </ul>
                 </template>
                 <template #AccTitle-3 data-accordion="3" class="accordions">{{ $t('accordionTitles[2]') }}</template>
                 <template #AccBody-3>
                   <ul>
-                    <li><a href="#">Tool 1</a></li>
-                    <li><a href="#">Tool 2</a></li>
-                    <li><a href="#">Tool 3</a></li>
+                    <li>LGBT Youth Line: 1-800-268-9688 OR text 647-694-4275</li>
+                    <li>Trans Lifeline (support for transgender people by transgender people): 1-877-330-6330-6366</li>
+                    <li>Public Service Pride: Resources</li>
                   </ul>
                 </template>
                 <template #AccTitle-4 data-accordion="4" class="accordions">{{ $t('accordionTitles[3]') }}</template>
                 <template #AccBody-4>
                   <ul>
-                    <li><a href="#">Event on Mental Health 1</a></li>
-                    <li><a href="#">Event on Mental Health 2</a></li>
-                    <li><a href="#">Event on Mental Health 3</a></li>
+                    <ul>
+                      <li>The Centre of Expertise on Mental Health in the Workplace provides information about how the Government of Canada addresses mental health in the workplace, as well as access to resources, tools and services for organizations, managers and employees.</li>
+                      <li>The Employee Assistance Program (EAP) provides free short-term counselling for personal or work-related problems, as well as crisis counselling. More than 80 federal departments and agencies receive their EAP services through Health Canada, while other organizations provide this service internally or purchase it from the private sector. To find the service provider for your organization, please consult the departmental listing.</li>
+                      <li>The Five Golden Rules for Managers, developed by Environment and Climate Change Canada, provide guidance on how to foster a healthy work environment, one that supports employees’ mental health.</li>
+                      <li>Mental Health Services for Canadian Armed Forces Members and Families</li>
+                      <li>Mental Health Services Available to RCMP Employees</li>
+                      <li>Mental Health Services Available to Veterans</li>
+                    </ul>
                   </ul>
                 </template>
                 <template #AccTitle-5 data-accordion="5" class="accordions">{{ $t('accordionTitles[4]') }}</template>
                 <template #AccBody-5>
                   <ul>
-                    <li><a href="#">Urgent Help Resource 1</a></li>
-                    <li><a href="#">Urgent Help Resource 2</a></li>
-                    <li><a href="#">Urgent Help Resource 3</a></li>
+                    <li>Video: Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Andrew Harkness</li>
+                    <li>Video: Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Esther Fleurimond</li>
+                    <li>Video: Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marc Beland</li>
+                    <li>Video: Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marie-Anik Gagné</li>
+                    <li>Video: Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Sophie Dubourg</li>
+                    <li>Video: Spotlight on #GCMentalHealth: Managing Your Mental Health</li>
+                    <li>Video: Spotlight on #GCMentalHealth: Sharing Our Stories, Inspiring Hope</li>
+                    <li>Video: Spotlight on #GCMentalHealth: Supporting a Colleague</li>
+                    <li>Video: Spotlight on #GCMentalHealth: Tips for Managers</li>
+                    <li>Video: Spotlight on #GCMentalHealth: You Are Not Alone</li>
                   </ul>
+                  <div class="managers" v-show="question2.role === 'manager'">
+                    <h3>For Managers</h3>
+                    <ul>
+                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 1 – Psychological and Social Support (WMT2-J01)</li>
+                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 2 – Organizational Culture (WMT2-J02)</li>
+                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 3 – Clear Leadership and Expectations (WMT2-J03)</li>
+                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 4 – Civility and Respect (WMT2-J04)</li>
+                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 5 – Psychological Competencies and Requirements (WMT2-J05)</li>
+                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 6 – Growth and Development (WMT2-J06)</li>
+                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 7 – Recognition and Reward (WMT2-J07)</li>
+                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 8 – Involvement and Influence (WMT2-J08)</li>
+                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 9 – Workload Management (WMT2-J09)</li>
+                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 10 – Engagement (WMT2-J10)</li>
+                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 11 – Balance (WMT2-J11)</li>
+                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 12 – Psychological Protection (WMT2-J12)</li>
+                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 13 – Protection of Physical Safety (WMT2-J13)</li>
+                    </ul>
+                  </div>
+                  <div class="executives" v-show="question2.role === 'executive'">
+                    <h3>For Executives</h3>
+                    <ul>
+                      <li>Podcast: How to Survive as an Executive, Season 1, Episode 3: Leading with Calm and Authenticity, with Valerie Gideon, Ph.D.</li>
+                      <li>Video: EXecuTALK: Practical Tips for Strengthening Mental Health for Your Staff, Your Clients and Yourself</li>
+                    </ul>
+                  </div>
                 </template>
               </MultiAccordions>
             </div>
