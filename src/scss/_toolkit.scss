@@ -36,6 +36,21 @@ background-attachment: fixed;
         color: #fff;
     }
 
+    ul {
+
+        li {
+            margin-bottom: 1em;
+
+            &::before {
+                color: $school-purple;
+                content: '\2022';
+                font-size: 1.75rem;
+            }
+        }
+    }
+    
+    
+
     a {
         text-decoration: none;
     }
@@ -313,7 +328,7 @@ background-attachment: fixed;
         }
     }
 
-    .card {
+    .intro-card {
         position: relative;
         display: -ms-flexbox;
         display: flex;
@@ -327,4 +342,14 @@ background-attachment: fixed;
         border-radius: 0.25rem;
         max-width: 700px;
         margin: auto;
+        margin-top: 2rem;
+
+        .btn-regular {
+            width: 300px;
+            margin-top: 2rem;
+        }
+    }
+
+    .accordion :not(.card-standard):not(.card-graphic)>.card-body {
+        font-weight: 400;
     }

@@ -87,100 +87,120 @@ $school-grey: #4E5B73;
     }
 
     &::after {
-        left: auto !important;
-        right: 1.5rem;
+        //left: auto !important;
+        left: 1.5rem;
     }
 }
 
-.accordion- {
-
-
-    &1 {
-
-        &::before {
-
-            @include m.getcode(csps-logo, $school-grey);
-
-        }
-
-        &[aria-expanded="true"]::before {
-            @include m.getcode(csps-logo, #fff);
-        }
+.expandall {
+    &:focus, &:hover {
+        background-color: #4E5B73;
     }
-
-    &2 {
-
-        &::before {
-
-            @include m.getcode(learning, $school-grey);
-            background-repeat: no-repeat;
-
-        }
-
-        &[aria-expanded="true"]::before {
-            @include m.getcode(learning, #fff);
-        }
-    }
-
-    &3 {
-
-        &::before {
-
-            @include m.getcode(assessment, $school-grey);
-            background-repeat: no-repeat;
-
-        }
-
-        &[aria-expanded="true"]::before {
-            @include m.getcode(assessment, #fff);
-        }
-    }
-
-    &4 {
-
-        &::before {
-
-            @include m.getcode(mental-health, $school-grey);
-            background-repeat: no-repeat;
-
-        }
-
-        &[aria-expanded="true"]::before {
-            @include m.getcode(mental-health, #fff);
-        }
-    }
-
-    &5 {
-
-        &::before {
-
-            @include m.getcode(urgent, $school-grey);
-            background-repeat: no-repeat;
-
-        }
-
-        &[aria-expanded="true"]::before {
-            @include m.getcode(urgent, #fff);
-        }
-    }
-
-    &6 {
-
-        &::before {
-
-            @include m.getcode(communities, $school-grey);
-            background-repeat: no-repeat;
-
-        }
-
-        &[aria-expanded="true"]::before {
-            @include m.getcode(communities, #fff);
-        }
-    }
-
-
 }
 
+// .accordion- {
+
+
+//     &1 {
+
+//         &::before {
+
+//             @include m.getcode(csps-logo, $school-grey);
+
+//         }
+
+//         &[aria-expanded="true"]::before {
+//             @include m.getcode(csps-logo, #fff);
+//         }
+//     }
+
+//     &2 {
+
+//         &::before {
+
+//             @include m.getcode(learning, $school-grey);
+//             background-repeat: no-repeat;
+
+//         }
+
+//         &[aria-expanded="true"]::before {
+//             @include m.getcode(learning, #fff);
+//         }
+//     }
+
+//     &3 {
+
+//         &::before {
+
+//             @include m.getcode(assessment, $school-grey);
+//             background-repeat: no-repeat;
+
+//         }
+
+//         &[aria-expanded="true"]::before {
+//             @include m.getcode(assessment, #fff);
+//         }
+//     }
+
+//     &4 {
+
+//         &::before {
+
+//             @include m.getcode(mental-health, $school-grey);
+//             background-repeat: no-repeat;
+
+//         }
+
+//         &[aria-expanded="true"]::before {
+//             @include m.getcode(mental-health, #fff);
+//         }
+//     }
+
+//     &5 {
+
+//         &::before {
+
+//             @include m.getcode(urgent, $school-grey);
+//             background-repeat: no-repeat;
+
+//         }
+
+//         &[aria-expanded="true"]::before {
+//             @include m.getcode(urgent, #fff);
+//         }
+//     }
+
+//     &6 {
+
+//         &::before {
+
+//             @include m.getcode(communities, $school-grey);
+//             background-repeat: no-repeat;
+
+//         }
+
+//         &[aria-expanded="true"]::before {
+//             @include m.getcode(communities, #fff);
+//         }
+//     }
+
+
+// }
+
+//only if no icons
+.accordion :not(.card-standard):not(.card-graphic).card .card-title button {
+    padding-left: 1.5rem;
+    border-top: none ;
+    text-decoration: none;
+
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
+}
+
+.accordion :not(.card-standard):not(.card-graphic).card {
+    border: 1px solid #4E5B73;
+}
 .expandall {
     font-size: 1.125rem;
     font-weight: 700;
@@ -189,5 +209,10 @@ $school-grey: #4E5B73;
     line-height: 1.25;
     margin-top: 0.75rem;
     margin-left: 0.75rem;
+}
+
+.card {
+    margin: 0.75rem;
+    
 }
 </style>
