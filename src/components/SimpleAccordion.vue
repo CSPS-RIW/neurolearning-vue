@@ -24,3 +24,14 @@ let randNum = Math.floor(Math.random() * 100);
         </div>
     </div>
 </template>
+<style lang="scss" scoped>
+.accordion :not(.card-standard):not(.card-graphic).card .card-title button {
+    padding-left: 1.5rem;
+    border-top: none ;
+    text-decoration: none;
+
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
+}
+</style>

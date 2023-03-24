@@ -17,7 +17,8 @@
     "buttons": {
         "back": "Précédent",
         "next": "Suivant",
-        "skip": "Passer à la fin"
+        "skip": "Passer à la fin",
+        "start": "Commencer"
     },
     "thankYouPara": [
         "Nous vous remercions de votre sélection. Vous pouvez choisir de répondre à une question supplémentaire afin de mieux personnaliser la liste des ressources en fonction de vos besoins.",

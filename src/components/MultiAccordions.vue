@@ -184,6 +184,16 @@ $school-grey: #4E5B73;
 //only if no icons
 .accordion :not(.card-standard):not(.card-graphic).card .card-title button {
     padding-left: 1.5rem;
+    border-top: none ;
+    text-decoration: none;
+
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
+}
+
+.accordion :not(.card-standard):not(.card-graphic).card {
+    border: 1px solid #4E5B73;
 }
 .expandall {
     font-size: 1.125rem;
@@ -193,5 +203,10 @@ $school-grey: #4E5B73;
     line-height: 1.25;
     margin-top: 0.75rem;
     margin-left: 0.75rem;
+}
+
+.card {
+    margin: 0.75rem;
+    
 }
 </style>
