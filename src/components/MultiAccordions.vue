@@ -92,6 +92,12 @@ $school-grey: #4E5B73;
     }
 }
 
+.expandall {
+    &:focus, &:hover {
+        background-color: #4E5B73;
+    }
+}
+
 // .accordion- {
 
 
