@@ -282,6 +282,7 @@ onBeforeMount(() => {
                 </template>
                 <template #AccTitle-5 data-accordion="5" class="accordions">{{ $t('accordionTitles[4]') }}</template>
                 <template #AccBody-5>
+                  <h3>Mental health lived experiences</h3>
                   <ul>
                     <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-harkness-eng.aspx" LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Andrew Harkness"/></li>
                     <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-fleurimond-eng.aspx" LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Esther Fleurimond"/> </li>
@@ -315,8 +316,19 @@ onBeforeMount(() => {
                   <div class="executives" v-show="question2.role === 'executive'">
                     <h3>For Executives</h3>
                     <ul>
-                      <li>Podcast: How to Survive as an Executive, Season 1, Episode 3: Leading with Calm and Authenticity, with Valerie Gideon, Ph.D.</li>
-                      <li>Video: EXecuTALK: Practical Tips for Strengthening Mental Health for Your Staff, Your Clients and Yourself</li>
+                      <li>Podcast: <NewWindow Href="https://www.csps-efpc.gc.ca/podcasts/survive-executive/season1/episode3-eng.aspx" LinkText="How to Survive as an Executive, Season 1, Episode 3: Leading with Calm and Authenticity, with Valerie Gideon, Ph.D."/> </li>
+                      <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/practical-tips-eng.aspx" LinkText="EXecuTALK: Practical Tips for Strengthening Mental Health for Your Staff, Your Clients and Yourself"/></li>
+                    </ul>
+                  </div>
+                  <div class="other">
+                    <h3>Other School resources</h3>
+                    <ul>
+                      <li>
+                        <NewWindow Href="https://www.csps-efpc.gc.ca/mental-health-eng.aspx#resources" LinkText="Mental Health Learning Series"/>
+                      </li>
+                      <li>
+                        Course: <NewWindow Href="https://catalogue.csps-efpc.gc.ca/product?catalog=WMT211&cm_locale=en" LinkText="Take a Deep Breath and Manage Your Stress (WMT211)"/>
+                      </li>
                     </ul>
                   </div>
                 </template>
