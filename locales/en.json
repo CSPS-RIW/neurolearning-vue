@@ -1,8 +1,8 @@
 {
-    "title": "Your Custom Toolkit",
-    "pageTitle": "Custom Toolkit",
+    "title": "Mental Health and Well-Being Resources",
+    "pageTitle": "Mental Health and Well-Being Resources",
     "heading": "Questionnaire",
-    "intro": "If you or someone you know needs support, help is available. You are not alone.",
+    "intro": ["If you or someone you know needs support, help is available. You are not alone.", "These resources have been categorized to help you find the most appropriate resource for your situation. We hope that you will explore many of these resources, during times of mental well-being and times of mental stress. In order to create a mentally-healthy workplace, every team member needs to be an active participant."],
     "interested": "I'm interested in...",
     "langToggle": "Français",
     "shortToggle": "Fr",

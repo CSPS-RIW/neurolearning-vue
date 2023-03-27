@@ -113,7 +113,8 @@ onBeforeMount(() => {
     <main>
       <div class="card intro-card"  v-if="!activityStart">
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
-          <p>{{ $t("intro") }}</p>
+          <p>{{ $t("intro[0]") }}</p>
+          <p>{{ $t("intro[1]") }}</p>
           <button class="btn-regular" @click="activityStart = true">
             {{ $t("buttons.start") }}
           </button>
