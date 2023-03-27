@@ -283,33 +283,33 @@ onBeforeMount(() => {
                 <template #AccTitle-5 data-accordion="5" class="accordions">{{ $t('accordionTitles[4]') }}</template>
                 <template #AccBody-5>
                   <ul>
-                    <li>Video: Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Andrew Harkness</li>
-                    <li>Video: Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Esther Fleurimond</li>
-                    <li>Video: Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marc Beland</li>
-                    <li>Video: Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marie-Anik Gagné</li>
-                    <li>Video: Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Sophie Dubourg</li>
-                    <li>Video: Spotlight on #GCMentalHealth: Managing Your Mental Health</li>
-                    <li>Video: Spotlight on #GCMentalHealth: Sharing Our Stories, Inspiring Hope</li>
-                    <li>Video: Spotlight on #GCMentalHealth: Supporting a Colleague</li>
-                    <li>Video: Spotlight on #GCMentalHealth: Tips for Managers</li>
-                    <li>Video: Spotlight on #GCMentalHealth: You Are Not Alone</li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-harkness-eng.aspx" LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Andrew Harkness"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-fleurimond-eng.aspx" LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Esther Fleurimond"/> </li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-beland-eng.aspx" LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marc Beland"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-gagne-eng.aspx" LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marie-Anik Gagné"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-dubourg-eng.aspx" LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Sophie Dubourg"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/managing-your-mental-health-eng.aspx" LinkText="Spotlight on #GCMentalHealth: Managing Your Mental Health"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/sharing-our-stories-eng.aspx" LinkText="Spotlight on #GCMentalHealth: Sharing Our Stories, Inspiring Hope"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/supporting-a-colleague-eng.aspx" LinkText="Spotlight on #GCMentalHealth: Supporting a Colleague"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/tips-for-managers-eng.aspx" LinkText="Spotlight on #GCMentalHealth: Tips for Managers"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/you-are-not-alone-eng.aspx" LinkText="Spotlight on #GCMentalHealth: You Are Not Alone"/></li>
                   </ul>
                   <div class="managers" v-show="question2.role === 'manager'">
                     <h3>For Managers</h3>
                     <ul>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 1 – Psychological and Social Support (WMT2-J01)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 2 – Organizational Culture (WMT2-J02)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 3 – Clear Leadership and Expectations (WMT2-J03)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 4 – Civility and Respect (WMT2-J04)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 5 – Psychological Competencies and Requirements (WMT2-J05)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 6 – Growth and Development (WMT2-J06)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 7 – Recognition and Reward (WMT2-J07)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 8 – Involvement and Influence (WMT2-J08)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 9 – Workload Management (WMT2-J09)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 10 – Engagement (WMT2-J10)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 11 – Balance (WMT2-J11)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 12 – Psychological Protection (WMT2-J12)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 13 – Protection of Physical Safety (WMT2-J13)</li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf1-psychological-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 1 – Psychological and Social Support (WMT2-J01)"/></li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf2-organizational-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 2 – Organizational Culture (WMT2-J02)"/></li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf3-clear-leadership-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 3 – Clear Leadership and Expectations (WMT2-J03)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf4-civility-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 4 – Civility and Respect (WMT2-J04)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf5-psychological-competencies-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 5 – Psychological Competencies and Requirements (WMT2-J05)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf6-growth-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 6 – Growth and Development (WMT2-J06)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf7-recognition-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 7 – Recognition and Reward (WMT2-J07)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf8-involvement-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 8 – Involvement and Influence (WMT2-J08)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf9-workload-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 9 – Workload Management (WMT2-J09)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf10-engagement-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 10 – Engagement (WMT2-J10)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf11-balance-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 11 – Balance (WMT2-J11)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf12-psychological-protection-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 12 – Psychological Protection (WMT2-J12)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf13-protection-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 13 – Protection of Physical Safety (WMT2-J13)"/> </li>
                     </ul>
                   </div>
                   <div class="executives" v-show="question2.role === 'executive'">
