@@ -27,7 +27,7 @@ let randNum = Math.floor(Math.random() * 100);
 <style lang="scss" scoped>
 .accordion :not(.card-standard):not(.card-graphic).card .card-title button {
     padding-left: 2.5rem;
-    border-top: none ;
+    border: none ;
     text-decoration: none;
     font-size: 20px;
 

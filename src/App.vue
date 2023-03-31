@@ -7,7 +7,7 @@ import SimpleAccordion from './components/SimpleAccordion.vue';
 import NewWindow from './components/NewWindow.vue';
 
 const step = ref(1)
-const totalSteps = ref(4)
+const totalSteps = ref(2)
 const activityStart = ref(false)
 
 const question1 = reactive(
@@ -165,7 +165,7 @@ onBeforeMount(() => {
                 </div>
               </form>
             </div>
-            <div class="questionnaire questionnaire-2" v-if="step === 2">
+            <!-- <div class="questionnaire questionnaire-2" v-if="step === 2">
               <p>{{ $t("thankYouPara[0]") }}</p>
               <p>{{ $t("thankYouPara[1]") }}</p>
               <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
@@ -189,8 +189,8 @@ onBeforeMount(() => {
                   <label for="executive">{{ t("roles[2]") }}</label>
                 </div>
               </form>
-            </div>
-            <div class="customized-toolkit" v-show="step === 4">
+            </div> -->
+            <div class="customized-toolkit" v-show="step === 2">
               <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
                 <template v-slot:AccTitle>
                   {{ $t('accordionTitles[0]') }}
@@ -296,7 +296,7 @@ onBeforeMount(() => {
                     <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/tips-for-managers-eng.aspx" LinkText="Spotlight on #GCMentalHealth: Tips for Managers"/></li>
                     <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/you-are-not-alone-eng.aspx" LinkText="Spotlight on #GCMentalHealth: You Are Not Alone"/></li>
                   </ul>
-                  <div class="managers" v-show="question2.role === 'manager'">
+                  <div class="managers">
                     <h3>For Managers</h3>
                     <ul>
                       <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf1-psychological-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 1 – Psychological and Social Support (WMT2-J01)"/></li>
@@ -314,7 +314,7 @@ onBeforeMount(() => {
                       <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf13-protection-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 13 – Protection of Physical Safety (WMT2-J13)"/> </li>
                     </ul>
                   </div>
-                  <div class="executives" v-show="question2.role === 'executive'">
+                  <div class="executives">
                     <h3>For Executives</h3>
                     <ul>
                       <li>Podcast: <NewWindow Href="https://www.csps-efpc.gc.ca/podcasts/survive-executive/season1/episode3-eng.aspx" LinkText="How to Survive as an Executive, Season 1, Episode 3: Leading with Calm and Authenticity, with Valerie Gideon, Ph.D."/> </li>
