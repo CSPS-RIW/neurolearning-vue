@@ -1,8 +1,8 @@
 {
-    "title": "Kit de ressources personnalisé",
-    "pageTitle": "Kit de ressources personnalisé",
+    "title": "Ressources sur la santé mentale et le bien-être",
+    "pageTitle": "Ressources sur la santé mentale et le bien-être",
     "heading": "Questionnaire",
-    "intro": "Si vous ou une personne de votre entourage avez besoin de soutien, vous pouvez obtenir de l'aide. Vous n'êtes pas seul.",
+    "intro": ["Si vous ou une personne de votre entourage avez besoin de soutien, vous pouvez obtenir de l'aide. Vous n'êtes pas seul.", "Ces ressources ont été classées par catégories pour vous aider à trouver celle qui convient le mieux à votre situation. Nous espérons que vous explorerez un grand nombre de ces ressources, dans les moments de bien-être mental comme dans les moments de stress mental. Pour créer un lieu de travail mentalement sain, chaque membre de l'équipe doit être un participant actif."],
     "interested": "Je suis intéressé par...",
     "langToggle": "English",
     "shortToggle": "En",

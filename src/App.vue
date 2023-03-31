@@ -4,6 +4,7 @@ import { onBeforeMount, reactive, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import MultiAccordions from './components/MultiAccordions.vue';
 import SimpleAccordion from './components/SimpleAccordion.vue';
+import NewWindow from './components/NewWindow.vue';
 
 const step = ref(1)
 const totalSteps = ref(4)
@@ -112,12 +113,16 @@ onBeforeMount(() => {
     <main>
       <div class="card intro-card"  v-if="!activityStart">
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
-          <p>{{ $t("intro") }}</p>
+          <p>{{ $t("intro[0]") }}</p>
+          <p>{{ $t("intro[1]") }}</p>
           <button class="btn-regular" @click="activityStart = true">
             {{ $t("buttons.start") }}
           </button>
+         
         </div>
+        
       </div>
+      
       <div id="toolkit_wrapper" v-if="activityStart">
         <div class="holster">
         
@@ -187,13 +192,12 @@ onBeforeMount(() => {
             </div>
             <div class="customized-toolkit" v-show="step === 4">
               <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
-        
                 <template v-slot:AccTitle>
                   {{ $t('accordionTitles[0]') }}
                 </template>
                 <template v-slot:AccBody>
                   <ul class="en" v-show="locale === 'en'">
-                    <li><a href="https://cmha.ca/" target="_blank">The Canadian Mental Health Association</a> is a nationwide organization that promotes mental health and supports people recovering from mental illness.</li>
+                    <li><NewWindow Href="https://cmha.ca/" LinkText="The Canadian Mental Health Association" /> is a nationwide organization that promotes mental health and supports people recovering from mental illness.</li>
                     <li><a href="https://www.crisisservicescanada.ca/en/" target="_blank">Crisis Services Canada</a> offers a toll-free, 24/7 suicide prevention service throughout the year at 1-833-456-4566. Whether you are suffering from a loss, worried about someone who may be having suicidal thoughts, or having suicidal thoughts yourself, highly trained responders can provide support.</li>
                     <li><a href="https://kidshelpphone.ca/" target="_blank">Kids Help Phone</a> is a 24/7 national service offering professional counselling, information, referrals and volunteer-led, text-based support to young people in both English and French.</li>
                     <li><a href="https://www.sheltersafe.ca/" target="_blank">ShelterSafe.ca</a> is an online resource for women and their children seeking safety from violence and abuse.</li>
@@ -204,17 +208,7 @@ onBeforeMount(() => {
                     <li><a href="https://www.mentalhealthcommission.ca/English" target="_blank">The Mental Health Commission of Canada</a> leads the development and dissemination of innovative programs and tools to support the mental health and wellness of Canadians</li>
                     <li>Mental Health Continuum Self-Check that can help us to identify how we are doing and when there is a need for support. </li>
                   </ul>
-                  <ul class="fr" v-show="locale === 'fr'">
-                    <li>L'Association canadienne pour la santé mentale est une organisation nationale qui promeut la santé mentale et soutient les personnes qui se rétablissent d'une maladie mentale.</li>
-                    <li><a href="https://www.crisisservicescanada.ca/fr/" target="_blank">Crisis Services Canada</a> offre un service gratuit de prévention du suicide 24 heures sur 24, 7 jours sur 7, tout au long de l'année, en composant le 1-833-456-4566. Que vous souffriez d'une perte, que vous vous inquiétiez pour quelqu'un qui pourrait avoir des pensées suicidaires ou que vous ayez vous-même des pensées suicidaires, des intervenants hautement qualifiés peuvent vous apporter leur soutien.</li>
-                    <li>Jeunesse, J'écoute est un service national accessible 24 heures sur 24, 7 jours sur 7, qui offre aux jeunes des conseils professionnels, des informations, des orientations et un soutien textuel assuré par des bénévoles, en anglais et en français.</li>
-                    <li>ShelterSafe.ca est une ressource en ligne pour les femmes et leurs enfants qui cherchent à se protéger de la violence et des abus.</li>
-                    <li>La page Web sur l'intimidation fournit des informations sur la façon de reconnaître et de prévenir l'intimidation, ainsi que des ressources sur la prévention de l'intimidation.</li>
-                    <li>La page Web sur la violence et les abus fournit des informations sur la violence et les abus, leur prévention et la manière d'obtenir de l'aide si vous êtes victime d'abus.</li>
-                    <li>Wellness Together Canada propose des conseils par téléphone, par vidéo et par texto, des informations et des vidéos sur les problèmes courants de santé mentale et de toxicomanie, des programmes de bien-être, ainsi qu'un soutien communautaire et par les pairs.</li>
-                    <li>La Commission de la santé mentale du Canada dirige l'élaboration et la diffusion de programmes et d'outils novateurs destinés à favoriser la santé mentale et le bien-être des Canadiens.</li>
-                    <li>Autocontrôle du continuum de la santé mentale, qui peut nous aider à identifier notre situation et à déterminer si nous avons besoin d'aide.</li>
-                  </ul>
+                  <ul class=“fr” v-show="locale === 'fr'"> <li><NewWindow Href="https://cmha.ca/" LinkText="L’Association canadienne pour la santé mentale" Title="Ouvre dans une nouvelle fenêtre/onglet"/> est une organisation nationale qui promeut la santé mentale et soutient les personnes en rétablissement de maladies mentales.</li> <li><a href=“https://www.crisisservicescanada.ca/en/” target=“_blank”>Services de crise Canada</a> offre un service de prévention du suicide gratuit et disponible 24 heures sur 24, 7 jours sur 7, tout au long de l’année au 1-833-456-4566. Que vous souffriez d’une perte, que vous vous inquiétiez pour quelqu’un qui pourrait avoir des pensées suicidaires ou que vous ayez vous-même des pensées suicidaires, des intervenants hautement qualifiés peuvent vous apporter leur soutien.</li> <li><a href=“https://kidshelpphone.ca/” target=“_blank”>Jeunesse, J’écoute</a> est un service national disponible 24 heures sur 24 qui offre des services de counseling professionnels, des informations, des références et un soutien par messagerie texte animé par des bénévoles aux jeunes en anglais et en français.</li> <li><a href=“https://www.sheltersafe.ca/” target=“_blank”>ShelterSafe.ca</a> est une ressource en ligne pour les femmes et leurs enfants qui cherchent à se protéger contre la violence et les abus.</li> <li>La page Web sur <a href=“https://www.canada.ca/fr/sante-publique/services/intimidation.html” target=“_blank”>l’intimidation</a> fournit des informations sur la façon de reconnaître et de prévenir l’intimidation, ainsi que des ressources de prévention de l’intimidation.</li> <li></li> <li>La page Web sur la <a href=“https://www.canada.ca/fr/sante-publique/sujets/violence-abus.html” target=“_blank”>violence et les abus</a> fournit des informations sur la violence et les abus, leur prévention et la façon d’obtenir de l’aide si vous êtes victime d’abus.</li> <li><a href=“https://bienetreensemble.ca/fr-CA” target=“_blank”>Bien-être ensemble Canada</a> offre des services de counseling par téléphone, vidéo et messagerie texte, des informations et des vidéos sur les problèmes courants de santé mentale et de toxicomanie, des programmes de bien-être et un soutien communautaire et par les pairs.</li> </ul>
                 </template>
               </SimpleAccordion>
               <div class="go-back questionnaire" v-show="Object.values(question1).every((v: any) => v === false)">
@@ -238,7 +232,7 @@ onBeforeMount(() => {
                     <li>Mental Health Continuum Self-Check that can help us to identify how we are doing and when there is a need for support. </li>
                   </ul>
                   
-                  <ul class=“en” v-show="locale === 'fr'"> <li><a href=“https://cmha.ca/” target=“_blank”>L’Association canadienne pour la santé mentale</a> est une organisation nationale qui promeut la santé mentale et soutient les personnes en rétablissement de maladies mentales.</li> <li><a href=“https://www.crisisservicescanada.ca/en/” target=“_blank”>Services de crise Canada</a> offre un service de prévention du suicide gratuit et disponible 24 heures sur 24, 7 jours sur 7, tout au long de l’année au 1-833-456-4566. Que vous souffriez d’une perte, que vous vous inquiétiez pour quelqu’un qui pourrait avoir des pensées suicidaires ou que vous ayez vous-même des pensées suicidaires, des intervenants hautement qualifiés peuvent vous apporter leur soutien.</li> <li><a href=“https://kidshelpphone.ca/” target=“_blank”>Jeunesse, J’écoute</a> est un service national disponible 24 heures sur 24 qui offre des services de counseling professionnels, des informations, des références et un soutien par messagerie texte animé par des bénévoles aux jeunes en anglais et en français.</li> <li><a href=“https://www.sheltersafe.ca/” target=“_blank”>ShelterSafe.ca</a> est une ressource en ligne pour les femmes et leurs enfants qui cherchent à se protéger contre la violence et les abus.</li> <li>La page Web sur <a href=“https://www.canada.ca/fr/sante-publique/services/intimidation.html” target=“_blank”>l’intimidation</a> fournit des informations sur la façon de reconnaître et de prévenir l’intimidation, ainsi que des ressources de prévention de l’intimidation.</li> <li></li> <li>La page Web sur la <a href=“https://www.canada.ca/fr/sante-publique/sujets/violence-abus.html” target=“_blank”>violence et les abus</a> fournit des informations sur la violence et les abus, leur prévention et la façon d’obtenir de l’aide si vous êtes victime d’abus.</li> <li><a href=“https://bienetreensemble.ca/fr-CA” target=“_blank”>Bien-être ensemble Canada</a> offre des services de counseling par téléphone, vidéo et messagerie texte, des informations et des vidéos sur les problèmes courants de santé mentale et de toxicomanie, des programmes de bien-être et un soutien communautaire et par les pairs.</li> </ul>
+                  <ul class=“fr” v-show="locale === 'fr'"> <li><a href=“https://cmha.ca/” target=“_blank”>L’Association canadienne pour la santé mentale</a> est une organisation nationale qui promeut la santé mentale et soutient les personnes en rétablissement de maladies mentales.</li> <li><a href=“https://www.crisisservicescanada.ca/en/” target=“_blank”>Services de crise Canada</a> offre un service de prévention du suicide gratuit et disponible 24 heures sur 24, 7 jours sur 7, tout au long de l’année au 1-833-456-4566. Que vous souffriez d’une perte, que vous vous inquiétiez pour quelqu’un qui pourrait avoir des pensées suicidaires ou que vous ayez vous-même des pensées suicidaires, des intervenants hautement qualifiés peuvent vous apporter leur soutien.</li> <li><a href=“https://kidshelpphone.ca/” target=“_blank”>Jeunesse, J’écoute</a> est un service national disponible 24 heures sur 24 qui offre des services de counseling professionnels, des informations, des références et un soutien par messagerie texte animé par des bénévoles aux jeunes en anglais et en français.</li> <li><a href=“https://www.sheltersafe.ca/” target=“_blank”>ShelterSafe.ca</a> est une ressource en ligne pour les femmes et leurs enfants qui cherchent à se protéger contre la violence et les abus.</li> <li>La page Web sur <a href=“https://www.canada.ca/fr/sante-publique/services/intimidation.html” target=“_blank”>l’intimidation</a> fournit des informations sur la façon de reconnaître et de prévenir l’intimidation, ainsi que des ressources de prévention de l’intimidation.</li> <li></li> <li>La page Web sur la <a href=“https://www.canada.ca/fr/sante-publique/sujets/violence-abus.html” target=“_blank”>violence et les abus</a> fournit des informations sur la violence et les abus, leur prévention et la façon d’obtenir de l’aide si vous êtes victime d’abus.</li> <li><a href=“https://bienetreensemble.ca/fr-CA” target=“_blank”>Bien-être ensemble Canada</a> offre des services de counseling par téléphone, vidéo et messagerie texte, des informations et des vidéos sur les problèmes courants de santé mentale et de toxicomanie, des programmes de bien-être et un soutien communautaire et par les pairs.</li> </ul>
                 </template>
                 <template #AccTitle-2 data-accordion="2" class="accordions">{{ $t('accordionTitles[1]') }}</template>
                 <template #AccBody-2>
@@ -289,41 +283,53 @@ onBeforeMount(() => {
                 </template>
                 <template #AccTitle-5 data-accordion="5" class="accordions">{{ $t('accordionTitles[4]') }}</template>
                 <template #AccBody-5>
+                  <h3>Mental health lived experiences</h3>
                   <ul>
-                    <li>Video: Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Andrew Harkness</li>
-                    <li>Video: Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Esther Fleurimond</li>
-                    <li>Video: Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marc Beland</li>
-                    <li>Video: Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marie-Anik Gagné</li>
-                    <li>Video: Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Sophie Dubourg</li>
-                    <li>Video: Spotlight on #GCMentalHealth: Managing Your Mental Health</li>
-                    <li>Video: Spotlight on #GCMentalHealth: Sharing Our Stories, Inspiring Hope</li>
-                    <li>Video: Spotlight on #GCMentalHealth: Supporting a Colleague</li>
-                    <li>Video: Spotlight on #GCMentalHealth: Tips for Managers</li>
-                    <li>Video: Spotlight on #GCMentalHealth: You Are Not Alone</li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-harkness-eng.aspx" LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Andrew Harkness"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-fleurimond-eng.aspx" LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Esther Fleurimond"/> </li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-beland-eng.aspx" LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marc Beland"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-gagne-eng.aspx" LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marie-Anik Gagné"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-dubourg-eng.aspx" LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Sophie Dubourg"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/managing-your-mental-health-eng.aspx" LinkText="Spotlight on #GCMentalHealth: Managing Your Mental Health"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/sharing-our-stories-eng.aspx" LinkText="Spotlight on #GCMentalHealth: Sharing Our Stories, Inspiring Hope"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/supporting-a-colleague-eng.aspx" LinkText="Spotlight on #GCMentalHealth: Supporting a Colleague"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/tips-for-managers-eng.aspx" LinkText="Spotlight on #GCMentalHealth: Tips for Managers"/></li>
+                    <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/you-are-not-alone-eng.aspx" LinkText="Spotlight on #GCMentalHealth: You Are Not Alone"/></li>
                   </ul>
                   <div class="managers" v-show="question2.role === 'manager'">
                     <h3>For Managers</h3>
                     <ul>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 1 – Psychological and Social Support (WMT2-J01)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 2 – Organizational Culture (WMT2-J02)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 3 – Clear Leadership and Expectations (WMT2-J03)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 4 – Civility and Respect (WMT2-J04)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 5 – Psychological Competencies and Requirements (WMT2-J05)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 6 – Growth and Development (WMT2-J06)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 7 – Recognition and Reward (WMT2-J07)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 8 – Involvement and Influence (WMT2-J08)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 9 – Workload Management (WMT2-J09)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 10 – Engagement (WMT2-J10)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 11 – Balance (WMT2-J11)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 12 – Psychological Protection (WMT2-J12)</li>
-                      <li>Mental Health Job Aid for Managers: Psychosocial Factor 13 – Protection of Physical Safety (WMT2-J13)</li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf1-psychological-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 1 – Psychological and Social Support (WMT2-J01)"/></li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf2-organizational-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 2 – Organizational Culture (WMT2-J02)"/></li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf3-clear-leadership-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 3 – Clear Leadership and Expectations (WMT2-J03)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf4-civility-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 4 – Civility and Respect (WMT2-J04)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf5-psychological-competencies-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 5 – Psychological Competencies and Requirements (WMT2-J05)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf6-growth-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 6 – Growth and Development (WMT2-J06)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf7-recognition-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 7 – Recognition and Reward (WMT2-J07)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf8-involvement-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 8 – Involvement and Influence (WMT2-J08)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf9-workload-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 9 – Workload Management (WMT2-J09)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf10-engagement-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 10 – Engagement (WMT2-J10)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf11-balance-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 11 – Balance (WMT2-J11)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf12-psychological-protection-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 12 – Psychological Protection (WMT2-J12)"/> </li>
+                      <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf13-protection-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 13 – Protection of Physical Safety (WMT2-J13)"/> </li>
                     </ul>
                   </div>
                   <div class="executives" v-show="question2.role === 'executive'">
                     <h3>For Executives</h3>
                     <ul>
-                      <li>Podcast: How to Survive as an Executive, Season 1, Episode 3: Leading with Calm and Authenticity, with Valerie Gideon, Ph.D.</li>
-                      <li>Video: EXecuTALK: Practical Tips for Strengthening Mental Health for Your Staff, Your Clients and Yourself</li>
+                      <li>Podcast: <NewWindow Href="https://www.csps-efpc.gc.ca/podcasts/survive-executive/season1/episode3-eng.aspx" LinkText="How to Survive as an Executive, Season 1, Episode 3: Leading with Calm and Authenticity, with Valerie Gideon, Ph.D."/> </li>
+                      <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/practical-tips-eng.aspx" LinkText="EXecuTALK: Practical Tips for Strengthening Mental Health for Your Staff, Your Clients and Yourself"/></li>
+                    </ul>
+                  </div>
+                  <div class="other">
+                    <h3>Other School resources</h3>
+                    <ul>
+                      <li>
+                        <NewWindow Href="https://www.csps-efpc.gc.ca/mental-health-eng.aspx#resources" LinkText="Mental Health Learning Series"/>
+                      </li>
+                      <li>
+                        Course: <NewWindow Href="https://catalogue.csps-efpc.gc.ca/product?catalog=WMT211&cm_locale=en" LinkText="Take a Deep Breath and Manage Your Stress (WMT211)"/>
+                      </li>
                     </ul>
                   </div>
                 </template>
