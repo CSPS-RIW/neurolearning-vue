@@ -29,6 +29,7 @@ let randNum = Math.floor(Math.random() * 100);
     padding-left: 2.5rem;
     border-top: none ;
     text-decoration: none;
+    font-size: 20px;
 
     &:hover, &:focus {
         text-decoration: underline;
