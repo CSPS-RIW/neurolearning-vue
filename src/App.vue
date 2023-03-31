@@ -97,10 +97,10 @@ onBeforeMount(() => {
   <div class="wrapper">
     <header>
       <div class="container">
-        <div class="row d-flex align-items-center">
-          <div class="col-sm-2"></div>
-          <div class="col-sm-8">
-            <h1 class="text-center">{{ $t("title") }}</h1>
+        <div class="row d-flex align-items-center justify-content-between">
+          
+          <div class="col-sm-10">
+            <h1>{{ $t("title") }}</h1>
           </div>
           <div class="col-sm-2">
             <a href="#" class="lang-toggle" @click.prevent="changeLang" :title="t('langToggle')"
@@ -115,7 +115,7 @@ onBeforeMount(() => {
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <p>{{ $t("intro[0]") }}</p>
           <p>{{ $t("intro[1]") }}</p>
-          <button class="btn-regular" @click="activityStart = true">
+          <button class="btn btn-regular" @click="activityStart = true">
             {{ $t("buttons.start") }}
           </button>
          
@@ -127,11 +127,11 @@ onBeforeMount(() => {
         <div class="holster">
         
           <div class="questionnaire-wrapper" aria-live="polite" role="region" aria-label="Questionnaire">
-            <div class="questionnaire-header">
-              <h2 class="questionnaire-heading text-center">
-                {{ $t("heading") }}
+            <!-- <div class="questionnaire-header">
+              <h2 class="questionnaire-heading">
+                
               </h2>
-            </div>
+            </div> -->
         
             <div class="questionnaire questionnaire-1" v-if="step === 1">
               <p>{{ $t("selectAll") }}</p>
