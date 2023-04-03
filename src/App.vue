@@ -367,7 +367,7 @@ onBeforeMount(() => {
               </ul>
             </nav>
           </div>
-          <button class="btn-regular next" @click="step++" :disabled="step >= 4">{{ $t('buttons.next') }}</button>
+          <button class="btn-regular next" @click="step++" :disabled="step >= 2">{{ $t('buttons.next') }}</button>
         </div>
       </div>
     </main>
