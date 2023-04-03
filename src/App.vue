@@ -128,10 +128,10 @@ onBeforeMount(() => {
 
           <div class="questionnaire-wrapper" aria-live="polite" role="region" aria-label="Questionnaire">
             <!-- <div class="questionnaire-header">
-                                          <h2 class="questionnaire-heading">
+                                                                                                                                    <h2 class="questionnaire-heading">
                 
-                                          </h2>
-                                        </div> -->
+                                                                                                                                    </h2>
+                                                                                                                                  </div> -->
 
             <div class="questionnaire questionnaire-1" v-if="step === 1">
               <p>{{ $t("selectAll") }}</p>
@@ -166,30 +166,30 @@ onBeforeMount(() => {
               </form>
             </div>
             <!-- <div class="questionnaire questionnaire-2" v-if="step === 2">
-                                          <p>{{ $t("thankYouPara[0]") }}</p>
-                                          <p>{{ $t("thankYouPara[1]") }}</p>
-                                          <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
-                                        </div>
-                                        <div class="questionnaire questionnaire-3" v-if="step === 3">
-                                          <p>{{ t("whichOfThese") }}</p>
-                                          <form class="options">
-                                            <div>
-                                              <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
-                                                v-model="question2.role">
-                                              <label for="employee">{{ t("roles[0]") }}</label>
-                                            </div>
-                                            <div>
-                                              <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
-                                                v-model="question2.role">
-                                              <label for="manager">{{ t("roles[1]") }}</label>
-                                            </div>
-                                            <div>
-                                              <input type="radio" name="option" id="executive" aria-label="executive"
-                                                value="executive" v-model="question2.role">
-                                              <label for="executive">{{ t("roles[2]") }}</label>
-                                            </div>
-                                          </form>
-                                        </div> -->
+                                                                                                                                    <p>{{ $t("thankYouPara[0]") }}</p>
+                                                                                                                                    <p>{{ $t("thankYouPara[1]") }}</p>
+                                                                                                                                    <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
+                                                                                                                                  </div>
+                                                                                                                                  <div class="questionnaire questionnaire-3" v-if="step === 3">
+                                                                                                                                    <p>{{ t("whichOfThese") }}</p>
+                                                                                                                                    <form class="options">
+                                                                                                                                      <div>
+                                                                                                                                        <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
+                                                                                                                                          v-model="question2.role">
+                                                                                                                                        <label for="employee">{{ t("roles[0]") }}</label>
+                                                                                                                                      </div>
+                                                                                                                                      <div>
+                                                                                                                                        <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
+                                                                                                                                          v-model="question2.role">
+                                                                                                                                        <label for="manager">{{ t("roles[1]") }}</label>
+                                                                                                                                      </div>
+                                                                                                                                      <div>
+                                                                                                                                        <input type="radio" name="option" id="executive" aria-label="executive"
+                                                                                                                                          value="executive" v-model="question2.role">
+                                                                                                                                        <label for="executive">{{ t("roles[2]") }}</label>
+                                                                                                                                      </div>
+                                                                                                                                    </form>
+                                                                                                                                  </div> -->
             <div class="customized-toolkit" v-show="step === 2">
               <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
                 <template v-slot:AccTitle>
@@ -198,8 +198,15 @@ onBeforeMount(() => {
                 <template v-slot:AccBody>
                   <ul class="en" v-show="locale === 'en'">
                     <li>
-                      <NewWindow Href="https://cmha.ca/" LinkText="The Canadian Mental
-                                                  Health Association" /> is a nationwide organization that promotes
+                      <NewWindow Href="https://cmha.ca/"
+                        LinkText="The Canadian Mental
+                                                                                                                                            Health Association" />
+                      is
+                      a
+                      nationwide
+                      organization
+                      that
+                      promotes
                       mental
                       health
                       and
@@ -214,8 +221,16 @@ onBeforeMount(() => {
                       can provide support.
                     </li>
                     <li>
-                      <NewWindow Href="https://kidshelpphone.ca/" LinkText="Kids Help
-                                      Phone" /><a href="" target="_blank"></a> is a 24/7 national service offering
+                      <NewWindow Href="https://kidshelpphone.ca/"
+                        LinkText="Kids Help
+                                                                                                                                Phone" />
+                      <a href="" target="_blank"></a>
+                      is
+                      a
+                      24/7
+                      national
+                      service
+                      offering
                       professional
                       counselling, information, referrals and
                       volunteer-led, text-based support to young people in both English and French.
@@ -233,8 +248,16 @@ onBeforeMount(() => {
                     </li>
                     <li></li>
                     <li>The
-                      <NewWindow Href="https://www.canada.ca/en/public-health/topics/violence-abuse.html" LinkText="Violence
-                                and Abuse" /><a href="" target="_blank"></a> web page provides information about violence
+                      <NewWindow Href="https://www.canada.ca/en/public-health/topics/violence-abuse.html"
+                        LinkText="Violence
+                                                                                                                          and Abuse" />
+                      <a href="" target="_blank"></a>
+                      web
+                      page
+                      provides
+                      information
+                      about
+                      violence
                       and
                       abuse, its prevention and how to
                       get help if you are being abuse.
@@ -296,8 +319,15 @@ onBeforeMount(() => {
 
                   <ul class="en" v-show="locale === 'en'">
                     <li>
-                      <NewWindow Href="https://cmha.ca/" LinkText="The Canadian Mental
-                                                  Health Association" /> is a nationwide organization that promotes
+                      <NewWindow Href="https://cmha.ca/"
+                        LinkText="The Canadian Mental
+                                                                                                                                            Health Association" />
+                      is
+                      a
+                      nationwide
+                      organization
+                      that
+                      promotes
                       mental
                       health
                       and
@@ -312,8 +342,16 @@ onBeforeMount(() => {
                       can provide support.
                     </li>
                     <li>
-                      <NewWindow Href="https://kidshelpphone.ca/" LinkText="Kids Help
-                                      Phone" /><a href="" target="_blank"></a> is a 24/7 national service offering
+                      <NewWindow Href="https://kidshelpphone.ca/"
+                        LinkText="Kids Help
+                                                                                                                                Phone" />
+                      <a href="" target="_blank"></a>
+                      is
+                      a
+                      24/7
+                      national
+                      service
+                      offering
                       professional
                       counselling, information, referrals and
                       volunteer-led, text-based support to young people in both English and French.
@@ -331,8 +369,16 @@ onBeforeMount(() => {
                     </li>
                     <li></li>
                     <li>The
-                      <NewWindow Href="https://www.canada.ca/en/public-health/topics/violence-abuse.html" LinkText="Violence
-                                and Abuse" /><a href="" target="_blank"></a> web page provides information about violence
+                      <NewWindow Href="https://www.canada.ca/en/public-health/topics/violence-abuse.html"
+                        LinkText="Violence
+                                                                                                                          and Abuse" />
+                      <a href="" target="_blank"></a>
+                      web
+                      page
+                      provides
+                      information
+                      about
+                      violence
                       and
                       abuse, its prevention and how to
                       get help if you are being abuse.
@@ -386,62 +432,113 @@ onBeforeMount(() => {
                 <template #AccBody-2>
                   <ul class="en" v-show="locale === 'en'">
                     <li>The
-                      <NewWindow Href="" LinkText="" /><a href="https://www.fpwc.ca/" target="_blank">First Peoples
-                        Wellness Circle</a> is a national not-for-profit corporation governed and managed by Indigenous
+                      <NewWindow Href="https://www.fpwc.ca/"
+                        LinkText="First Peoples
+                                                                                                                  Wellness Circle" />
+                      <a href="" target="_blank"></a>
+                      is
+                      a
+                      national
+                      not-for-profit
+                      corporation
+                      governed and managed by Indigenous
                       Leaders, which exists to improve the lives of Canada’s First Peoples by addressing healing, wellness
                       and other mental health challenges.
                     </li>
                     <li>The
-                      <NewWindow Href="" LinkText="" /><a href="https://www.sac-isc.gc.ca/eng/1576089519527/1576089566478"
-                        target="_blank">Hope for Wellness Help Line</a> offers immediate help to all Indigenous Peoples
+                      <NewWindow Href="https://www.sac-isc.gc.ca/eng/1576089519527/1576089566478"
+                        LinkText="Hope for Wellness Help Line" /><a href="" target="_blank"></a> offers immediate help to
+                      all Indigenous Peoples
                       across Canada 24 hours a day, 7 days a week. Call the toll-free Help Line or connect to the online
                       chat at hopeforwellness.ca. Telephone and online counselling are available in English and French. On
                       request, telephone counselling is available in Cree, Ojibway and Inuktitut: 1-855-242-3310.
                     </li>
                     <li>The
-                      <NewWindow Href="" LinkText="" /><a href="https://www.irsss.ca/" target="_blank">Indian Residential
-                        School Survivors Society</a> offers a 24/7 crisis line that provides support to anyone
+                      <NewWindow Href="https://www.irsss.ca/"
+                        LinkText="Indian Residential
+                                                                                                              School Survivors Society" />
+                      <a href="" target="_blank"></a>
+                      offers
+                      a
+                      24/7
+                      crisis
+                      line
+                      that
+                      provides support to anyone
                       experiencing pain or distress as a result of their residential school experience: 1-800-721-0066..
                     </li>
                     <li>
-                      <NewWindow Href="" LinkText="" /><a href="https://www.itk.ca/" target="_blank">Inuit Tapiriit
-                        Kanatami</a> works to improve the health and well-being of Inuit in Canada through research,
+                      <NewWindow Href="https://www.itk.ca/" LinkText="Inuit Tapiriit
+                                                                                                            Kanatami" />
+                      <a href="" target="_blank"></a>
+                      works
+                      to
+                      improve
+                      the
+                      health
+                      and
+                      well-being
+                      of
+                      Inuit
+                      in Canada through research,
                       advocacy, public outreach and education.
                     </li>
                     <li>The
-                      <NewWindow Href="" LinkText="" /><a href="http://nunavuthelpline.ca/" target="_blank">Kamatsiaqtut
-                        Nunavut Helpline</a> is a toll-free, anonymous, confidential 24/7 service staffed by trained
+                      <NewWindow Href="http://nunavuthelpline.ca/"
+                        LinkText="Kamatsiaqtut
+                                                                                                          Nunavut Helpline" />
+                      <a href="" target="_blank"></a>
+                      is
+                      a
+                      toll-free,
+                      anonymous,
+                      confidential
+                      24/7 service staffed by trained
                       volunteers: 1-800-265-3333.
                     </li>
                     <li>The
-                      <NewWindow Href="" LinkText="" /><a href="https://www.mmiwg-ffada.ca/contact/"
-                        target="_blank">Support Line of the National Inquiry into Missing and Murdered Indigenous Women
-                        and Girls</a> is an independent, national, 24/7 toll-free service available to anyone who requires
+                      <NewWindow Href="https://www.mmiwg-ffada.ca/contact/" LinkText="Support Line of the National Inquiry into Missing and Murdered Indigenous Women
+                                                                                                        and Girls" /><a
+                        href="" target="_blank"></a>
+                      is
+                      an
+                      independent,
+                      national,
+                      24/7
+                      toll-free
+                      service available to anyone who requires
                       assistance. Services are available in English and French: 1-844-413-6649.
                     </li>
                     <li>The
-                      <NewWindow Href="" LinkText="" /><a href="https://nafc.ca/?lang=en" target="_blank">National
-                        Association of Friendship Centres</a> provides culturally relevant programs and services for
+                      <NewWindow Href="https://nafc.ca/?lang=en"
+                        LinkText="National
+                                                                                                      Association of Friendship Centres" />
+                      <a href="" target="_blank"></a>
+                      provides
+                      culturally
+                      relevant programs and services for
                       Indigenous Peoples living in urban centres across Canada. It works on a range of issues, including
                       health, housing, youth, justice and international development.
                     </li>
                     <li>The
-                      <NewWindow Href="" LinkText="" /><a href="https://www.nwac.ca/covid19-support/"
-                        target="_blank">Native Women's Association of Canada</a> offers support and helps build
+                      <NewWindow Href="https://www.nwac.ca/covid19-support/"
+                        LinkText="Native Women's Association of Canada" /><a href="" target="_blank"></a> offers support
+                      and helps build
                       resiliency. Elders are available Monday to Friday, from 9:00 am to 11:00 am and 1:00 pm to 3:00 pm
                       (Eastern Time): 1-888-664-7808.
                     </li>
                     <li>
-                      <NewWindow Href="" LinkText="" /><a href="http://www.talk4healing.com/about/"
-                        target="_blank">Talk4Healing</a> provides 24/7 phone, text, live chat counselling, and other
+                      <NewWindow Href="http://www.talk4healing.com/about/" LinkText="Talk4Healing" /><a href=""
+                        target="_blank"></a> provides 24/7 phone, text, live chat counselling, and other
                       support and resources for Indigenous women, by Indigenous women, all across Ontario. Services are
                       fully grounded in Indigenous culture, wisdom and tradition and are available in the following
                       languages: Oji-Cree, Cree, Algonquin, Inuktitut, Mohawk, Oneida, Odawa, Potawatomi, Micmac, Black
                       Foot, Anishinaabe, Moose Cree, Swampy Cree and English: 1-855-554-HEAL.
                     </li>
                     <li>The
-                      <NewWindow Href="" LinkText="" /><a href="https://thunderbirdpf.org/crisis-to-wellness/"
-                        target="_blank">Thunderbird Partnership Foundation</a> promotes a holistic approach to healing and
+                      <NewWindow Href="https://thunderbirdpf.org/crisis-to-wellness/"
+                        LinkText="Thunderbird Partnership Foundation" /><a href="" target="_blank"></a> promotes a
+                      holistic approach to healing and
                       wellness that values culture, respect, community, and compassion. The foundation’s top priority is
                       developing a continuum of care that would be available to all Indigenous Peoples in Canada.
                     </li>
@@ -500,8 +597,8 @@ onBeforeMount(() => {
                     <li>LGBT Youth Line: 1-800-268-9688 OR text 647-694-4275</li>
                     <li>Trans Lifeline (support for transgender people by transgender people): 1-877-330-6330-6366</li>
                     <li>
-                      <NewWindow Href="" LinkText="" /><a href="https://publicservicepride.ca/resources/"
-                        target="_blank">Public Service Pride: Resources</a>
+                      <NewWindow Href="https://publicservicepride.ca/resources/"
+                        LinkText="Public Service Pride: Resources" /><a href="" target="_blank"></a>
                     </li>
                   </ul>
                   <ul class="fr" v-show="locale === 'fr'">
@@ -509,8 +606,8 @@ onBeforeMount(() => {
                     <li>Trans Lifeline (soutien pour les personnes transgenres par des personnes transgenres):
                       1-877-330-6330-6366</li>
                     <li>
-                      <NewWindow Href="" LinkText="" /><a href=“https://publicservicepride.ca/resources/”
-                        target=“_blank”>Fierté de la fonction publique: Ressources</a>
+                      <NewWindow Href="https://publicservicepride.ca/resources/"
+                        LinkText="Fierté de la fonction publique: Ressources" /><a href=“” target=“_blank”></a>
                     </li>
                   </ul>
                 </template>
@@ -519,28 +616,31 @@ onBeforeMount(() => {
 
                   <ul class="en" v-show="locale === 'en'">
                     <li>The
-                      <NewWindow Href="" LinkText="" /><a
-                        href="https://www.canada.ca/en/government/publicservice/wellness-inclusion-diversity-public-service/health-wellness-public-servants/mental-health-workplace.html"
-                        target="_blank">Centre of Expertise on Mental Health in the Workplace</a> provides information
+                      <NewWindow
+                        Href="https://www.canada.ca/en/government/publicservice/wellness-inclusion-diversity-public-service/health-wellness-public-servants/mental-health-workplace.html"
+                        LinkText="Centre of Expertise on Mental Health in the Workplace" /><a href="" target="_blank"></a>
+                      provides information
                       about how the Government of Canada addresses mental health in the workplace, as well as access to
                       resources, tools and services for organizations, managers and employees.
                     </li>
                     <li>The
-                      <NewWindow Href="" LinkText="" /><a
-                        href="https://www.canada.ca/en/health-canada/services/environmental-workplace-health/occupational-health-safety/employee-assistance-services/employee-assistance-program.html"
-                        target="_blank">Employee Assistance Program (EAP)</a> provides free short-term counselling for
+                      <NewWindow
+                        Href="https://www.canada.ca/en/health-canada/services/environmental-workplace-health/occupational-health-safety/employee-assistance-services/employee-assistance-program.html"
+                        LinkText="Employee Assistance Program (EAP)" /><a href="" target="_blank"></a> provides free
+                      short-term counselling for
                       personal or work-related problems, as well as crisis counselling. More than 80 federal departments
                       and agencies receive their EAP services through Health Canada, while other organizations provide
                       this service internally or purchase it from the private sector. To find the service provider for
                       your organization, please consult the
-                      <NewWindow Href="" LinkText="" /><a
-                        href="https://www.canada.ca/en/government/publicservice/wellness-inclusion-diversity-public-service/employee-assistance-program.html"
-                        target="_blank">departmental listing</a>.
+                      <NewWindow
+                        Href="https://www.canada.ca/en/government/publicservice/wellness-inclusion-diversity-public-service/employee-assistance-program.html"
+                        LinkText="departmental listing" /><a href="" target="_blank"></a>.
                     </li>
                     <li>The
-                      <NewWindow Href="" LinkText="" /><a
-                        href="https://www.canada.ca/content/dam/eccc/documents/pdf/corporate-info/covid-19/five-rules-managers.pdf"
-                        target="_blank">Five Golden Rules for Managers</a>, developed by Environment and Climate Change
+                      <NewWindow
+                        Href="https://www.canada.ca/content/dam/eccc/documents/pdf/corporate-info/covid-19/five-rules-managers.pdf"
+                        LinkText="Five Golden Rules for Managers" /><a href="" target="_blank"></a>, developed by
+                      Environment and Climate Change
                       Canada, provide guidance on how to foster a healthy work environment, one that supports employees’
                       mental health.
                     </li>
@@ -578,133 +678,284 @@ onBeforeMount(() => {
                 </template>
                 <template #AccTitle-5 data-accordion="5" class="accordions">{{ $t('accordionTitles[4]') }}</template>
                 <template #AccBody-5>
-                  <h3>Mental health lived experiences</h3>
-                  <ul>
-                    <li>Video:
-                      <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-harkness-eng.aspx"
-                        LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Andrew Harkness" />
-                    </li>
-                    <li>Video:
-                      <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-fleurimond-eng.aspx"
-                        LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Esther Fleurimond" />
-                    </li>
-                    <li>Video:
-                      <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-beland-eng.aspx"
-                        LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marc Beland" />
-                    </li>
-                    <li>Video:
-                      <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-gagne-eng.aspx"
-                        LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marie-Anik Gagné" />
-                    </li>
-                    <li>Video:
-                      <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-dubourg-eng.aspx"
-                        LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Sophie Dubourg" />
-                    </li>
-                    <li>Video:
-                      <NewWindow Href="https://www.csps-efpc.gc.ca/video/managing-your-mental-health-eng.aspx"
-                        LinkText="Spotlight on #GCMentalHealth: Managing Your Mental Health" />
-                    </li>
-                    <li>Video:
-                      <NewWindow Href="https://www.csps-efpc.gc.ca/video/sharing-our-stories-eng.aspx"
-                        LinkText="Spotlight on #GCMentalHealth: Sharing Our Stories, Inspiring Hope" />
-                    </li>
-                    <li>Video:
-                      <NewWindow Href="https://www.csps-efpc.gc.ca/video/supporting-a-colleague-eng.aspx"
-                        LinkText="Spotlight on #GCMentalHealth: Supporting a Colleague" />
-                    </li>
-                    <li>Video:
-                      <NewWindow Href="https://www.csps-efpc.gc.ca/video/tips-for-managers-eng.aspx"
-                        LinkText="Spotlight on #GCMentalHealth: Tips for Managers" />
-                    </li>
-                    <li>Video:
-                      <NewWindow Href="https://www.csps-efpc.gc.ca/video/you-are-not-alone-eng.aspx"
-                        LinkText="Spotlight on #GCMentalHealth: You Are Not Alone" />
-                    </li>
-                  </ul>
-                  <div class="managers">
-                    <h3>For Managers</h3>
-                    <ul>
-                      <li>
-                        <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf1-psychological-eng.aspx"
-                          LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 1 – Psychological and Social Support (WMT2-J01)" />
-                      </li>
-                      <li>
-                        <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf2-organizational-eng.aspx"
-                          LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 2 – Organizational Culture (WMT2-J02)" />
-                      </li>
-                      <li>
-                        <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf3-clear-leadership-eng.aspx"
-                          LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 3 – Clear Leadership and Expectations (WMT2-J03)" />
-                      </li>
-                      <li>
-                        <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf4-civility-eng.aspx"
-                          LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 4 – Civility and Respect (WMT2-J04)" />
-                      </li>
-                      <li>
-                        <NewWindow
-                          Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf5-psychological-competencies-eng.aspx"
-                          LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 5 – Psychological Competencies and Requirements (WMT2-J05)" />
-                      </li>
-                      <li>
-                        <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf6-growth-eng.aspx"
-                          LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 6 – Growth and Development (WMT2-J06)" />
-                      </li>
-                      <li>
-                        <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf7-recognition-eng.aspx"
-                          LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 7 – Recognition and Reward (WMT2-J07)" />
-                      </li>
-                      <li>
-                        <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf8-involvement-eng.aspx"
-                          LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 8 – Involvement and Influence (WMT2-J08)" />
-                      </li>
-                      <li>
-                        <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf9-workload-eng.aspx"
-                          LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 9 – Workload Management (WMT2-J09)" />
-                      </li>
-                      <li>
-                        <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf10-engagement-eng.aspx"
-                          LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 10 – Engagement (WMT2-J10)" />
-                      </li>
-                      <li>
-                        <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf11-balance-eng.aspx"
-                          LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 11 – Balance (WMT2-J11)" />
-                      </li>
-                      <li>
-                        <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf12-psychological-protection-eng.aspx"
-                          LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 12 – Psychological Protection (WMT2-J12)" />
-                      </li>
-                      <li>
-                        <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf13-protection-eng.aspx"
-                          LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 13 – Protection of Physical Safety (WMT2-J13)" />
-                      </li>
-                    </ul>
+
+                  <div class="en" v-show="locale === 'en'">
+                    <div class="mh-lived">
+                      <h3>Mental health lived experiences</h3>
+                      <ul>
+                        <li>Video:
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-harkness-eng.aspx"
+                            LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Andrew Harkness" />
+                        </li>
+                        <li>Video:
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-fleurimond-eng.aspx"
+                            LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Esther Fleurimond" />
+                        </li>
+                        <li>Video:
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-beland-eng.aspx"
+                            LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marc Beland" />
+                        </li>
+                        <li>Video:
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-gagne-eng.aspx"
+                            LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marie-Anik Gagné" />
+                        </li>
+                        <li>Video:
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-dubourg-eng.aspx"
+                            LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Sophie Dubourg" />
+                        </li>
+                        <li>Video:
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/managing-your-mental-health-eng.aspx"
+                            LinkText="Spotlight on #GCMentalHealth: Managing Your Mental Health" />
+                        </li>
+                        <li>Video:
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/sharing-our-stories-eng.aspx"
+                            LinkText="Spotlight on #GCMentalHealth: Sharing Our Stories, Inspiring Hope" />
+                        </li>
+                        <li>Video:
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/supporting-a-colleague-eng.aspx"
+                            LinkText="Spotlight on #GCMentalHealth: Supporting a Colleague" />
+                        </li>
+                        <li>Video:
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/tips-for-managers-eng.aspx"
+                            LinkText="Spotlight on #GCMentalHealth: Tips for Managers" />
+                        </li>
+                        <li>Video:
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/you-are-not-alone-eng.aspx"
+                            LinkText="Spotlight on #GCMentalHealth: You Are Not Alone" />
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="managers">
+                      <h3>For Managers</h3>
+                      <ul>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf1-psychological-eng.aspx"
+                            LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 1 – Psychological and Social Support (WMT2-J01)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf2-organizational-eng.aspx"
+                            LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 2 – Organizational Culture (WMT2-J02)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf3-clear-leadership-eng.aspx"
+                            LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 3 – Clear Leadership and Expectations (WMT2-J03)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf4-civility-eng.aspx"
+                            LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 4 – Civility and Respect (WMT2-J04)" />
+                        </li>
+                        <li>
+                          <NewWindow
+                            Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf5-psychological-competencies-eng.aspx"
+                            LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 5 – Psychological Competencies and Requirements (WMT2-J05)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf6-growth-eng.aspx"
+                            LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 6 – Growth and Development (WMT2-J06)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf7-recognition-eng.aspx"
+                            LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 7 – Recognition and Reward (WMT2-J07)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf8-involvement-eng.aspx"
+                            LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 8 – Involvement and Influence (WMT2-J08)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf9-workload-eng.aspx"
+                            LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 9 – Workload Management (WMT2-J09)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf10-engagement-eng.aspx"
+                            LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 10 – Engagement (WMT2-J10)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf11-balance-eng.aspx"
+                            LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 11 – Balance (WMT2-J11)" />
+                        </li>
+                        <li>
+                          <NewWindow
+                            Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf12-psychological-protection-eng.aspx"
+                            LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 12 – Psychological Protection (WMT2-J12)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf13-protection-eng.aspx"
+                            LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 13 – Protection of Physical Safety (WMT2-J13)" />
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="executives">
+                      <h3>For Executives</h3>
+                      <ul>
+                        <li>Podcast:
+                          <NewWindow
+                            Href="https://www.csps-efpc.gc.ca/podcasts/survive-executive/season1/episode3-eng.aspx"
+                            LinkText="How to Survive as an Executive, Season 1, Episode 3: Leading with Calm and Authenticity, with Valerie Gideon, Ph.D." />
+                        </li>
+                        <li>Video:
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/practical-tips-eng.aspx"
+                            LinkText="EXecuTALK: Practical Tips for Strengthening Mental Health for Your Staff, Your Clients and Yourself" />
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="other">
+                      <h3>Other School resources</h3>
+                      <ul>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/mental-health-eng.aspx#resources"
+                            LinkText="Mental Health Learning Series" />
+                        </li>
+                        <li>
+                          Course:
+                          <NewWindow Href="https://catalogue.csps-efpc.gc.ca/product?catalog=WMT211&cm_locale=en"
+                            LinkText="Take a Deep Breath and Manage Your Stress (WMT211)" />
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <div class="executives">
-                    <h3>For Executives</h3>
-                    <ul>
-                      <li>Podcast:
-                        <NewWindow Href="https://www.csps-efpc.gc.ca/podcasts/survive-executive/season1/episode3-eng.aspx"
-                          LinkText="How to Survive as an Executive, Season 1, Episode 3: Leading with Calm and Authenticity, with Valerie Gideon, Ph.D." />
-                      </li>
-                      <li>Video:
-                        <NewWindow Href="https://www.csps-efpc.gc.ca/video/practical-tips-eng.aspx"
-                          LinkText="EXecuTALK: Practical Tips for Strengthening Mental Health for Your Staff, Your Clients and Yourself" />
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="other">
-                    <h3>Other School resources</h3>
-                    <ul>
-                      <li>
-                        <NewWindow Href="https://www.csps-efpc.gc.ca/mental-health-eng.aspx#resources"
-                          LinkText="Mental Health Learning Series" />
-                      </li>
-                      <li>
-                        Course:
-                        <NewWindow Href="https://catalogue.csps-efpc.gc.ca/product?catalog=WMT211&cm_locale=en"
-                          LinkText="Take a Deep Breath and Manage Your Stress (WMT211)" />
-                      </li>
-                    </ul>
+                  <div class="fr" v-show="locale === 'fr'">
+                    <div class="mh-lived">
+                      <h3>Santé mentale : expériences vécues</h3>
+                      <ul>
+                        <li>Vidéo :
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/mental-health-harkness-fra.aspx"
+                            LinkText="La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Andrew Harkness" />
+                        </li>
+                        <li>Vidéo :
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/mental-health-fleurimond-fra.aspx"
+                            LinkText="La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Esther Fleurimond" />
+                        </li>
+                        <li>Vidéo :
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/mental-health-beland-fra.aspx"
+                            LinkText="La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Marc Beland" />
+                        </li>
+                        <li>Vidéo :
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/mental-health-gagne-fra.aspx"
+                            LinkText="La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Marie-Anik Gagné" />
+                        </li>
+                        <li>Vidéo :
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/mental-health-dubourg-fra.aspx"
+                            LinkText="La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Sophie Dubourg" />
+                        </li>
+                        <li>Vidéo :
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/managing-your-mental-health-fra.aspx"
+                            LinkText="#SantéMentaleGC : Gérer votre santé mentale" />
+                        </li>
+                        <li>Vidéo :
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/sharing-our-stories-fra.aspx"
+                            LinkText="#SantéMentaleGC : Partager nos histoires, insuffler de l'espoir" />
+                        </li>
+                        <li>Vidéo :
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/supporting-a-colleague-fra.aspx"
+                            LinkText="#SantéMentaleGC : Soutenir un collègue" />
+                        </li>
+                        <li>Vidéo :
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/tips-for-managers-fra.aspx"
+                            LinkText="#SantéMentaleGC : Conseils pour les gestionnaires" />
+                        </li>
+                        <li>Vidéo :
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/you-are-not-alone-fra.aspx"
+                            LinkText="#SantéMentaleGC : Vous n'êtes pas seul" />
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="managers">
+                      <h3>Pour les gestionnaires</h3>
+                      <ul>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf1-psychological-fra.aspx"
+                            LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 1 – Soutien psychologique et social (WMT2-J01)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf2-organizational-fra.aspx"
+                            LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 2 – Culture organisationnelle (WMT2-J02)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf3-clear-leadership-fra.aspx"
+                            LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 3 – Leadership et attentes clairs (WMT2-J03)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf4-civility-fra.aspx"
+                            LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 4 – Courtoisie et respect (WMT2-J04)" />
+                        </li>
+                        <li>
+                          <NewWindow
+                            Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf5-psychological-competencies-fra.aspx"
+                            LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 5 – Compétences et exigences psychologiques (WMT2-J05)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf6-growth-fra.aspx"
+                            LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 6 – Croissance et perfectionnement (WMT2-J06)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf7-recognition-fra.aspx"
+                            LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 7 – Reconnaissance et récompense (WMT2-J07)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf8-involvement-fra.aspx"
+                            LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 8 – Participation et influence (WMT2-J08)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf9-workload-fra.aspx"
+                            LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 9 – Gestion de la charge de travail (WMT2-J09)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf10-engagement-fra.aspx"
+                            LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 10 – Engagement (WMT2-J10)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf11-balance-fra.aspx"
+                            LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 11 – Équilibre (WMT2-J11)" />
+                        </li>
+                        <li>
+                          <NewWindow
+                            Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf12-psychological-protection-fra.aspx"
+                            LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 12 – Protection de la sécurité psychologique (WMT2-J12)" />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf13-protection-fra.aspx"
+                            LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 13 – Protection de l'intégrité physique (WMT2-J13)" />
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="executives">
+                      <h3>Pour les cadres</h3>
+                      <ul>
+                        <li>Podcast:
+                          <NewWindow
+                            Href="https://www.csps-efpc.gc.ca/podcasts/survive-executive/season1/episode3-eng.aspx"
+                            LinkText="How to Survive as an Executive, Season 1, Episode 3: Leading with Calm and Authenticity, with Valerie Gideon, Ph.D." />
+                        </li>
+                        <li>Video:
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/practical-tips-eng.aspx"
+                            LinkText="EXecuTALK: Practical Tips for Strengthening Mental Health for Your Staff, Your Clients and Yourself" />
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="other">
+                      <h3>Autres ressources de l'école</h3>
+                      <ul>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/mental-health-eng.aspx#resources"
+                            LinkText="Mental Health Learning Series" />
+                        </li>
+                        <li>
+                          Course:
+                          <NewWindow Href="https://catalogue.csps-efpc.gc.ca/product?catalog=WMT211&cm_locale=en"
+                            LinkText="Take a Deep Breath and Manage Your Stress (WMT211)" />
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </template>
               </MultiAccordions>
