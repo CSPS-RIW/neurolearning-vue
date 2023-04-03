@@ -128,10 +128,10 @@ onBeforeMount(() => {
 
           <div class="questionnaire-wrapper" aria-live="polite" role="region" aria-label="Questionnaire">
             <!-- <div class="questionnaire-header">
-                                                                                                                                                          <h2 class="questionnaire-heading">
+                                                                                                                                                                                    <h2 class="questionnaire-heading">
                 
-                                                                                                                                                          </h2>
-                                                                                                                                                        </div> -->
+                                                                                                                                                                                    </h2>
+                                                                                                                                                                                  </div> -->
 
             <div class="questionnaire questionnaire-1" v-if="step === 1">
               <p>{{ $t("selectAll") }}</p>
@@ -166,30 +166,30 @@ onBeforeMount(() => {
               </form>
             </div>
             <!-- <div class="questionnaire questionnaire-2" v-if="step === 2">
-                                                                                                                                                          <p>{{ $t("thankYouPara[0]") }}</p>
-                                                                                                                                                          <p>{{ $t("thankYouPara[1]") }}</p>
-                                                                                                                                                          <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
-                                                                                                                                                        </div>
-                                                                                                                                                        <div class="questionnaire questionnaire-3" v-if="step === 3">
-                                                                                                                                                          <p>{{ t("whichOfThese") }}</p>
-                                                                                                                                                          <form class="options">
-                                                                                                                                                            <div>
-                                                                                                                                                              <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
-                                                                                                                                                                v-model="question2.role">
-                                                                                                                                                              <label for="employee">{{ t("roles[0]") }}</label>
-                                                                                                                                                            </div>
-                                                                                                                                                            <div>
-                                                                                                                                                              <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
-                                                                                                                                                                v-model="question2.role">
-                                                                                                                                                              <label for="manager">{{ t("roles[1]") }}</label>
-                                                                                                                                                            </div>
-                                                                                                                                                            <div>
-                                                                                                                                                              <input type="radio" name="option" id="executive" aria-label="executive"
-                                                                                                                                                                value="executive" v-model="question2.role">
-                                                                                                                                                              <label for="executive">{{ t("roles[2]") }}</label>
-                                                                                                                                                            </div>
-                                                                                                                                                          </form>
-                                                                                                                                                        </div> -->
+                                                                                                                                                                                    <p>{{ $t("thankYouPara[0]") }}</p>
+                                                                                                                                                                                    <p>{{ $t("thankYouPara[1]") }}</p>
+                                                                                                                                                                                    <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
+                                                                                                                                                                                  </div>
+                                                                                                                                                                                  <div class="questionnaire questionnaire-3" v-if="step === 3">
+                                                                                                                                                                                    <p>{{ t("whichOfThese") }}</p>
+                                                                                                                                                                                    <form class="options">
+                                                                                                                                                                                      <div>
+                                                                                                                                                                                        <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
+                                                                                                                                                                                          v-model="question2.role">
+                                                                                                                                                                                        <label for="employee">{{ t("roles[0]") }}</label>
+                                                                                                                                                                                      </div>
+                                                                                                                                                                                      <div>
+                                                                                                                                                                                        <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
+                                                                                                                                                                                          v-model="question2.role">
+                                                                                                                                                                                        <label for="manager">{{ t("roles[1]") }}</label>
+                                                                                                                                                                                      </div>
+                                                                                                                                                                                      <div>
+                                                                                                                                                                                        <input type="radio" name="option" id="executive" aria-label="executive"
+                                                                                                                                                                                          value="executive" v-model="question2.role">
+                                                                                                                                                                                        <label for="executive">{{ t("roles[2]") }}</label>
+                                                                                                                                                                                      </div>
+                                                                                                                                                                                    </form>
+                                                                                                                                                                                  </div> -->
             <div class="customized-toolkit" v-show="step === 2">
               <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
                 <template v-slot:AccTitle>
@@ -200,7 +200,7 @@ onBeforeMount(() => {
                     <li>
                       <NewWindow Href="https://cmha.ca/"
                         LinkText="The Canadian Mental
-                                                                                                                                                                  Health Association" />
+                                                                                                                                                                                            Health Association" />
                       is
                       a
                       nationwide
@@ -223,7 +223,7 @@ onBeforeMount(() => {
                     <li>
                       <NewWindow Href="https://kidshelpphone.ca/"
                         LinkText="Kids Help
-                                                                                                                                                      Phone" />
+                                                                                                                                                                                Phone" />
                       <a href="" target="_blank"></a>
                       is
                       a
@@ -250,7 +250,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://www.canada.ca/en/public-health/topics/violence-abuse.html"
                         LinkText="Violence
-                                                                                                                                                and Abuse" />
+                                                                                                                                                                          and Abuse" />
                       <a href="" target="_blank"></a>
                       web
                       page
@@ -321,7 +321,7 @@ onBeforeMount(() => {
                     <li>
                       <NewWindow Href="https://cmha.ca/"
                         LinkText="The Canadian Mental
-                                                                                                                                                                  Health Association" />
+                                                                                                                                                                                            Health Association" />
                       is
                       a
                       nationwide
@@ -344,7 +344,7 @@ onBeforeMount(() => {
                     <li>
                       <NewWindow Href="https://kidshelpphone.ca/"
                         LinkText="Kids Help
-                                                                                                                                                      Phone" />
+                                                                                                                                                                                Phone" />
                       <a href="" target="_blank"></a>
                       is
                       a
@@ -371,7 +371,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://www.canada.ca/en/public-health/topics/violence-abuse.html"
                         LinkText="Violence
-                                                                                                                                                and Abuse" />
+                                                                                                                                                                          and Abuse" />
                       <a href="" target="_blank"></a>
                       web
                       page
@@ -434,7 +434,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://www.fpwc.ca/"
                         LinkText="First Peoples
-                                                                                                                                        Wellness Circle" />
+                                                                                                                                                                  Wellness Circle" />
                       <a href="" target="_blank"></a>
                       is
                       a
@@ -456,7 +456,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://www.irsss.ca/"
                         LinkText="Indian Residential
-                                                                                                                                    School Survivors Society" />
+                                                                                                                                                              School Survivors Society" />
                       <a href="" target="_blank"></a>
                       offers
                       a
@@ -470,7 +470,7 @@ onBeforeMount(() => {
                     <li>
                       <NewWindow Href="https://www.itk.ca/"
                         LinkText="Inuit Tapiriit
-                                                                                                                                  Kanatami" />
+                                                                                                                                                            Kanatami" />
                       <a href="" target="_blank"></a>
                       works
                       to
@@ -487,7 +487,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="http://nunavuthelpline.ca/"
                         LinkText="Kamatsiaqtut
-                                                                                                                                Nunavut Helpline" />
+                                                                                                                                                          Nunavut Helpline" />
                       <a href="" target="_blank"></a>
                       is
                       a
@@ -500,7 +500,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://www.mmiwg-ffada.ca/contact/"
                         LinkText="Support Line of the National Inquiry into Missing and Murdered Indigenous Women
-                                                                                                                              and Girls" />
+                                                                                                                                                        and Girls" />
                       <a href="" target="_blank"></a>
                       is
                       an
@@ -514,7 +514,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://nafc.ca/?lang=en"
                         LinkText="National
-                                                                                                                            Association of Friendship Centres" />
+                                                                                                                                                      Association of Friendship Centres" />
                       <a href="" target="_blank"></a>
                       provides
                       culturally
@@ -608,7 +608,8 @@ onBeforeMount(() => {
                     <li>Trans Lifeline (soutien pour les personnes transgenres par des personnes transgenres):
                       1-877-330-6330-6366</li>
                     <li>
-                      <NewWindow Href="https://publicservicepride.ca/resources/"
+                      <NewWindow Href="https://publicservicepride.ca/fr/resources/"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet"
                         LinkText="Fierté de la fonction publique: Ressources" /><a href=“” target=“_blank”></a>
                     </li>
                   </ul>
@@ -651,27 +652,39 @@ onBeforeMount(() => {
                     <li>Mental Health Services Available to Veterans</li>
                   </ul>
                   <ul class="fr" v-show="locale === 'fr'">
-                    <li>Le <a
-                        href=“https://www.canada.ca/fr/gouvernement/fonctionpublique/bien-etre-inclusion-diversite-fonction-publique/sante-bien-etre-fonctionnaires/sante-mentale-lieu-travail.html”
-                        target=“_blank”>Centre d’expertise sur la santé mentale en milieu de travail</a> fournit des
+                    <li>Le
+                      <NewWindow
+                        Href="https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/sante-mieux-etre-fonctionnaires/sante-mentale-travail.html"
+                        LinkText="Centre d’expertise sur la santé mentale en milieu de travail"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" /> <a href=“” target=“_blank”></a> fournit des
                       informations sur la façon dont le gouvernement du Canada aborde la santé mentale en milieu de
                       travail, ainsi que l’accès à des ressources, des outils et des services pour les organisations, les
-                      gestionnaires et les employés.</li>
-                    <li>Le <a
-                        href=“https://www.canada.ca/fr/sante-canada/services/sante-travail/sante-securite-travail/soutien-employes/programme-aide-employes.html”
-                        target=“_blank”>Programme d’aide aux employés (PAE)</a> offre des services de counseling à court
+                      gestionnaires et les employés.
+                    </li>
+                    <li>Le
+                      <NewWindow
+                        Href="https://www.canada.ca/fr/sante-canada/services/sante-environnement-milieu-travail/sante-securite-travail/service-aide-employes/programme-aide-employes.html"
+                        LinkText="Programme d’aide aux employés (PAE)" Title="Ouvre dans une nouvelle fenêtre/onglet" /><a
+                        href=“” target=“_blank”></a> offre des services de counseling à court
                       terme gratuits pour les problèmes personnels ou liés au travail, ainsi que des services de
                       counseling en cas de crise. Plus de 80 ministères et organismes fédéraux reçoivent leurs services de
                       PAE par l’intermédiaire de Santé Canada, tandis que d’autres organisations fournissent ce service en
                       interne ou l’achètent auprès du secteur privé. Pour trouver le fournisseur de services pour votre
-                      organisation, veuillez consulter la <a
-                        href=“https://www.canada.ca/fr/gouvernement/fonctionpublique/bien-etre-inclusion-diversite-fonction-publique/programme-aide-employes.html”
-                        target=“_blank”>liste ministérielle</a>.</li>
-                    <li>Les <a
-                        href=“https://www.canada.ca/fr/environnement-changement-climatique/services/sante-securite-travail/programme-sante-bien-etre/gestionnaires-cinq-regles-dor.html”
-                        target=“_blank”>Cinq règles d’or pour les gestionnaires</a>, élaborées par Environnement et
+                      organisation, veuillez consulter la
+                      <NewWindow
+                        Href="https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/programme-aide-employes.html"
+                        LinkText="liste ministérielle" Title="Ouvre dans une nouvelle fenêtre/onglet" /><a href=“”
+                        target=“_blank”></a>.
+                    </li>
+                    <li>Les
+                      <NewWindow
+                        Href="https://www.canada.ca/fr/environnement-changement-climatique/services/sante-securite-travail/programme-sante-bien-etre/gestionnaires-cinq-regles-dor.html"
+                        LinkText="Cinq règles d’or pour les gestionnaires"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" /><a href=“” target=“_blank”></a>, élaborées par
+                      Environnement et
                       Changement climatique Canada, fournissent des orientations sur la façon de favoriser un
-                      environnement de travail sain, qui soutient la santé mentale des employés.</li>
+                      environnement de travail sain, qui soutient la santé mentale des employés.
+                    </li>
                     <li>Services de santé mentale pour les membres des Forces armées canadiennes et leur famille</li>
                     <li>Services de santé mentale disponibles pour les employés de la GRC</li>
                     <li>Services de santé mentale disponibles pour les anciens combattants</li>
