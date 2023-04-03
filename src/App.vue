@@ -206,7 +206,7 @@ onBeforeMount(() => {
                     <li>
                       <NewWindow Href="https://kidshelpphone.ca/"
                         LinkText="Kids Help Phone" />
-                      <a href="" target="_blank"></a>
+                      
                       is
                       a
                       24/7
@@ -224,7 +224,7 @@ onBeforeMount(() => {
                     </li>
                     <li>The
                       <NewWindow Href="https://www.canada.ca/en/public-health/services/bullying.html"
-                        LinkText="Bullying" /><a href="" target="_blank"></a>
+                        LinkText="Bullying" />
                       web page provides information on how to recognize and prevent bullying, as well as bullying
                       prevention resources.
                     </li>
@@ -232,7 +232,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://www.canada.ca/en/public-health/topics/violence-abuse.html"
                         LinkText="Violence and Abuse" />
-                      <a href="" target="_blank"></a>
+                      
                       web
                       page
                       provides
@@ -251,7 +251,7 @@ onBeforeMount(() => {
                     </li>
                     <li>
                       <NewWindow Href="https://www.mentalhealthcommission.ca/English"
-                        LinkText="The Mental Health Commission of Canada" /><a href="" target="_blank"></a> leads the
+                        LinkText="The Mental Health Commission of Canada" /> leads the
                       development and dissemination
                       of innovative programs and tools to support the mental health and wellness of Canadians
                     </li>
@@ -322,7 +322,7 @@ onBeforeMount(() => {
                     <li>
                       <NewWindow Href="https://kidshelpphone.ca/"
                         LinkText="Kids Help Phone" />
-                      <a href="" target="_blank"></a>
+                      
                       is
                       a
                       24/7
@@ -340,7 +340,7 @@ onBeforeMount(() => {
                     </li>
                     <li>The
                       <NewWindow Href="https://www.canada.ca/en/public-health/services/bullying.html"
-                        LinkText="Bullying" /><a href="" target="_blank"></a>
+                        LinkText="Bullying" />
                       web page provides information on how to recognize and prevent bullying, as well as bullying
                       prevention resources.
                     </li>
@@ -348,7 +348,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://www.canada.ca/en/public-health/topics/violence-abuse.html"
                         LinkText="Violence and Abuse" />
-                      <a href="" target="_blank"></a>
+                      
                       web
                       page
                       provides
@@ -367,7 +367,7 @@ onBeforeMount(() => {
                     </li>
                     <li>
                       <NewWindow Href="https://www.mentalhealthcommission.ca/English"
-                        LinkText="The Mental Health Commission of Canada" /><a href="" target="_blank"></a> leads the
+                        LinkText="The Mental Health Commission of Canada" /> leads the
                       development and dissemination
                       of innovative programs and tools to support the mental health and wellness of Canadians
                     </li>
@@ -410,7 +410,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://www.fpwc.ca/"
                         LinkText="First Peoples Wellness Circle" />
-                      <a href="" target="_blank"></a>
+                      
                       is
                       a
                       national
@@ -422,7 +422,7 @@ onBeforeMount(() => {
                     </li>
                     <li>The
                       <NewWindow Href="https://www.sac-isc.gc.ca/eng/1576089519527/1576089566478"
-                        LinkText="Hope for Wellness Help Line" /><a href="" target="_blank"></a> offers immediate help to
+                        LinkText="Hope for Wellness Help Line" /> offers immediate help to
                       all Indigenous Peoples
                       across Canada 24 hours a day, 7 days a week. Call the toll-free Help Line or connect to the online
                       chat at hopeforwellness.ca. Telephone and online counselling are available in English and French. On
@@ -431,7 +431,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://www.irsss.ca/"
                         LinkText="Indian Residential School Survivors Society" />
-                      <a href="" target="_blank"></a>
+                      
                       offers
                       a
                       24/7
@@ -444,7 +444,7 @@ onBeforeMount(() => {
                     <li>
                       <NewWindow Href="https://www.itk.ca/"
                         LinkText="Inuit Tapiriit Kanatami" />
-                      <a href="" target="_blank"></a>
+                      
                       works
                       to
                       improve
@@ -460,7 +460,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="http://nunavuthelpline.ca/"
                         LinkText="Kamatsiaqtut Nunavut Helpline" />
-                      <a href="" target="_blank"></a>
+                      
                       is
                       a
                       toll-free,
@@ -472,7 +472,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://www.mmiwg-ffada.ca/contact/"
                         LinkText="Support Line of the National Inquiry into Missing and Murdered Indigenous Women and Girls" />
-                      <a href="" target="_blank"></a>
+                      
                       is
                       an
                       independent,
@@ -485,7 +485,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://nafc.ca/?lang=en"
                         LinkText="National Association of Friendship Centres" />
-                      <a href="" target="_blank"></a>
+                      
                       provides
                       culturally
                       relevant programs and services for
@@ -494,7 +494,7 @@ onBeforeMount(() => {
                     </li>
                     <li>The
                       <NewWindow Href="https://www.nwac.ca/covid19-support/"
-                        LinkText="Native Women's Association of Canada" /><a href="" target="_blank"></a> offers support
+                        LinkText="Native Women's Association of Canada" /> offers support
                       and helps build
                       resiliency. Elders are available Monday to Friday, from 9:00 am to 11:00 am and 1:00 pm to 3:00 pm
                       (Eastern Time): 1-888-664-7808.
@@ -509,7 +509,7 @@ onBeforeMount(() => {
                     </li>
                     <li>The
                       <NewWindow Href="https://thunderbirdpf.org/crisis-to-wellness/"
-                        LinkText="Thunderbird Partnership Foundation" /><a href="" target="_blank"></a> promotes a
+                        LinkText="Thunderbird Partnership Foundation" /> promotes a
                       holistic approach to healing and
                       wellness that values culture, respect, community, and compassion. The foundation’s top priority is
                       developing a continuum of care that would be available to all Indigenous Peoples in Canada.
@@ -570,7 +570,7 @@ onBeforeMount(() => {
                     <li>Trans Lifeline (support for transgender people by transgender people): 1-877-330-6330-6366</li>
                     <li>
                       <NewWindow Href="https://publicservicepride.ca/resources/"
-                        LinkText="Public Service Pride: Resources" /><a href="" target="_blank"></a>
+                        LinkText="Public Service Pride: Resources" />
                     </li>
                   </ul>
                   <ul class="fr" v-show="locale === 'fr'">
@@ -591,7 +591,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow
                         Href="https://www.canada.ca/en/government/publicservice/wellness-inclusion-diversity-public-service/health-wellness-public-servants/mental-health-workplace.html"
-                        LinkText="Centre of Expertise on Mental Health in the Workplace" /><a href="" target="_blank"></a>
+                        LinkText="Centre of Expertise on Mental Health in the Workplace" />
                       provides information
                       about how the Government of Canada addresses mental health in the workplace, as well as access to
                       resources, tools and services for organizations, managers and employees.
@@ -599,7 +599,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow
                         Href="https://www.canada.ca/en/health-canada/services/environmental-workplace-health/occupational-health-safety/employee-assistance-services/employee-assistance-program.html"
-                        LinkText="Employee Assistance Program (EAP)" /><a href="" target="_blank"></a> provides free
+                        LinkText="Employee Assistance Program (EAP)" /> provides free
                       short-term counselling for
                       personal or work-related problems, as well as crisis counselling. More than 80 federal departments
                       and agencies receive their EAP services through Health Canada, while other organizations provide
@@ -607,12 +607,12 @@ onBeforeMount(() => {
                       your organization, please consult the
                       <NewWindow
                         Href="https://www.canada.ca/en/government/publicservice/wellness-inclusion-diversity-public-service/employee-assistance-program.html"
-                        LinkText="departmental listing" /><a href="" target="_blank"></a>.
+                        LinkText="departmental listing" />.
                     </li>
                     <li>The
                       <NewWindow
                         Href="https://www.canada.ca/content/dam/eccc/documents/pdf/corporate-info/covid-19/five-rules-managers.pdf"
-                        LinkText="Five Golden Rules for Managers" /><a href="" target="_blank"></a>, developed by
+                        LinkText="Five Golden Rules for Managers" />, developed by
                       Environment and Climate Change
                       Canada, provide guidance on how to foster a healthy work environment, one that supports employees’
                       mental health.
