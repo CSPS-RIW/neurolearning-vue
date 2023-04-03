@@ -1,97 +1,81 @@
 <script setup lang="ts">
-import { useCycleList, useTitle } from '@vueuse/core';
-import { onBeforeMount, reactive, ref } from 'vue';
-import { useI18n } from 'vue-i18n';
-import MultiAccordions from './components/MultiAccordions.vue';
-import SimpleAccordion from './components/SimpleAccordion.vue';
-import NewWindow from './components/NewWindow.vue';
+import { useCycleList, useTitle } from "@vueuse/core";
+import { onBeforeMount, reactive, ref } from "vue";
+import { useI18n } from "vue-i18n";
+import MultiAccordions from "./components/MultiAccordions.vue";
+import SimpleAccordion from "./components/SimpleAccordion.vue";
+import NewWindow from "./components/NewWindow.vue";
 
-const step = ref(1)
-const totalSteps = ref(2)
-const activityStart = ref(false)
+const step = ref(1);
+const totalSteps = ref(2);
+const activityStart = ref(false);
 
-const question1 = reactive(
-  {
-    general: false,
-    indigenous: false,
-    lgbt: false,
-    publicServants: false,
-    csps: false
-  }
-)
+const question1 = reactive({
+  general: false,
+  indigenous: false,
+  lgbt: false,
+  publicServants: false,
+  csps: false,
+});
 
-const question2 = reactive(
-  {
-    role: ''
-  }
-)
+const question2 = reactive({
+  role: "",
+});
 
+const question3 = reactive({
+  poc: false,
+  lgbt: false,
+  disability: false,
+});
 
-const question3 = reactive(
-  {
-    poc: false,
-    lgbt: false,
-    disability: false
-  }
-)
-
-const { t, locale, availableLocales } = useI18n()
-
-
+const { t, locale, availableLocales } = useI18n();
 
 // Set html lang based on current locale
-const locales = useCycleList(availableLocales)
-let lang = document.querySelector('html')
-let currLang = lang?.getAttribute('lang')
+const locales = useCycleList(availableLocales);
+let lang = document.querySelector("html");
+let currLang = lang?.getAttribute("lang");
 // set page title
-const title = useTitle()
-
+const title = useTitle();
 
 // methods
 function changeLang() {
-  locale.value !== 'en' ? locale.value = 'en' : locale.value = 'fr'
-  lang?.setAttribute('lang', locale.value)
-  title.value = t('pageTitle')
+  locale.value !== "en" ? (locale.value = "en") : (locale.value = "fr");
+  lang?.setAttribute("lang", locale.value);
+  title.value = t("pageTitle");
 }
-
 
 function determineAccordionNum(e: any) {
-  let decider = e.target.getAttribute('data-accordion-target')
-  let accordionArray = Array.from(document.querySelectorAll('.accordion > div'))
-  let multiAccGroup = document.querySelector('.multi-accordion-group')
+  let decider = e.target.getAttribute("data-accordion-target");
+  let accordionArray = Array.from(
+    document.querySelectorAll(".accordion > div")
+  );
+  let multiAccGroup = document.querySelector(".multi-accordion-group");
 
-  accordionArray.map(arr => {
+  accordionArray.map((arr) => {
     // arr is accordion that matches decider
-    if (decider === arr.getAttribute('data-accordion')) {
+    if (decider === arr.getAttribute("data-accordion")) {
       // Show this accordion
-      arr.toggleAttribute('hidden')
-      arr.toggleAttribute('checked')
+      arr.toggleAttribute("hidden");
+      arr.toggleAttribute("checked");
 
       if (Object.values(question1).some((v: any) => v === true)) {
-        multiAccGroup?.removeAttribute('hidden')
+        multiAccGroup?.removeAttribute("hidden");
       } else {
-        multiAccGroup?.setAttribute('hidden', '')
+        multiAccGroup?.setAttribute("hidden", "");
       }
-
-
     }
-  })
-
+  });
 }
-
 
 // life cycle hooks
 
 onBeforeMount(() => {
   if (currLang) {
-    locale.value = currLang
-    lang?.setAttribute('lang', locale.value)
-    title.value = t('pageTitle')
+    locale.value = currLang;
+    lang?.setAttribute("lang", locale.value);
+    title.value = t("pageTitle");
   }
-
-})
-
-
+});
 </script>
 <template>
   <div class="wrapper">
@@ -128,10 +112,10 @@ onBeforeMount(() => {
 
           <div class="questionnaire-wrapper" aria-live="polite" role="region" aria-label="Questionnaire">
             <!-- <div class="questionnaire-header">
-                                                                                                                                                                                    <h2 class="questionnaire-heading">
+                                                                                                                                                                                        <h2 class="questionnaire-heading">
                 
-                                                                                                                                                                                    </h2>
-                                                                                                                                                                                  </div> -->
+                                                                                                                                                                                        </h2>
+                                                                                                                                                                                      </div> -->
 
             <div class="questionnaire questionnaire-1" v-if="step === 1">
               <p>{{ $t("selectAll") }}</p>
@@ -166,30 +150,30 @@ onBeforeMount(() => {
               </form>
             </div>
             <!-- <div class="questionnaire questionnaire-2" v-if="step === 2">
-                                                                                                                                                                                    <p>{{ $t("thankYouPara[0]") }}</p>
-                                                                                                                                                                                    <p>{{ $t("thankYouPara[1]") }}</p>
-                                                                                                                                                                                    <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
-                                                                                                                                                                                  </div>
-                                                                                                                                                                                  <div class="questionnaire questionnaire-3" v-if="step === 3">
-                                                                                                                                                                                    <p>{{ t("whichOfThese") }}</p>
-                                                                                                                                                                                    <form class="options">
-                                                                                                                                                                                      <div>
-                                                                                                                                                                                        <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
-                                                                                                                                                                                          v-model="question2.role">
-                                                                                                                                                                                        <label for="employee">{{ t("roles[0]") }}</label>
+                                                                                                                                                                                        <p>{{ $t("thankYouPara[0]") }}</p>
+                                                                                                                                                                                        <p>{{ $t("thankYouPara[1]") }}</p>
+                                                                                                                                                                                        <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
                                                                                                                                                                                       </div>
-                                                                                                                                                                                      <div>
-                                                                                                                                                                                        <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
-                                                                                                                                                                                          v-model="question2.role">
-                                                                                                                                                                                        <label for="manager">{{ t("roles[1]") }}</label>
-                                                                                                                                                                                      </div>
-                                                                                                                                                                                      <div>
-                                                                                                                                                                                        <input type="radio" name="option" id="executive" aria-label="executive"
-                                                                                                                                                                                          value="executive" v-model="question2.role">
-                                                                                                                                                                                        <label for="executive">{{ t("roles[2]") }}</label>
-                                                                                                                                                                                      </div>
-                                                                                                                                                                                    </form>
-                                                                                                                                                                                  </div> -->
+                                                                                                                                                                                      <div class="questionnaire questionnaire-3" v-if="step === 3">
+                                                                                                                                                                                        <p>{{ t("whichOfThese") }}</p>
+                                                                                                                                                                                        <form class="options">
+                                                                                                                                                                                          <div>
+                                                                                                                                                                                            <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
+                                                                                                                                                                                              v-model="question2.role">
+                                                                                                                                                                                            <label for="employee">{{ t("roles[0]") }}</label>
+                                                                                                                                                                                          </div>
+                                                                                                                                                                                          <div>
+                                                                                                                                                                                            <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
+                                                                                                                                                                                              v-model="question2.role">
+                                                                                                                                                                                            <label for="manager">{{ t("roles[1]") }}</label>
+                                                                                                                                                                                          </div>
+                                                                                                                                                                                          <div>
+                                                                                                                                                                                            <input type="radio" name="option" id="executive" aria-label="executive"
+                                                                                                                                                                                              value="executive" v-model="question2.role">
+                                                                                                                                                                                            <label for="executive">{{ t("roles[2]") }}</label>
+                                                                                                                                                                                          </div>
+                                                                                                                                                                                        </form>
+                                                                                                                                                                                      </div> -->
             <div class="customized-toolkit" v-show="step === 2">
               <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
                 <template v-slot:AccTitle>
@@ -199,8 +183,7 @@ onBeforeMount(() => {
                   <ul class="en" v-show="locale === 'en'">
                     <li>
                       <NewWindow Href="https://cmha.ca/"
-                        LinkText="The Canadian Mental
-                                                                                                                                                                                            Health Association" />
+                        LinkText="The Canadian Mental Health Association" />
                       is
                       a
                       nationwide
@@ -222,8 +205,7 @@ onBeforeMount(() => {
                     </li>
                     <li>
                       <NewWindow Href="https://kidshelpphone.ca/"
-                        LinkText="Kids Help
-                                                                                                                                                                                Phone" />
+                        LinkText="Kids Help Phone" />
                       <a href="" target="_blank"></a>
                       is
                       a
@@ -249,8 +231,7 @@ onBeforeMount(() => {
                     <li></li>
                     <li>The
                       <NewWindow Href="https://www.canada.ca/en/public-health/topics/violence-abuse.html"
-                        LinkText="Violence
-                                                                                                                                                                          and Abuse" />
+                        LinkText="Violence and Abuse" />
                       <a href="" target="_blank"></a>
                       web
                       page
@@ -314,14 +295,13 @@ onBeforeMount(() => {
 
               </div>
               <MultiAccordions :AccNum="6">
-                <template #AccTitle-1 data-accordion="1" class="accordions">{{ $t('accordionTitles[0]') }}</template>
+                <template #AccTitle-1 data-accordion="1" >{{ $t('accordionTitles[0]') }}</template>
                 <template #AccBody-1>
 
                   <ul class="en" v-show="locale === 'en'">
                     <li>
                       <NewWindow Href="https://cmha.ca/"
-                        LinkText="The Canadian Mental
-                                                                                                                                                                                            Health Association" />
+                        LinkText="The Canadian Mental Health Association" />
                       is
                       a
                       nationwide
@@ -343,8 +323,7 @@ onBeforeMount(() => {
                     </li>
                     <li>
                       <NewWindow Href="https://kidshelpphone.ca/"
-                        LinkText="Kids Help
-                                                                                                                                                                                Phone" />
+                        LinkText="Kids Help Phone" />
                       <a href="" target="_blank"></a>
                       is
                       a
@@ -370,8 +349,7 @@ onBeforeMount(() => {
                     <li></li>
                     <li>The
                       <NewWindow Href="https://www.canada.ca/en/public-health/topics/violence-abuse.html"
-                        LinkText="Violence
-                                                                                                                                                                          and Abuse" />
+                        LinkText="Violence and Abuse" />
                       <a href="" target="_blank"></a>
                       web
                       page
@@ -428,13 +406,12 @@ onBeforeMount(() => {
                       soutien communautaire et par les pairs.</li>
                   </ul>
                 </template>
-                <template #AccTitle-2 data-accordion="2" class="accordions">{{ $t('accordionTitles[1]') }}</template>
+                <template #AccTitle-2 data-accordion="2" >{{ $t('accordionTitles[1]') }}</template>
                 <template #AccBody-2>
                   <ul class="en" v-show="locale === 'en'">
                     <li>The
                       <NewWindow Href="https://www.fpwc.ca/"
-                        LinkText="First Peoples
-                                                                                                                                                                  Wellness Circle" />
+                        LinkText="First Peoples Wellness Circle" />
                       <a href="" target="_blank"></a>
                       is
                       a
@@ -455,8 +432,7 @@ onBeforeMount(() => {
                     </li>
                     <li>The
                       <NewWindow Href="https://www.irsss.ca/"
-                        LinkText="Indian Residential
-                                                                                                                                                              School Survivors Society" />
+                        LinkText="Indian Residential School Survivors Society" />
                       <a href="" target="_blank"></a>
                       offers
                       a
@@ -469,8 +445,7 @@ onBeforeMount(() => {
                     </li>
                     <li>
                       <NewWindow Href="https://www.itk.ca/"
-                        LinkText="Inuit Tapiriit
-                                                                                                                                                            Kanatami" />
+                        LinkText="Inuit Tapiriit Kanatami" />
                       <a href="" target="_blank"></a>
                       works
                       to
@@ -486,8 +461,7 @@ onBeforeMount(() => {
                     </li>
                     <li>The
                       <NewWindow Href="http://nunavuthelpline.ca/"
-                        LinkText="Kamatsiaqtut
-                                                                                                                                                          Nunavut Helpline" />
+                        LinkText="Kamatsiaqtut Nunavut Helpline" />
                       <a href="" target="_blank"></a>
                       is
                       a
@@ -499,8 +473,7 @@ onBeforeMount(() => {
                     </li>
                     <li>The
                       <NewWindow Href="https://www.mmiwg-ffada.ca/contact/"
-                        LinkText="Support Line of the National Inquiry into Missing and Murdered Indigenous Women
-                                                                                                                                                        and Girls" />
+                        LinkText="Support Line of the National Inquiry into Missing and Murdered Indigenous Women and Girls" />
                       <a href="" target="_blank"></a>
                       is
                       an
@@ -513,8 +486,7 @@ onBeforeMount(() => {
                     </li>
                     <li>The
                       <NewWindow Href="https://nafc.ca/?lang=en"
-                        LinkText="National
-                                                                                                                                                      Association of Friendship Centres" />
+                        LinkText="National Association of Friendship Centres" />
                       <a href="" target="_blank"></a>
                       provides
                       culturally
@@ -593,7 +565,7 @@ onBeforeMount(() => {
 
                   </ul>
                 </template>
-                <template #AccTitle-3 data-accordion="3" class="accordions">{{ $t('accordionTitles[2]') }}</template>
+                <template #AccTitle-3 data-accordion="3" >{{ $t('accordionTitles[2]') }}</template>
                 <template #AccBody-3>
                   <ul class="en" v-show="locale === 'en'">
                     <li>LGBT Youth Line: 1-800-268-9688 OR text 647-694-4275</li>
@@ -614,7 +586,7 @@ onBeforeMount(() => {
                     </li>
                   </ul>
                 </template>
-                <template #AccTitle-4 data-accordion="4" class="accordions">{{ $t('accordionTitles[3]') }}</template>
+                <template #AccTitle-4 data-accordion="4" >{{ $t('accordionTitles[3]') }}</template>
                 <template #AccBody-4>
 
                   <ul class="en" v-show="locale === 'en'">
@@ -691,7 +663,7 @@ onBeforeMount(() => {
                   </ul>
 
                 </template>
-                <template #AccTitle-5 data-accordion="5" class="accordions">{{ $t('accordionTitles[4]') }}</template>
+                <template #AccTitle-5 data-accordion="5" >{{ $t('accordionTitles[4]') }}</template>
                 <template #AccBody-5>
 
                   <div class="en" v-show="locale === 'en'">
