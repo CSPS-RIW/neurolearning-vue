@@ -7,7 +7,7 @@ import SimpleAccordion from './components/SimpleAccordion.vue';
 import NewWindow from './components/NewWindow.vue';
 
 const step = ref(1)
-const totalSteps = ref(4)
+const totalSteps = ref(2)
 const activityStart = ref(false)
 
 const question1 = reactive(
@@ -97,10 +97,10 @@ onBeforeMount(() => {
   <div class="wrapper">
     <header>
       <div class="container">
-        <div class="row d-flex align-items-center">
-          <div class="col-sm-2"></div>
-          <div class="col-sm-8">
-            <h1 class="text-center">{{ $t("title") }}</h1>
+        <div class="row d-flex align-items-center justify-content-between">
+          
+          <div class="col-sm-10">
+            <h1>{{ $t("title") }}</h1>
           </div>
           <div class="col-sm-2">
             <a href="#" class="lang-toggle" @click.prevent="changeLang" :title="t('langToggle')"
@@ -115,7 +115,7 @@ onBeforeMount(() => {
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <p>{{ $t("intro[0]") }}</p>
           <p>{{ $t("intro[1]") }}</p>
-          <button class="btn-regular" @click="activityStart = true">
+          <button class="btn btn-regular" @click="activityStart = true">
             {{ $t("buttons.start") }}
           </button>
          
@@ -127,11 +127,11 @@ onBeforeMount(() => {
         <div class="holster">
         
           <div class="questionnaire-wrapper" aria-live="polite" role="region" aria-label="Questionnaire">
-            <div class="questionnaire-header">
-              <h2 class="questionnaire-heading text-center">
-                {{ $t("heading") }}
+            <!-- <div class="questionnaire-header">
+              <h2 class="questionnaire-heading">
+                
               </h2>
-            </div>
+            </div> -->
         
             <div class="questionnaire questionnaire-1" v-if="step === 1">
               <p>{{ $t("selectAll") }}</p>
@@ -165,7 +165,7 @@ onBeforeMount(() => {
                 </div>
               </form>
             </div>
-            <div class="questionnaire questionnaire-2" v-if="step === 2">
+            <!-- <div class="questionnaire questionnaire-2" v-if="step === 2">
               <p>{{ $t("thankYouPara[0]") }}</p>
               <p>{{ $t("thankYouPara[1]") }}</p>
               <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
@@ -189,8 +189,8 @@ onBeforeMount(() => {
                   <label for="executive">{{ t("roles[2]") }}</label>
                 </div>
               </form>
-            </div>
-            <div class="customized-toolkit" v-show="step === 4">
+            </div> -->
+            <div class="customized-toolkit" v-show="step === 2">
               <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
                 <template v-slot:AccTitle>
                   {{ $t('accordionTitles[0]') }}
@@ -296,7 +296,7 @@ onBeforeMount(() => {
                     <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/tips-for-managers-eng.aspx" LinkText="Spotlight on #GCMentalHealth: Tips for Managers"/></li>
                     <li>Video: <NewWindow Href="https://www.csps-efpc.gc.ca/video/you-are-not-alone-eng.aspx" LinkText="Spotlight on #GCMentalHealth: You Are Not Alone"/></li>
                   </ul>
-                  <div class="managers" v-show="question2.role === 'manager'">
+                  <div class="managers">
                     <h3>For Managers</h3>
                     <ul>
                       <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf1-psychological-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 1 – Psychological and Social Support (WMT2-J01)"/></li>
@@ -314,7 +314,7 @@ onBeforeMount(() => {
                       <li><NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf13-protection-eng.aspx" LinkText="Mental Health Job Aid for Managers: Psychosocial Factor 13 – Protection of Physical Safety (WMT2-J13)"/> </li>
                     </ul>
                   </div>
-                  <div class="executives" v-show="question2.role === 'executive'">
+                  <div class="executives">
                     <h3>For Executives</h3>
                     <ul>
                       <li>Podcast: <NewWindow Href="https://www.csps-efpc.gc.ca/podcasts/survive-executive/season1/episode3-eng.aspx" LinkText="How to Survive as an Executive, Season 1, Episode 3: Leading with Calm and Authenticity, with Valerie Gideon, Ph.D."/> </li>
@@ -367,7 +367,7 @@ onBeforeMount(() => {
               </ul>
             </nav>
           </div>
-          <button class="btn-regular next" @click="step++" :disabled="step >= 4">{{ $t('buttons.next') }}</button>
+          <button class="btn-regular next" @click="step++" :disabled="step >= 2">{{ $t('buttons.next') }}</button>
         </div>
       </div>
     </main>
