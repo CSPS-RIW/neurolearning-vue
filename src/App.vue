@@ -128,10 +128,10 @@ onBeforeMount(() => {
 
           <div class="questionnaire-wrapper" aria-live="polite" role="region" aria-label="Questionnaire">
             <!-- <div class="questionnaire-header">
-                                                                                                                                    <h2 class="questionnaire-heading">
+                                                                                                                                                          <h2 class="questionnaire-heading">
                 
-                                                                                                                                    </h2>
-                                                                                                                                  </div> -->
+                                                                                                                                                          </h2>
+                                                                                                                                                        </div> -->
 
             <div class="questionnaire questionnaire-1" v-if="step === 1">
               <p>{{ $t("selectAll") }}</p>
@@ -166,30 +166,30 @@ onBeforeMount(() => {
               </form>
             </div>
             <!-- <div class="questionnaire questionnaire-2" v-if="step === 2">
-                                                                                                                                    <p>{{ $t("thankYouPara[0]") }}</p>
-                                                                                                                                    <p>{{ $t("thankYouPara[1]") }}</p>
-                                                                                                                                    <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
-                                                                                                                                  </div>
-                                                                                                                                  <div class="questionnaire questionnaire-3" v-if="step === 3">
-                                                                                                                                    <p>{{ t("whichOfThese") }}</p>
-                                                                                                                                    <form class="options">
-                                                                                                                                      <div>
-                                                                                                                                        <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
-                                                                                                                                          v-model="question2.role">
-                                                                                                                                        <label for="employee">{{ t("roles[0]") }}</label>
-                                                                                                                                      </div>
-                                                                                                                                      <div>
-                                                                                                                                        <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
-                                                                                                                                          v-model="question2.role">
-                                                                                                                                        <label for="manager">{{ t("roles[1]") }}</label>
-                                                                                                                                      </div>
-                                                                                                                                      <div>
-                                                                                                                                        <input type="radio" name="option" id="executive" aria-label="executive"
-                                                                                                                                          value="executive" v-model="question2.role">
-                                                                                                                                        <label for="executive">{{ t("roles[2]") }}</label>
-                                                                                                                                      </div>
-                                                                                                                                    </form>
-                                                                                                                                  </div> -->
+                                                                                                                                                          <p>{{ $t("thankYouPara[0]") }}</p>
+                                                                                                                                                          <p>{{ $t("thankYouPara[1]") }}</p>
+                                                                                                                                                          <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
+                                                                                                                                                        </div>
+                                                                                                                                                        <div class="questionnaire questionnaire-3" v-if="step === 3">
+                                                                                                                                                          <p>{{ t("whichOfThese") }}</p>
+                                                                                                                                                          <form class="options">
+                                                                                                                                                            <div>
+                                                                                                                                                              <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
+                                                                                                                                                                v-model="question2.role">
+                                                                                                                                                              <label for="employee">{{ t("roles[0]") }}</label>
+                                                                                                                                                            </div>
+                                                                                                                                                            <div>
+                                                                                                                                                              <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
+                                                                                                                                                                v-model="question2.role">
+                                                                                                                                                              <label for="manager">{{ t("roles[1]") }}</label>
+                                                                                                                                                            </div>
+                                                                                                                                                            <div>
+                                                                                                                                                              <input type="radio" name="option" id="executive" aria-label="executive"
+                                                                                                                                                                value="executive" v-model="question2.role">
+                                                                                                                                                              <label for="executive">{{ t("roles[2]") }}</label>
+                                                                                                                                                            </div>
+                                                                                                                                                          </form>
+                                                                                                                                                        </div> -->
             <div class="customized-toolkit" v-show="step === 2">
               <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
                 <template v-slot:AccTitle>
@@ -200,7 +200,7 @@ onBeforeMount(() => {
                     <li>
                       <NewWindow Href="https://cmha.ca/"
                         LinkText="The Canadian Mental
-                                                                                                                                            Health Association" />
+                                                                                                                                                                  Health Association" />
                       is
                       a
                       nationwide
@@ -223,7 +223,7 @@ onBeforeMount(() => {
                     <li>
                       <NewWindow Href="https://kidshelpphone.ca/"
                         LinkText="Kids Help
-                                                                                                                                Phone" />
+                                                                                                                                                      Phone" />
                       <a href="" target="_blank"></a>
                       is
                       a
@@ -250,7 +250,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://www.canada.ca/en/public-health/topics/violence-abuse.html"
                         LinkText="Violence
-                                                                                                                          and Abuse" />
+                                                                                                                                                and Abuse" />
                       <a href="" target="_blank"></a>
                       web
                       page
@@ -321,7 +321,7 @@ onBeforeMount(() => {
                     <li>
                       <NewWindow Href="https://cmha.ca/"
                         LinkText="The Canadian Mental
-                                                                                                                                            Health Association" />
+                                                                                                                                                                  Health Association" />
                       is
                       a
                       nationwide
@@ -344,7 +344,7 @@ onBeforeMount(() => {
                     <li>
                       <NewWindow Href="https://kidshelpphone.ca/"
                         LinkText="Kids Help
-                                                                                                                                Phone" />
+                                                                                                                                                      Phone" />
                       <a href="" target="_blank"></a>
                       is
                       a
@@ -371,7 +371,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://www.canada.ca/en/public-health/topics/violence-abuse.html"
                         LinkText="Violence
-                                                                                                                          and Abuse" />
+                                                                                                                                                and Abuse" />
                       <a href="" target="_blank"></a>
                       web
                       page
@@ -434,7 +434,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://www.fpwc.ca/"
                         LinkText="First Peoples
-                                                                                                                  Wellness Circle" />
+                                                                                                                                        Wellness Circle" />
                       <a href="" target="_blank"></a>
                       is
                       a
@@ -456,7 +456,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://www.irsss.ca/"
                         LinkText="Indian Residential
-                                                                                                              School Survivors Society" />
+                                                                                                                                    School Survivors Society" />
                       <a href="" target="_blank"></a>
                       offers
                       a
@@ -468,8 +468,9 @@ onBeforeMount(() => {
                       experiencing pain or distress as a result of their residential school experience: 1-800-721-0066..
                     </li>
                     <li>
-                      <NewWindow Href="https://www.itk.ca/" LinkText="Inuit Tapiriit
-                                                                                                            Kanatami" />
+                      <NewWindow Href="https://www.itk.ca/"
+                        LinkText="Inuit Tapiriit
+                                                                                                                                  Kanatami" />
                       <a href="" target="_blank"></a>
                       works
                       to
@@ -486,7 +487,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="http://nunavuthelpline.ca/"
                         LinkText="Kamatsiaqtut
-                                                                                                          Nunavut Helpline" />
+                                                                                                                                Nunavut Helpline" />
                       <a href="" target="_blank"></a>
                       is
                       a
@@ -497,9 +498,10 @@ onBeforeMount(() => {
                       volunteers: 1-800-265-3333.
                     </li>
                     <li>The
-                      <NewWindow Href="https://www.mmiwg-ffada.ca/contact/" LinkText="Support Line of the National Inquiry into Missing and Murdered Indigenous Women
-                                                                                                        and Girls" /><a
-                        href="" target="_blank"></a>
+                      <NewWindow Href="https://www.mmiwg-ffada.ca/contact/"
+                        LinkText="Support Line of the National Inquiry into Missing and Murdered Indigenous Women
+                                                                                                                              and Girls" />
+                      <a href="" target="_blank"></a>
                       is
                       an
                       independent,
@@ -512,7 +514,7 @@ onBeforeMount(() => {
                     <li>The
                       <NewWindow Href="https://nafc.ca/?lang=en"
                         LinkText="National
-                                                                                                      Association of Friendship Centres" />
+                                                                                                                            Association of Friendship Centres" />
                       <a href="" target="_blank"></a>
                       provides
                       culturally
@@ -873,57 +875,68 @@ onBeforeMount(() => {
                       <h3>Pour les gestionnaires</h3>
                       <ul>
                         <li>
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf1-psychological-fra.aspx"
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf1-psychological-fra.aspx"
                             LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 1 – Soutien psychologique et social (WMT2-J01)" />
                         </li>
                         <li>
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf2-organizational-fra.aspx"
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf2-organizational-fra.aspx"
                             LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 2 – Culture organisationnelle (WMT2-J02)" />
                         </li>
                         <li>
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf3-clear-leadership-fra.aspx"
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf3-clear-leadership-fra.aspx"
                             LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 3 – Leadership et attentes clairs (WMT2-J03)" />
                         </li>
                         <li>
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf4-civility-fra.aspx"
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf4-civility-fra.aspx"
                             LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 4 – Courtoisie et respect (WMT2-J04)" />
                         </li>
                         <li>
-                          <NewWindow
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf5-psychological-competencies-fra.aspx"
                             LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 5 – Compétences et exigences psychologiques (WMT2-J05)" />
                         </li>
                         <li>
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf6-growth-fra.aspx"
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf6-growth-fra.aspx"
                             LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 6 – Croissance et perfectionnement (WMT2-J06)" />
                         </li>
                         <li>
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf7-recognition-fra.aspx"
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf7-recognition-fra.aspx"
                             LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 7 – Reconnaissance et récompense (WMT2-J07)" />
                         </li>
                         <li>
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf8-involvement-fra.aspx"
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf8-involvement-fra.aspx"
                             LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 8 – Participation et influence (WMT2-J08)" />
                         </li>
                         <li>
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf9-workload-fra.aspx"
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf9-workload-fra.aspx"
                             LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 9 – Gestion de la charge de travail (WMT2-J09)" />
                         </li>
                         <li>
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf10-engagement-fra.aspx"
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf10-engagement-fra.aspx"
                             LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 10 – Engagement (WMT2-J10)" />
                         </li>
                         <li>
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf11-balance-fra.aspx"
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf11-balance-fra.aspx"
                             LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 11 – Équilibre (WMT2-J11)" />
                         </li>
                         <li>
-                          <NewWindow
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf12-psychological-protection-fra.aspx"
                             LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 12 – Protection de la sécurité psychologique (WMT2-J12)" />
                         </li>
                         <li>
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf13-protection-fra.aspx"
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf13-protection-fra.aspx"
                             LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 13 – Protection de l'intégrité physique (WMT2-J13)" />
                         </li>
                       </ul>
@@ -931,14 +944,16 @@ onBeforeMount(() => {
                     <div class="executives">
                       <h3>Pour les cadres</h3>
                       <ul>
-                        <li>Podcast:
+                        <li>Podcast :
                           <NewWindow
-                            Href="https://www.csps-efpc.gc.ca/podcasts/survive-executive/season1/episode3-eng.aspx"
-                            LinkText="How to Survive as an Executive, Season 1, Episode 3: Leading with Calm and Authenticity, with Valerie Gideon, Ph.D." />
+                            Href="https://www.csps-efpc.gc.ca/podcasts/survive-executive/season1/episode3-fra.aspx"
+                            Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            LinkText="Comment survivre comme cadre, saison 1, épisode 3 : Comment diriger une équipe avec calme et authenticité, avec Valerie Gideon, Ph.D." />
                         </li>
-                        <li>Video:
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/practical-tips-eng.aspx"
-                            LinkText="EXecuTALK: Practical Tips for Strengthening Mental Health for Your Staff, Your Clients and Yourself" />
+                        <li>Vidéo :
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/practical-tips-fra.aspx"
+                            Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            LinkText="Entre cadres : Conseils pratiques pour améliorer la santé mentale, celle de votre personnel, celle de vos clients et la vôtre" />
                         </li>
                       </ul>
                     </div>
@@ -946,13 +961,15 @@ onBeforeMount(() => {
                       <h3>Autres ressources de l'école</h3>
                       <ul>
                         <li>
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/mental-health-eng.aspx#resources"
-                            LinkText="Mental Health Learning Series" />
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/mental-health-fra.aspx#resources"
+                            Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            LinkText="Série d'apprentissage sur la santé mentale" />
                         </li>
                         <li>
-                          Course:
-                          <NewWindow Href="https://catalogue.csps-efpc.gc.ca/product?catalog=WMT211&cm_locale=en"
-                            LinkText="Take a Deep Breath and Manage Your Stress (WMT211)" />
+                          Cours :
+                          <NewWindow Href="https://catalogue.csps-efpc.gc.ca/product?catalog=WMT211&cm_locale=fr"
+                            Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            LinkText="Respirer profondément et gérer son stress (WMT211)" />
                         </li>
                       </ul>
                     </div>
