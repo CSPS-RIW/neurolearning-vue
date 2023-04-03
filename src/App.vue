@@ -324,9 +324,9 @@ onBeforeMount(() => {
                         LinkText="L’Association canadienne pour la santé mentale"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> est une organisation
-                      nationale qui promeut la santé mentale et soutient les
-                      personnes en rétablissement de maladies mentales.
+                      est une organisation nationale qui promeut la santé
+                      mentale et soutient les personnes en rétablissement de
+                      maladies mentales.
                     </li>
                     <li>
                       <NewWindow
@@ -334,14 +334,13 @@ onBeforeMount(() => {
                         LinkText="Services de crise Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> offre un service de
-                      prévention du suicide gratuit et disponible 24 heures sur
-                      24, 7 jours sur 7, tout au long de l’année au
-                      1-833-456-4566. Que vous souffriez d’une perte, que vous
-                      vous inquiétiez pour quelqu’un qui pourrait avoir des
-                      pensées suicidaires ou que vous ayez vous-même des pensées
-                      suicidaires, des intervenants hautement qualifiés peuvent
-                      vous apporter leur soutien.
+                      offre un service de prévention du suicide gratuit et
+                      disponible 24 heures sur 24, 7 jours sur 7, tout au long
+                      de l’année au 1-833-456-4566. Que vous souffriez d’une
+                      perte, que vous vous inquiétiez pour quelqu’un qui
+                      pourrait avoir des pensées suicidaires ou que vous ayez
+                      vous-même des pensées suicidaires, des intervenants
+                      hautement qualifiés peuvent vous apporter leur soutien.
                     </li>
                     <li>
                       <NewWindow
@@ -349,11 +348,11 @@ onBeforeMount(() => {
                         LinkText="Jeunesse, J’écoute"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> est un service
-                      national disponible 24 heures sur 24 qui offre des
-                      services de counseling professionnels, des informations,
-                      des références et un soutien par messagerie texte animé
-                      par des bénévoles aux jeunes en anglais et en français.
+                      est un service national disponible 24 heures sur 24 qui
+                      offre des services de counseling professionnels, des
+                      informations, des références et un soutien par messagerie
+                      texte animé par des bénévoles aux jeunes en anglais et en
+                      français.
                     </li>
                     <li>
                       <NewWindow
@@ -361,9 +360,9 @@ onBeforeMount(() => {
                         LinkText="Hebergementfemmes.ca"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> est une ressource en
-                      ligne pour les femmes et leurs enfants qui cherchent à se
-                      protéger contre la violence et les abus.
+                      est une ressource en ligne pour les femmes et leurs
+                      enfants qui cherchent à se protéger contre la violence et
+                      les abus.
                     </li>
                     <li>
                       La page Web sur
@@ -372,10 +371,9 @@ onBeforeMount(() => {
                         LinkText="l’intimidation"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> fournit des
-                      informations sur la façon de reconnaître et de prévenir
-                      l’intimidation, ainsi que des ressources de prévention de
-                      l’intimidation.
+                      fournit des informations sur la façon de reconnaître et de
+                      prévenir l’intimidation, ainsi que des ressources de
+                      prévention de l’intimidation.
                     </li>
                     <li></li>
                     <li>
@@ -385,10 +383,9 @@ onBeforeMount(() => {
                         LinkText="violence et les abus"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> fournit des
-                      informations sur la violence et les abus, leur prévention
-                      et la façon d’obtenir de l’aide si vous êtes victime
-                      d’abus.
+                      fournit des informations sur la violence et les abus, leur
+                      prévention et la façon d’obtenir de l’aide si vous êtes
+                      victime d’abus.
                     </li>
                     <li>
                       <NewWindow
@@ -396,11 +393,11 @@ onBeforeMount(() => {
                         LinkText="Mieux-être ensemble Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> offre des services de
-                      counseling par téléphone, vidéo et messagerie texte, des
-                      informations et des vidéos sur les problèmes courants de
-                      santé mentale et de toxicomanie, des programmes de
-                      bien-être et un soutien communautaire et par les pairs.
+                      offre des services de counseling par téléphone, vidéo et
+                      messagerie texte, des informations et des vidéos sur les
+                      problèmes courants de santé mentale et de toxicomanie, des
+                      programmes de bien-être et un soutien communautaire et par
+                      les pairs.
                     </li>
                   </ul>
                 </template>
@@ -508,9 +505,9 @@ onBeforeMount(() => {
                         LinkText="L’Association canadienne pour la santé mentale"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> est une organisation
-                      nationale qui promeut la santé mentale et soutient les
-                      personnes en rétablissement de maladies mentales.
+                      est une organisation nationale qui promeut la santé
+                      mentale et soutient les personnes en rétablissement de
+                      maladies mentales.
                     </li>
                     <li>
                       <NewWindow
@@ -518,14 +515,13 @@ onBeforeMount(() => {
                         LinkText="Services de crise Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> offre un service de
-                      prévention du suicide gratuit et disponible 24 heures sur
-                      24, 7 jours sur 7, tout au long de l’année au
-                      1-833-456-4566. Que vous souffriez d’une perte, que vous
-                      vous inquiétiez pour quelqu’un qui pourrait avoir des
-                      pensées suicidaires ou que vous ayez vous-même des pensées
-                      suicidaires, des intervenants hautement qualifiés peuvent
-                      vous apporter leur soutien.
+                      offre un service de prévention du suicide gratuit et
+                      disponible 24 heures sur 24, 7 jours sur 7, tout au long
+                      de l’année au 1-833-456-4566. Que vous souffriez d’une
+                      perte, que vous vous inquiétiez pour quelqu’un qui
+                      pourrait avoir des pensées suicidaires ou que vous ayez
+                      vous-même des pensées suicidaires, des intervenants
+                      hautement qualifiés peuvent vous apporter leur soutien.
                     </li>
                     <li>
                       <NewWindow
@@ -533,11 +529,11 @@ onBeforeMount(() => {
                         LinkText="Jeunesse, J’écoute"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> est un service
-                      national disponible 24 heures sur 24 qui offre des
-                      services de counseling professionnels, des informations,
-                      des références et un soutien par messagerie texte animé
-                      par des bénévoles aux jeunes en anglais et en français.
+                      est un service national disponible 24 heures sur 24 qui
+                      offre des services de counseling professionnels, des
+                      informations, des références et un soutien par messagerie
+                      texte animé par des bénévoles aux jeunes en anglais et en
+                      français.
                     </li>
                     <li>
                       <NewWindow
@@ -545,9 +541,9 @@ onBeforeMount(() => {
                         LinkText="Hebergementfemmes.ca"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> est une ressource en
-                      ligne pour les femmes et leurs enfants qui cherchent à se
-                      protéger contre la violence et les abus.
+                      est une ressource en ligne pour les femmes et leurs
+                      enfants qui cherchent à se protéger contre la violence et
+                      les abus.
                     </li>
                     <li>
                       La page Web sur
@@ -556,10 +552,9 @@ onBeforeMount(() => {
                         LinkText="l’intimidation"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> fournit des
-                      informations sur la façon de reconnaître et de prévenir
-                      l’intimidation, ainsi que des ressources de prévention de
-                      l’intimidation.
+                      fournit des informations sur la façon de reconnaître et de
+                      prévenir l’intimidation, ainsi que des ressources de
+                      prévention de l’intimidation.
                     </li>
                     <li></li>
                     <li>
@@ -569,10 +564,9 @@ onBeforeMount(() => {
                         LinkText="violence et les abus"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> fournit des
-                      informations sur la violence et les abus, leur prévention
-                      et la façon d’obtenir de l’aide si vous êtes victime
-                      d’abus.
+                      fournit des informations sur la violence et les abus, leur
+                      prévention et la façon d’obtenir de l’aide si vous êtes
+                      victime d’abus.
                     </li>
                     <li>
                       <NewWindow
@@ -580,11 +574,11 @@ onBeforeMount(() => {
                         LinkText="Mieux-être ensemble Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> offre des services de
-                      counseling par téléphone, vidéo et messagerie texte, des
-                      informations et des vidéos sur les problèmes courants de
-                      santé mentale et de toxicomanie, des programmes de
-                      bien-être et un soutien communautaire et par les pairs.
+                      offre des services de counseling par téléphone, vidéo et
+                      messagerie texte, des informations et des vidéos sur les
+                      problèmes courants de santé mentale et de toxicomanie, des
+                      programmes de bien-être et un soutien communautaire et par
+                      les pairs.
                     </li>
                   </ul>
                 </template>
@@ -718,11 +712,10 @@ onBeforeMount(() => {
                         LinkText="Cercle de bien-être des Premières Nations"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> est une corporation
-                      nationale à but non lucratif gouvernée et gérée par des
-                      leaders autochtones, qui vise à améliorer la vie des
-                      Premières Nations du Canada en abordant la guérison, le
-                      bien-être et d’autres défis de santé mentale.
+                      est une corporation nationale à but non lucratif gouvernée
+                      et gérée par des leaders autochtones, qui vise à améliorer
+                      la vie des Premières Nations du Canada en abordant la
+                      guérison, le bien-être et d’autres défis de santé mentale.
                     </li>
                     <li>
                       La
@@ -731,10 +724,9 @@ onBeforeMount(() => {
                         LinkText="Ligne d'écoute d'espoir pour le mieux-être"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> offre une aide
-                      immédiate à tous les peuples autochtones du Canada, 24
-                      heures sur 24, 7 jours sur 7. Appelez la ligne d’aide sans
-                      frais ou connectez-vous au chat en ligne à
+                      offre une aide immédiate à tous les peuples autochtones du
+                      Canada, 24 heures sur 24, 7 jours sur 7. Appelez la ligne
+                      d’aide sans frais ou connectez-vous au chat en ligne à
                       hopeforwellness.ca. Des services de counseling par
                       téléphone et en ligne sont disponibles en anglais et en
                       français. Sur demande, le counseling téléphonique est
@@ -749,11 +741,10 @@ onBeforeMount(() => {
                         indiens"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> offre une ligne de
-                      crise 24 heures sur 24, 7 jours sur 7, qui offre du
-                      soutien à toute personne éprouvant de la douleur ou de la
-                      détresse en raison de son expérience dans un pensionnat
-                      indien: 1-800-721-0066.
+                      offre une ligne de crise 24 heures sur 24, 7 jours sur 7,
+                      qui offre du soutien à toute personne éprouvant de la
+                      douleur ou de la détresse en raison de son expérience dans
+                      un pensionnat indien: 1-800-721-0066.
                     </li>
                     <li>
                       <NewWindow
@@ -761,10 +752,9 @@ onBeforeMount(() => {
                         LinkText="Inuit Tapiriit Kanatami"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> travaille à améliorer
-                      la santé et le bien-être des Inuits au Canada par la
-                      recherche, la défense des droits, la sensibilisation du
-                      public et l’éducation.
+                      travaille à améliorer la santé et le bien-être des Inuits
+                      au Canada par la recherche, la défense des droits, la
+                      sensibilisation du public et l’éducation.
                     </li>
                     <li>
                       La
@@ -774,9 +764,9 @@ onBeforeMount(() => {
                         Nunavut"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> est un service
-                      gratuit, anonyme et confidentiel 24 heures sur 24, 7 jours
-                      sur 7, assuré par des bénévoles formés: 1-800-265-3333.
+                      est un service gratuit, anonyme et confidentiel 24 heures
+                      sur 24, 7 jours sur 7, assuré par des bénévoles formés:
+                      1-800-265-3333.
                     </li>
                     <li>
                       La
@@ -786,11 +776,10 @@ onBeforeMount(() => {
                         nationale sur les femmes et les filles autochtones disparues et assassinées"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> est un service
-                      indépendant, national et gratuit 24 heures sur 24, 7 jours
-                      sur 7, disponible pour toute personne ayant besoin d’aide.
-                      Des services sont disponibles en anglais et en français:
-                      1-844-413-6649.
+                      est un service indépendant, national et gratuit 24 heures
+                      sur 24, 7 jours sur 7, disponible pour toute personne
+                      ayant besoin d’aide. Des services sont disponibles en
+                      anglais et en français: 1-844-413-6649.
                     </li>
                     <li>
                       La
@@ -885,7 +874,7 @@ onBeforeMount(() => {
                         Href="https://publicservicepride.ca/fr/resources/"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                         LinkText="Fierté de la fonction publique: Ressources"
-                      /><a href="“”" target="“_blank”"></a>
+                      />
                     </li>
                   </ul>
                 </template>
@@ -947,11 +936,11 @@ onBeforeMount(() => {
                         LinkText="Centre d’expertise sur la santé mentale en milieu de travail"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
                       />
-                      <a href="“”" target="“_blank”"></a> fournit des
-                      informations sur la façon dont le gouvernement du Canada
-                      aborde la santé mentale en milieu de travail, ainsi que
-                      l’accès à des ressources, des outils et des services pour
-                      les organisations, les gestionnaires et les employés.
+                      fournit des informations sur la façon dont le gouvernement
+                      du Canada aborde la santé mentale en milieu de travail,
+                      ainsi que l’accès à des ressources, des outils et des
+                      services pour les organisations, les gestionnaires et les
+                      employés.
                     </li>
                     <li>
                       Le
@@ -959,21 +948,21 @@ onBeforeMount(() => {
                         Href="https://www.canada.ca/fr/sante-canada/services/sante-environnement-milieu-travail/sante-securite-travail/service-aide-employes/programme-aide-employes.html"
                         LinkText="Programme d’aide aux employés (PAE)"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
-                      /><a href="“”" target="“_blank”"></a> offre des services
-                      de counseling à court terme gratuits pour les problèmes
-                      personnels ou liés au travail, ainsi que des services de
-                      counseling en cas de crise. Plus de 80 ministères et
-                      organismes fédéraux reçoivent leurs services de PAE par
-                      l’intermédiaire de Santé Canada, tandis que d’autres
-                      organisations fournissent ce service en interne ou
-                      l’achètent auprès du secteur privé. Pour trouver le
+                      />
+                      offre des services de counseling à court terme gratuits
+                      pour les problèmes personnels ou liés au travail, ainsi
+                      que des services de counseling en cas de crise. Plus de 80
+                      ministères et organismes fédéraux reçoivent leurs services
+                      de PAE par l’intermédiaire de Santé Canada, tandis que
+                      d’autres organisations fournissent ce service en interne
+                      ou l’achètent auprès du secteur privé. Pour trouver le
                       fournisseur de services pour votre organisation, veuillez
                       consulter la
                       <NewWindow
                         Href="https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/programme-aide-employes.html"
                         LinkText="liste ministérielle"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
-                      /><a href="“”" target="“_blank”"></a>.
+                      />.
                     </li>
                     <li>
                       Les
@@ -981,11 +970,10 @@ onBeforeMount(() => {
                         Href="https://www.canada.ca/fr/environnement-changement-climatique/services/sante-securite-travail/programme-sante-bien-etre/gestionnaires-cinq-regles-dor.html"
                         LinkText="Cinq règles d’or pour les gestionnaires"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
-                      /><a href="“”" target="“_blank”"></a>, élaborées par
-                      Environnement et Changement climatique Canada, fournissent
-                      des orientations sur la façon de favoriser un
-                      environnement de travail sain, qui soutient la santé
-                      mentale des employés.
+                      />, élaborées par Environnement et Changement climatique
+                      Canada, fournissent des orientations sur la façon de
+                      favoriser un environnement de travail sain, qui soutient
+                      la santé mentale des employés.
                     </li>
                     <li>
                       Services de santé mentale pour les membres des Forces
