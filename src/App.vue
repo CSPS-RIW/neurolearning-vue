@@ -258,32 +258,30 @@ onBeforeMount(() => {
                     <li>Mental Health Continuum Self-Check that can help us to identify how we are doing and when there is
                       a need for support. </li>
                   </ul>
-                  <ul class=“fr” v-show="locale === 'fr'">
-                    <li>
-                      <NewWindow Href="https://cmha.ca/" LinkText="L’Association canadienne pour la santé mentale"
-                        Title="Ouvre dans une nouvelle fenêtre/onglet" /> est une organisation nationale qui promeut la
-                      santé mentale et soutient les personnes en rétablissement de maladies mentales.
-                    </li>
-                    <li><a href=“https://www.crisisservicescanada.ca/en/” target=“_blank”>Services de crise Canada</a>
+                   <ul class=“fr” v-show="locale === 'fr'">
+                    <li> <NewWindow Href="https://cmha.ca/" LinkText="L’Association canadienne pour la santé mentale" Title="Ouvre dans une nouvelle fenêtre/onglet" /> <a href=“” target=“_blank”></a> est
+                      une organisation nationale qui promeut la santé mentale et soutient les personnes en rétablissement
+                      de maladies mentales.</li>
+                    <li> <NewWindow Href="https://www.crisisservicescanada.ca/fr/" LinkText="Services de crise Canada" Title="Ouvre dans une nouvelle fenêtre/onglet" /> <a href=“” target=“_blank”></a>
                       offre un service de prévention du suicide gratuit et disponible 24 heures sur 24, 7 jours sur 7,
                       tout au long de l’année au 1-833-456-4566. Que vous souffriez d’une perte, que vous vous inquiétiez
                       pour quelqu’un qui pourrait avoir des pensées suicidaires ou que vous ayez vous-même des pensées
                       suicidaires, des intervenants hautement qualifiés peuvent vous apporter leur soutien.</li>
-                    <li><a href=“https://kidshelpphone.ca/” target=“_blank”>Jeunesse, J’écoute</a> est un service national
+                    <li> <NewWindow Href="https://kidshelpphone.ca/" LinkText="Jeunesse, J’écoute" Title="Ouvre dans une nouvelle fenêtre/onglet" /> <a href=“” target=“_blank”></a> est un service national
                       disponible 24 heures sur 24 qui offre des services de counseling professionnels, des informations,
                       des références et un soutien par messagerie texte animé par des bénévoles aux jeunes en anglais et
                       en français.</li>
-                    <li><a href=“https://www.sheltersafe.ca/” target=“_blank”>ShelterSafe.ca</a> est une ressource en
+                    <li> <NewWindow Href="https://www.sheltersafe.ca/" LinkText="ShelterSafe.ca" Title="Ouvre dans une nouvelle fenêtre/onglet" /> <a href=“” target=“_blank”></a> est une ressource en
                       ligne pour les femmes et leurs enfants qui cherchent à se protéger contre la violence et les abus.
                     </li>
-                    <li>La page Web sur <a href=“https://www.canada.ca/fr/sante-publique/services/intimidation.html”
-                        target=“_blank”>l’intimidation</a> fournit des informations sur la façon de reconnaître et de
+                    <li>La page Web sur  <NewWindow Href="https://www.canada.ca/fr/sante-publique/services/intimidation.html" LinkText="l’intimidation" Title="Ouvre dans une nouvelle fenêtre/onglet" /> <a href=“”
+                        target=“_blank”></a> fournit des informations sur la façon de reconnaître et de
                       prévenir l’intimidation, ainsi que des ressources de prévention de l’intimidation.</li>
                     <li></li>
-                    <li>La page Web sur la <a href=“https://www.canada.ca/fr/sante-publique/sujets/violence-abus.html”
-                        target=“_blank”>violence et les abus</a> fournit des informations sur la violence et les abus,
+                    <li>La page Web sur la  <NewWindow Href="https://www.canada.ca/fr/sante-publique/sujets/violence-abus.html" LinkText="violence et les abus" Title="Ouvre dans une nouvelle fenêtre/onglet" /> <a href=“”
+                        target=“_blank”></a> fournit des informations sur la violence et les abus,
                       leur prévention et la façon d’obtenir de l’aide si vous êtes victime d’abus.</li>
-                    <li><a href=“https://bienetreensemble.ca/fr-CA” target=“_blank”>Bien-être ensemble Canada</a> offre
+                    <li> <NewWindow Href="https://bienetreensemble.ca/fr-CA" LinkText="Bien-être ensemble Canada" Title="Ouvre dans une nouvelle fenêtre/onglet" /> <a href=“” target=“_blank”></a> offre
                       des services de counseling par téléphone, vidéo et messagerie texte, des informations et des vidéos
                       sur les problèmes courants de santé mentale et de toxicomanie, des programmes de bien-être et un
                       soutien communautaire et par les pairs.</li>
@@ -378,29 +376,29 @@ onBeforeMount(() => {
                   </ul>
 
                   <ul class=“fr” v-show="locale === 'fr'">
-                    <li><a href=“https://cmha.ca/” target=“_blank”>L’Association canadienne pour la santé mentale</a> est
+                    <li> <NewWindow Href="https://cmha.ca/" LinkText="L’Association canadienne pour la santé mentale" Title="Ouvre dans une nouvelle fenêtre/onglet" /> <a href=“” target=“_blank”></a> est
                       une organisation nationale qui promeut la santé mentale et soutient les personnes en rétablissement
                       de maladies mentales.</li>
-                    <li><a href=“https://www.crisisservicescanada.ca/en/” target=“_blank”>Services de crise Canada</a>
+                    <li> <NewWindow Href="https://www.crisisservicescanada.ca/fr/" LinkText="Services de crise Canada" Title="Ouvre dans une nouvelle fenêtre/onglet" /> <a href=“” target=“_blank”></a>
                       offre un service de prévention du suicide gratuit et disponible 24 heures sur 24, 7 jours sur 7,
                       tout au long de l’année au 1-833-456-4566. Que vous souffriez d’une perte, que vous vous inquiétiez
                       pour quelqu’un qui pourrait avoir des pensées suicidaires ou que vous ayez vous-même des pensées
                       suicidaires, des intervenants hautement qualifiés peuvent vous apporter leur soutien.</li>
-                    <li><a href=“https://kidshelpphone.ca/” target=“_blank”>Jeunesse, J’écoute</a> est un service national
+                    <li> <NewWindow Href="https://kidshelpphone.ca/" LinkText="Jeunesse, J’écoute" Title="Ouvre dans une nouvelle fenêtre/onglet" /> <a href=“” target=“_blank”></a> est un service national
                       disponible 24 heures sur 24 qui offre des services de counseling professionnels, des informations,
                       des références et un soutien par messagerie texte animé par des bénévoles aux jeunes en anglais et
                       en français.</li>
-                    <li><a href=“https://www.sheltersafe.ca/” target=“_blank”>ShelterSafe.ca</a> est une ressource en
+                    <li> <NewWindow Href="https://www.sheltersafe.ca/" LinkText="ShelterSafe.ca" Title="Ouvre dans une nouvelle fenêtre/onglet" /> <a href=“” target=“_blank”></a> est une ressource en
                       ligne pour les femmes et leurs enfants qui cherchent à se protéger contre la violence et les abus.
                     </li>
-                    <li>La page Web sur <a href=“https://www.canada.ca/fr/sante-publique/services/intimidation.html”
-                        target=“_blank”>l’intimidation</a> fournit des informations sur la façon de reconnaître et de
+                    <li>La page Web sur  <NewWindow Href="https://www.canada.ca/fr/sante-publique/services/intimidation.html" LinkText="l’intimidation" Title="Ouvre dans une nouvelle fenêtre/onglet" /> <a href=“”
+                        target=“_blank”></a> fournit des informations sur la façon de reconnaître et de
                       prévenir l’intimidation, ainsi que des ressources de prévention de l’intimidation.</li>
                     <li></li>
-                    <li>La page Web sur la <a href=“https://www.canada.ca/fr/sante-publique/sujets/violence-abus.html”
-                        target=“_blank”>violence et les abus</a> fournit des informations sur la violence et les abus,
+                    <li>La page Web sur la  <NewWindow Href="https://www.canada.ca/fr/sante-publique/sujets/violence-abus.html" LinkText="violence et les abus" Title="Ouvre dans une nouvelle fenêtre/onglet" /> <a href=“”
+                        target=“_blank”></a> fournit des informations sur la violence et les abus,
                       leur prévention et la façon d’obtenir de l’aide si vous êtes victime d’abus.</li>
-                    <li><a href=“https://bienetreensemble.ca/fr-CA” target=“_blank”>Bien-être ensemble Canada</a> offre
+                    <li> <NewWindow Href="https://bienetreensemble.ca/fr-CA" LinkText="Bien-être ensemble Canada" Title="Ouvre dans une nouvelle fenêtre/onglet" /> <a href=“” target=“_blank”></a> offre
                       des services de counseling par téléphone, vidéo et messagerie texte, des informations et des vidéos
                       sur les problèmes courants de santé mentale et de toxicomanie, des programmes de bien-être et un
                       soutien communautaire et par les pairs.</li>
