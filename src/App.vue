@@ -255,7 +255,7 @@ onBeforeMount(() => {
                       maladies mentales.
                     </li>
                     <li>
-                      <NewWindow Href="https://www.crisisservicescanada.ca/fr/" LinkText="Services de crise Canada"
+                      <NewWindow Href="https://parlonssuicide.ca/" LinkText="Services de crise Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       offre un service de prévention du suicide gratuit et
                       disponible 24 heures sur 24, 7 jours sur 7, tout au long
@@ -391,7 +391,7 @@ onBeforeMount(() => {
                       maladies mentales.
                     </li>
                     <li>
-                      <NewWindow Href="https://www.crisisservicescanada.ca/fr/" LinkText="Services de crise Canada"
+                      <NewWindow Href="https://parlonssuicide.ca/" LinkText="Services de crise Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       offre un service de prévention du suicide gratuit et
                       disponible 24 heures sur 24, 7 jours sur 7, tout au long
