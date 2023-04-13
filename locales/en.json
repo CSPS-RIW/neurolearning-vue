@@ -1,62 +1,60 @@
 {
-    "title": "Mental Health and Well-Being Resources",
-    "pageTitle": "Mental Health and Well-Being Resources",
-    "heading": "Questionnaire",
-    "intro": ["If you or someone you know needs support, help is available. You are not alone.", "These resources have been categorized to help you find the most appropriate resource for your situation. We hope that you will explore many of these resources, during times of mental well-being and times of mental stress. In order to create a mentally-healthy workplace, every team member needs to be an active participant."],
-    "interested": "I'm interested in...",
-    "langToggle": "Français",
-    "shortToggle": "FR",
-    "selectAll": "Please select one or more of the options below to get a list of some useful resources, categorized according to your selection.",
-    "checkboxes": [
-        "General mental health and well-being resources",
-        "Indigenous resources for mental health and well-being",
-        "Resources for 2SLGBTQI+ support",
-        "Resources specific to public servants",
-        "Resources from Canada School of Public Service"
-    ],
-    "buttons": {
-        "back": "Back",
-        "next": "Next",
-        "skip": "Skip to the end",
-        "start": "Start"
-    },
-    "thankYouPara": [
-        "Thank you for your selection. You may choose to answer an additional question to better customize the list of resources to meet your needs.",
-        "Please note that your responses to the questions will only be used to generate a customized list of resources and no responses will be stored by CSPS."
-    ],
-    "whichOfThese": "Which of these options best describes your role?",
-    "roles": [
-        "Employee",
-        "Manager",
-        "Executive"
-    ],
-    "identify": "Do you identify as...",
-    "identities": [
-        "a person of colour",
-        "a member of the 2SLGBTQIA+ community",
-        "a person living with a disability"
-    ],
-    "accordionTitles": [
-        "General mental health and well-being resources",
-        "Indigenous resources for mental health and well-being",
-        "Resources for 2SLGBTQI+ support",
-        "Resources specific to public servants",
-        "Resources from Canada School of Public Service"
-    ],
-    "ifInterestedIn": "If you are interested in more resources, please go back to the beginning of the questionnaire and select the items you are interested in.",
-    "openAll" : "Open All Panels",
-    "resources": {
-        "general": [
-            "The Canadian Mental Health Association is a nationwide organization that promotes mental health and supports people recovering from mental illness.",
-            "Crisis Services Canada offers a toll-free, 24/7 suicide prevention service throughout the year at 1-833-456-4566. Whether you are suffering from a loss, worried about someone who may be having suicidal thoughts, or having suicidal thoughts yourself, highly trained responders can provide support.",
-            "Kids Help Phone is a 24/7 national service offering professional counselling, information, referrals and volunteer-led, text-based support to young people in both English and French.",
-            "ShelterSafe.ca is an online resource for women and their children seeking safety from violence and abuse.",
-            "The Bullying web page provides information on how to recognize and prevent bullying, as well as bullying prevention resources.",
-            "The Violence and Abuse web page provides information about violence and abuse, its prevention and how to get help if you are being abuse.",
-            "Wellness Together Canada provides phone, video, and text counselling, information and videos on common mental health and substance use issues, wellness programs, and community and peer support.",
-            "The Mental Health Commission of Canada leads the development and dissemination of innovative programs and tools to support the mental health and wellness of Canadians",
-            "Mental Health Continuum Self-Check that can help us to identify how we are doing and when there is a need for support."
-        ]
-    }
-
+	"title": "Mental Health and Well-Being Resources",
+	"pageTitle": "Mental Health and Well-Being Resources",
+	"heading": "Questionnaire",
+	"intro": [
+		"If you or someone you know needs support, help is available. You are not alone.",
+		"Please select one or more of the options below to get a list of some useful resources, categorized according to your selection."
+	],
+	"interested": "I'm interested in:",
+	"langToggle": "Français",
+	"shortToggle": "FR",
+	"selectAll": "Please select one or more of the options below to get a list of some useful resources, categorized according to your selection.",
+	"checkboxes": [
+		"General mental health and well-being resources",
+		"Indigenous resources for mental health and well-being",
+		"Resources for 2SLGBTQI+ support",
+		"Resources specific to public servants",
+		"Resources from Canada School of Public Service"
+	],
+	"buttons": {
+		"back": "Back",
+		"next": "Next",
+		"skip": "Skip to the end",
+		"start": "Start"
+	},
+	"thankYouPara": [
+		"Thank you for your selection. You may choose to answer an additional question to better customize the list of resources to meet your needs.",
+		"Please note that your responses to the questions will only be used to generate a customized list of resources and no responses will be stored by CSPS."
+	],
+	"whichOfThese": "Which of these options best describes your role?",
+	"roles": ["Employee", "Manager", "Executive"],
+	"identify": "Do you identify as...",
+	"identities": [
+		"a person of colour",
+		"a member of the 2SLGBTQIA+ community",
+		"a person living with a disability"
+	],
+	"accordionTitles": [
+		"General mental health and well-being resources",
+		"Indigenous resources for mental health and well-being",
+		"Resources for 2SLGBTQI+ support",
+		"Resources specific to public servants",
+		"Resources from Canada School of Public Service"
+	],
+	"ifInterestedIn": "If you are interested in more resources, please go back to the beginning of the questionnaire and select the items you are interested in.",
+	"openAll": "Open All Panels",
+	"resources": {
+		"general": [
+			"The Canadian Mental Health Association is a nationwide organization that promotes mental health and supports people recovering from mental illness.",
+			"Crisis Services Canada offers a toll-free, 24/7 suicide prevention service throughout the year at 1-833-456-4566. Whether you are suffering from a loss, worried about someone who may be having suicidal thoughts, or having suicidal thoughts yourself, highly trained responders can provide support.",
+			"Kids Help Phone is a 24/7 national service offering professional counselling, information, referrals and volunteer-led, text-based support to young people in both English and French.",
+			"ShelterSafe.ca is an online resource for women and their children seeking safety from violence and abuse.",
+			"The Bullying web page provides information on how to recognize and prevent bullying, as well as bullying prevention resources.",
+			"The Violence and Abuse web page provides information about violence and abuse, its prevention and how to get help if you are being abuse.",
+			"Wellness Together Canada provides phone, video, and text counselling, information and videos on common mental health and substance use issues, wellness programs, and community and peer support.",
+			"The Mental Health Commission of Canada leads the development and dissemination of innovative programs and tools to support the mental health and wellness of Canadians",
+			"Mental Health Continuum Self-Check that can help us to identify how we are doing and when there is a need for support."
+		]
+	}
 }

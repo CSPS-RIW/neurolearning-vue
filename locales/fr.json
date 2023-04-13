@@ -1,49 +1,40 @@
 {
-    "title": "Ressources sur la santé mentale et le bien-être",
-    "pageTitle": "Ressources sur la santé mentale et le bien-être",
-    "heading": "Questionnaire",
-    "intro": ["Si vous ou une personne de votre entourage avez besoin de soutien, vous pouvez obtenir de l'aide. Vous n'êtes pas seul.", "Ces ressources ont été classées par catégories pour vous aider à trouver celle qui convient le mieux à votre situation. Nous espérons que vous explorerez un grand nombre de ces ressources, dans les moments de bien-être mental comme dans les moments de stress mental. Pour créer un lieu de travail mentalement sain, chaque membre de l'équipe doit être un participant actif."],
-    "interested": "Je suis intéressé par...",
-    "langToggle": "English",
-    "shortToggle": "EN",
-    "selectAll": "Veuillez sélectionner une ou plusieurs des options ci-dessous pour obtenir une liste de ressources utiles, classées en fonction de votre sélection.",
-    "checkboxes": [
-        "Ressources générales sur la santé mentale et le bien-être",
-        "Ressources indigènes pour la santé mentale et le bien-être",
-        "Ressources pour le soutien aux 2SLGBTQI+",
-        "Ressources spécifiques aux fonctionnaires",
-        "Ressources de l'École de la fonction publique du Canada"
-    ],
-    "buttons": {
-        "back": "Précédent",
-        "next": "Suivant",
-        "skip": "Passer à la fin",
-        "start": "Commencer"
-    },
-    "thankYouPara": [
-        "Nous vous remercions de votre sélection. Vous pouvez choisir de répondre à une question supplémentaire afin de mieux personnaliser la liste des ressources en fonction de vos besoins.",
-        "Veuillez noter que vos réponses aux questions ne seront utilisées que pour générer une liste personnalisée de ressources et qu'aucune réponse ne sera stockée par l'EFPC."
-    ],
-    "whichOfThese": "Laquelle de ces options décrit le mieux votre rôle?",
-    "roles": [
-        "Employé",
-        "Gestionnaire",
-        "Cadre"
-    ],
-    "identify": "Vous identifiez vous comme...",
-    "identities": [
-        "une personne de couleur",
-        "un membre de la communauté 2ELGBTQIA+.",
-        "une personne handicapée"
-    ],
-    "accordionTitles": [
-        "Ressources générales sur la santé mentale et le bien-être",
-        "Ressources indigènes pour la santé mentale et le bien-être",
-        "Ressources pour le soutien aux 2SLGBTQI+",
-        "Ressources spécifiques aux fonctionnaires",
-        "Ressources de l'École de la fonction publique du Canada"
-    ],
-    "ifInterestedIn": "Si vous êtes intéressé par d'autres ressources, veuillez revenir au début du questionnaire et sélectionner les éléments qui vous intéressent.",
-    "openAll" : "Ouvrir tous les panneaux"
-
+	"title": "Ressources sur la santé mentale et le bien-être",
+	"pageTitle": "Ressources sur la santé mentale et le bien-être",
+	"heading": "Questionnaire",
+	"intro": [
+		"Si vous ou une personne que vous connaissez avez besoin de soutien, de l’aide vous est offerte. Vous n’êtes pas seul·e.",
+		"Veuillez sélectionner une ou plusieurs des options ci-dessous pour obtenir une liste de ressources utiles, classées en fonction de votre sélection."
+	],
+	"interested": "Je suis intéressé par :",
+	"langToggle": "English",
+	"shortToggle": "EN",
+	"selectAll": "Veuillez sélectionner une ou plusieurs des options ci-dessous pour obtenir une liste de ressources utiles, classées en fonction de votre sélection.",
+	"checkboxes": [
+		"Ressources générales sur la santé mentale et le bien-être",
+		"Ressources pour les Autochtones",
+		"Ressources pour le soutien aux membres des communautés 2ELGBTQI+",
+		"Ressources pour les fonctionnaires",
+		"Ressources de l'École de la fonction publique du Canada"
+	],
+	"buttons": {
+		"back": "Précédent",
+		"next": "Suivant",
+		"skip": "Passer à la fin",
+		"start": "Commencer"
+	},
+	"thankYouPara": [
+		"Nous vous remercions de votre sélection. Vous pouvez choisir de répondre à une question supplémentaire afin de mieux personnaliser la liste des ressources en fonction de vos besoins.",
+		"Veuillez noter que vos réponses aux questions ne seront utilisées que pour générer une liste personnalisée de ressources et qu'aucune réponse ne sera stockée par l'EFPC."
+	],
+	"whichOfThese": "Laquelle de ces options décrit le mieux votre rôle?",
+	"roles": ["Employé", "Gestionnaire", "Cadre"],
+	"identify": "Vous identifiez vous comme...",
+	"identities": [
+		"une personne de couleur",
+		"un membre de la communauté 2ELGBTQIA+.",
+		"une personne handicapée"
+	],
+	"ifInterestedIn": "Si vous êtes intéressé·e par d'autres ressources, veuillez revenir au début du questionnaire et sélectionner les éléments qui vous intéressent.",
+	"openAll": "Ouvrir tous les panneaux"
 }

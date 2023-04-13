@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useCycleList, useTitle } from "@vueuse/core";
+import { useTitle } from "@vueuse/core";
 import { onBeforeMount, reactive, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import MultiAccordions from "./components/MultiAccordions.vue";
@@ -18,20 +18,9 @@ const question1 = reactive({
   csps: false,
 });
 
-const question2 = reactive({
-  role: "",
-});
-
-const question3 = reactive({
-  poc: false,
-  lgbt: false,
-  disability: false,
-});
-
-const { t, locale, availableLocales } = useI18n();
+const { t, locale } = useI18n();
 
 // Set html lang based on current locale
-const locales = useCycleList(availableLocales);
 let lang = document.querySelector("html");
 let currLang = lang?.getAttribute("lang");
 // set page title
@@ -39,9 +28,9 @@ const title = useTitle();
 
 // methods
 function changeLang() {
-  locale.value !== "en" ? (locale.value = "en") : (locale.value = "fr");
-  lang?.setAttribute("lang", locale.value);
-  title.value = t("pageTitle");
+  locale.value !== 'en' ? locale.value = 'en' : locale.value = 'fr'
+  lang?.setAttribute('lang', locale.value)
+  title.value = t('pageTitle')
 }
 
 function determineAccordionNum(e: any) {
@@ -71,19 +60,19 @@ function determineAccordionNum(e: any) {
 
 onBeforeMount(() => {
   if (currLang) {
-    locale.value = currLang;
-    lang?.setAttribute("lang", locale.value);
-    title.value = t("pageTitle");
+    locale.value = currLang
+    lang?.setAttribute('lang', locale.value)
+    title.value = t('pageTitle')
   }
 });
 </script>
 <template>
   <div class="wrapper">
-  <header class="col-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8">
-    <div class="container">
-      <div class="row d-flex align-items-center justify-content-between">
-        <div class="col-sm-10">
-          <h1>{{ $t("title") }}</h1>
+    <header class="col-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-between">
+          <div class="col-sm-10">
+            <h1>{{ $t("title") }}</h1>
         </div>
         <div class="col-sm-2">
           <a href="#" class="lang-toggle" @click.prevent="changeLang" :title="t('langToggle')"
@@ -96,21 +85,20 @@ onBeforeMount(() => {
     <div class="card intro-card" v-if="!activityStart">
       <div class="card-body d-flex flex-column justify-content-center align-items-center">
         <p>{{ $t("intro[0]") }}</p>
-        <p>{{ $t("intro[1]") }}</p>
         <button class="btn btn-regular" @click="activityStart = true">
-            {{ $t("buttons.start") }}
-          </button>
-        </div>
+          {{ $t("buttons.start") }}
+        </button>
       </div>
+    </div>
 
-      <div id="toolkit_wrapper" v-if="activityStart">
-        <div class="holster">
-          <div class="questionnaire-wrapper" aria-live="polite" role="region" aria-label="Questionnaire">
-            <!-- <div class="questionnaire-header">
-                                                                                                                                                                                          <h2 class="questionnaire-heading">
-                
-                                                                                                                                                                                          </h2>
-                                                                                                                                                                                        </div> -->
+    <div id="toolkit_wrapper" v-if="activityStart">
+      <div class="holster">
+        <div class="questionnaire-wrapper" aria-live="polite" role="region" aria-label="Questionnaire">
+          <!-- <div class="questionnaire-header">
+                                                                                                                                                                                                  <h2 class="questionnaire-heading">
+
+                                                                                                                                                                                                                                                                                                                                                            </h2>
+                                                                                                                                                                                                                                                                                                                                                          </div> -->
 
             <div class="questionnaire questionnaire-1" v-if="step === 1">
               <p>{{ $t("selectAll") }}</p>
@@ -153,34 +141,34 @@ onBeforeMount(() => {
               </form>
             </div>
             <!-- <div class="questionnaire questionnaire-2" v-if="step === 2">
-                                                                                                                                                                                          <p>{{ $t("thankYouPara[0]") }}</p>
-                                                                                                                                                                                          <p>{{ $t("thankYouPara[1]") }}</p>
-                                                                                                                                                                                          <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
-                                                                                                                                                                                        </div>
-                                                                                                                                                                                        <div class="questionnaire questionnaire-3" v-if="step === 3">
-                                                                                                                                                                                          <p>{{ t("whichOfThese") }}</p>
-                                                                                                                                                                                          <form class="options">
-                                                                                                                                                                                            <div>
-                                                                                                                                                                                              <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
-                                                                                                                                                                                                v-model="question2.role">
-                                                                                                                                                                                              <label for="employee">{{ t("roles[0]") }}</label>
-                                                                                                                                                                                            </div>
-                                                                                                                                                                                            <div>
-                                                                                                                                                                                              <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
-                                                                                                                                                                                                v-model="question2.role">
-                                                                                                                                                                                              <label for="manager">{{ t("roles[1]") }}</label>
-                                                                                                                                                                                            </div>
-                                                                                                                                                                                            <div>
-                                                                                                                                                                                              <input type="radio" name="option" id="executive" aria-label="executive"
-                                                                                                                                                                                                value="executive" v-model="question2.role">
-                                                                                                                                                                                              <label for="executive">{{ t("roles[2]") }}</label>
-                                                                                                                                                                                            </div>
-                                                                                                                                                                                          </form>
-                                                                                                                                                                                        </div> -->
+                                                                                                                                                                                                                                                                                                                                                            <p>{{ $t("thankYouPara[0]") }}</p>
+                                                                                                                                                                                                                                                                                                                                                            <p>{{ $t("thankYouPara[1]") }}</p>
+                                                                                                                                                                                                                                                                                                                                                            <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
+                                                                                                                                                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                                                                                                                                                          <div class="questionnaire questionnaire-3" v-if="step === 3">
+                                                                                                                                                                                                                                                                                                                                                            <p>{{ t("whichOfThese") }}</p>
+                                                                                                                                                                                                                                                                                                                                                            <form class="options">
+                                                                                                                                                                                                                                                                                                                                                              <div>
+                                                                                                                                                                                                                                                                                                                                                                <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
+                                                                                                                                                                                                                                                                                                                                                                  v-model="question2.role">
+                                                                                                                                                                                                                                                                                                                                                                <label for="employee">{{ t("roles[0]") }}</label>
+                                                                                                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                                                                                              <div>
+                                                                                                                                                                                                                                                                                                                                                                <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
+                                                                                                                                                                                                                                                                                                                                                                  v-model="question2.role">
+                                                                                                                                                                                                                                                                                                                                                                <label for="manager">{{ t("roles[1]") }}</label>
+                                                                                                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                                                                                              <div>
+                                                                                                                                                                                                                                                                                                                                                                <input type="radio" name="option" id="executive" aria-label="executive"
+                                                                                                                                                                                                                                                                                                                                                                  value="executive" v-model="question2.role">
+                                                                                                                                                                                                                                                                                                                                                                <label for="executive">{{ t("roles[2]") }}</label>
+                                                                                                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                                                                                            </form>
+                                                                                                                                                                                                                                                                                                                                                          </div> -->
             <div class="customized-toolkit" v-show="step === 2">
               <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
                 <template v-slot:AccTitle>
-                  {{ $t("accordionTitles[0]") }}
+                  {{ $t("checkboxes[0]") }}
                 </template>
                 <template v-slot:AccBody>
                   <ul class="en" v-show="locale === 'en'">
@@ -192,7 +180,7 @@ onBeforeMount(() => {
                     <li>
                       <NewWindow Href="https://www.crisisservicescanada.ca/en/" LinkText="Crisis Services Canada" />
                       offers a toll-free, 24/7 suicide prevention service
-                      throughout the year at 1-833-456-4566. Whether you are
+                      throughout the year at <a href="tel:1-833-456-4566">1-833-456-4566</a>. Whether you are
                       suffering from a loss, worried about someone who may be
                       having suicidal thoughts, or having suicidal thoughts
                       yourself, highly trained responders can provide support.
@@ -248,64 +236,61 @@ onBeforeMount(() => {
                   </ul>
                   <ul class="“fr”" v-show="locale === 'fr'">
                     <li>
-                      <NewWindow Href="https://cmha.ca/fr" LinkText="L’Association canadienne pour la santé mentale"
+                      L’
+                      <NewWindow Href="https://cmha.ca/fr" LinkText="Association canadienne pour la santé mentale"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est une organisation nationale qui promeut la santé
-                      mentale et soutient les personnes en rétablissement de
-                      maladies mentales.
+                      est une organisation nationale qui fait la promotion de la santé mentale et soutient les personnes
+                      qui se remettent d’une maladie mentale.
                     </li>
                     <li>
                       <NewWindow Href="https://www.crisisservicescanada.ca/fr/" LinkText="Services de crise Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre un service de prévention du suicide gratuit et
-                      disponible 24 heures sur 24, 7 jours sur 7, tout au long
-                      de l’année au 1-833-456-4566. Que vous souffriez d’une
-                      perte, que vous vous inquiétiez pour quelqu’un qui
-                      pourrait avoir des pensées suicidaires ou que vous ayez
-                      vous-même des pensées suicidaires, des intervenants
-                      hautement qualifiés peuvent vous apporter leur soutien.
+                      offre des services sans frais en tout temps à toute personne préoccupée par le suicide. Le service
+                      est offert toute l’année. Que vous souffriez d’un deuil, que vous vous inquiétiez pour quelqu’un qui
+                      pourrait avoir des pensées suicidaires ou que vous ayez vous-même des pensées suicidaires, leurs
+                      intervenantes et intervenants hautement qualifiés sont là pour vous apporter leur soutien.
                     </li>
                     <li>
                       <NewWindow Href="https://jeunessejecoute.ca/" LinkText="Jeunesse, J’écoute"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est un service national disponible 24 heures sur 24 qui
-                      offre des services de counseling professionnels, des
-                      informations, des références et un soutien par messagerie
-                      texte animé par des bénévoles aux jeunes en anglais et en
-                      français.
+                      est un service national offert en tout temps qui permet aux jeunes d’obtenir une consultation
+                      professionnelle, des renseignements, des références et un soutien textuel auprès de bénévoles, en
+                      anglais et en français.
                     </li>
                     <li>
-                      <NewWindow Href="https://hebergementfemmes.ca/" LinkText="Hebergementfemmes.ca"
+                      <NewWindow Href="https://hebergementfemmes.ca/" LinkText="Hébergement femmes Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est une ressource en ligne pour les femmes et leurs
-                      enfants qui cherchent à se protéger contre la violence et
-                      les abus.
+                      est une ressource en ligne pour les femmes et leurs enfants cherchant à se protéger de la violence
+                      et des abus.
                     </li>
                     <li>
-                      La page Web sur
+                      La page Web
                       <NewWindow Href="https://www.canada.ca/fr/sante-publique/services/intimidation.html"
-                        LinkText="l’intimidation" Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      fournit des informations sur la façon de reconnaître et de
-                      prévenir l’intimidation, ainsi que des ressources de
-                      prévention de l’intimidation.
+                        LinkText="Intimidation" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      fournit de l’information sur la façon de reconnaître et d’éviter l’intimidation ainsi que des
+                      ressources sur la prévention de l’intimidation.
                     </li>
-                    <li></li>
                     <li>
-                      La page Web sur la
+                      La page Web
                       <NewWindow Href="https://www.canada.ca/fr/sante-publique/sujets/violence-et-abus.html"
-                        LinkText="violence et les abus" Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      fournit des informations sur la violence et les abus, leur
-                      prévention et la façon d’obtenir de l’aide si vous êtes
-                      victime d’abus.
+                        LinkText="Violence et abus" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      fournit de l’information sur la violence et l’abus, comment les prévenir et comment obtenir de
+                      l’aide si vous en êtes victime.
                     </li>
                     <li>
-                      <NewWindow Href="https://www.wellnesstogether.ca/fr-CA" LinkText="Mieux-être ensemble Canada"
+                      <NewWindow Href="https://www.wellnesstogether.ca/fr-CA" LinkText="Espace Mieux-être Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre des services de counseling par téléphone, vidéo et
-                      messagerie texte, des informations et des vidéos sur les
-                      problèmes courants de santé mentale et de toxicomanie, des
-                      programmes de bien-être et un soutien communautaire et par
-                      les pairs.
+                      fournit des conseils par téléphone, par vidéoconférence et par SMS, de l’information et des vidéos
+                      sur les troubles mentaux et les problèmes de toxicomanie courants, les programmes de mieux-être et
+                      le soutien communautaire et par les pairs.
+                    </li>
+                    <li>
+                      La
+                      <NewWindow Href="https://commissionsantementale.ca/"
+                        LinkText="Commission de la santé mentale du Canada"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" /> dirige l’élaboration et la diffusion de
+                      programmes et d’outils novateurs pour soutenir la santé
+                      mentale et le mieux-être des Canadien·nes.
                     </li>
                   </ul>
                 </template>
@@ -315,19 +300,20 @@ onBeforeMount(() => {
               </div>
               <MultiAccordions :AccNum="6">
                 <template #AccTitle-1 data-accordion="1">{{
-                  $t("accordionTitles[0]")
+                  $t("checkboxes[0]")
                 }}</template>
                 <template #AccBody-1>
                   <ul class="en" v-show="locale === 'en'">
                     <li>
-                      <NewWindow Href="https://cmha.ca/" LinkText="The Canadian Mental Health Association" />
+                      The
+                      <NewWindow Href="https://cmha.ca/" LinkText="Canadian Mental Health Association" />
                       is a nationwide organization that promotes mental health
                       and supports people recovering from mental illness.
                     </li>
                     <li>
                       <NewWindow Href="https://www.crisisservicescanada.ca/en/" LinkText="Crisis Services Canada" />
                       offers a toll-free, 24/7 suicide prevention service
-                      throughout the year at 1-833-456-4566. Whether you are
+                      throughout the year at <a href="tel:1-833-456-4566">1-833-456-4566</a>. Whether you are
                       suffering from a loss, worried about someone who may be
                       having suicidal thoughts, or having suicidal thoughts
                       yourself, highly trained responders can provide support.
@@ -353,14 +339,13 @@ onBeforeMount(() => {
                       prevent bullying, as well as bullying prevention
                       resources.
                     </li>
-                    <li></li>
                     <li>
                       The
                       <NewWindow Href="https://www.canada.ca/en/public-health/topics/violence-abuse.html"
                         LinkText="Violence and Abuse" />
 
                       web page provides information about violence and abuse,
-                      its prevention and how to get help if you are being abuse.
+                      its prevention and how to get help if you are being abused.
                     </li>
                     <li>
                       <NewWindow Href="https://wellnesstogether.ca/en-CA" LinkText="Wellness Together Canada" />
@@ -384,69 +369,66 @@ onBeforeMount(() => {
 
                   <ul class="“fr”" v-show="locale === 'fr'">
                     <li>
-                      <NewWindow Href="https://cmha.ca/fr" LinkText="L’Association canadienne pour la santé mentale"
+                      L’
+                      <NewWindow Href="https://cmha.ca/fr" LinkText="Association canadienne pour la santé mentale"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est une organisation nationale qui promeut la santé
-                      mentale et soutient les personnes en rétablissement de
-                      maladies mentales.
+                      est une organisation nationale qui fait la promotion de la santé mentale et soutient les personnes
+                      qui se remettent d’une maladie mentale.
                     </li>
                     <li>
                       <NewWindow Href="https://www.crisisservicescanada.ca/fr/" LinkText="Services de crise Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre un service de prévention du suicide gratuit et
-                      disponible 24 heures sur 24, 7 jours sur 7, tout au long
-                      de l’année au 1-833-456-4566. Que vous souffriez d’une
-                      perte, que vous vous inquiétiez pour quelqu’un qui
-                      pourrait avoir des pensées suicidaires ou que vous ayez
-                      vous-même des pensées suicidaires, des intervenants
-                      hautement qualifiés peuvent vous apporter leur soutien.
+                      offre des services sans frais en tout temps à toute personne préoccupée par le suicide. Le service
+                      est offert toute l’année. Que vous souffriez d’un deuil, que vous vous inquiétiez pour quelqu’un qui
+                      pourrait avoir des pensées suicidaires ou que vous ayez vous-même des pensées suicidaires, leurs
+                      intervenantes et intervenants hautement qualifiés sont là pour vous apporter leur soutien.
                     </li>
                     <li>
                       <NewWindow Href="https://jeunessejecoute.ca/" LinkText="Jeunesse, J’écoute"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est un service national disponible 24 heures sur 24 qui
-                      offre des services de counseling professionnels, des
-                      informations, des références et un soutien par messagerie
-                      texte animé par des bénévoles aux jeunes en anglais et en
-                      français.
+                      est un service national offert en tout temps qui permet aux jeunes d’obtenir une consultation
+                      professionnelle, des renseignements, des références et un soutien textuel auprès de bénévoles, en
+                      anglais et en français.
                     </li>
                     <li>
-                      <NewWindow Href="https://hebergementfemmes.ca/" LinkText="Hebergementfemmes.ca"
+                      <NewWindow Href="https://hebergementfemmes.ca/" LinkText="Hébergement femmes Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est une ressource en ligne pour les femmes et leurs
-                      enfants qui cherchent à se protéger contre la violence et
-                      les abus.
+                      est une ressource en ligne pour les femmes et leurs enfants cherchant à se protéger de la violence
+                      et des abus.
                     </li>
                     <li>
-                      La page Web sur
+                      La page Web
                       <NewWindow Href="https://www.canada.ca/fr/sante-publique/services/intimidation.html"
-                        LinkText="l’intimidation" Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      fournit des informations sur la façon de reconnaître et de
-                      prévenir l’intimidation, ainsi que des ressources de
-                      prévention de l’intimidation.
+                        LinkText="Intimidation" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      fournit de l’information sur la façon de reconnaître et d’éviter l’intimidation ainsi que des
+                      ressources sur la prévention de l’intimidation.
                     </li>
-                    <li></li>
                     <li>
-                      La page Web sur la
+                      La page Web
                       <NewWindow Href="https://www.canada.ca/fr/sante-publique/sujets/violence-et-abus.html"
-                        LinkText="violence et les abus" Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      fournit des informations sur la violence et les abus, leur
-                      prévention et la façon d’obtenir de l’aide si vous êtes
-                      victime d’abus.
+                        LinkText="Violence et abus" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      fournit de l’information sur la violence et l’abus, comment les prévenir et comment obtenir de
+                      l’aide si vous en êtes victime.
                     </li>
                     <li>
-                      <NewWindow Href="https://www.wellnesstogether.ca/fr-CA" LinkText="Mieux-être ensemble Canada"
+                      <NewWindow Href="https://www.wellnesstogether.ca/fr-CA" LinkText="Espace Mieux-être Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre des services de counseling par téléphone, vidéo et
-                      messagerie texte, des informations et des vidéos sur les
-                      problèmes courants de santé mentale et de toxicomanie, des
-                      programmes de bien-être et un soutien communautaire et par
-                      les pairs.
+                      fournit des conseils par téléphone, par vidéoconférence et par SMS, de l’information et des vidéos
+                      sur les troubles mentaux et les problèmes de toxicomanie courants, les programmes de mieux-être et
+                      le soutien communautaire et par les pairs.
+                    </li>
+                    <li>
+                      La
+                      <NewWindow Href="https://commissionsantementale.ca/"
+                        LinkText="Commission de la santé mentale du Canada"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" /> dirige l’élaboration et la diffusion de
+                      programmes et d’outils novateurs pour soutenir la santé
+                      mentale et le mieux-être des Canadien·nes.
                     </li>
                   </ul>
                 </template>
                 <template #AccTitle-2 data-accordion="2">{{
-                  $t("accordionTitles[1]")
+                  $t("checkboxes[1]")
                 }}</template>
                 <template #AccBody-2>
                   <ul class="en" v-show="locale === 'en'">
@@ -491,7 +473,7 @@ onBeforeMount(() => {
                       <NewWindow Href="http://nunavuthelpline.ca/" LinkText="Kamatsiaqtut Nunavut Helpline" />
 
                       is a toll-free, anonymous, confidential 24/7 service
-                      staffed by trained volunteers: 1-800-265-3333.
+                      staffed by trained volunteers: <a href="tel:1-800-265-3333">1-800-265-3333</a>.
                     </li>
                     <li>
                       The
@@ -500,7 +482,7 @@ onBeforeMount(() => {
 
                       is an independent, national, 24/7 toll-free service
                       available to anyone who requires assistance. Services are
-                      available in English and French: 1-844-413-6649.
+                      available in English and French: <a href="tel:1-844-413-6649">1-844-413-6649</a>.
                     </li>
                     <li>
                       The
@@ -517,7 +499,7 @@ onBeforeMount(() => {
                         LinkText="Native Women's Association of Canada" />
                       offers support and helps build resiliency. Elders are
                       available Monday to Friday, from 9:00 am to 11:00 am and
-                      1:00 pm to 3:00 pm (Eastern Time): 1-888-664-7808.
+                      1:00 pm to 3:00 pm (Eastern Time): <a href="tel:1-888-664-7808">1-888-664-7808</a>.
                     </li>
                     <li>
                       <NewWindow Href="http://www.talk4healing.com/about/" LinkText="Talk4Healing" />
@@ -528,7 +510,7 @@ onBeforeMount(() => {
                       are available in the following languages: Oji-Cree, Cree,
                       Algonquin, Inuktitut, Mohawk, Oneida, Odawa, Potawatomi,
                       Micmac, Black Foot, Anishinaabe, Moose Cree, Swampy Cree
-                      and English: 1-855-554-HEAL.
+                      and English: <a href="tel:1-855-554-4325">1-855-554-HEAL</a>.
                     </li>
                     <li>
                       The
@@ -544,120 +526,104 @@ onBeforeMount(() => {
                   <ul class="fr" v-show="locale === 'fr'">
                     <li>
                       Le
-                      <NewWindow Href="https://www.fpwc.ca/" LinkText="Cercle de bien-être des Premières Nations"
+                      <NewWindow Href="https://www.fpwc.ca/" LinkText="First Peoples Wellness Circle"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est une corporation nationale à but non lucratif gouvernée
-                      et gérée par des leaders autochtones, qui vise à améliorer
-                      la vie des Premières Nations du Canada en abordant la
-                      guérison, le bien-être et d’autres défis de santé mentale.
+                      (en anglais seulement) est un organisme national à but non lucratif régi et géré par des leaders
+                      autochtones; il vise à améliorer la vie des premiers peuples du Canada en traitant de la guérison,
+                      du bien-être et de problèmes de santé mentale.
                     </li>
                     <li>
                       La
                       <NewWindow Href="https://www.sac-isc.gc.ca/fra/1576089519527/1576089566478"
-                        LinkText="Ligne d'écoute d'espoir pour le mieux-être"
-                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre une aide immédiate à tous les peuples autochtones du
-                      Canada, 24 heures sur 24, 7 jours sur 7. Appelez la ligne
-                      d’aide sans frais ou connectez-vous au chat en ligne à
-                      hopeforwellness.ca. Des services de counseling par
-                      téléphone et en ligne sont disponibles en anglais et en
-                      français. Sur demande, le counseling téléphonique est
-                      disponible en cri, en ojibwé et en inuktitut:
-                      1-855-242-3310.
+                        LinkText="Ligne d'écoute d'espoir" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      offre une aide immédiate à tous les peuples autochtones au Canada. Elle est accessible en tout
+                      temps. Appelez sans frais ou connectez-vous au clavardage en ligne sur le site
+                      <NewWindow Href="https://www.espoirpourlemieuxetre.ca" LinkText="www.espoirpourlemieuxetre.ca"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" />. Les consultations téléphoniques et en ligne se
+                      font en anglais et en français. Sur demande, des consultations téléphoniques sont également offertes
+                      en cri, en ojibwé et en inuktitut au 1-855-242-3310.
                     </li>
                     <li>
-                      La
-                      <NewWindow Href="https://www.irsss.ca/" LinkText="Société des survivants des pensionnats
-                          indiens" Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre une ligne de crise 24 heures sur 24, 7 jours sur 7,
-                      qui offre du soutien à toute personne éprouvant de la
-                      douleur ou de la détresse en raison de son expérience dans
-                      un pensionnat indien: 1-800-721-0066.
+                      La ligne d’aide 24 heures sur 24 de la
+                      <NewWindow Href="https://www.irsss.ca/" LinkText="Indian Residential School Survivors Society"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      (en anglais seulement) fournit un soutien à toute personne souffrant de douleur ou de détresse à la
+                      suite de son expérience dans un pensionnat : 1-800-721-0066.
                     </li>
                     <li>
                       <NewWindow Href="https://www.itk.ca/" LinkText="Inuit Tapiriit Kanatami"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      travaille à améliorer la santé et le bien-être des Inuits
-                      au Canada par la recherche, la défense des droits, la
-                      sensibilisation du public et l’éducation.
+                      (en anglais seulement) travaille à améliorer la santé et le bien-être des Inuits au Canada grâce à
+                      la recherche, à la défense des droits, à la sensibilisation du public et à l’éducation.
                     </li>
                     <li>
                       La
-                      <NewWindow Href="https://nunavuthelpline.ca/?lang=fr" LinkText="ligne d’assistance Kamatsiaqtut
-                          Nunavut" Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est un service gratuit, anonyme et confidentiel 24 heures
-                      sur 24, 7 jours sur 7, assuré par des bénévoles formés:
-                      1-800-265-3333.
-                    </li>
-                    <li>
-                      La
-                      <NewWindow Href="https://www.mmiwg-ffada.ca/fr/contact/" LinkText="ligne de soutien de l’Enquête
-                          nationale sur les femmes et les filles autochtones disparues et assassinées"
+                      <NewWindow Href="https://nunavuthelpline.ca/?lang=fr"
+                        LinkText="ligne d’assistance Kamatsiaqtut Nunavut"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est un service indépendant, national et gratuit 24 heures
-                      sur 24, 7 jours sur 7, disponible pour toute personne
-                      ayant besoin d’aide. Des services sont disponibles en
-                      anglais et en français: 1-844-413-6649.
+                      est un service sans frais, anonyme et confidentiel offert en tout temps et doté de personnes
+                      bénévoles formées : <a href="tel:1-800-265-3333">1-800-265-3333</a>.
                     </li>
                     <li>
                       La
-                      <NewWindow Href="https://nafc.ca/?lang=fr" LinkText="Association nationale des centres
-                          d’amitié" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      <NewWindow Href="https://www.mmiwg-ffada.ca/fr/contact/"
+                        LinkText="ligne de soutien de l’Enquête nationale sur les femmes et les filles autochtones disparues et assassinées"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      est un service gratuit, national et indépendant, accessible en tout temps à toute personne ayant
+                      besoin d’aide. Les services sont offerts en anglais et en français au <a
+                        href="tel:1-844-413-6649">1-844-413-6649</a>.
+                    </li>
+                    <li>
+                      L’
+                      <NewWindow Href="https://nafc.ca/?lang=fr" LinkText="Association nationale des centres d’amitié"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       <a href="" target="“_blank”"></a> offre des programmes et
-                      des services culturellement pertinents pour les peuples
-                      autochtones vivant dans les centres urbains du Canada.
-                      Elle travaille sur une gamme de questions, notamment la
-                      santé, le logement, la jeunesse, la justice et le
-                      développement international.
+                      propose des programmes et des services adaptés aux peuples autochtones vivant dans les centres
+                      urbains du Canada. Elle travaille sur une gamme de questions, y compris la santé, le logement, la
+                      jeunesse, la justice et le développement international.
                     </li>
                     <li>
-                      La
-                      <NewWindow Href="https://www.nwac.ca/covid19-support/" LinkText="Association des femmes
-                          autochtones du Canada" Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre du soutien et aide à renforcer la résilience. Des
-                      aînés sont disponibles du lundi au vendredi, de 9 h à 11 h
-                      et de 13 h à 15 h (heure de l’Est): 1-888-664-7808.
+                      L’
+                      <NewWindow Href="https://www.nwac.ca/covid19-support/"
+                        LinkText="Association des femmes autochtones du Canada"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      (en anglais seulement) offre son soutien et favorise la résilience. Les aînées et aînés sont
+                      disponibles du lundi au vendredi, de 9 h à 11 h et de 13 h à 15 h (heure de l’Est) : <a
+                        href="tel:1-888-664-7808">1-888-664-7808</a>.
                     </li>
                     <li>
                       <NewWindow Href="http://www.talk4healing.com/about/" LinkText="Talk4Healing"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      fournit des services de counseling téléphonique, de
-                      messagerie texte, de chat en direct 24 heures sur 24, 7
-                      jours sur 7 et d’autres formes de soutien et de ressources
-                      pour les femmes autochtones, par les femmes autochtones,
-                      partout en Ontario. Les services sont entièrement ancrés
-                      dans la culture, la sagesse et la tradition autochtones et
-                      sont disponibles dans les langues suivantes: oji-cree,
-                      cri, algonquin, inuktitut, mohawk, oneida, odawa,
-                      potawatomi, micmac, black foot, anishinaabe, moose cree,
-                      swampy cree et anglais: 1-855-554-HEAL.
+                      (en anglais seulement) fournit des conseils en tout temps par téléphone, par SMS et par l’entremise
+                      d’un clavardage en direct. Talk4Healing offre également du soutien et des ressources aux femmes
+                      autochtones, par des femmes autochtones, partout en Ontario. Les services sont entièrement ancrés
+                      dans la culture, la sagesse et la tradition autochtones et sont offerts dans les langues suivantes :
+                      oji-cri, cri, algonquin, inuktitut, mohawk, oneida, odawa, potawatomi, micmac, pied-noir,
+                      anishinaabemowin, cri de la Moose, cri des marais et anglais : <a href="tel:1-855-554-4325">1-855-554-HEAL</a>.
                     </li>
                     <li>
                       La
                       <NewWindow
                         Href="https://thunderbirdpf.org/reponse-a-la-crise-dans-les-communautes-autochtones/?lang=fr"
-                        LinkText="Fondation Thunderbird
-                          Partnership" Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      promeut une approche holistique de la guérison et du
-                      bien-être qui valorise la culture, le respect, la
-                      communauté et la compassion. La priorité absolue de la
-                      fondation est de développer un continuum de soins qui
-                      serait disponible pour tous les peuples autochtones du
-                      Canada.
+                        LinkText="Thunderbird Partnership Foundation" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      fait la promotion d’une approche holistique de la guérison et d’un mieux-être qui valorise la
+                      culture, le respect, la communauté et la compassion. La priorité de la fondation est de développer
+                      un continuum de soins qui serait offert à tous les peuples autochtones au Canada.
                     </li>
                   </ul>
                 </template>
                 <template #AccTitle-3 data-accordion="3">{{
-                  $t("accordionTitles[2]")
+                  $t("checkboxes[2]")
                 }}</template>
                 <template #AccBody-3>
                   <ul class="en" v-show="locale === 'en'">
                     <li>
-                      LGBT Youth Line: 1-800-268-9688 OR text 647-694-4275
+                      LGBT Youth Line: <a href="tel:1-800-268-9688">1-800-268-9688</a> OR text <a
+                        href="sms:647-694-4275">647-694-4275</a>
                     </li>
                     <li>
                       Trans Lifeline (support for transgender people by
-                      transgender people): 1-877-330-6330-6366
+                      transgender people): <a href="tel:1-877-330-6330-6366">1-877-330-6330-6366</a>
                     </li>
                     <li>
                       <NewWindow Href="https://publicservicepride.ca/resources/"
@@ -666,21 +632,22 @@ onBeforeMount(() => {
                   </ul>
                   <ul class="fr" v-show="locale === 'fr'">
                     <li>
-                      Ligne jeunesse LGBT: 1-800-268-9688 OU texto 647-694-4275
-                    </li>
+                      LGBT Youth Line : <a href="tel:1-800-268-9688">1-800-268-9688</a> ou par SMS au <a
+                        href="sms:647-694-4275">647-694-4275</a> (en
+                      anglais seulement) </li>
                     <li>
-                      Trans Lifeline (soutien pour les personnes transgenres par
-                      des personnes transgenres): 1-877-330-6330-6366
+                      Trans Lifeline (soutien aux personnes transgenres par des personnes transgenres) :
+                      <a href="tel:1-877-330-6330-6366">1-877-330-6330-6366</a> (en anglais seulement)
                     </li>
                     <li>
                       <NewWindow Href="https://publicservicepride.ca/fr/resources/"
                         Title="Ouvre dans une nouvelle fenêtre/onglet"
-                        LinkText="Fierté de la fonction publique: Ressources" />
+                        LinkText="Ressources : Fierté de la fonction publique" />
                     </li>
                   </ul>
                 </template>
                 <template #AccTitle-4 data-accordion="4">{{
-                  $t("accordionTitles[3]")
+                  $t("checkboxes[3]")
                 }}</template>
                 <template #AccBody-4>
                   <ul class="en" v-show="locale === 'en'">
@@ -732,26 +699,20 @@ onBeforeMount(() => {
                         Href="https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/sante-mieux-etre-fonctionnaires/sante-mentale-travail.html"
                         LinkText="Centre d’expertise sur la santé mentale en milieu de travail"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      fournit des informations sur la façon dont le gouvernement
-                      du Canada aborde la santé mentale en milieu de travail,
-                      ainsi que l’accès à des ressources, des outils et des
-                      services pour les organisations, les gestionnaires et les
-                      employés.
+                      offre des renseignements sur la façon dont le gouvernement du Canada aborde la santé mentale en
+                      milieu de travail et l’accès aux ressources, aux outils et aux services pour les organisations, les
+                      gestionnaires et les employé·es.
                     </li>
                     <li>
                       Le
                       <NewWindow
                         Href="https://www.canada.ca/fr/sante-canada/services/sante-environnement-milieu-travail/sante-securite-travail/service-aide-employes/programme-aide-employes.html"
                         LinkText="Programme d’aide aux employés (PAE)" Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre des services de counseling à court terme gratuits
-                      pour les problèmes personnels ou liés au travail, ainsi
-                      que des services de counseling en cas de crise. Plus de 80
-                      ministères et organismes fédéraux reçoivent leurs services
-                      de PAE par l’intermédiaire de Santé Canada, tandis que
-                      d’autres organisations fournissent ce service en interne
-                      ou l’achètent auprès du secteur privé. Pour trouver le
-                      fournisseur de services pour votre organisation, veuillez
-                      consulter la
+                      offre gratuitement des services de consultation à court terme en cas de problèmes personnels ou
+                      professionnels ainsi qu’en cas de crise. Plus de 80 ministères et organismes fédéraux reçoivent
+                      leurs services du PAE par l’entremise de Santé Canada, tandis que d’autres organismes offrent ce
+                      service à l’interne ou font appel au secteur privé. Pour trouver le prestataire de services pour
+                      votre organisation, consultez la
                       <NewWindow
                         Href="https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/programme-aide-employes.html"
                         LinkText="liste ministérielle" Title="Ouvre dans une nouvelle fenêtre/onglet" />.
@@ -761,28 +722,25 @@ onBeforeMount(() => {
                       <NewWindow
                         Href="https://www.canada.ca/fr/environnement-changement-climatique/services/sante-securite-travail/programme-sante-bien-etre/gestionnaires-cinq-regles-dor.html"
                         LinkText="Cinq règles d’or pour les gestionnaires"
-                        Title="Ouvre dans une nouvelle fenêtre/onglet" />, élaborées par Environnement et Changement
-                      climatique
-                      Canada, fournissent des orientations sur la façon de
-                      favoriser un environnement de travail sain, qui soutient
-                      la santé mentale des employés.
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" /> élaborées par Environnement et Changement
+                      climatique Canada, comportent des conseils sur la façon de favoriser un environnement de travail
+                      sain pour appuyer la santé mentale des employé·es.
                     </li>
                     <li>
-                      Services de santé mentale pour les membres des Forces
-                      armées canadiennes et leur famille
+                      <NewWindow
+                        Href="https://www.canada.ca/fr/ministere-defense-nationale/services/avantages-militaires/sante-mentale-militaires.html"
+                        LinkText="Services de santé mentale pour les membres des Forces armées canadiennes et leur famille"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
                     </li>
                     <li>
-                      Services de santé mentale disponibles pour les employés de
-                      la GRC
-                    </li>
-                    <li>
-                      Services de santé mentale disponibles pour les anciens
-                      combattants
+                      <NewWindow Href="https://www.veterans.gc.ca/fra/health-support/mental-health-and-wellness"
+                        LinkText="Services de santé mentale pour les vétérans"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
                     </li>
                   </ul>
                 </template>
                 <template #AccTitle-5 data-accordion="5">{{
-                  $t("accordionTitles[4]")
+                  $t("checkboxes[4]")
                 }}</template>
                 <template #AccBody-5>
                   <div class="en" v-show="locale === 'en'">
@@ -802,7 +760,7 @@ onBeforeMount(() => {
                         <li>
                           Video:
                           <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-beland-eng.aspx"
-                            LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marc Beland" />
+                            LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marc Béland" />
                         </li>
                         <li>
                           Video:
@@ -838,6 +796,22 @@ onBeforeMount(() => {
                           Video:
                           <NewWindow Href="https://www.csps-efpc.gc.ca/video/you-are-not-alone-eng.aspx"
                             LinkText="Spotlight on #GCMentalHealth: You Are Not Alone" />
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="executives">
+                      <h3>For Executives</h3>
+                      <ul>
+                        <li>
+                          Podcast:
+                          <NewWindow
+                            Href="https://www.csps-efpc.gc.ca/podcasts/survive-executive/season1/episode3-eng.aspx"
+                            LinkText="How to Survive as an Executive, Season 1, Episode 3: Leading with Calm and Authenticity, with Valerie Gideon, Ph.D." />
+                        </li>
+                        <li>
+                          Video:
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/practical-tips-eng.aspx"
+                            LinkText="EXecuTALK: Practical Tips for Strengthening Mental Health for Your Staff, Your Clients and Yourself" />
                         </li>
                       </ul>
                     </div>
@@ -900,22 +874,6 @@ onBeforeMount(() => {
                         </li>
                       </ul>
                     </div>
-                    <div class="executives">
-                      <h3>For Executives</h3>
-                      <ul>
-                        <li>
-                          Podcast:
-                          <NewWindow
-                            Href="https://www.csps-efpc.gc.ca/podcasts/survive-executive/season1/episode3-eng.aspx"
-                            LinkText="How to Survive as an Executive, Season 1, Episode 3: Leading with Calm and Authenticity, with Valerie Gideon, Ph.D." />
-                        </li>
-                        <li>
-                          Video:
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/practical-tips-eng.aspx"
-                            LinkText="EXecuTALK: Practical Tips for Strengthening Mental Health for Your Staff, Your Clients and Yourself" />
-                        </li>
-                      </ul>
-                    </div>
                     <div class="other">
                       <h3>Other School resources</h3>
                       <ul>
@@ -936,64 +894,70 @@ onBeforeMount(() => {
                       <h3>Santé mentale : expériences vécues</h3>
                       <ul>
                         <li>
-                          Vidéo :
                           <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/video/mental-health-harkness-fra.aspx"
-                            LinkText="La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Andrew Harkness" />
+                            LinkText="Vidéo : La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Andrew Harkness" />
                         </li>
                         <li>
-                          Vidéo :
                           <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/video/mental-health-fleurimond-fra.aspx"
-                            LinkText="La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Esther Fleurimond" />
+                            LinkText="Vidéo : La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Esther Fleurimond" />
                         </li>
                         <li>
-                          Vidéo :
                           <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/video/mental-health-beland-fra.aspx"
-                            LinkText="La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Marc Beland" />
+                            LinkText="Vidéo : La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Marc Béland" />
                         </li>
                         <li>
-                          Vidéo :
                           <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/video/mental-health-gagne-fra.aspx"
-                            LinkText="La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Marie-Anik Gagné" />
+                            LinkText="Vidéo : La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Marie-Anik Gagné" />
                         </li>
                         <li>
-                          Vidéo :
                           <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/video/mental-health-dubourg-fra.aspx"
-                            LinkText="La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Sophie Dubourg" />
+                            LinkText="Vidéo : La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Sophie Dubourg" />
                         </li>
                         <li>
-                          Vidéo :
-                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
-                            Href="https://www.csps-efpc.gc.ca/video/managing-your-mental-health-fra.aspx"
-                            LinkText="#SantéMentaleGC : Gérer votre santé mentale" />
-                        </li>
-                        <li>
-                          Vidéo :
-                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
-                            Href="https://www.csps-efpc.gc.ca/video/sharing-our-stories-fra.aspx"
-                            LinkText="#SantéMentaleGC : Partager nos histoires, insuffler de l'espoir" />
-                        </li>
-                        <li>
-                          Vidéo :
-                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
-                            Href="https://www.csps-efpc.gc.ca/video/supporting-a-colleague-fra.aspx"
-                            LinkText="#SantéMentaleGC : Soutenir un collègue" />
-                        </li>
-                        <li>
-                          Vidéo :
                           <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/video/tips-for-managers-fra.aspx"
-                            LinkText="#SantéMentaleGC : Conseils pour les gestionnaires" />
+                            LinkText="Vidéo : Pleins feux sur la #SantéMentaleGC : Conseils pour les gestionnaires" />
                         </li>
                         <li>
-                          Vidéo :
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/managing-your-mental-health-fra.aspx"
+                            LinkText="Vidéo : Pleins feux sur la #SantéMentaleGC : Gérer votre santé mentale" />
+                        </li>
+                        <li>
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/sharing-our-stories-fra.aspx"
+                            LinkText="Vidéo : Pleins feux sur la #SantéMentaleGC : Partager nos histoires, insuffler de l'espoir" />
+                        </li>
+                        <li>
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/supporting-a-colleague-fra.aspx"
+                            LinkText="Vidéo : Pleins feux sur la #SantéMentaleGC : Soutenir un collègue" />
+                        </li>
+                        <li>
                           <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/video/you-are-not-alone-fra.aspx"
-                            LinkText="#SantéMentaleGC : Vous n'êtes pas seul" />
+                            LinkText="Vidéo : Pleins feux sur la #SantéMentaleGC : Vous n'êtes pas seul" />
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="executives">
+                      <h3>Pour les cadres</h3>
+                      <ul>
+                        <li>
+                          <NewWindow
+                            Href="https://www.csps-efpc.gc.ca/podcasts/survive-executive/season1/episode3-fra.aspx"
+                            Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            LinkText="Balado : Comment survivre comme cadre, saison 1, épisode 3 : Comment diriger une équipe avec calme et authenticité, avec Valerie Gideon, Ph.D." />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/practical-tips-fra.aspx"
+                            Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            LinkText="Vidéo : Entre cadres : Conseils pratiques pour améliorer la santé mentale, celle de votre personnel, celle de vos clients et la vôtre" />
                         </li>
                       </ul>
                     </div>
@@ -1067,24 +1031,6 @@ onBeforeMount(() => {
                         </li>
                       </ul>
                     </div>
-                    <div class="executives">
-                      <h3>Pour les cadres</h3>
-                      <ul>
-                        <li>
-                          Podcast :
-                          <NewWindow
-                            Href="https://www.csps-efpc.gc.ca/podcasts/survive-executive/season1/episode3-fra.aspx"
-                            Title="Ouvre dans une nouvelle fenêtre/onglet"
-                            LinkText="Comment survivre comme cadre, saison 1, épisode 3 : Comment diriger une équipe avec calme et authenticité, avec Valerie Gideon, Ph.D." />
-                        </li>
-                        <li>
-                          Vidéo :
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/practical-tips-fra.aspx"
-                            Title="Ouvre dans une nouvelle fenêtre/onglet"
-                            LinkText="Entre cadres : Conseils pratiques pour améliorer la santé mentale, celle de votre personnel, celle de vos clients et la vôtre" />
-                        </li>
-                      </ul>
-                    </div>
                     <div class="other">
                       <h3>Autres ressources de l'école</h3>
                       <ul>
@@ -1097,7 +1043,7 @@ onBeforeMount(() => {
                           Cours :
                           <NewWindow Href="https://catalogue.csps-efpc.gc.ca/product?catalog=WMT211&cm_locale=fr"
                             Title="Ouvre dans une nouvelle fenêtre/onglet"
-                            LinkText="Respirer profondément et gérer son stress (WMT211)" />
+                            LinkText="Respirer profondément et gérer son stress" />
                         </li>
                       </ul>
                     </div>
