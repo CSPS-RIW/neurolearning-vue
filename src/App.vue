@@ -97,8 +97,8 @@ onBeforeMount(() => {
           <!-- <div class="questionnaire-header">
                                                                                                                                                                                                   <h2 class="questionnaire-heading">
 
-                                                                                                                                                                                                                                                                                                  </h2>
-                                                                                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                        </h2>
+                                                                                                                                                                                                                                                                                                                      </div> -->
 
             <div class="questionnaire questionnaire-1" v-if="step === 1">
               <p>{{ $t("selectAll") }}</p>
@@ -141,30 +141,30 @@ onBeforeMount(() => {
               </form>
             </div>
             <!-- <div class="questionnaire questionnaire-2" v-if="step === 2">
-                                                                                                                                                                                                                                                                                                  <p>{{ $t("thankYouPara[0]") }}</p>
-                                                                                                                                                                                                                                                                                                  <p>{{ $t("thankYouPara[1]") }}</p>
-                                                                                                                                                                                                                                                                                                  <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
-                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                <div class="questionnaire questionnaire-3" v-if="step === 3">
-                                                                                                                                                                                                                                                                                                  <p>{{ t("whichOfThese") }}</p>
-                                                                                                                                                                                                                                                                                                  <form class="options">
-                                                                                                                                                                                                                                                                                                    <div>
-                                                                                                                                                                                                                                                                                                      <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
-                                                                                                                                                                                                                                                                                                        v-model="question2.role">
-                                                                                                                                                                                                                                                                                                      <label for="employee">{{ t("roles[0]") }}</label>
-                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                    <div>
-                                                                                                                                                                                                                                                                                                      <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
-                                                                                                                                                                                                                                                                                                        v-model="question2.role">
-                                                                                                                                                                                                                                                                                                      <label for="manager">{{ t("roles[1]") }}</label>
-                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                    <div>
-                                                                                                                                                                                                                                                                                                      <input type="radio" name="option" id="executive" aria-label="executive"
-                                                                                                                                                                                                                                                                                                        value="executive" v-model="question2.role">
-                                                                                                                                                                                                                                                                                                      <label for="executive">{{ t("roles[2]") }}</label>
-                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                  </form>
-                                                                                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                        <p>{{ $t("thankYouPara[0]") }}</p>
+                                                                                                                                                                                                                                                                                                                        <p>{{ $t("thankYouPara[1]") }}</p>
+                                                                                                                                                                                                                                                                                                                        <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
+                                                                                                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                                                                                                      <div class="questionnaire questionnaire-3" v-if="step === 3">
+                                                                                                                                                                                                                                                                                                                        <p>{{ t("whichOfThese") }}</p>
+                                                                                                                                                                                                                                                                                                                        <form class="options">
+                                                                                                                                                                                                                                                                                                                          <div>
+                                                                                                                                                                                                                                                                                                                            <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
+                                                                                                                                                                                                                                                                                                                              v-model="question2.role">
+                                                                                                                                                                                                                                                                                                                            <label for="employee">{{ t("roles[0]") }}</label>
+                                                                                                                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                                                                                                                          <div>
+                                                                                                                                                                                                                                                                                                                            <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
+                                                                                                                                                                                                                                                                                                                              v-model="question2.role">
+                                                                                                                                                                                                                                                                                                                            <label for="manager">{{ t("roles[1]") }}</label>
+                                                                                                                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                                                                                                                          <div>
+                                                                                                                                                                                                                                                                                                                            <input type="radio" name="option" id="executive" aria-label="executive"
+                                                                                                                                                                                                                                                                                                                              value="executive" v-model="question2.role">
+                                                                                                                                                                                                                                                                                                                            <label for="executive">{{ t("roles[2]") }}</label>
+                                                                                                                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                                                                                                                        </form>
+                                                                                                                                                                                                                                                                                                                      </div> -->
             <div class="customized-toolkit" v-show="step === 2">
               <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
                 <template v-slot:AccTitle>
@@ -694,26 +694,20 @@ onBeforeMount(() => {
                         Href="https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/sante-mieux-etre-fonctionnaires/sante-mentale-travail.html"
                         LinkText="Centre d’expertise sur la santé mentale en milieu de travail"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      fournit des informations sur la façon dont le gouvernement
-                      du Canada aborde la santé mentale en milieu de travail,
-                      ainsi que l’accès à des ressources, des outils et des
-                      services pour les organisations, les gestionnaires et les
-                      employés.
+                      offre des renseignements sur la façon dont le gouvernement du Canada aborde la santé mentale en
+                      milieu de travail et l’accès aux ressources, aux outils et aux services pour les organisations, les
+                      gestionnaires et les employé·es.
                     </li>
                     <li>
                       Le
                       <NewWindow
                         Href="https://www.canada.ca/fr/sante-canada/services/sante-environnement-milieu-travail/sante-securite-travail/service-aide-employes/programme-aide-employes.html"
                         LinkText="Programme d’aide aux employés (PAE)" Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre des services de counseling à court terme gratuits
-                      pour les problèmes personnels ou liés au travail, ainsi
-                      que des services de counseling en cas de crise. Plus de 80
-                      ministères et organismes fédéraux reçoivent leurs services
-                      de PAE par l’intermédiaire de Santé Canada, tandis que
-                      d’autres organisations fournissent ce service en interne
-                      ou l’achètent auprès du secteur privé. Pour trouver le
-                      fournisseur de services pour votre organisation, veuillez
-                      consulter la
+                      offre gratuitement des services de consultation à court terme en cas de problèmes personnels ou
+                      professionnels ainsi qu’en cas de crise. Plus de 80 ministères et organismes fédéraux reçoivent
+                      leurs services du PAE par l’entremise de Santé Canada, tandis que d’autres organismes offrent ce
+                      service à l’interne ou font appel au secteur privé. Pour trouver le prestataire de services pour
+                      votre organisation, consultez la
                       <NewWindow
                         Href="https://www.canada.ca/fr/gouvernement/fonctionpublique/mieux-etre-inclusion-diversite-fonction-publique/programme-aide-employes.html"
                         LinkText="liste ministérielle" Title="Ouvre dans une nouvelle fenêtre/onglet" />.
@@ -723,23 +717,20 @@ onBeforeMount(() => {
                       <NewWindow
                         Href="https://www.canada.ca/fr/environnement-changement-climatique/services/sante-securite-travail/programme-sante-bien-etre/gestionnaires-cinq-regles-dor.html"
                         LinkText="Cinq règles d’or pour les gestionnaires"
-                        Title="Ouvre dans une nouvelle fenêtre/onglet" />, élaborées par Environnement et Changement
-                      climatique
-                      Canada, fournissent des orientations sur la façon de
-                      favoriser un environnement de travail sain, qui soutient
-                      la santé mentale des employés.
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" /> élaborées par Environnement et Changement
+                      climatique Canada, comportent des conseils sur la façon de favoriser un environnement de travail
+                      sain pour appuyer la santé mentale des employé·es.
                     </li>
                     <li>
-                      Services de santé mentale pour les membres des Forces
-                      armées canadiennes et leur famille
+                      <NewWindow
+                        Href="https://www.canada.ca/fr/ministere-defense-nationale/services/avantages-militaires/sante-mentale-militaires.html"
+                        LinkText="Services de santé mentale pour les membres des Forces armées canadiennes et leur famille"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
                     </li>
                     <li>
-                      Services de santé mentale disponibles pour les employés de
-                      la GRC
-                    </li>
-                    <li>
-                      Services de santé mentale disponibles pour les anciens
-                      combattants
+                      <NewWindow Href="https://www.veterans.gc.ca/fra/health-support/mental-health-and-wellness"
+                        LinkText="Services de santé mentale pour les vétérans"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
                     </li>
                   </ul>
                 </template>
@@ -764,7 +755,7 @@ onBeforeMount(() => {
                         <li>
                           Video:
                           <NewWindow Href="https://www.csps-efpc.gc.ca/video/mental-health-beland-eng.aspx"
-                            LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marc Beland" />
+                            LinkText="Mental Health and the Easing of COVID-19 Restrictions in the Workplace: Marc Béland" />
                         </li>
                         <li>
                           Video:
@@ -898,64 +889,59 @@ onBeforeMount(() => {
                       <h3>Santé mentale : expériences vécues</h3>
                       <ul>
                         <li>
-                          Vidéo :
                           <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/video/mental-health-harkness-fra.aspx"
-                            LinkText="La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Andrew Harkness" />
+                            LinkText="Vidéo : La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Andrew Harkness" />
                         </li>
                         <li>
-                          Vidéo :
                           <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/video/mental-health-fleurimond-fra.aspx"
-                            LinkText="La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Esther Fleurimond" />
+                            LinkText="Vidéo : La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Esther Fleurimond" />
                         </li>
                         <li>
-                          Vidéo :
                           <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/video/mental-health-beland-fra.aspx"
-                            LinkText="La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Marc Beland" />
+                            LinkText="Vidéo : La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Marc Béland" />
                         </li>
                         <li>
-                          Vidéo :
                           <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/video/mental-health-gagne-fra.aspx"
-                            LinkText="La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Marie-Anik Gagné" />
+                            LinkText="Vidéo : La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Marie-Anik Gagné" />
                         </li>
                         <li>
-                          Vidéo :
                           <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/video/mental-health-dubourg-fra.aspx"
-                            LinkText="La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Sophie Dubourg" />
+                            LinkText="Vidéo : La santé mentale et l'assouplissement des restrictions liées à la COVID-19 sur le lieu de travail : Sophie Dubourg" />
                         </li>
                         <li>
-                          Vidéo :
-                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
-                            Href="https://www.csps-efpc.gc.ca/video/managing-your-mental-health-fra.aspx"
-                            LinkText="#SantéMentaleGC : Gérer votre santé mentale" />
-                        </li>
-                        <li>
-                          Vidéo :
-                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
-                            Href="https://www.csps-efpc.gc.ca/video/sharing-our-stories-fra.aspx"
-                            LinkText="#SantéMentaleGC : Partager nos histoires, insuffler de l'espoir" />
-                        </li>
-                        <li>
-                          Vidéo :
-                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
-                            Href="https://www.csps-efpc.gc.ca/video/supporting-a-colleague-fra.aspx"
-                            LinkText="#SantéMentaleGC : Soutenir un collègue" />
-                        </li>
-                        <li>
-                          Vidéo :
                           <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/video/tips-for-managers-fra.aspx"
-                            LinkText="#SantéMentaleGC : Conseils pour les gestionnaires" />
+                            LinkText="Vidéo : Pleins feux sur la #SantéMentaleGC : Conseils pour les gestionnaires" />
                         </li>
                         <li>
-                          Vidéo :
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/managing-your-mental-health-fra.aspx"
+                            LinkText="Vidéo : #SantéMentaleGC : Gérer votre santé mentale" />
+                        </li>
+                        <li>
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/sharing-our-stories-fra.aspx"
+                            LinkText="Vidéo : #SantéMentaleGC : Partager nos histoires, insuffler de l'espoir" />
+                        </li>
+                        <li>
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/supporting-a-colleague-fra.aspx"
+                            LinkText="Vidéo : #SantéMentaleGC : Soutenir un collègue" />
+                        </li>
+                        <li>
+                          <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            Href="https://www.csps-efpc.gc.ca/video/tips-for-managers-fra.aspx"
+                            LinkText="Vidéo : #SantéMentaleGC : Conseils pour les gestionnaires" />
+                        </li>
+                        <li>
                           <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/video/you-are-not-alone-fra.aspx"
-                            LinkText="#SantéMentaleGC : Vous n'êtes pas seul" />
+                            LinkText="Vidéo : #SantéMentaleGC : Vous n'êtes pas seul" />
                         </li>
                       </ul>
                     </div>
@@ -1040,10 +1026,9 @@ onBeforeMount(() => {
                             LinkText="Comment survivre comme cadre, saison 1, épisode 3 : Comment diriger une équipe avec calme et authenticité, avec Valerie Gideon, Ph.D." />
                         </li>
                         <li>
-                          Vidéo :
                           <NewWindow Href="https://www.csps-efpc.gc.ca/video/practical-tips-fra.aspx"
                             Title="Ouvre dans une nouvelle fenêtre/onglet"
-                            LinkText="Entre cadres : Conseils pratiques pour améliorer la santé mentale, celle de votre personnel, celle de vos clients et la vôtre" />
+                            LinkText="Vidéo : Entre cadres : Conseils pratiques pour améliorer la santé mentale, celle de votre personnel, celle de vos clients et la vôtre" />
                         </li>
                       </ul>
                     </div>
