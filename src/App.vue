@@ -96,9 +96,9 @@ onBeforeMount(() => {
         <div class="questionnaire-wrapper" aria-live="polite" role="region" aria-label="Questionnaire">
           <!-- <div class="questionnaire-header">
                                                                                                                                                                                                   <h2 class="questionnaire-heading">
-                
-                                                                                                                                                                                                                    </h2>
-                                                                                                                                                                                                                  </div> -->
+
+                                                                                                                                                                                                                                                    </h2>
+                                                                                                                                                                                                                                                  </div> -->
 
             <div class="questionnaire questionnaire-1" v-if="step === 1">
               <p>{{ $t("selectAll") }}</p>
@@ -141,30 +141,30 @@ onBeforeMount(() => {
               </form>
             </div>
             <!-- <div class="questionnaire questionnaire-2" v-if="step === 2">
-                                                                                                                                                                                                                    <p>{{ $t("thankYouPara[0]") }}</p>
-                                                                                                                                                                                                                    <p>{{ $t("thankYouPara[1]") }}</p>
-                                                                                                                                                                                                                    <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
-                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                  <div class="questionnaire questionnaire-3" v-if="step === 3">
-                                                                                                                                                                                                                    <p>{{ t("whichOfThese") }}</p>
-                                                                                                                                                                                                                    <form class="options">
-                                                                                                                                                                                                                      <div>
-                                                                                                                                                                                                                        <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
-                                                                                                                                                                                                                          v-model="question2.role">
-                                                                                                                                                                                                                        <label for="employee">{{ t("roles[0]") }}</label>
-                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                      <div>
-                                                                                                                                                                                                                        <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
-                                                                                                                                                                                                                          v-model="question2.role">
-                                                                                                                                                                                                                        <label for="manager">{{ t("roles[1]") }}</label>
-                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                      <div>
-                                                                                                                                                                                                                        <input type="radio" name="option" id="executive" aria-label="executive"
-                                                                                                                                                                                                                          value="executive" v-model="question2.role">
-                                                                                                                                                                                                                        <label for="executive">{{ t("roles[2]") }}</label>
-                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                    </form>
-                                                                                                                                                                                                                  </div> -->
+                                                                                                                                                                                                                                                    <p>{{ $t("thankYouPara[0]") }}</p>
+                                                                                                                                                                                                                                                    <p>{{ $t("thankYouPara[1]") }}</p>
+                                                                                                                                                                                                                                                    <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
+                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                  <div class="questionnaire questionnaire-3" v-if="step === 3">
+                                                                                                                                                                                                                                                    <p>{{ t("whichOfThese") }}</p>
+                                                                                                                                                                                                                                                    <form class="options">
+                                                                                                                                                                                                                                                      <div>
+                                                                                                                                                                                                                                                        <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
+                                                                                                                                                                                                                                                          v-model="question2.role">
+                                                                                                                                                                                                                                                        <label for="employee">{{ t("roles[0]") }}</label>
+                                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                                      <div>
+                                                                                                                                                                                                                                                        <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
+                                                                                                                                                                                                                                                          v-model="question2.role">
+                                                                                                                                                                                                                                                        <label for="manager">{{ t("roles[1]") }}</label>
+                                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                                      <div>
+                                                                                                                                                                                                                                                        <input type="radio" name="option" id="executive" aria-label="executive"
+                                                                                                                                                                                                                                                          value="executive" v-model="question2.role">
+                                                                                                                                                                                                                                                        <label for="executive">{{ t("roles[2]") }}</label>
+                                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                                    </form>
+                                                                                                                                                                                                                                                  </div> -->
             <div class="customized-toolkit" v-show="step === 2">
               <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
                 <template v-slot:AccTitle>
@@ -236,64 +236,61 @@ onBeforeMount(() => {
                   </ul>
                   <ul class="“fr”" v-show="locale === 'fr'">
                     <li>
-                      <NewWindow Href="https://cmha.ca/fr" LinkText="L’Association canadienne pour la santé mentale"
+                      L’
+                      <NewWindow Href="https://cmha.ca/fr" LinkText="Association canadienne pour la santé mentale"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est une organisation nationale qui promeut la santé
-                      mentale et soutient les personnes en rétablissement de
-                      maladies mentales.
+                      est une organisation nationale qui fait la promotion de la santé mentale et soutient les personnes
+                      qui se remettent d’une maladie mentale.
                     </li>
                     <li>
                       <NewWindow Href="https://www.crisisservicescanada.ca/fr/" LinkText="Services de crise Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre un service de prévention du suicide gratuit et
-                      disponible 24 heures sur 24, 7 jours sur 7, tout au long
-                      de l’année au 1-833-456-4566. Que vous souffriez d’une
-                      perte, que vous vous inquiétiez pour quelqu’un qui
-                      pourrait avoir des pensées suicidaires ou que vous ayez
-                      vous-même des pensées suicidaires, des intervenants
-                      hautement qualifiés peuvent vous apporter leur soutien.
+                      offre des services sans frais en tout temps à toute personne préoccupée par le suicide. Le service
+                      est offert toute l’année. Que vous souffriez d’un deuil, que vous vous inquiétiez pour quelqu’un qui
+                      pourrait avoir des pensées suicidaires ou que vous ayez vous-même des pensées suicidaires, leurs
+                      intervenantes et intervenants hautement qualifiés sont là pour vous apporter leur soutien.
                     </li>
                     <li>
                       <NewWindow Href="https://jeunessejecoute.ca/" LinkText="Jeunesse, J’écoute"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est un service national disponible 24 heures sur 24 qui
-                      offre des services de counseling professionnels, des
-                      informations, des références et un soutien par messagerie
-                      texte animé par des bénévoles aux jeunes en anglais et en
-                      français.
+                      est un service national offert en tout temps qui permet aux jeunes d’obtenir une consultation
+                      professionnelle, des renseignements, des références et un soutien textuel auprès de bénévoles, en
+                      anglais et en français.
                     </li>
                     <li>
-                      <NewWindow Href="https://hebergementfemmes.ca/" LinkText="Hebergementfemmes.ca"
+                      <NewWindow Href="https://hebergementfemmes.ca/" LinkText="Hébergement femmes Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est une ressource en ligne pour les femmes et leurs
-                      enfants qui cherchent à se protéger contre la violence et
-                      les abus.
+                      est une ressource en ligne pour les femmes et leurs enfants cherchant à se protéger de la violence
+                      et des abus.
                     </li>
                     <li>
-                      La page Web sur
+                      La page Web
                       <NewWindow Href="https://www.canada.ca/fr/sante-publique/services/intimidation.html"
-                        LinkText="l’intimidation" Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      fournit des informations sur la façon de reconnaître et de
-                      prévenir l’intimidation, ainsi que des ressources de
-                      prévention de l’intimidation.
+                        LinkText="Intimidation" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      fournit de l’information sur la façon de reconnaître et d’éviter l’intimidation ainsi que des
+                      ressources sur la prévention de l’intimidation.
                     </li>
-                    <li></li>
                     <li>
-                      La page Web sur la
+                      La page Web
                       <NewWindow Href="https://www.canada.ca/fr/sante-publique/sujets/violence-et-abus.html"
-                        LinkText="violence et les abus" Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      fournit des informations sur la violence et les abus, leur
-                      prévention et la façon d’obtenir de l’aide si vous êtes
-                      victime d’abus.
+                        LinkText="Violence et abus" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      fournit de l’information sur la violence et l’abus, comment les prévenir et comment obtenir de
+                      l’aide si vous en êtes victime.
                     </li>
                     <li>
-                      <NewWindow Href="https://www.wellnesstogether.ca/fr-CA" LinkText="Mieux-être ensemble Canada"
+                      <NewWindow Href="https://www.wellnesstogether.ca/fr-CA" LinkText="Espace Mieux-être Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre des services de counseling par téléphone, vidéo et
-                      messagerie texte, des informations et des vidéos sur les
-                      problèmes courants de santé mentale et de toxicomanie, des
-                      programmes de bien-être et un soutien communautaire et par
-                      les pairs.
+                      fournit des conseils par téléphone, par vidéoconférence et par SMS, de l’information et des vidéos
+                      sur les troubles mentaux et les problèmes de toxicomanie courants, les programmes de mieux-être et
+                      le soutien communautaire et par les pairs.
+                    </li>
+                    <li>
+                      La
+                      <NewWindow Href="https://commissionsantementale.ca/"
+                        LinkText="Commission de la santé mentale du Canada"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" /> dirige l’élaboration et la diffusion de
+                      programmes et d’outils novateurs pour soutenir la santé
+                      mentale et le mieux-être des Canadien·nes.
                     </li>
                   </ul>
                 </template>
@@ -372,64 +369,61 @@ onBeforeMount(() => {
 
                   <ul class="“fr”" v-show="locale === 'fr'">
                     <li>
-                      <NewWindow Href="https://cmha.ca/fr" LinkText="L’Association canadienne pour la santé mentale"
+                      L’
+                      <NewWindow Href="https://cmha.ca/fr" LinkText="Association canadienne pour la santé mentale"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est une organisation nationale qui promeut la santé
-                      mentale et soutient les personnes en rétablissement de
-                      maladies mentales.
+                      est une organisation nationale qui fait la promotion de la santé mentale et soutient les personnes
+                      qui se remettent d’une maladie mentale.
                     </li>
                     <li>
                       <NewWindow Href="https://www.crisisservicescanada.ca/fr/" LinkText="Services de crise Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre un service de prévention du suicide gratuit et
-                      disponible 24 heures sur 24, 7 jours sur 7, tout au long
-                      de l’année au 1-833-456-4566. Que vous souffriez d’une
-                      perte, que vous vous inquiétiez pour quelqu’un qui
-                      pourrait avoir des pensées suicidaires ou que vous ayez
-                      vous-même des pensées suicidaires, des intervenants
-                      hautement qualifiés peuvent vous apporter leur soutien.
+                      offre des services sans frais en tout temps à toute personne préoccupée par le suicide. Le service
+                      est offert toute l’année. Que vous souffriez d’un deuil, que vous vous inquiétiez pour quelqu’un qui
+                      pourrait avoir des pensées suicidaires ou que vous ayez vous-même des pensées suicidaires, leurs
+                      intervenantes et intervenants hautement qualifiés sont là pour vous apporter leur soutien.
                     </li>
                     <li>
                       <NewWindow Href="https://jeunessejecoute.ca/" LinkText="Jeunesse, J’écoute"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est un service national disponible 24 heures sur 24 qui
-                      offre des services de counseling professionnels, des
-                      informations, des références et un soutien par messagerie
-                      texte animé par des bénévoles aux jeunes en anglais et en
-                      français.
+                      est un service national offert en tout temps qui permet aux jeunes d’obtenir une consultation
+                      professionnelle, des renseignements, des références et un soutien textuel auprès de bénévoles, en
+                      anglais et en français.
                     </li>
                     <li>
-                      <NewWindow Href="https://hebergementfemmes.ca/" LinkText="Hebergementfemmes.ca"
+                      <NewWindow Href="https://hebergementfemmes.ca/" LinkText="Hébergement femmes Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est une ressource en ligne pour les femmes et leurs
-                      enfants qui cherchent à se protéger contre la violence et
-                      les abus.
+                      est une ressource en ligne pour les femmes et leurs enfants cherchant à se protéger de la violence
+                      et des abus.
                     </li>
                     <li>
-                      La page Web sur
+                      La page Web
                       <NewWindow Href="https://www.canada.ca/fr/sante-publique/services/intimidation.html"
-                        LinkText="l’intimidation" Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      fournit des informations sur la façon de reconnaître et de
-                      prévenir l’intimidation, ainsi que des ressources de
-                      prévention de l’intimidation.
+                        LinkText="Intimidation" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      fournit de l’information sur la façon de reconnaître et d’éviter l’intimidation ainsi que des
+                      ressources sur la prévention de l’intimidation.
                     </li>
-                    <li></li>
                     <li>
-                      La page Web sur la
+                      La page Web
                       <NewWindow Href="https://www.canada.ca/fr/sante-publique/sujets/violence-et-abus.html"
-                        LinkText="violence et les abus" Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      fournit des informations sur la violence et les abus, leur
-                      prévention et la façon d’obtenir de l’aide si vous êtes
-                      victime d’abus.
+                        LinkText="Violence et abus" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      fournit de l’information sur la violence et l’abus, comment les prévenir et comment obtenir de
+                      l’aide si vous en êtes victime.
                     </li>
                     <li>
-                      <NewWindow Href="https://www.wellnesstogether.ca/fr-CA" LinkText="Mieux-être ensemble Canada"
+                      <NewWindow Href="https://www.wellnesstogether.ca/fr-CA" LinkText="Espace Mieux-être Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre des services de counseling par téléphone, vidéo et
-                      messagerie texte, des informations et des vidéos sur les
-                      problèmes courants de santé mentale et de toxicomanie, des
-                      programmes de bien-être et un soutien communautaire et par
-                      les pairs.
+                      fournit des conseils par téléphone, par vidéoconférence et par SMS, de l’information et des vidéos
+                      sur les troubles mentaux et les problèmes de toxicomanie courants, les programmes de mieux-être et
+                      le soutien communautaire et par les pairs.
+                    </li>
+                    <li>
+                      La
+                      <NewWindow Href="https://commissionsantementale.ca/"
+                        LinkText="Commission de la santé mentale du Canada"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" /> dirige l’élaboration et la diffusion de
+                      programmes et d’outils novateurs pour soutenir la santé
+                      mentale et le mieux-être des Canadien·nes.
                     </li>
                   </ul>
                 </template>
@@ -556,7 +550,8 @@ onBeforeMount(() => {
                     <li>
                       La
                       <NewWindow Href="https://www.irsss.ca/" LinkText="Société des survivants des pensionnats
-                                                    indiens" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                                                                                    indiens"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       offre une ligne de crise 24 heures sur 24, 7 jours sur 7,
                       qui offre du soutien à toute personne éprouvant de la
                       douleur ou de la détresse en raison de son expérience dans
@@ -572,7 +567,8 @@ onBeforeMount(() => {
                     <li>
                       La
                       <NewWindow Href="https://nunavuthelpline.ca/?lang=fr" LinkText="ligne d’assistance Kamatsiaqtut
-                                                    Nunavut" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                                                                                    Nunavut"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       est un service gratuit, anonyme et confidentiel 24 heures
                       sur 24, 7 jours sur 7, assuré par des bénévoles formés:
                       1-800-265-3333.
@@ -581,7 +577,7 @@ onBeforeMount(() => {
                       La
                       <NewWindow Href="https://www.mmiwg-ffada.ca/fr/contact/"
                         LinkText="ligne de soutien de l’Enquête
-                                                    nationale sur les femmes et les filles autochtones disparues et assassinées"
+                                                                                    nationale sur les femmes et les filles autochtones disparues et assassinées"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       est un service indépendant, national et gratuit 24 heures
                       sur 24, 7 jours sur 7, disponible pour toute personne
@@ -591,7 +587,8 @@ onBeforeMount(() => {
                     <li>
                       La
                       <NewWindow Href="https://nafc.ca/?lang=fr" LinkText="Association nationale des centres
-                                                    d’amitié" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                                                                                    d’amitié"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       <a href="" target="“_blank”"></a> offre des programmes et
                       des services culturellement pertinents pour les peuples
                       autochtones vivant dans les centres urbains du Canada.
@@ -602,7 +599,7 @@ onBeforeMount(() => {
                     <li>
                       La
                       <NewWindow Href="https://www.nwac.ca/covid19-support/" LinkText="Association des femmes
-                                                    autochtones du Canada"
+                                                                                    autochtones du Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       offre du soutien et aide à renforcer la résilience. Des
                       aînés sont disponibles du lundi au vendredi, de 9 h à 11 h
@@ -627,7 +624,8 @@ onBeforeMount(() => {
                       <NewWindow
                         Href="https://thunderbirdpf.org/reponse-a-la-crise-dans-les-communautes-autochtones/?lang=fr"
                         LinkText="Fondation Thunderbird
-                                                    Partnership" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                                                                                    Partnership"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       promeut une approche holistique de la guérison et du
                       bien-être qui valorise la culture, le respect, la
                       communauté et la compassion. La priorité absolue de la
