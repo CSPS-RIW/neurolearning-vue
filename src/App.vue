@@ -97,8 +97,8 @@ onBeforeMount(() => {
           <!-- <div class="questionnaire-header">
                                                                                                                                                                                                   <h2 class="questionnaire-heading">
 
-                                                                                                                                                                                                                                                                                                                            </h2>
-                                                                                                                                                                                                                                                                                                                          </div> -->
+                                                                                                                                                                                                                                                                                                                              </h2>
+                                                                                                                                                                                                                                                                                                                            </div> -->
 
             <div class="questionnaire questionnaire-1" v-if="step === 1">
               <p>{{ $t("selectAll") }}</p>
@@ -141,30 +141,30 @@ onBeforeMount(() => {
               </form>
             </div>
             <!-- <div class="questionnaire questionnaire-2" v-if="step === 2">
-                                                                                                                                                                                                                                                                                                                            <p>{{ $t("thankYouPara[0]") }}</p>
-                                                                                                                                                                                                                                                                                                                            <p>{{ $t("thankYouPara[1]") }}</p>
-                                                                                                                                                                                                                                                                                                                            <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
-                                                                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                                                                          <div class="questionnaire questionnaire-3" v-if="step === 3">
-                                                                                                                                                                                                                                                                                                                            <p>{{ t("whichOfThese") }}</p>
-                                                                                                                                                                                                                                                                                                                            <form class="options">
-                                                                                                                                                                                                                                                                                                                              <div>
-                                                                                                                                                                                                                                                                                                                                <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
-                                                                                                                                                                                                                                                                                                                                  v-model="question2.role">
-                                                                                                                                                                                                                                                                                                                                <label for="employee">{{ t("roles[0]") }}</label>
-                                                                                                                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                                                                                                              <div>
-                                                                                                                                                                                                                                                                                                                                <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
-                                                                                                                                                                                                                                                                                                                                  v-model="question2.role">
-                                                                                                                                                                                                                                                                                                                                <label for="manager">{{ t("roles[1]") }}</label>
-                                                                                                                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                                                                                                              <div>
-                                                                                                                                                                                                                                                                                                                                <input type="radio" name="option" id="executive" aria-label="executive"
-                                                                                                                                                                                                                                                                                                                                  value="executive" v-model="question2.role">
-                                                                                                                                                                                                                                                                                                                                <label for="executive">{{ t("roles[2]") }}</label>
-                                                                                                                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                                                                                                            </form>
-                                                                                                                                                                                                                                                                                                                          </div> -->
+                                                                                                                                                                                                                                                                                                                              <p>{{ $t("thankYouPara[0]") }}</p>
+                                                                                                                                                                                                                                                                                                                              <p>{{ $t("thankYouPara[1]") }}</p>
+                                                                                                                                                                                                                                                                                                                              <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
+                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                            <div class="questionnaire questionnaire-3" v-if="step === 3">
+                                                                                                                                                                                                                                                                                                                              <p>{{ t("whichOfThese") }}</p>
+                                                                                                                                                                                                                                                                                                                              <form class="options">
+                                                                                                                                                                                                                                                                                                                                <div>
+                                                                                                                                                                                                                                                                                                                                  <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
+                                                                                                                                                                                                                                                                                                                                    v-model="question2.role">
+                                                                                                                                                                                                                                                                                                                                  <label for="employee">{{ t("roles[0]") }}</label>
+                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                <div>
+                                                                                                                                                                                                                                                                                                                                  <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
+                                                                                                                                                                                                                                                                                                                                    v-model="question2.role">
+                                                                                                                                                                                                                                                                                                                                  <label for="manager">{{ t("roles[1]") }}</label>
+                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                <div>
+                                                                                                                                                                                                                                                                                                                                  <input type="radio" name="option" id="executive" aria-label="executive"
+                                                                                                                                                                                                                                                                                                                                    value="executive" v-model="question2.role">
+                                                                                                                                                                                                                                                                                                                                  <label for="executive">{{ t("roles[2]") }}</label>
+                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                              </form>
+                                                                                                                                                                                                                                                                                                                            </div> -->
             <div class="customized-toolkit" v-show="step === 2">
               <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
                 <template v-slot:AccTitle>
@@ -940,6 +940,23 @@ onBeforeMount(() => {
                         </li>
                       </ul>
                     </div>
+                    <div class="executives">
+                      <h3>Pour les cadres</h3>
+                      <ul>
+                        <li>
+                          Podcast :
+                          <NewWindow
+                            Href="https://www.csps-efpc.gc.ca/podcasts/survive-executive/season1/episode3-fra.aspx"
+                            Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            LinkText="Comment survivre comme cadre, saison 1, épisode 3 : Comment diriger une équipe avec calme et authenticité, avec Valerie Gideon, Ph.D." />
+                        </li>
+                        <li>
+                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/practical-tips-fra.aspx"
+                            Title="Ouvre dans une nouvelle fenêtre/onglet"
+                            LinkText="Vidéo : Entre cadres : Conseils pratiques pour améliorer la santé mentale, celle de votre personnel, celle de vos clients et la vôtre" />
+                        </li>
+                      </ul>
+                    </div>
                     <div class="managers">
                       <h3>Pour les gestionnaires</h3>
                       <ul>
@@ -1007,23 +1024,6 @@ onBeforeMount(() => {
                           <NewWindow Title="Ouvre dans une nouvelle fenêtre/onglet"
                             Href="https://www.csps-efpc.gc.ca/tools/jobaids/pf13-protection-fra.aspx"
                             LinkText="Outils de santé mentale pour les gestionnaires : Facteur psychosocial 13 – Protection de l'intégrité physique (WMT2-J13)" />
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="executives">
-                      <h3>Pour les cadres</h3>
-                      <ul>
-                        <li>
-                          Podcast :
-                          <NewWindow
-                            Href="https://www.csps-efpc.gc.ca/podcasts/survive-executive/season1/episode3-fra.aspx"
-                            Title="Ouvre dans une nouvelle fenêtre/onglet"
-                            LinkText="Comment survivre comme cadre, saison 1, épisode 3 : Comment diriger une équipe avec calme et authenticité, avec Valerie Gideon, Ph.D." />
-                        </li>
-                        <li>
-                          <NewWindow Href="https://www.csps-efpc.gc.ca/video/practical-tips-fra.aspx"
-                            Title="Ouvre dans une nouvelle fenêtre/onglet"
-                            LinkText="Vidéo : Entre cadres : Conseils pratiques pour améliorer la santé mentale, celle de votre personnel, celle de vos clients et la vôtre" />
                         </li>
                       </ul>
                     </div>
