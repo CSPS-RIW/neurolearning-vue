@@ -97,8 +97,8 @@ onBeforeMount(() => {
           <!-- <div class="questionnaire-header">
                                                                                                                                                                                                   <h2 class="questionnaire-heading">
 
-                                                                                                                                                                                                                                                    </h2>
-                                                                                                                                                                                                                                                  </div> -->
+                                                                                                                                                                                                                                                                                          </h2>
+                                                                                                                                                                                                                                                                                        </div> -->
 
             <div class="questionnaire questionnaire-1" v-if="step === 1">
               <p>{{ $t("selectAll") }}</p>
@@ -141,30 +141,30 @@ onBeforeMount(() => {
               </form>
             </div>
             <!-- <div class="questionnaire questionnaire-2" v-if="step === 2">
-                                                                                                                                                                                                                                                    <p>{{ $t("thankYouPara[0]") }}</p>
-                                                                                                                                                                                                                                                    <p>{{ $t("thankYouPara[1]") }}</p>
-                                                                                                                                                                                                                                                    <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
-                                                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                                                  <div class="questionnaire questionnaire-3" v-if="step === 3">
-                                                                                                                                                                                                                                                    <p>{{ t("whichOfThese") }}</p>
-                                                                                                                                                                                                                                                    <form class="options">
-                                                                                                                                                                                                                                                      <div>
-                                                                                                                                                                                                                                                        <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
-                                                                                                                                                                                                                                                          v-model="question2.role">
-                                                                                                                                                                                                                                                        <label for="employee">{{ t("roles[0]") }}</label>
-                                                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                                                      <div>
-                                                                                                                                                                                                                                                        <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
-                                                                                                                                                                                                                                                          v-model="question2.role">
-                                                                                                                                                                                                                                                        <label for="manager">{{ t("roles[1]") }}</label>
-                                                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                                                      <div>
-                                                                                                                                                                                                                                                        <input type="radio" name="option" id="executive" aria-label="executive"
-                                                                                                                                                                                                                                                          value="executive" v-model="question2.role">
-                                                                                                                                                                                                                                                        <label for="executive">{{ t("roles[2]") }}</label>
-                                                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                                                    </form>
-                                                                                                                                                                                                                                                  </div> -->
+                                                                                                                                                                                                                                                                                          <p>{{ $t("thankYouPara[0]") }}</p>
+                                                                                                                                                                                                                                                                                          <p>{{ $t("thankYouPara[1]") }}</p>
+                                                                                                                                                                                                                                                                                          <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
+                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                        <div class="questionnaire questionnaire-3" v-if="step === 3">
+                                                                                                                                                                                                                                                                                          <p>{{ t("whichOfThese") }}</p>
+                                                                                                                                                                                                                                                                                          <form class="options">
+                                                                                                                                                                                                                                                                                            <div>
+                                                                                                                                                                                                                                                                                              <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
+                                                                                                                                                                                                                                                                                                v-model="question2.role">
+                                                                                                                                                                                                                                                                                              <label for="employee">{{ t("roles[0]") }}</label>
+                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                            <div>
+                                                                                                                                                                                                                                                                                              <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
+                                                                                                                                                                                                                                                                                                v-model="question2.role">
+                                                                                                                                                                                                                                                                                              <label for="manager">{{ t("roles[1]") }}</label>
+                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                            <div>
+                                                                                                                                                                                                                                                                                              <input type="radio" name="option" id="executive" aria-label="executive"
+                                                                                                                                                                                                                                                                                                value="executive" v-model="question2.role">
+                                                                                                                                                                                                                                                                                              <label for="executive">{{ t("roles[2]") }}</label>
+                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                          </form>
+                                                                                                                                                                                                                                                                                        </div> -->
             <div class="customized-toolkit" v-show="step === 2">
               <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
                 <template v-slot:AccTitle>
@@ -526,112 +526,87 @@ onBeforeMount(() => {
                   <ul class="fr" v-show="locale === 'fr'">
                     <li>
                       Le
-                      <NewWindow Href="https://www.fpwc.ca/" LinkText="Cercle de bien-être des Premières Nations"
+                      <NewWindow Href="https://www.fpwc.ca/" LinkText="First Peoples Wellness Circle"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est une corporation nationale à but non lucratif gouvernée
-                      et gérée par des leaders autochtones, qui vise à améliorer
-                      la vie des Premières Nations du Canada en abordant la
-                      guérison, le bien-être et d’autres défis de santé mentale.
+                      (en anglais seulement) est un organisme national à but non lucratif régi et géré par des leaders
+                      autochtones; il vise à améliorer la vie des premiers peuples du Canada en traitant de la guérison,
+                      du bien-être et de problèmes de santé mentale.
                     </li>
                     <li>
                       La
                       <NewWindow Href="https://www.sac-isc.gc.ca/fra/1576089519527/1576089566478"
-                        LinkText="Ligne d'écoute d'espoir pour le mieux-être"
-                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre une aide immédiate à tous les peuples autochtones du
-                      Canada, 24 heures sur 24, 7 jours sur 7. Appelez la ligne
-                      d’aide sans frais ou connectez-vous au chat en ligne à
-                      hopeforwellness.ca. Des services de counseling par
-                      téléphone et en ligne sont disponibles en anglais et en
-                      français. Sur demande, le counseling téléphonique est
-                      disponible en cri, en ojibwé et en inuktitut:
-                      1-855-242-3310.
+                        LinkText="Ligne d'écoute d'espoir" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      offre une aide immédiate à tous les peuples autochtones au Canada. Elle est accessible en tout
+                      temps. Appelez sans frais ou connectez-vous au clavardage en ligne sur le site
+                      <NewWindow Href="https://www.espoirpourlemieuxetre.ca" LinkText="www.espoirpourlemieuxetre.ca"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" />. Les consultations téléphoniques et en ligne se
+                      font en anglais et en français. Sur demande, des consultations téléphoniques sont également offertes
+                      en cri, en ojibwé et en inuktitut au 1-855-242-3310.
                     </li>
                     <li>
-                      La
-                      <NewWindow Href="https://www.irsss.ca/" LinkText="Société des survivants des pensionnats
-                                                                                    indiens"
+                      La ligne d’aide 24 heures sur 24 de la
+                      <NewWindow Href="https://www.irsss.ca/" LinkText="Indian Residential School Survivors Society"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre une ligne de crise 24 heures sur 24, 7 jours sur 7,
-                      qui offre du soutien à toute personne éprouvant de la
-                      douleur ou de la détresse en raison de son expérience dans
-                      un pensionnat indien: 1-800-721-0066.
+                      (en anglais seulement) fournit un soutien à toute personne souffrant de douleur ou de détresse à la
+                      suite de son expérience dans un pensionnat : 1-800-721-0066.
                     </li>
                     <li>
                       <NewWindow Href="https://www.itk.ca/" LinkText="Inuit Tapiriit Kanatami"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      travaille à améliorer la santé et le bien-être des Inuits
-                      au Canada par la recherche, la défense des droits, la
-                      sensibilisation du public et l’éducation.
+                      (en anglais seulement) travaille à améliorer la santé et le bien-être des Inuits au Canada grâce à
+                      la recherche, à la défense des droits, à la sensibilisation du public et à l’éducation.
                     </li>
                     <li>
                       La
-                      <NewWindow Href="https://nunavuthelpline.ca/?lang=fr" LinkText="ligne d’assistance Kamatsiaqtut
-                                                                                    Nunavut"
+                      <NewWindow Href="https://nunavuthelpline.ca/?lang=fr"
+                        LinkText="ligne d’assistance Kamatsiaqtut Nunavut"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est un service gratuit, anonyme et confidentiel 24 heures
-                      sur 24, 7 jours sur 7, assuré par des bénévoles formés:
-                      1-800-265-3333.
+                      est un service sans frais, anonyme et confidentiel offert en tout temps et doté de personnes
+                      bénévoles formées : 1-800-265-3333.
                     </li>
                     <li>
                       La
                       <NewWindow Href="https://www.mmiwg-ffada.ca/fr/contact/"
-                        LinkText="ligne de soutien de l’Enquête
-                                                                                    nationale sur les femmes et les filles autochtones disparues et assassinées"
+                        LinkText="ligne de soutien de l’Enquête nationale sur les femmes et les filles autochtones disparues et assassinées"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      est un service indépendant, national et gratuit 24 heures
-                      sur 24, 7 jours sur 7, disponible pour toute personne
-                      ayant besoin d’aide. Des services sont disponibles en
-                      anglais et en français: 1-844-413-6649.
+                      est un service gratuit, national et indépendant, accessible en tout temps à toute personne ayant
+                      besoin d’aide. Les services sont offerts en anglais et en français au 1-844-413-6649.
                     </li>
                     <li>
-                      La
-                      <NewWindow Href="https://nafc.ca/?lang=fr" LinkText="Association nationale des centres
-                                                                                    d’amitié"
+                      L’
+                      <NewWindow Href="https://nafc.ca/?lang=fr" LinkText="Association nationale des centres d’amitié"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       <a href="" target="“_blank”"></a> offre des programmes et
-                      des services culturellement pertinents pour les peuples
-                      autochtones vivant dans les centres urbains du Canada.
-                      Elle travaille sur une gamme de questions, notamment la
-                      santé, le logement, la jeunesse, la justice et le
-                      développement international.
+                      propose des programmes et des services adaptés aux peuples autochtones vivant dans les centres
+                      urbains du Canada. Elle travaille sur une gamme de questions, y compris la santé, le logement, la
+                      jeunesse, la justice et le développement international.
                     </li>
                     <li>
-                      La
-                      <NewWindow Href="https://www.nwac.ca/covid19-support/" LinkText="Association des femmes
-                                                                                    autochtones du Canada"
+                      L’
+                      <NewWindow Href="https://www.nwac.ca/covid19-support/"
+                        LinkText="Association des femmes autochtones du Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      offre du soutien et aide à renforcer la résilience. Des
-                      aînés sont disponibles du lundi au vendredi, de 9 h à 11 h
-                      et de 13 h à 15 h (heure de l’Est): 1-888-664-7808.
+                      (en anglais seulement) offre son soutien et favorise la résilience. Les aînées et aînés sont
+                      disponibles du lundi au vendredi, de 9 h à 11 h et de 13 h à 15 h (heure de l’Est) : 1-888-664-7808.
                     </li>
                     <li>
                       <NewWindow Href="http://www.talk4healing.com/about/" LinkText="Talk4Healing"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      fournit des services de counseling téléphonique, de
-                      messagerie texte, de chat en direct 24 heures sur 24, 7
-                      jours sur 7 et d’autres formes de soutien et de ressources
-                      pour les femmes autochtones, par les femmes autochtones,
-                      partout en Ontario. Les services sont entièrement ancrés
-                      dans la culture, la sagesse et la tradition autochtones et
-                      sont disponibles dans les langues suivantes: oji-cree,
-                      cri, algonquin, inuktitut, mohawk, oneida, odawa,
-                      potawatomi, micmac, black foot, anishinaabe, moose cree,
-                      swampy cree et anglais: 1-855-554-HEAL.
+                      (en anglais seulement) fournit des conseils en tout temps par téléphone, par SMS et par l’entremise
+                      d’un clavardage en direct. Talk4Healing offre également du soutien et des ressources aux femmes
+                      autochtones, par des femmes autochtones, partout en Ontario. Les services sont entièrement ancrés
+                      dans la culture, la sagesse et la tradition autochtones et sont offerts dans les langues suivantes :
+                      oji-cri, cri, algonquin, inuktitut, mohawk, oneida, odawa, potawatomi, micmac, pied-noir,
+                      anishinaabemowin, cri de la Moose, cri des marais et anglais : 1-855-554-HEAL.
                     </li>
                     <li>
                       La
                       <NewWindow
                         Href="https://thunderbirdpf.org/reponse-a-la-crise-dans-les-communautes-autochtones/?lang=fr"
-                        LinkText="Fondation Thunderbird
-                                                                                    Partnership"
-                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
-                      promeut une approche holistique de la guérison et du
-                      bien-être qui valorise la culture, le respect, la
-                      communauté et la compassion. La priorité absolue de la
-                      fondation est de développer un continuum de soins qui
-                      serait disponible pour tous les peuples autochtones du
-                      Canada.
+                        LinkText="Thunderbird Partnership Foundation" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                      fait la promotion d’une approche holistique de la guérison et d’un mieux-être qui valorise la
+                      culture, le respect, la communauté et la compassion. La priorité de la fondation est de développer
+                      un continuum de soins qui serait offert à tous les peuples autochtones au Canada.
                     </li>
                   </ul>
                 </template>
