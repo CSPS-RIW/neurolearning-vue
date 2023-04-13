@@ -97,8 +97,8 @@ onBeforeMount(() => {
           <!-- <div class="questionnaire-header">
                                                                                                                                                                                                   <h2 class="questionnaire-heading">
 
-                                                                                                                                                                                                                                                                                                                                  </h2>
-                                                                                                                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                                                            </h2>
+                                                                                                                                                                                                                                                                                                                                                          </div> -->
 
             <div class="questionnaire questionnaire-1" v-if="step === 1">
               <p>{{ $t("selectAll") }}</p>
@@ -141,30 +141,30 @@ onBeforeMount(() => {
               </form>
             </div>
             <!-- <div class="questionnaire questionnaire-2" v-if="step === 2">
-                                                                                                                                                                                                                                                                                                                                  <p>{{ $t("thankYouPara[0]") }}</p>
-                                                                                                                                                                                                                                                                                                                                  <p>{{ $t("thankYouPara[1]") }}</p>
-                                                                                                                                                                                                                                                                                                                                  <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
-                                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                                                <div class="questionnaire questionnaire-3" v-if="step === 3">
-                                                                                                                                                                                                                                                                                                                                  <p>{{ t("whichOfThese") }}</p>
-                                                                                                                                                                                                                                                                                                                                  <form class="options">
-                                                                                                                                                                                                                                                                                                                                    <div>
-                                                                                                                                                                                                                                                                                                                                      <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
-                                                                                                                                                                                                                                                                                                                                        v-model="question2.role">
-                                                                                                                                                                                                                                                                                                                                      <label for="employee">{{ t("roles[0]") }}</label>
-                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                    <div>
-                                                                                                                                                                                                                                                                                                                                      <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
-                                                                                                                                                                                                                                                                                                                                        v-model="question2.role">
-                                                                                                                                                                                                                                                                                                                                      <label for="manager">{{ t("roles[1]") }}</label>
-                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                    <div>
-                                                                                                                                                                                                                                                                                                                                      <input type="radio" name="option" id="executive" aria-label="executive"
-                                                                                                                                                                                                                                                                                                                                        value="executive" v-model="question2.role">
-                                                                                                                                                                                                                                                                                                                                      <label for="executive">{{ t("roles[2]") }}</label>
-                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                  </form>
-                                                                                                                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                                                            <p>{{ $t("thankYouPara[0]") }}</p>
+                                                                                                                                                                                                                                                                                                                                                            <p>{{ $t("thankYouPara[1]") }}</p>
+                                                                                                                                                                                                                                                                                                                                                            <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
+                                                                                                                                                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                                                                                                                                                          <div class="questionnaire questionnaire-3" v-if="step === 3">
+                                                                                                                                                                                                                                                                                                                                                            <p>{{ t("whichOfThese") }}</p>
+                                                                                                                                                                                                                                                                                                                                                            <form class="options">
+                                                                                                                                                                                                                                                                                                                                                              <div>
+                                                                                                                                                                                                                                                                                                                                                                <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
+                                                                                                                                                                                                                                                                                                                                                                  v-model="question2.role">
+                                                                                                                                                                                                                                                                                                                                                                <label for="employee">{{ t("roles[0]") }}</label>
+                                                                                                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                                                                                              <div>
+                                                                                                                                                                                                                                                                                                                                                                <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
+                                                                                                                                                                                                                                                                                                                                                                  v-model="question2.role">
+                                                                                                                                                                                                                                                                                                                                                                <label for="manager">{{ t("roles[1]") }}</label>
+                                                                                                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                                                                                              <div>
+                                                                                                                                                                                                                                                                                                                                                                <input type="radio" name="option" id="executive" aria-label="executive"
+                                                                                                                                                                                                                                                                                                                                                                  value="executive" v-model="question2.role">
+                                                                                                                                                                                                                                                                                                                                                                <label for="executive">{{ t("roles[2]") }}</label>
+                                                                                                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                                                                                            </form>
+                                                                                                                                                                                                                                                                                                                                                          </div> -->
             <div class="customized-toolkit" v-show="step === 2">
               <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
                 <template v-slot:AccTitle>
@@ -180,7 +180,7 @@ onBeforeMount(() => {
                     <li>
                       <NewWindow Href="https://www.crisisservicescanada.ca/en/" LinkText="Crisis Services Canada" />
                       offers a toll-free, 24/7 suicide prevention service
-                      throughout the year at 1-833-456-4566. Whether you are
+                      throughout the year at <a href="tel:1-833-456-4566">1-833-456-4566</a>. Whether you are
                       suffering from a loss, worried about someone who may be
                       having suicidal thoughts, or having suicidal thoughts
                       yourself, highly trained responders can provide support.
@@ -313,7 +313,7 @@ onBeforeMount(() => {
                     <li>
                       <NewWindow Href="https://www.crisisservicescanada.ca/en/" LinkText="Crisis Services Canada" />
                       offers a toll-free, 24/7 suicide prevention service
-                      throughout the year at 1-833-456-4566. Whether you are
+                      throughout the year at <a href="tel:1-833-456-4566">1-833-456-4566</a>. Whether you are
                       suffering from a loss, worried about someone who may be
                       having suicidal thoughts, or having suicidal thoughts
                       yourself, highly trained responders can provide support.
@@ -473,7 +473,7 @@ onBeforeMount(() => {
                       <NewWindow Href="http://nunavuthelpline.ca/" LinkText="Kamatsiaqtut Nunavut Helpline" />
 
                       is a toll-free, anonymous, confidential 24/7 service
-                      staffed by trained volunteers: 1-800-265-3333.
+                      staffed by trained volunteers: <a href="tel:1-800-265-3333">1-800-265-3333</a>.
                     </li>
                     <li>
                       The
@@ -482,7 +482,7 @@ onBeforeMount(() => {
 
                       is an independent, national, 24/7 toll-free service
                       available to anyone who requires assistance. Services are
-                      available in English and French: 1-844-413-6649.
+                      available in English and French: <a href="tel:1-844-413-6649">1-844-413-6649</a>.
                     </li>
                     <li>
                       The
@@ -499,7 +499,7 @@ onBeforeMount(() => {
                         LinkText="Native Women's Association of Canada" />
                       offers support and helps build resiliency. Elders are
                       available Monday to Friday, from 9:00 am to 11:00 am and
-                      1:00 pm to 3:00 pm (Eastern Time): 1-888-664-7808.
+                      1:00 pm to 3:00 pm (Eastern Time): <a href="tel:1-888-664-7808">1-888-664-7808</a>.
                     </li>
                     <li>
                       <NewWindow Href="http://www.talk4healing.com/about/" LinkText="Talk4Healing" />
@@ -510,7 +510,7 @@ onBeforeMount(() => {
                       are available in the following languages: Oji-Cree, Cree,
                       Algonquin, Inuktitut, Mohawk, Oneida, Odawa, Potawatomi,
                       Micmac, Black Foot, Anishinaabe, Moose Cree, Swampy Cree
-                      and English: 1-855-554-HEAL.
+                      and English: <a href="tel:1-855-554-4325">1-855-554-HEAL</a>.
                     </li>
                     <li>
                       The
@@ -562,7 +562,7 @@ onBeforeMount(() => {
                         LinkText="ligne d’assistance Kamatsiaqtut Nunavut"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       est un service sans frais, anonyme et confidentiel offert en tout temps et doté de personnes
-                      bénévoles formées : 1-800-265-3333.
+                      bénévoles formées : <a href="tel:1-800-265-3333">1-800-265-3333</a>.
                     </li>
                     <li>
                       La
@@ -570,7 +570,8 @@ onBeforeMount(() => {
                         LinkText="ligne de soutien de l’Enquête nationale sur les femmes et les filles autochtones disparues et assassinées"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       est un service gratuit, national et indépendant, accessible en tout temps à toute personne ayant
-                      besoin d’aide. Les services sont offerts en anglais et en français au 1-844-413-6649.
+                      besoin d’aide. Les services sont offerts en anglais et en français au <a
+                        href="tel:1-844-413-6649">1-844-413-6649</a>.
                     </li>
                     <li>
                       L’
@@ -587,7 +588,8 @@ onBeforeMount(() => {
                         LinkText="Association des femmes autochtones du Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       (en anglais seulement) offre son soutien et favorise la résilience. Les aînées et aînés sont
-                      disponibles du lundi au vendredi, de 9 h à 11 h et de 13 h à 15 h (heure de l’Est) : 1-888-664-7808.
+                      disponibles du lundi au vendredi, de 9 h à 11 h et de 13 h à 15 h (heure de l’Est) : <a
+                        href="tel:1-888-664-7808">1-888-664-7808</a>.
                     </li>
                     <li>
                       <NewWindow Href="http://www.talk4healing.com/about/" LinkText="Talk4Healing"
@@ -597,7 +599,7 @@ onBeforeMount(() => {
                       autochtones, par des femmes autochtones, partout en Ontario. Les services sont entièrement ancrés
                       dans la culture, la sagesse et la tradition autochtones et sont offerts dans les langues suivantes :
                       oji-cri, cri, algonquin, inuktitut, mohawk, oneida, odawa, potawatomi, micmac, pied-noir,
-                      anishinaabemowin, cri de la Moose, cri des marais et anglais : 1-855-554-HEAL.
+                      anishinaabemowin, cri de la Moose, cri des marais et anglais : <a href="tel:1-855-554-4325">1-855-554-HEAL</a>.
                     </li>
                     <li>
                       La
@@ -616,11 +618,12 @@ onBeforeMount(() => {
                 <template #AccBody-3>
                   <ul class="en" v-show="locale === 'en'">
                     <li>
-                      LGBT Youth Line: 1-800-268-9688 OR text 647-694-4275
+                      LGBT Youth Line: <a href="tel:1-800-268-9688">1-800-268-9688</a> OR text <a
+                        href="sms:647-694-4275">647-694-4275</a>
                     </li>
                     <li>
                       Trans Lifeline (support for transgender people by
-                      transgender people): 1-877-330-6330-6366
+                      transgender people): <a href="tel:1-877-330-6330-6366">1-877-330-6330-6366</a>
                     </li>
                     <li>
                       <NewWindow Href="https://publicservicepride.ca/resources/"
@@ -629,10 +632,12 @@ onBeforeMount(() => {
                   </ul>
                   <ul class="fr" v-show="locale === 'fr'">
                     <li>
-                      LGBT Youth Line : 1-800-268-9688 ou par SMS au 647-694-4275 (en anglais seulement) </li>
+                      LGBT Youth Line : <a href="tel:1-800-268-9688">1-800-268-9688</a> ou par SMS au <a
+                        href="sms:647-694-4275">647-694-4275</a> (en
+                      anglais seulement) </li>
                     <li>
                       Trans Lifeline (soutien aux personnes transgenres par des personnes transgenres) :
-                      1-877-330-6330-6366 (en anglais seulement)
+                      <a href="tel:1-877-330-6330-6366">1-877-330-6330-6366</a> (en anglais seulement)
                     </li>
                     <li>
                       <NewWindow Href="https://publicservicepride.ca/fr/resources/"
