@@ -73,7 +73,7 @@ onBeforeMount(() => {
         <div class="row d-flex align-items-center justify-content-between">
           <div class="col-sm-10">
             <h1>{{ $t("title") }}</h1>
-          </div>
+        </div>
         <div class="col-sm-2">
           <a href="#" class="lang-toggle" @click.prevent="changeLang" :title="t('langToggle')"
             :lang="t('shortToggle')">{{ t("shortToggle") }}</a>
@@ -97,8 +97,8 @@ onBeforeMount(() => {
           <!-- <div class="questionnaire-header">
                                                                                                                                                                                                   <h2 class="questionnaire-heading">
                 
-                                                                                                                                                                                                                  </h2>
-                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                    </h2>
+                                                                                                                                                                                                                  </div> -->
 
             <div class="questionnaire questionnaire-1" v-if="step === 1">
               <p>{{ $t("selectAll") }}</p>
@@ -141,34 +141,34 @@ onBeforeMount(() => {
               </form>
             </div>
             <!-- <div class="questionnaire questionnaire-2" v-if="step === 2">
-                                                                                                                                                                                                                  <p>{{ $t("thankYouPara[0]") }}</p>
-                                                                                                                                                                                                                  <p>{{ $t("thankYouPara[1]") }}</p>
-                                                                                                                                                                                                                  <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
-                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                <div class="questionnaire questionnaire-3" v-if="step === 3">
-                                                                                                                                                                                                                  <p>{{ t("whichOfThese") }}</p>
-                                                                                                                                                                                                                  <form class="options">
-                                                                                                                                                                                                                    <div>
-                                                                                                                                                                                                                      <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
-                                                                                                                                                                                                                        v-model="question2.role">
-                                                                                                                                                                                                                      <label for="employee">{{ t("roles[0]") }}</label>
-                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                    <div>
-                                                                                                                                                                                                                      <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
-                                                                                                                                                                                                                        v-model="question2.role">
-                                                                                                                                                                                                                      <label for="manager">{{ t("roles[1]") }}</label>
-                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                    <div>
-                                                                                                                                                                                                                      <input type="radio" name="option" id="executive" aria-label="executive"
-                                                                                                                                                                                                                        value="executive" v-model="question2.role">
-                                                                                                                                                                                                                      <label for="executive">{{ t("roles[2]") }}</label>
-                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                  </form>
-                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                    <p>{{ $t("thankYouPara[0]") }}</p>
+                                                                                                                                                                                                                    <p>{{ $t("thankYouPara[1]") }}</p>
+                                                                                                                                                                                                                    <button class="btn-regular skip" @click="step = 4">{{ t("buttons.skip") }}</button>
+                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                  <div class="questionnaire questionnaire-3" v-if="step === 3">
+                                                                                                                                                                                                                    <p>{{ t("whichOfThese") }}</p>
+                                                                                                                                                                                                                    <form class="options">
+                                                                                                                                                                                                                      <div>
+                                                                                                                                                                                                                        <input type="radio" name="option" id="employee" aria-label="employee" value="employee"
+                                                                                                                                                                                                                          v-model="question2.role">
+                                                                                                                                                                                                                        <label for="employee">{{ t("roles[0]") }}</label>
+                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                      <div>
+                                                                                                                                                                                                                        <input type="radio" name="option" id="manager" aria-label="manager" value="manager"
+                                                                                                                                                                                                                          v-model="question2.role">
+                                                                                                                                                                                                                        <label for="manager">{{ t("roles[1]") }}</label>
+                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                      <div>
+                                                                                                                                                                                                                        <input type="radio" name="option" id="executive" aria-label="executive"
+                                                                                                                                                                                                                          value="executive" v-model="question2.role">
+                                                                                                                                                                                                                        <label for="executive">{{ t("roles[2]") }}</label>
+                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                    </form>
+                                                                                                                                                                                                                  </div> -->
             <div class="customized-toolkit" v-show="step === 2">
               <SimpleAccordion v-show="Object.values(question1).every((v: any) => v === false)">
                 <template v-slot:AccTitle>
-                  {{ $t("accordionTitles[0]") }}
+                  {{ $t("checkboxes[0]") }}
                 </template>
                 <template v-slot:AccBody>
                   <ul class="en" v-show="locale === 'en'">
@@ -303,7 +303,7 @@ onBeforeMount(() => {
               </div>
               <MultiAccordions :AccNum="6">
                 <template #AccTitle-1 data-accordion="1">{{
-                  $t("accordionTitles[0]")
+                  $t("checkboxes[0]")
                 }}</template>
                 <template #AccBody-1>
                   <ul class="en" v-show="locale === 'en'">
@@ -434,7 +434,7 @@ onBeforeMount(() => {
                   </ul>
                 </template>
                 <template #AccTitle-2 data-accordion="2">{{
-                  $t("accordionTitles[1]")
+                  $t("checkboxes[1]")
                 }}</template>
                 <template #AccBody-2>
                   <ul class="en" v-show="locale === 'en'">
@@ -556,7 +556,7 @@ onBeforeMount(() => {
                     <li>
                       La
                       <NewWindow Href="https://www.irsss.ca/" LinkText="Société des survivants des pensionnats
-                                                  indiens" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                                                    indiens" Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       offre une ligne de crise 24 heures sur 24, 7 jours sur 7,
                       qui offre du soutien à toute personne éprouvant de la
                       douleur ou de la détresse en raison de son expérience dans
@@ -572,7 +572,7 @@ onBeforeMount(() => {
                     <li>
                       La
                       <NewWindow Href="https://nunavuthelpline.ca/?lang=fr" LinkText="ligne d’assistance Kamatsiaqtut
-                                                  Nunavut" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                                                    Nunavut" Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       est un service gratuit, anonyme et confidentiel 24 heures
                       sur 24, 7 jours sur 7, assuré par des bénévoles formés:
                       1-800-265-3333.
@@ -581,7 +581,8 @@ onBeforeMount(() => {
                       La
                       <NewWindow Href="https://www.mmiwg-ffada.ca/fr/contact/"
                         LinkText="ligne de soutien de l’Enquête
-                                                  nationale sur les femmes et les filles autochtones disparues et assassinées" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                                                    nationale sur les femmes et les filles autochtones disparues et assassinées"
+                        Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       est un service indépendant, national et gratuit 24 heures
                       sur 24, 7 jours sur 7, disponible pour toute personne
                       ayant besoin d’aide. Des services sont disponibles en
@@ -590,7 +591,7 @@ onBeforeMount(() => {
                     <li>
                       La
                       <NewWindow Href="https://nafc.ca/?lang=fr" LinkText="Association nationale des centres
-                                                  d’amitié" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                                                    d’amitié" Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       <a href="" target="“_blank”"></a> offre des programmes et
                       des services culturellement pertinents pour les peuples
                       autochtones vivant dans les centres urbains du Canada.
@@ -601,7 +602,7 @@ onBeforeMount(() => {
                     <li>
                       La
                       <NewWindow Href="https://www.nwac.ca/covid19-support/" LinkText="Association des femmes
-                                                  autochtones du Canada"
+                                                    autochtones du Canada"
                         Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       offre du soutien et aide à renforcer la résilience. Des
                       aînés sont disponibles du lundi au vendredi, de 9 h à 11 h
@@ -626,7 +627,7 @@ onBeforeMount(() => {
                       <NewWindow
                         Href="https://thunderbirdpf.org/reponse-a-la-crise-dans-les-communautes-autochtones/?lang=fr"
                         LinkText="Fondation Thunderbird
-                                                  Partnership" Title="Ouvre dans une nouvelle fenêtre/onglet" />
+                                                    Partnership" Title="Ouvre dans une nouvelle fenêtre/onglet" />
                       promeut une approche holistique de la guérison et du
                       bien-être qui valorise la culture, le respect, la
                       communauté et la compassion. La priorité absolue de la
@@ -637,7 +638,7 @@ onBeforeMount(() => {
                   </ul>
                 </template>
                 <template #AccTitle-3 data-accordion="3">{{
-                  $t("accordionTitles[2]")
+                  $t("checkboxes[2]")
                 }}</template>
                 <template #AccBody-3>
                   <ul class="en" v-show="locale === 'en'">
@@ -669,7 +670,7 @@ onBeforeMount(() => {
                   </ul>
                 </template>
                 <template #AccTitle-4 data-accordion="4">{{
-                  $t("accordionTitles[3]")
+                  $t("checkboxes[3]")
                 }}</template>
                 <template #AccBody-4>
                   <ul class="en" v-show="locale === 'en'">
@@ -771,7 +772,7 @@ onBeforeMount(() => {
                   </ul>
                 </template>
                 <template #AccTitle-5 data-accordion="5">{{
-                  $t("accordionTitles[4]")
+                  $t("checkboxes[4]")
                 }}</template>
                 <template #AccBody-5>
                   <div class="en" v-show="locale === 'en'">
